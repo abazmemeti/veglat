@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../foto/icon.png" />
+    <link rel="stylesheet" href="../style/default.css">
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/nata.css">
+    <script src="../script/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <title>HTML</title>
+</head>
+<body>
+<div id="grid">
+     
+<div id="navigimi">
+    <header>
+        <div class="logo"><a href="/">VEGLAT SOFTUERIKE</a></div>
+        <div id="burger">
+            <span class="viza"></span>
+            <span class="viza"></span>
+            <span class="viza"></span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">HTML</a>
+        <a href="../css/">CSS</a>
+        <a href="../js/">JavaScript</a>
+        <a href="../sql/">SQL</a>
+        <div id="nata" title="Modi i errët/ndritshëm">
+            <div id="dita"></div>
+        </div>
+    </nav>
+</div>
+
+<div id="wrapper">
+    <article>
+        <h3>REFERENCA</h3>
+        <ul>
+            <li><a href="https://www.w3schools.com/html/default.asp" target="_blank">w3Schools.com</a></li>
+            <li><a href="https://html.com/" target="_blank">html.com</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank">developer.mozilla.org</a></li>
+            <li><a href="https://www.javatpoint.com/html-tutorial" target="_blank">javaTpoint.com</a></li>
+            <li><a href="https://www.learn-html.org/" target="_blank">learn-html.org</a></li>
+            <li><a href="https://www.coderepublics.com/HTML/html-tutorial.php" target="_blank">codeRepublics.com</a></li>
+            <li><a href="https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/" target="_blank">freeCodeCamp.org</a></li>
+            <li><a href="https://www.bitdegree.org/learn/html" target="_blank">bitDegree.org</a></li>
+            <li><a href="https://www.khanacademy.org/computing/computer-programming/html-css" target="_blank">khanAcademy.org</a></li>
+            <li><a href="https://www.sololearn.com/learning/1014" target="_blank">soloLearn.com</a></li>
+            <li><a href="https://scrimba.com/learn/frontend/html-css-basics-module-intro-c2K8mmH2" target="_blank">scrimba.com</a></li>
+        </ul>
+    </article>
+
+    <aside>
+        <h3>HTML</h3>
+        <ul>
+            <li><a href="#html-njohuri-themelore">Njohuri themelore</a></li>
+            <li><a href="#html-hyrje">Hyrje</a></li>
+            <li><a href="#elementet-e-html-se">Elementet e HTML-së</a></li>
+            <li><a href="#atributet">Atributet</a></li>
+            <li><a href="#titujt">Titujt</a></li>
+            <li><a href="#linqet">Linqet</a></li>
+            <li><a href="#formatimi-i-tekstit">Formatimi i tekstit</a></li>
+            <li><a href="#stilet-ne-html">Stilet në HTML</a></li>
+            <li><a href="#imazhet">Imazhet</a></li>
+            <li><a href="#tabelat">Tabelat</a></li>
+            <li><a href="#listat">Listat</a></li>
+            <li><a href="#format">Format</a></li>
+            <li><a href="#iframe">iFrame</a></li>
+            <li><a href="#audio">Audio</a></li>
+            <li><a href="#video">Video</a></li>
+        </ul>
+    </aside>
+
+    <main>
+
+        <section id="html-njohuri-themelore">
+            <h1>HTML &ndash; Njohuri themelore</h1>
+            <p><strong>HTML</strong> &euml;sht&euml; gjuha kryesore sh&euml;njuese p&euml;r p&euml;rshkrimin e struktur&euml;s s&euml; ueb faqeve.</p>
+            <div class="figure jonata">
+                <img src="foto/html5.png" alt="HTML5">
+            </div>
+            <p><strong>HTML</strong> &euml;sht&euml; akronim nga <strong><em>H</em></strong><em>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</em>. HTML &euml;sht&euml; blloku themelor i Rrjetit Mbar&euml; Bot&euml;ror &ndash; <em>World Wide Web</em>.</p>
+            <p><em>Hypertext</em> &euml;sht&euml; teksti i paraqitur n&euml; nj&euml; kompjuter ose pajisje tjet&euml;r elektronike me referenca n&euml; nj&euml; tekst tjet&euml;r n&euml; t&euml; cilin shfryt&euml;zuesi mund t&euml; qaset menj&euml;her&euml;, zakonisht me an&euml; t&euml; nj&euml; klikimi t&euml; mausit ose shtypjes s&euml; tastit.</p>
+            <p>P&euml;rve&ccedil; tekstit, hiperteksti mund t&euml; p&euml;rmbaj&euml; tabela, lista, forma, imazhe dhe elemente tjera &nbsp;prezantuese. HTML &euml;sht&euml; nj&euml; format i leht&euml; p&euml;r t&rsquo;u p&euml;rdorur dhe fleksib&euml;l p&euml;r t&euml; ndar&euml; informacionin p&euml;rmes Internetit.</p>
+            <p>Gjuh&euml;t e sh&euml;njimit p&euml;rdorin grupe t&euml; etiketave (<em>tags</em>) t&euml; sh&euml;njimit p&euml;r t&euml; karakterizuar elementet e tekstit brenda nj&euml; dokumenti, i cili u jep udh&euml;zime ueb shfletuesve (<em>web browsers</em>) se si duhet t&euml; shfaqet dokumenti.</p>
+            <p>HTML u krijua fillimisht nga <strong>Tim Berners-Lee</strong> n&euml; vitin 1990. Ai &euml;sht&euml; i njohur gjithashtu si babai i Uebit. N&euml; vitin 1996, Konsorciumi World Wide Web (<em>W3C</em>) u b&euml; autoriteti p&euml;r t&euml; mir&euml;mbajtur specifikimet HTML. HTML gjithashtu u b&euml; nj&euml; standard nd&euml;rkomb&euml;tar (<em>ISO</em>) n&euml; vitin 2000. HTML5 &euml;sht&euml; versioni i fundit i HTML. HTML5 siguron nj&euml; qasje m&euml; t&euml; shpejt&euml; dhe m&euml; t&euml; fuqishme p&euml;r zhvillimin e uebit.</p>
+            <h2>&Ccedil;far&euml; mund t&euml; b&euml;ni me HTML?</h2>
+            <p>Ka shum&euml; m&euml; tep&euml;r gj&euml;ra q&euml; ju mund t&euml; b&euml;ni me HTML.</p>
+            <ul>
+            <li>Mund t&euml; publikoni n&euml; Internet dokumente me tekst, imazhe, lista, tabela, etj.</li>
+            <li>Mund t&euml; p&euml;rdorni burimet e uebit si&ccedil; jan&euml; imazhet, videot ose dokument tjet&euml;r HTML p&euml;rmes lidhjeve t&euml; ndryshme.</li>
+            <li>Mund t&euml; krijoni formular&euml; p&euml;r t&euml; mbledhur t&euml; dh&euml;nat e p&euml;rdorueseve, si emri, adresa e post&euml;s elektronike, komentet, etj.</li>
+            <li>Mund t&euml; p&euml;rfshini imazhe, video, klipe zanore, video, aplikacione dhe dokumente t&euml; tjer&euml; HTML direkt brenda nj&euml; dokumenti HTML.</li>
+            <li>Mund t&euml; krijoni nj&euml; version <em>offline</em> t&euml; ueb sajtit tuaj q&euml; funksionon pa internet.</li>
+            <li>Mund t&euml; ruani t&euml; dh&euml;na n&euml; shfletuesin e p&euml;rdoruesit dhe t&rsquo;ju qaseni m&euml; von&euml;.</li>
+            <li>Mund t&euml; gjeni vendndodhjen aktuale t&euml; vizitorit n&euml; ueb sajtin tuaj.</li>
+            </ul>
+            <p>Lista nuk mbaron k&euml;tu, ka shum&euml; gj&euml;ra t&euml; tjera interesante q&euml; mund t&euml; b&euml;ni me HTML.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: HTML si&ccedil; u p&euml;rshkrua m&euml; her&euml;t &euml;sht&euml; nj&euml; gjuh&euml; e sh&euml;njimit dhe jo nj&euml; gjuh&euml; programimi, si Java, C++, PHP, etj. Ju nevojitet nj&euml; ueb shfletues p&euml;r t&euml; par&euml; faqet HTML. Ueb shfletuesit nuk shfaqin etiketat HTML, por p&euml;rdorin etiketat p&euml;r t&euml; interpretuar p&euml;rmbajtjen e ueb faqeve.</p>
+            </div>
+        </section>
+
+        <section id="html-hyrje">
+            <h1>HTML &ndash; Hyrje</h1>
+            <p>&Euml;sht&euml; shum&euml; e leht&euml; t&euml; krijoni nj&euml; dokument HTML, pra nj&euml; ueb faqe. P&euml;r t&euml; filluar kodimin n&euml; HTML ju nevojiten s&euml; paku dy gj&euml;ra: nj&euml; tekst editor&euml; i thjesht&euml; dhe ueb shfletuesi.</p>
+            <h2>Krijimi p&euml;r her&euml; t&euml; par&euml; i nj&euml; dokumenti HTML</h2>
+            <p>Le t&euml; l&euml;vizim n&euml;p&euml;r hapat e m&euml;posht&euml;m. N&euml; fund t&euml; k&euml;saj kaptine, ju do t&euml; keni krijuar nj&euml; fajll HTML q&euml; shfaq mesazhin "P&euml;rsh&euml;ndetje Bot&euml;" n&euml; ueb shfletuesin tuaj.</p>
+            <h3>Hapi 1: Krijimi i fajllit HTML</h3>
+            <p>Hapni nj&euml; tekst-editor&euml; t&euml; thjesht&euml; n&euml; kompjuterin tuaj dhe krijoni nj&euml; fajll.</p>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Ju sugjerojm&euml; t&euml; p&euml;rdorni Notepad (n&euml; Windows), TextEdit (n&euml; Mac) ose ndonj&euml; tekst-editor&euml; tjet&euml;r t&euml; thjesht&euml; p&euml;r ta b&euml;r&euml; k&euml;t&euml;; mos p&euml;rdorni Word ose WordPad!</p>
+            </div>
+            <h3>Hapi 2: Sh&euml;noni ca kod HTML</h3>
+            <p>Filloni me nj&euml; dritare t&euml; zbrazt&euml; dhe shkruani kodin e dh&euml;n&euml; n&euml; shembullin e m&euml;posht&euml;m.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="sq"&gt;
+&lt;head&gt;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;&lt;title&gt;Dokument i thjesht&euml; HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;&lt;p&gt;P&euml;rsh&euml;ndetje Bot&euml;!&lt;p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+            </div>
+            <h3>Hapi 3: Ruajtja e fajllit</h3>
+            <p>Tani ruani fajllin n&euml; desktop k&euml;sisoj "uebfaqja.html ".</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: &Euml;sht&euml; e r&euml;nd&euml;sishme q&euml; shtojca (extension) .html t&euml; specifikohet - pasi disa editor&euml; teksti, si&ccedil; &euml;sht&euml; Notepad, do ta ruajn&euml; automatikisht si .txt</p>
+            </div>
+            <p>P&euml;r t&euml; hapur fajllin e ruajtur n&euml; nj&euml; shfletues, navigoni tek fajlli juaj, pastaj klikoni dy her&euml; mbi t&euml;. Do t&euml; hapet n&euml; ueb shfletuesin tuaj t&euml; parazgjedhur. N&euml;se jo, hapni shfletuesin tuaj dhe t&euml;rhiqeni fajllin n&euml; t&euml;.</p>
+            <h2>Shpjegimi i kodit</h2>
+            <p>Mund t&euml; pyetni se p&euml;r &ccedil;far&euml; ishte ai kod. Pra, le ta zbulojm&euml;.</p>
+            <ul>
+            <li>Rreshti i par&euml; &lt;!DOCTYPE html&gt; &euml;sht&euml; deklarata p&euml;r llojin e dokumentit. I jep udh&euml;zim ueb shfletuesit e q&euml; ky dokument &euml;sht&euml; nj&euml; dokument HTML5. &Euml;sht&euml; i pandjesh&euml;m n&euml; llojin e shkronjave &ndash; t&euml; m&euml;dha apo t&euml; vogla (<em>case-insesetive</em>).</li>
+            <li>Elementi &lt;head&gt; &euml;sht&euml; nj&euml; konteiner p&euml;r etiketat q&euml; ofrojn&euml; informacion n&euml; lidhje me dokumentin, p&euml;r shembull, etiketa &lt;title&gt; p&euml;rcakton titullin e dokumentit.</li>
+            <li>Elementi &lt;body&gt; p&euml;rmban n&euml; vete p&euml;rmbajtjen aktuale t&euml; dokumentit (paragraf&euml;, lidhje, imazhe, tabela etj.) e q&euml; paraqitet n&euml; ueb shfletues dhe i shfaqet p&euml;rdoruesit.</li>
+            </ul>
+            <p>Tani n&euml; fillim thjesht do t&euml; p&euml;rqendrohemi n&euml; struktur&euml;n themelore t&euml; dokumentit HTML, pa ju qasur detajeve.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Deklarata DOCTYPE shfaqet n&euml; krye t&euml; &ccedil;do ueb faqeje p&euml;rpara se t&euml; gjith&euml; elementet tjer&euml;. Megjithat&euml; vet&euml; deklarata e dok-tipit nuk &euml;sht&euml; etiket&euml; HTML. &Ccedil;do dokument HTML k&euml;rkon nj&euml; deklarat&euml; p&euml;r tipin e dokumentit p&euml;r t&euml; siguruar q&euml; faqet tuaja t&euml; shfaqen n&euml; m&euml;nyr&euml; korrekte.</p>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Etiketat &lt;html&gt;, &lt;head&gt; dhe &lt;body&gt; p&euml;rb&euml;jn&euml; skeletin baz&euml; t&euml; &ccedil;do ueb faqeje. P&euml;rmbajtja brenda &lt;head&gt; dhe &lt;/head&gt; &euml;sht&euml; e padukshme p&euml;r p&euml;rdoruesit me nj&euml; p&euml;rjashtim: teksti midis etiketave &lt;title&gt; dhe &lt;/title&gt; i cili shfaqet si titull n&euml; tab-in t&euml; shfletuesit.</p>
+            </div>
+            <h2>Etiketat (tags) dhe elementet e HTML-s&euml;</h2>
+            <p>HTML &euml;sht&euml; shkruar n&euml; form&euml;n e elementeve HTML t&euml; p&euml;rb&euml;r&euml; nga etiketa sh&euml;njuese. K&euml;to etiketime sh&euml;njuese jan&euml; karakteristika themelore e HTML-s&euml;. &Ccedil;do etiket&euml; e sh&euml;nimit p&euml;rb&euml;het nga nj&euml; fjal&euml; ky&ccedil;e, e rrethuar nga simbolet m&euml; e vog&euml;l (&lt;) dhe m&euml; e madhe (&gt;), t&euml; tilla si &lt;html&gt;, &lt;head&gt;, &lt;body&gt;, &lt;title&gt;, &lt;p&gt;, etj.</p>
+            <p>Etiketat HTML zakonisht vijn&euml; n&euml; &ccedil;ifte si &lt;html&gt; dhe &lt;/html&gt;. Etiketa e par&euml; n&euml; nj&euml; &ccedil;ift shpesh quhet etiketimi i hapjes (ose etiketa e fillimit), dhe etiketimi i dyt&euml; quhet etiketimi i mbylljes (ose etiketa e fundit).</p>
+            <p>Nj&euml; etiket&euml; e hapjes dhe nj&euml; etiket&euml; e mbylljes jan&euml; identike, p&euml;rve&ccedil; nj&euml; vize t&euml; pjerrt&euml; (/) pas simbolit m&euml; e vog&euml;l t&euml; etiket&euml;s mbyll&euml;se, p&euml;r t'i th&euml;n&euml; shfletuesit q&euml; komanda &euml;sht&euml; kryer.</p>
+            <p>N&euml; mes t&euml; etiketave fillestare dhe p&euml;rfundimtare mund t&euml; vendosni p&euml;rmbajtjen e duhur. P&euml;r shembull, nj&euml; paragraf, i cili p&euml;rfaq&euml;sohet nga elementi p, do t&euml; shkruhej si:</p>   
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky &euml;sht&euml; nj&euml; paragraf.&lt;/p&gt;
+&lt;!-- Paragraf me elemente t&euml; vendosura --&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;b&gt;nj&euml; tjet&euml;r&lt;/b&gt; paragraf.&lt;/p&gt;
+</code></pre>
+                </div>
+            </div>        
+        </section>
+
+        <section id="elementet-e-html-se">
+            <h1>Elementet e HTML-s&euml;</h1>
+            <p>Nj&euml; element HTML &euml;sht&euml; nj&euml; komponent&euml; individuale e nj&euml; dokumenti HTML q&euml; p&euml;rfaq&euml;son semantik&euml;n, ose kuptimin. P&euml;r shembull, elementi title p&euml;rfaq&euml;son titullin e dokumentit.</p>
+            <p>Shumica e elementeve HTML jan&euml; shkruar me nj&euml; <em>etiket&euml; fillestare </em>(ose etiket&euml; hap&euml;se) dhe nj&euml; <em>etiket&euml; p&euml;rfundimtare</em> (ose etiket&euml; mbyll&euml;se), me p&euml;rmbajtje n&euml; mes tyre. Elementet gjithashtu mund t&euml; p&euml;rmbajn&euml; atribute q&euml; p&euml;rcaktojn&euml; vetit&euml; e tyre shtes&euml;. P&euml;r shembull, nj&euml; paragraf, i cili p&euml;rfaq&euml;sohet nga elementi p, do t&euml; shkruhej si:</p>
+            <div class="img-kodi elementet-html" style="text-align: center;">
+                <img src="foto/kodi-html.jpg" alt="Kodi HTML">
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: T&euml; gjith&euml; element&euml;t nuk k&euml;rkojn&euml; q&euml; t&euml; ken&euml; t&euml; pranish&euml;m etiket&euml;n mbyll&euml;se ose etiketimin p&euml;rfundimtar. K&euml;to i referohen element&euml;ve t&euml; zbraz&euml;t ose elementeve me vet&euml;-mbyllje.</p>
+            </div>
+            <h2>Etiketat krahas Elementeve</h2>
+            <p>Teknikisht, nj&euml; element HTML &euml;sht&euml; grumbull i etiket&euml;s hap&euml;se, atributeve t&euml; tij, etiket&euml;s mbyll&euml;se dhe gjith&ccedil;kaje n&euml; mes tyre. Nga ana tjet&euml;r, nj&euml; etiket&euml; HTML (hap&euml;se ose mbyll&euml;se) p&euml;rdoret p&euml;r t&euml; sh&euml;nuar fillimin ose fundin e nj&euml; elementi, si&ccedil; mund ta shihni n&euml; ilustrimin e m&euml;sip&euml;rm.</p>
+            <p>Sidoqoft&euml;, n&euml; zbatimet e zakonshme termat element HTML dhe etiket&euml; HTML jan&euml; t&euml; k&euml;mbyesh&euml;m d.m.th. nj&euml; etiket&euml; &euml;sht&euml; nj&euml; element i nj&euml; etiket&euml;. P&euml;r shkak t&euml; thjesht&euml;sis&euml; s&euml; k&euml;tij materiali m&euml;simor, termat "etiket&euml;" dhe "element" p&euml;rdoren p&euml;r t&euml; kuptuar t&euml; nj&euml;jt&euml;n gj&euml; &ndash; pra do t&euml; definoj di&ccedil;ka n&euml; ueb faqen tuaj.</p>
+            <h2>Mosndjeshm&euml;ria nga lloji i shkrimit n&euml; etiketa dhe atribute</h2>
+            <p>N&euml; HTML, em&euml;rimet e etiketave dhe atributeve nuk jan&euml; t&euml; ndjesh&euml;m n&euml; at&euml; se cilat lloj shkronja p&euml;rdoren, t&euml; m&euml;dha apo t&euml; vogla shkronja t&euml; m&euml;dha (por shumica e vlerave t&euml; atributeve jan&euml; t&euml; ndjesh&euml;m ndaj llojit t&euml; shkronjave). Kjo n&euml;nkupton se etiketa &lt;P&gt; dhe etiketa &lt;p&gt; definojn&euml; t&euml; nj&euml;jt&euml;n gj&euml; n&euml; HTML e cila &euml;sht&euml; nj&euml; paragraf.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky &euml;sht&euml; paragraf.&lt;/p&gt;
+&lt;P&gt;Ky &euml;sht&euml; gjithashtu nj&euml; paragraf valid.&lt;/P&gt;</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Rekomandohet p&euml;rdorimi i shkronjave t&euml; vogla p&euml;r em&euml;rtimet e etiketave dhe atributeve n&euml; HTML, pasi duke b&euml;r&euml; k&euml;t&euml; ju mund ta b&euml;ni dokumentin tuaj m&euml; t&euml; pajtuesh&euml;m p&euml;r p&euml;rdit&euml;simet e ardhshme.</p>
+            </div>
+            <h2>Elementet e zbraz&euml;t</h2>
+            <p>Elementet e zbraz&euml;t (gjithashtu t&euml; quajtur elemente me vet-mbyllje) nuk jan&euml; etiketa me p&euml;rmbajtje &ndash; q&euml; n&euml;nkupton se nuk mund t&euml; shkruani di&ccedil;ka k&euml;sisoj: &lt;hr&gt;<em>ndonj&euml; p&euml;rmbajtje</em>&lt;/hr&gt; ose &lt;br&gt;<em>ndonj&euml; p&euml;rmbajtje</em>&lt;/br&gt;.</p>
+            <p>Nj&euml; shembull tipik i nj&euml; elementi t&euml; zbraz&euml;t, &euml;sht&euml; elementi &lt;br&gt;, i cili p&euml;rfaq&euml;son nj&euml; nd&euml;rprerje t&euml; rreshtit. Disa element&euml; tjer&euml; t&euml; zakonsh&euml;m t&euml; zbraz&euml;t jan&euml; &lt;img&gt;, &lt;input&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;hr&gt;, etj.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky paragraf &euml;sht&euml; i &lt;br&gt; nd&euml;rprer&euml;.&lt;/p&gt;
+&lt;img src="foto/qielli.jpg" alt="Qielli i kalt&euml;r"&gt;
+&lt;input type="text" name="emri"&gt;
+</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml; HTML, nj&euml; element vet&euml;-mbyll&euml;s shkruhet thjesht si p.sh. &lt;br&gt;. N&euml; XHTML, nj&euml; element vet&euml;-mbyll&euml;s k&euml;rkon nj&euml; hap&euml;sir&euml; dhe nj&euml; prerje mbrapa, si&ccedil; &euml;sht&euml; &lt;br /&gt;.</p>
+            </div>
+            <h2>Fole elementesh</h2>
+            <p>Shumica e elementeve HTML mund t&euml; p&euml;rmbajn&euml; elemente tjer&euml; brenda vetes (p&euml;rve&ccedil; elementeve t&euml; zbraz&euml;t), t&euml; cil&euml;t, nga ana tjet&euml;r, p&euml;rb&euml;hen nga etiketat, atributet dhe p&euml;rmbajtja ose element&euml; t&euml; tjer&euml;.</p>
+            <p>Shembulli i m&euml;posht&euml;m tregon disa element&euml; t&euml; vendosur brenda elementit &lt;p&gt;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky &euml;sht&euml; tekst &lt;b&gt;i trash&euml;&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; tekst &lt;em&gt;i pjerrt&euml;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; tekst &lt;mark&gt;i sh&euml;njuar&lt;/mark&gt;.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Vendosja e nj&euml; elementi brenda nj&euml; tjetri quhet fole (<em>nesting</em>). Nj&euml; element i n&euml;nvendosur, i quajtur gjithashtu nj&euml; element f&euml;mij&euml; (<em>child element</em>), mund t&euml; jet&euml; gjithashtu nj&euml; element prind (<em>parent</em> <em>element</em>) n&euml;se elemente tjer&euml; jan&euml; t&euml; vendosur brenda tij.</p>
+            </div>
+            <p>Etiketat HTML duhet t&euml; vendosen n&euml; radh&euml;n e duhur. Ato duhet t&euml; mbyllen n&euml; radh&euml;n e kund&euml;rt t&euml; m&euml;nyr&euml;s se si jan&euml; hapur, kjo do t&euml; thot&euml; q&euml; s&euml; pari t&euml; mbyllet etiketimi i fundit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;&lt;strong&gt;K&euml;to etiketa jan&euml; vendosur si duhet.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;K&euml;to etiketa nuk jan&euml; vendosur si duhet.&lt;/p&gt;&lt;/strong&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Shkrimi i komenteve</h2>
+            <p>Komentet zakonisht shtohen me q&euml;llim q&euml; ta b&euml;jn&euml; kodin burimor m&euml; t&euml; leht&euml; p&euml;r t'u kuptuar. Mund t&rsquo;i ndihmoj&euml; zhvilluesin tjet&euml;r (ose juve n&euml; t&euml; ardhmen kur ndryshoni kodin burimor) t&euml; kuptojn&euml; se &ccedil;far&euml; p&euml;rpiqeshit t&euml; b&euml;nit me HTML. Komentet nuk shfaqen n&euml; shfletues.</p>
+            <p>Nj&euml; koment HTML fillon me &lt;!-- dhe p&euml;rfundon me --&gt;, si&ccedil; tregohet n&euml; shembullin e m&euml;posht&euml;m:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;!-- Ky &euml;sht&euml; nj&euml; koment n&euml; HTML --&gt;
+&lt;!-- Ky &euml;sht&euml; nj&euml; koment HTML n&euml; shum&euml; rreshta,
+&nbsp; &nbsp;i cili mund t&euml; jet&euml; i gjat&euml; --&gt;
+&lt;p&gt;Kjo &euml;sht&euml; nj&euml; pjes&euml; normale e tekstit n&euml; paragraf.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; komentoni nj&euml; pjes&euml; t&euml; kodit tuaj HTML me q&euml;llim korrigjimi, si&ccedil; tregohet m&euml; posht&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;!-- Fshehja e k&euml;tij imazhi p&euml;r testim
+&lt;img src="foto/qielli.png" alt="Qielli i kalt&euml;r"&gt;
+--&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Tipet e elementeve</h2>
+            <p>Elementet mund t&euml; ndahen n&euml; dy grupe t&euml; posa&ccedil;me: elemente bllok&nbsp; dhe element&euml;t n&euml; linj&euml; (<em>block and inline elements</em>). T&euml; par&euml;t p&euml;rb&euml;jn&euml; struktur&euml;n e dokumentit, nd&euml;rsa t&euml; dyt&euml;t veshin p&euml;rmbajtjen e nj&euml; blloku.</p>
+            <p>Gjithashtu, nj&euml; element bllok z&euml; 100% t&euml; gjer&euml;sis&euml; s&euml; disponueshme dhe jepet me nj&euml; nd&euml;rprerje linje para dhe pas. Nd&euml;rsa, nj&euml; element n&euml; linj&euml; do t&euml; z&euml;r&euml; aq hap&euml;sir&euml; sa i nevojitet.</p>
+            <p>Element&euml;t m&euml; t&euml; zakonsh&euml;m t&euml; nivelit t&euml; bllokut jan&euml; &lt;div&gt;, &lt;p&gt;, &lt;h1&gt; deri &lt;h6&gt;, &lt;form&gt;, &lt;ol&gt;, &lt;ul&gt;, &lt;li&gt;, etj. Nd&euml;rsa, element&euml;t e nivelit n&euml; linj&euml; t&euml; p&euml;rdorur zakonisht jan&euml; &lt;img&gt;, &lt;a&gt;, &lt;span&gt;, &lt;strong&gt;, &lt;b&gt;, &lt;em&gt;, &lt;i&gt;, &lt;code&gt;, &lt;input&gt;, &lt;button&gt;, etj.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Elementet e nivelit t&euml; bllokut nuk duhet t&euml; vendosen brenda elementeve t&euml; nivelit inline. P&euml;r shembull, elementi &lt;p&gt; nuk duhet t&euml; vendoset brenda elementit &lt;b&gt;.</p>
+            </div>
+        </section>
+
+        <section id="atributet">
+            <h1>Atributet</h1>
+            <p>Atributet p&euml;rcaktojn&euml; karakteristikat ose vetit&euml; shtes&euml; t&euml; elementit si&ccedil; jan&euml; p.sh. gjer&euml;sia dhe lart&euml;sia e nj&euml; imazhi. Atributet specifikohen gjithmon&euml; n&euml; etiket&euml;n fillestare (ose etiket&euml;n hap&euml;se) dhe zakonisht p&euml;rb&euml;het nga emri/vlera si emri="vlera". Vlerat e atributeve duhet t&euml; jen&euml; gjithmon&euml; t&euml; mbyllura n&euml; thonj&euml;za.</p>
+            <p>Gjithashtu, disa atribute jan&euml; t&euml; domosdoshme p&euml;r elemente t&euml; caktuar. P&euml;r shembull, nj&euml; etiket&euml; &lt;img&gt; duhet t&euml; p&euml;rmbaj&euml; atribute src dhe alt. Le t&euml; hedhim nj&euml; v&euml;shtrim n&euml; disa shembuj t&euml; p&euml;rdorimeve t&euml; atributeve:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;img src="foto/qielli.png" width="320" height="240" alt="Qielli"&gt;
+&lt;a href="https://www.google.com/" title="Motor k&euml;rkimi"&gt;Google&lt;/a&gt;
+&lt;abbr title="Hyper Text Markup Language"&gt;HTML&lt;/abbr&gt;
+&lt;input type="text" value="Filan Fisteku"&gt;</code></pre>
+                </div>
+            </div>
+            <p>N&euml; shembullin e m&euml;sip&euml;rm src brenda etiket&euml;s &lt;img&gt; &euml;sht&euml; nj&euml; atribut dhe vlera e tij &euml;sht&euml; lokacioni i imazhit. N&euml; m&euml;nyr&euml; t&euml; ngjashme href brenda etiket&euml;s &lt;a&gt; &euml;sht&euml; nj&euml; atribut dhe linku i dh&euml;n&euml; &euml;sht&euml; vlera e tij, etj.</p>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Si thonj&euml;zat e nj&euml;fishta ashtu edhe ato t&euml; dyfishta mund t&euml; p&euml;rdoren p&euml;r t&euml; cituar vlerat e atributeve. Sidoqoft&euml;, thonj&euml;zat e dyfishta zakonisht p&euml;rdoren. N&euml; situatat kur vet&euml; vlera e atributit p&euml;rmban thonj&euml;za t&euml; dyfishta &euml;sht&euml; e nevojshme q&euml; citimin e atributit ta b&euml;jm&euml; me thonj&euml;za t&euml; nj&euml;fishta.</p>
+            </div>
+            <p>Ka disa atribute n&euml; HTML5 q&euml; nuk p&euml;rb&euml;hen nga &ccedil;ifti emri/vlera e atributit, por p&euml;rb&euml;het vet&euml;m nga emri. Atributet e tilla quhen atribute <em>Boolean</em>. Shembuj t&euml; disa atributeve Boolean q&euml; p&euml;rdoren zakonisht jan&euml; checked, disabled, readonly, required, etj.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;input type="email" required&gt;
+&lt;input type="submit" value="Paraqit" disabled&gt;
+&lt;input type="checkbox" checked&gt;
+&lt;input type="text" value="Tekst vet&euml;m p&euml;r lexim" readonly&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vlerat e atributeve zakonisht nuk jan&euml; t&euml; ndjeshme n&euml; shkronja t&euml; m&euml;dha, p&euml;rve&ccedil; vlerave t&euml; caktuara t&euml; atributeve, si atributi id dhe class. Sidoqoft&euml;, Konsorciumi World Wide Web (<em>W3C</em>) rekomandon t&euml; p&euml;rdoren shkronja t&euml; vogla p&euml;r vlerat e atributeve n&euml; specifikimet e tyre.</p>
+            </div>
+            <h2>Atributet e q&euml;llimit t&euml; p&euml;rgjithsh&euml;m</h2>
+            <p>Ka disa atribute, t&euml; tilla si id, title, class, style, etj., t&euml; cil&euml;t mund t'i p&euml;rdorni n&euml; shumic&euml;n e elementeve HTML. N&euml; vazhdim do t&euml; p&euml;rshkruhet p&euml;rdorimi i tyre.</p>
+            <h3>Atributi <em>id</em></h3>
+            <p>Atributi id p&euml;rdoret p&euml;r t'i dh&euml;n&euml; nj&euml; em&euml;r unik ose identifikues nj&euml; elementi brenda nj&euml; dokumenti. Kjo e b&euml;n m&euml; t&euml; leht&euml; zgjedhjen e elementit duke p&euml;rdorur CSS ose JavaScript.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;input type="text" id="emri"&gt;
+&lt;div id="konteiner"&gt;P&euml;rmbajtja me tekst&lt;/div&gt;
+&lt;p id="infoTekst"&gt;Ky &euml;sht&euml; nj&euml; paragraf.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vlera e atributit id t&euml; nj&euml; elementi duhet t&euml; jet&euml; unik brenda nj&euml; dokumenti t&euml; vet&euml;m. Asnj&euml; element n&euml; t&euml; nj&euml;jtin dokument nuk mund t&euml; em&euml;rohet me t&euml; nj&euml;jt&euml;n id dhe &ccedil;do element mund t&euml; ket&euml; vet&euml;m nj&euml; id.</p>
+            </div>
+            <h3>Atributi <em>class</em></h3>
+            <p>Ashtu si atributi id, atributi class gjithashtu p&euml;rdoret p&euml;r t&euml; identifikuar elementet. Por ndryshe nga id, atributi class nuk duhet t&euml; jet&euml; unik n&euml; dokument. Kjo do t&euml; thot&euml; q&euml; mund t&euml; p&euml;rdorni t&euml; nj&euml;jt&euml;n klas&euml; n&euml; shum&euml; elemente n&euml; nj&euml; dokument, si&ccedil; tregohet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;input type="text" class="bllok"&gt;
+&lt;div class="bllok theksuar"&gt;P&euml;rmbajtja me tekst&lt;/div&gt;
+&lt;p class="theksuar"&gt;Ky &euml;sht&euml; nj&euml; paragraf.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Meqen&euml;se nj&euml; class mund t&euml; p&euml;rdoret n&euml; shum&euml; elemente, andaj &ccedil;do stil q&euml; &euml;sht&euml; shkruar n&euml; at&euml; class do t&euml; zbatohet p&euml;r t&euml; gjith&euml; element&euml;t q&euml; kan&euml; at&euml; class.</p>
+            </div>
+            <h3>Atributi <em>title</em></h3>
+            <p>Atributi i titullit title p&euml;rdoret p&euml;r t&euml; siguruar nj&euml; tekst k&euml;shillues p&euml;r nj&euml; element ose p&euml;rmbajtjen e tij. Provoni shembullin vijues p&euml;r t&euml; kuptuar se si funksionon kjo n&euml; t&euml; v&euml;rtet&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;abbr title="Konsorciumi World Wide Web "&gt;W3C&lt;/abbr&gt;
+&lt;a href="foto/natyra.jpg" title="Kliko p&euml;r t&euml; par&euml; foton m&euml; t&euml; madhe"&gt;
+&nbsp; &nbsp;&lt;img src="foto/natyra-thumb.jpg" alt="natyra"&gt;
+&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Vlera e atributit t&euml; titullit title (d.m.th. teksti i titullit) shfaqet si k&euml;shill&euml; (<em>tooltip</em>) nga ueb shfletuesit kur shfryt&euml;zuesi vendos kursorin e miut mbi element.</p>
+            </div>
+            <h3>Atributi <em>style</em></h3>
+            <p>Atributi style ju lejon t&euml; specifikoni rregullat e stilit CSS, t&euml; tilla si ngjyra e tekstit, fonti, kufiri i elementit, etj. drejtp&euml;rdrejt brenda elementit. Le ta shohim nj&euml; shembull p&euml;r t&euml; par&euml; se si funksionon:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p style="color: blue;"&gt;Ky &euml;sht&euml; nj&euml; paragraf.&lt;/p&gt;
+&lt;img src="foto/qielli.jpg" style="width: 300px;" alt="Qielli blu"&gt;
+&lt;div style="border: 1px solid red;"&gt;P&euml;rmbajtja me tekst&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+            <p>Do t&euml; njoftoheni m&euml; shum&euml; rreth stilizimit t&euml; elementeve HTML n&euml; kaptin&euml;n stilet n&euml; HTML.</p>
+
+        </section>
+
+        <section id="titujt">
+            <h1>Titujt</h1>
+            <p>Titujt ndihmojn&euml; n&euml; p&euml;rcaktimin e hierarkis&euml; dhe struktur&euml;s s&euml; p&euml;rmbajtjes n&euml; ueb faqe.</p>
+            <p>HTML-ja ofron gjasht&euml; nivele t&euml; etiketave t&euml; titujve, &lt;h1&gt; deri n&euml; &lt;h6&gt;; sa m&euml; i lart&euml; t&euml; jet&euml; numri i nivelit t&euml; titullit, aq m&euml; e madhe &euml;sht&euml; r&euml;nd&euml;sia e tij - prandaj etiketa &lt;h1&gt; p&euml;rcakton titullin m&euml; t&euml; r&euml;nd&euml;sish&euml;m, nd&euml;rsa etiketa &lt;h6&gt; p&euml;rcakton titullin m&euml; pak t&euml; r&euml;nd&euml;sish&euml;m n&euml; dokument.</p>
+            <p>Si parazgjedhje, shfletuesit paraqesin titujt me font m&euml; t&euml; madh dhe m&euml; t&euml; trash se sa teksti normal. Gjithashtu, titujt &lt;h1&gt; paraqiten me font m&euml; t&euml; madh, nd&euml;rsa titujt &lt;h6&gt; paraqiten me font m&euml; t&euml; vog&euml;l.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;h1&gt;Titull - niveli 1&lt;/h1&gt;
+&lt;h2&gt;Titull - niveli 2&lt;/h2&gt;
+&lt;h3&gt;Titull - niveli 3&lt;/h3&gt;
+&lt;h4&gt;Titull - niveli 4&lt;/h4&gt;
+&lt;h5&gt;Titull - niveli 5&lt;/h5&gt;
+&lt;h6&gt;Titull - niveli 6&lt;/h6&gt;</code></pre>
+                </div>
+            </div>        
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/titujt.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Sa her&euml; q&euml; vendosni nj&euml; etiket&euml; t&euml; titullit n&euml; ueb faqe, stili i integruar i ueb shfletuesit krijon automatikisht hap&euml;sir&euml; t&euml; zbrazt&euml; (t&euml; quajtur margjin&euml; - margin) para dhe pas &ccedil;do titulli. Mund t&euml; p&euml;rdorni vetin&euml; CSS: margin p&euml;r t&euml; anashkaluar stilin e paracaktuar nga ueb shfletuesi.</p>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Shum&euml; leht&euml; mund t&euml; personalizoni pamjen e titullit n&euml; HTML, si madh&euml;sia, trash&euml;sia dhe lloji i fontit, duke p&euml;rdorur vetin&euml; CSS: font.</p>
+            </div>
+            <h2>R&euml;nd&euml;sia e titujve</h2>
+            <ul>
+                <li>Titujt HTML ofrojn&euml; informacion t&euml; vlefsh&euml;m duke nxjerr&euml; n&euml; pah tema t&euml; r&euml;nd&euml;sishme dhe duke theksuar struktur&euml;n e dokumentit, prandaj optimizoni ato me kujdes p&euml;r t&euml; p&euml;rmir&euml;suar angazhimin e p&euml;rdoruesit.</li>
+                <li>Mos p&euml;rdorni tituj p&euml;r ta b&euml;r&euml; tekstin tuaj t&euml; duket i MADH ose i trash&euml;. P&euml;rdorni ato vet&euml;m p&euml;r t&euml; theksuar titullin e dokumentit tuaj dhe p&euml;r t&euml; treguar struktur&euml;n e dokumentit.</li>
+                <li>Meqen&euml;se motor&euml;t e k&euml;rkimit, t&euml; till&euml; si Google, i p&euml;rdorin titujt p&euml;r t&euml; indeksuar struktur&euml;n dhe p&euml;rmbajtjen e ueb faqeve, p&euml;r k&euml;t&euml; arsye p&euml;rdorni me shum&euml; men&ccedil;uri n&euml; ueb faqen tuaj.</li>
+                <li>P&euml;rdorni titujt &lt;h1&gt; si tituj kryesor&euml; t&euml; ueb faqes tuaj, t&euml; ndjekur nga titujt &lt;h2&gt;, pastaj titujt m&euml; pak t&euml; r&euml;nd&euml;sish&euml;m &lt;h3&gt;, etj.</li>
+            </ul>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: P&euml;rdorni etiket&euml;n &lt;h1&gt; p&euml;r t&euml; sh&euml;nuar titullin m&euml; t&euml; r&euml;nd&euml;sish&euml;m i cili zakonisht &euml;sht&euml; n&euml; krye t&euml; faqes. Nj&euml; dokument HTML n&euml; p&euml;rgjith&euml;si duhet t&euml; ket&euml; sakt&euml;sisht nj&euml; titull &lt;h1&gt;, i ndjekur nga titujt e nivelit m&euml; t&euml; ul&euml;t si &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, etj.</p>
+            </div>
+
+        </section>
+
+        <section id="paragrafet">
+            <h1>Paragraf&euml;t</h1>
+            <p>Elementi i paragrafit p&euml;rdoret p&euml;r t&euml; publikuar tekst n&euml; ueb faqe.</p>
+            <p>Paragraf&euml;t definohen me etiket&euml;n &lt;p&gt;. Etiketa e paragrafit &euml;sht&euml; nj&euml; etiket&euml; shum&euml; themelore dhe tipike e gjithashtu edhe etiket&euml; e par&euml; q&euml; do t'ju duhet p&euml;r t&euml; publikuar tekstin tuaj n&euml; ueb faqe.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky &euml;sht&euml; nj&euml; paragraf.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; nj&euml; tjet&euml;r paragraf.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Stili i integruar i shfletuesve krijon automatikisht nj&euml; hap&euml;sir&euml; sip&euml;r dhe posht&euml; p&euml;rmbajtjes s&euml; nj&euml; paragrafi (t&euml; quajtur margjin&euml; - <em>margin</em>), por ju mund ta ndryshoni at&euml; duke p&euml;rdorur CSS.</p>
+            </div>
+            <h2>Elementi mbyll&euml;s i paragrafit</h2>
+            <p>N&euml; HTML4 dhe versionet e m&euml;parshme, ishte e mjaftueshme p&euml;r t&euml; inicuar nj&euml; paragraf t&euml; ri duke p&euml;rdor etiket&euml;n hap&euml;se. Shumica e shfletuesve do t&euml; shfaqin HTML-n&euml; sakt&euml;sisht edhe n&euml;se harroni etiket&euml;n mbyll&euml;se.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky &euml;sht&euml; nj&euml; paragraf.
+&lt;p&gt;Ky &euml;sht&euml; nj&euml; tjet&euml;r paragraf.</code></pre>
+                </div>
+            </div>
+            <p>Kodi HTML n&euml; shembullin e m&euml;sip&euml;rm do t&euml; funksionoj&euml; n&euml; shumic&euml;n e ueb shfletuesve, por sidoqoft ju p&euml;rdorni etiket&euml;n mbyll&euml;se. Mungesa e etiket&euml;s mbyll&euml;se mund t&euml; prodhoj&euml; rezultate ose gabime t&euml; papritura.</p>
+            <h2>Krijimi i nd&euml;rprerjeve t&euml; linjave</h2>
+            <p>Etiketa &lt;br&gt; p&euml;rdoret p&euml;r t&euml; nd&euml;rprer&euml; rreshtin n&euml; nj&euml; ueb faqe.</p>
+            <p>Meqen&euml;se etiketa &lt;br&gt; &euml;sht&euml; element i zbraz&euml;t, andaj nuk &euml;sht&euml; e nevojshme t&rsquo;i korrespondoj etiketa mbyll&euml;se &lt;/br&gt;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky &euml;sht&euml; nj&euml; paragraf&lt;br&gt;me nd&euml;rprerje t&euml; rreshtit.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;br&gt;nj&euml; tjet&euml;r paragraf&lt;br&gt;me nd&euml;rprerje t&euml; rreshtave.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Mos p&euml;rdorni paragraf t&euml; zbrazt&euml;, d.m.th. &lt;p&gt;&lt;/p&gt; p&euml;r t&euml; shtuar hap&euml;sir&euml; shtes&euml; n&euml; ueb faqet tuaja. Shfletuesi mund t&euml; injoroj&euml; paragraf&euml;t e zbrazt&euml; pasi jan&euml; etiketa logjike. P&euml;rdorni vetin&euml; CSS: <em>margin </em>n&euml; vend t&euml; k&euml;saj p&euml;r t&euml; rregulluar hap&euml;sir&euml;n rreth elementeve.</p>
+            </div>
+            <h2>Krijimi i rregullave horizontale</h2>
+            <p>Mund t&euml; p&euml;rdorni etiket&euml;n &lt;hr&gt; p&euml;r t&euml; krijuar rregulla horizontale ose linj&euml; horizontale p&euml;r t&euml; ndar&euml; vizualisht seksionet e p&euml;rmbajtjes n&euml; nj&euml; ueb faqe. Ashtu si &lt;br&gt;, etiketa &lt;hr&gt; &euml;sht&euml; gjithashtu nj&euml; element i zbraz&euml;t.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky &euml;sht&euml; nj&euml; paragraf.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Ky &euml;sht&euml; nj&euml; tjet&euml;r paragraf.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Menaxhimi i hap&euml;sirave boshe</h2>
+            <p>Normalisht shfletuesi do t&euml; shfaq hap&euml;sira t&euml; shumta t&euml; krijuara brenda kodit HTML duke klikuar butonin <em>space</em> ose butonin <em>tab</em> n&euml; tastier&euml; si nj&euml; hap&euml;sir&euml; t&euml; vetme. Nd&euml;rprerjet e shum&euml;fishta t&euml; rreshtave t&euml; krijuara brenda kodit HTML p&euml;rmes klikimit s&euml; tastit <em>enter</em> gjithashtu shfaqen si nj&euml; hap&euml;sir&euml; e vetme.</p>
+            <p>Paragraf&euml;t e m&euml;posht&euml;m do t&euml; shfaqen n&euml; nj&euml; rresht t&euml; vet&euml;m pa ndonj&euml; hap&euml;sir&euml; shtes&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky paragraf p&euml;rmban&nbsp;&nbsp;&nbsp;&nbsp; hap&euml;sira boshe&nbsp; t&euml;
+shum&euml;fishta n&euml; kodin burimor.&lt;/p&gt;
+&lt;p&gt;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;Ky paragraf p&euml;rmban
+&nbsp; &nbsp;klikime t&euml; shum&euml;fishta t&euml;
+&nbsp; &nbsp;butonit tab n&euml; kodin burimor.
+&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <p>Futni <i>&amp;nbsp;</i> p&euml;r krijimin e hap&euml;sirave ekstra boshe t&euml; nj&euml;pasnj&euml;shme, nd&euml;rsa vendosni etiket&euml;n &lt;br&gt; p&euml;r krijimin e nd&euml;rprerjeve t&euml; rreshtave n&euml; ueb faqe, si&ccedil; demonstrohet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky paragraf ka hap&euml;sira&amp;nbsp;&amp;nbsp;&amp;nbsp;t&euml; shum&euml;fishta.&lt;/p&gt;
+&lt;p&gt;Ky paragraf&lt;br&gt;&lt;br&gt;ka nd&euml;rprerje t&euml;&lt;br&gt;&lt;br&gt;&lt;br&gt;shum&euml;fishta.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <h2>P&euml;rcaktimi i tekstit t&euml; paraformatuar</h2>
+            <p>Ndonj&euml;her&euml;, p&euml;rdorimi i <i>&amp;nbsp;, &lt;br&gt;</i>, etj. p&euml;r administrimin e hap&euml;sirave nuk &euml;sht&euml; shum&euml; i p&euml;rshtatsh&euml;m. P&euml;rndryshe, mund t&euml; p&euml;rdorni etiket&euml;n &lt;pre&gt; p&euml;r t&euml; shfaqur hap&euml;sira boshe, nd&euml;rprerjen e rreshtave, etj., sakt&euml;sisht si&ccedil; shkruhet n&euml; fajllin HTML. &Euml;sht&euml; shum&euml; e dobishme gjat&euml; paraqitjes s&euml; tekstit ku hap&euml;sirat dhe nd&euml;rprerjet e rreshtave jan&euml; t&euml; r&euml;nd&euml;sishme si p.sh. poezi ose kod t&euml; ndonj&euml; programi.</p>
+            <p>Shembulli i m&euml;posht&euml;m do t&euml; shfaq&euml; tekstin n&euml; shfletues ashtu si&ccedil; &euml;sht&euml; n&euml; kodin burimor:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;pre&gt;
+&nbsp; &nbsp; V&euml;llez&euml;r shqip&euml;tar&euml;!
+&nbsp; &nbsp; T&euml; prekim urt&euml;sin&euml;,
+&nbsp; &nbsp; T&euml; z&euml;m' udh&euml;n e mbar&euml;,
+&nbsp; &nbsp; T&euml; ngjallim Shqip&euml;rin&euml;.
+&lt;/pre&gt;</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Teksti brenda elementit &lt;pre&gt; jepet zakonisht nga shfletuesit n&euml; nj&euml; font me nj&euml; hap&euml;sir&euml; ose me gjer&euml;si fikse, si&ccedil; &euml;sht&euml; <em>Courier</em>, por ju mund ta ndryshoni k&euml;t&euml; duke p&euml;rdorur vetin&euml; CSS: <em>font</em>.</p>
+            </div>
+
+        </section>
+
+        <section id="linqet">
+            <h1>Linqet</h1>
+                <p>Nj&euml; link ose hiperlink &euml;sht&euml; nj&euml; lidhje nga nj&euml; burim uebi n&euml; nj&euml; tjet&euml;r. Linqet ju lejojn&euml; p&euml;rdorues&euml;ve t&euml; l&euml;vizin leht&euml;sisht nga nj&euml; faqe n&euml; nj&euml; tjetr&euml;n, n&euml; &ccedil;do server kudo n&euml; bot&euml;.</p>
+                <p>Nj&euml; link ka dy skaje, t&euml; sh&euml;nuara me a (<em>anchor</em>). Linku fillon n&euml; burim dhe tregon p&euml;r lokacionin e &nbsp;destinacionit, e cila mund t&euml; jet&euml; &ccedil;do burim uebi, p&euml;r shembull, nj&euml; imazh, nj&euml; klip audio ose video, nj&euml; fajll PDF, nj&euml; dokument HTML ose nj&euml; element brenda vet&euml; dokumentit, etj.</p>
+                <p>Me parazgjedhje, linqet do t&euml; shfaqen n&euml; shumic&euml;n e shfletuesve k&euml;sisoj:</p>
+                <ul>
+                <li><u style="font-family: 'Times New Roman', Times, serif; color:blue; font-size: 105%;">Linku i pavizituar</u> &euml;sht&euml; i n&euml;nvizuar dhe me ngjyr&euml; t&euml; kalt&euml;r.</li>
+                <li><u style="font-family: 'Times New Roman', Times, serif; color:purple; font-size: 105%;">Linku i vizituar</u> &euml;sht&euml; i n&euml;nvizuar dhe me ngjyr&euml; t&euml; purpurt&euml;.</li>
+                <li><u style="font-family: 'Times New Roman', Times, serif; color:red; font-size: 105%;">Linku aktiv</u> &euml;sht&euml; i n&euml;nvizuar dhe me ngjyr&euml; t&euml; kuqe.</li>
+                </ul>
+                <p>Megjithat&euml;, mund t&rsquo;i ndryshoni k&euml;to duke p&euml;rdorur CSS-n&euml;. Do t&euml; m&euml;soni m&euml; shum&euml; n&euml; nj&euml;sin&euml; stilizimi i linqeve.</p>
+                <h2>Sintaksa e linkut</h2>
+                <p>Linqet specifikohen n&euml; HTML duke p&euml;rdorur etiket&euml;n &lt;a&gt;.</p>
+                <p>Linku apo hiperlinku mund t&euml; jet&euml; nj&euml; fjal&euml;, grup fjal&euml;sh ose nj&euml; imazh.</p>
+                <div class="sintaksa">
+<pre><code>&lt;a href="<em>url</em>"&gt;Teksti i linkut&lt;/a&gt;</code></pre>
+                </div>        
+                <p>Gjith&ccedil;ka n&euml; mes etiket&euml;s hap&euml;se &lt;a&gt; dhe etiket&euml;s mbyll&euml;se &lt;/a&gt; b&euml;het pjes&euml; e linkut, t&euml; cil&euml;n p&euml;rdoruesi e sheh dhe mund t&euml; klikoj n&euml; at&euml;. Ja disa shembuj t&euml; linqeve:</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>&lt;a href="https://www.google.com/"&gt;K&euml;rko n&euml; Google&lt;/a&gt;
+&lt;a href="http://www.sezisurroi.com/"&gt;SHM Sezai Surroi&lt;/a&gt;
+&lt;a href="foto/qielli.jpg"&gt;
+&nbsp; &nbsp;&lt;img src="qielli-mini.jpg" alt="qielli"&gt;
+&lt;/a&gt;</code></pre>
+                    </div>
+                </div>
+                <p>Atributi href specifikon cakun e linkut. Vlera e tij mund t&euml; jet&euml; nj&euml; URL absolute ose relative.</p>
+                <p>Nj&euml; URL absolute &euml;sht&euml; URL q&euml; p&euml;rfshin &ccedil;do pjes&euml; t&euml; formatit URL, t&euml; tilla si protokolli, emri i hostit dhe shtegu i dokumentit, p.sh., https://www.google.com/, https://www.shembull.com/forma.html, etj. Nd&euml;rsa URL-t&euml; relative jan&euml; shtigje relative t&euml; faqes, p.sh. kontakti.html, foto/qielli.jpg, etj. Nj&euml; URL relative nuk p&euml;rfshin kurr&euml; prefiksin http:// ose https://.</p>
+                <h2>Vendosja e caqeve (<em>targets</em>) p&euml;r linqet</h2>
+                <p>Atributi target i tregon shfletuesit se ku t&euml; hap&euml; dokumentin e lidhur. Ekzistojn&euml; kat&euml;r targete t&euml; definuara, dhe secili em&euml;r i targetit fillon me nj&euml; karakter t&euml; n&euml;nvizuar (_):</p>
+                <ul>
+                <li>_blank &ndash; Hap dokumentin e lidhur n&euml; nj&euml; dritare ose tab t&euml; ri.</li>
+                <li>_parent &ndash; Hap dokumentin e lidhur n&euml; dritaren prind.</li>
+                <li>_self &ndash; Hap dokumentin e lidhur n&euml; t&euml; nj&euml;jt&euml;n dritare ose tab t&euml; nj&euml;jt&euml; si dokument burimor. Kjo &euml;sht&euml; e paracaktuar, prandaj nuk &euml;sht&euml; e nevojshme t&euml; specifikohet qart&euml; kjo vler&euml;.</li>
+                <li>_top &ndash; Hap dokumentin e lidhur n&euml; dritaren e plot&euml; t&euml; shfletuesit.</li>
+                </ul>
+                <p>Provoni shembullin e m&euml;posht&euml;m p&euml;r t&euml; kuptuar se si funksionon n&euml; thelb targeti i linkut:</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>&lt;a href="/rrethmeje.html" target="_top"&gt;Rreth Meje&lt;/a&gt;
+&lt;a href="https://www.google.com/" target="_blank"&gt;Google&lt;/a&gt;
+&lt;a href="foto/qielli.jpg" target="_parent"&gt;
+&nbsp; &nbsp;&lt;img src="qielli-mini.jpg" alt="Qielli i kalt&euml;r"&gt;
+&lt;/a&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="keshille">
+                    <p><strong>K&euml;shill&euml;</strong>: N&euml;se ueb faqja juaj &euml;sht&euml; vendosur brenda nj&euml; iframe, mund t&euml; p&euml;rdorni <em>target="_top"</em> n&euml; linqet p&euml;r t&euml; dal&euml; nga iframe dhe p&euml;r t&euml; treguar faqen e target-uar n&euml; dritaren e plot&euml; t&euml; shfletuesit.</p>
+                </div>
+                <h2>Krijimi i fletsh&euml;nimeve (bookmarkeve)</h2>
+                <p>Gjithashtu mund t&euml; krijoni bookmarke p&euml;r t&euml; lejuar p&euml;rdoruesit t&euml; kalojn&euml; n&euml; nj&euml; seksion specifik t&euml; nj&euml; ueb faqeje. Bookmarket jan&euml; ve&ccedil;an&euml;risht t&euml; dobishme n&euml;se keni nj&euml; ueb faqe shum&euml; t&euml; gjat&euml;.</p>
+                <p>Krijimi i bookmarkeve &euml;sht&euml; nj&euml; proces me dy hapa: s&rsquo;pari shtoni atributin id n&euml; elementin ku d&euml;shironi t&euml; kaloni, pastaj p&euml;rdorni at&euml; vler&euml; t&euml; atributit id t&euml; paraprir&euml; nga shenja hash (#) si vler&euml; e atributit href t&euml; etiket&euml;s &lt;a&gt; , si&ccedil; tregohet n&euml; shembullin vijues:</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>&lt;a href="#seksioniA"&gt;Kalo tek Seksioni A&lt;/a&gt;
+&lt;h2 id="seksioniA"&gt;Seksioni A&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="keshille">
+                    <p><strong>K&euml;shill&euml;</strong>: Mund t&euml; kaloni edhe n&euml; nj&euml; seksion t&euml; nj&euml; ueb faqeje tjet&euml;r duke specifikuar URL-n&euml; e asaj faqe s&euml; bashku me tagun a (dmth. <em>#elementiId</em>) n&euml; atributin href, p&euml;r shembull,<em> &lt;a href="faqjaime.html#temaA"&gt; Kalo&nbsp; tek TemaA &lt;/a&gt;</em>.</p>
+                </div>
+                <h2>Krijimi i Linqeve p&euml;r Shkarkim</h2>
+                <p>Gjithashtu mund t&euml; krijoni link p&euml;r shkarkim t&euml; fajllit n&euml; t&euml; nj&euml;jt&euml;n m&euml;nyr&euml; sikur vendosja e linqeve me tekst. Thjesht vendos URL-n&euml; e destinacionit n&euml; fajllin q&euml; d&euml;shiron t&euml; jet&euml; i disponuesh&euml;m p&euml;r shkarkim.</p>
+                <p>N&euml; shembullin vijues ne kemi krijuar linqet e shkarkimit p&euml;r fajllat ZIP, PDF dhe JPG.</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>&lt;a href="shkarkime/testi.zip"&gt;Shkarko fajllin Zip&lt;/a&gt;
+&lt;a href="shkarkime/dokument.pdf"&gt;Shkarko fajllin PDF&lt;/a&gt;
+&lt;a href="shkarkime/imazh.jpg"&gt;Shkarko imazhin&lt;/a&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="shenim">
+                    <p><strong>Sh&euml;nim</strong>: Kur klikoni n&euml; nj&euml; link q&euml; lidhet me nj&euml; fajll PDF ose imazh, fajlli nuk shkarkohet drejtp&euml;rdrejt n&euml; hard diskun tuaj. Do t&euml; hapet fajlli vet&euml;m n&euml; ueb shfletuesin tuaj. M&euml; tej ju mund ta ruani ose shkarkoni at&euml; n&euml; hard disk mbi nj&euml; baz&euml; t&euml; p&euml;rhershme.</p>
+                </div>
+
+        </section>
+
+        <section id="formatimi-i-tekstit">
+            <h1>Formatimi i tekstit</h1>
+            <p>HTML ofron disa etiketa q&euml; mund t&rsquo;i p&euml;rdorni p&euml;r t&euml; b&euml;r&euml; q&euml; nj&euml; pjes&euml; t&euml; tekstit n&euml; ueb faqet tuaja t&euml; shfaqen ndryshe nga teksti normal, p&euml;r shembull, mund t&euml; p&euml;rdorni etiket&euml;n &lt;b&gt; p&euml;r ta b&euml;r&euml; tekstin e trash&euml;, etiket&euml;n &lt;i&gt; p&euml;r ta b&euml;r&euml; tekstin e pjerr&euml;t, etiket&euml;n &lt;mark&gt; p&euml;r ta theksuar tekstin, etiket&euml;n &lt;code&gt; p&euml;r ta shfaqur nj&euml; fragment t&euml; kodit kompjuterik, etiketat &lt;ins&gt; dhe &lt;del&gt; p&euml;r t&euml; sh&euml;njuar insertimin dhe fshirjen e tekstit, etj.</p>
+            <p>Shembulli i m&euml;posht&euml;m demonstron etiketat m&euml; t&euml; p&euml;rdorura t&euml; formatimit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Ky &euml;sht&euml; &lt;b&gt;tekst i trash&euml;&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;strong&gt;tekst mjaft i r&euml;nd&euml;sish&euml;m&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;i&gt;tekst i pjerrt&euml;&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;em&gt;tekst i pjerrt&euml; i thekstuar&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;mark&gt;tekst i theksuar&lt;/mark&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;code&gt;kod kompjuterik&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;small&gt;tekst m&euml; i vog&euml;l&lt;/small&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;sub&gt;n&euml;ntekst&lt;/sub&gt; dhe &lt;sup&gt;mbitekst&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;del&gt;tekst i fshir&euml;&lt;/del&gt;.&lt;/p&gt;
+&lt;p&gt;Ky &euml;sht&euml; &lt;ins&gt;tekst i insertuar&lt;/ins&gt;.&lt;/p&gt;</code></pre>
+                </div>
+            </div>   
+            <p>Si parazgjedhje, etiketa &lt;strong&gt; zakonisht paraqitet n&euml; shfletues si &lt;b&gt;, nd&euml;rsa etiketa &lt;em&gt; paraqitet si &lt;i&gt;. Sidoqoft&euml;, ekziston nj&euml; ndryshim n&euml; kuptimin e k&euml;tyre etiketave.</p>
+            <h3>Diferenca n&euml; mes etiket&euml;s &lt;strong&gt; dhe &lt;b&gt;</h3>
+            <p>T&euml; dy etiketat &lt;strong&gt; dhe &lt;b&gt; e paraqesin tekstin e mbyllur n&euml; nj&euml; tekst t&euml; trash&euml; n&euml; m&euml;nyr&euml; t&euml; paracaktuar, por etiketa &lt;strong&gt; tregon se p&euml;rmbajtja e tij ka r&euml;nd&euml;si t&euml; madhe, nd&euml;rsa etiketa &lt;b&gt; p&euml;rdoret thjesht p&euml;r t&euml; t&euml;rhequr v&euml;mendjen e lexuesit pa p&euml;rcjell&euml; ndonj&euml; r&euml;nd&euml;si t&euml; ve&ccedil;ant&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;&lt;strong&gt;KUJDES!&lt;/strong&gt; Ju lutemi keni kujdes.&lt;/p&gt;
+&lt;p&gt;Shfaqja do t&euml; mbahet n&euml; &lt;b&gt;Sht&euml;pin&euml; e Kultur&euml;s&lt;/b&gt; n&euml; Bujanoc.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Diferenca n&euml; mes etiket&euml;s &lt;em&gt; dhe &lt;i&gt;</h3>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, t&euml; dy etiketat &lt;em&gt; dhe &lt;i&gt; e paraqesin tekstin e pjerr&euml;t si parazgjedhje, por etiketimi &lt;em&gt; tregon se p&euml;rmbajtja e tij p&euml;rve&ccedil; se &euml;sht&euml; e pjerrt&euml; &euml;sht&euml; gjithashtu e r&euml;nd&euml;sishme, nd&euml;rsa etiketimi &lt;i&gt; p&euml;rdoret p&euml;r ta b&euml;r&euml; tekstin e pjerrt&euml; p&euml;r arsye t&euml; lexueshm&euml;ris&euml;, si nj&euml; term teknik, nj&euml; fraz&euml; idiomatike nga nj&euml; gjuh&euml; tjet&euml;r, nj&euml; mendim, etj.</p>       
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Macet jan&euml; kafsh&euml; &lt;em&gt;t&euml; bukura&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;KF T&euml;rnoci&lt;/i&gt; fitoi ndeshjen e djeshme.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: P&euml;rdorni etiketat &lt;em&gt; dhe &lt;strong&gt; kur p&euml;rmbajtja e faqes tuaj k&euml;rkon q&euml; disa fjal&euml; ose fraza t&euml; caktuara duhet t&euml; ken&euml; theks ose r&euml;nd&euml;si t&euml; ve&ccedil;ant&euml;. Gjithashtu, n&euml; HTML5 etiketat &lt;b&gt; dhe &lt;i&gt; jan&euml; ridefinuar, m&euml; her&euml;t ato nuk kishin ndonj&euml; kuptim semantik.</p>
+            </div>
+            <h2>Formatimi i kuotimeve</h2>
+            <p>Leht&euml; mund t&euml; formatoni blloqe t&euml; citateve nga burime tjera me etiket&euml;n &lt;blockquote&gt;.</p>
+            <p>Blloqet e kuotimeve zakonisht shfaqen me kufijt&euml; e prer&euml; majtas dhe djathtas, s&euml; bashku me pak hap&euml;sir&euml; shtes&euml; t&euml; shtuar sip&euml;r dhe posht&euml;. Le t&euml; provojm&euml; nj&euml; shembull p&euml;r t&euml; par&euml; se si funksionon:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;blockquote&gt;
+&nbsp; &nbsp;&lt;p&gt;M&euml;soni nga e djeshmja, jetoni p&euml;r t&euml; sotmen, shpresoni p&euml;r t&euml; nes&euml;rmen. E r&euml;nd&euml;sishme &euml;sht&euml; t&euml; mos ndaloni s&euml; pyeturi.&lt;/p&gt;
+&nbsp; &nbsp;&lt;cite&gt;&mdash; Albert Ajnshtajn&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Etiketa cite p&euml;rdoret p&euml;r t&euml; p&euml;rshkruar nj&euml; referenc&euml; ndaj nj&euml; vepre krijuese. Duhet t&euml; p&euml;rmbaj&euml; titullin e asaj vepre ose emrin e autorit (njer&euml;z ose organizat&euml;) ose nj&euml; referenc&euml; URL.</p>
+            </div>
+            <p>P&euml;r kuotime t&euml; shkurta n&euml; linj&euml;, mund t&euml; p&euml;rdorni etiket&euml;n &lt;q&gt;. Shumica e shfletuesve i shfaqin kuotimet n&euml; linj&euml; &nbsp;duke e rrethuar tekstin me thonj&euml;za.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;Sipas Organizat&euml;s Bot&euml;rore t&euml; Sh&euml;ndet&euml;sis&euml; (OBSH): &lt;q&gt;Sh&euml;ndeti &euml;sht&euml; nj&euml; gjendje e mir&euml;qenies s&euml; plot&euml; fizike, mendore dhe shoq&euml;rore.&lt;/q&gt;&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Paraqitja e akronimeve</h2>
+            <p>Nj&euml; akronim &euml;sht&euml; nj&euml; form&euml; e shkurtuar e nj&euml; fjale, fraze ose emri.</p>
+            <p>Mund t&euml; p&euml;rdorni etiket&euml;n &lt;abbr&gt; p&euml;r t&euml; treguar nj&euml; akronim. Atributi title p&euml;rdoret brenda k&euml;tij etiketimi p&euml;r t&euml; siguruar kuptimin e plot&euml; t&euml; akronimit, e cila paraqitet nga shfletuesit si nj&euml; k&euml;shill&euml; (<em>tooltip</em>) kur kursori i mausit vendoset mbi at&euml; element.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;&lt;abbr title="World Wide Web Consortium"&gt;W3C&lt;/abbr&gt; &euml;sht&euml; organizata kryesore nd&euml;rkomb&euml;tare e standardeve p&euml;r &lt;abbr title="World Wide Web"&gt;WWW ose W3&lt;/abbr&gt;. Ajo u themelua nga Tim Berners-Lee.&lt;/p&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Sh&euml;nimi i adresave t&euml; kontaktit</h2>
+            <p>Ueb Faqet shpesh ofrojn&euml; p&euml;rfshirjen e adresave t&euml; rrug&euml;ve ose adresa postare. HTML ofron nj&euml; etiket&euml; t&euml; ve&ccedil;ant&euml; &lt;address&gt; p&euml;r t&euml; prezantuar informacionin e kontaktit (fizik dhe/ose digjital) p&euml;r nj&euml; person, njer&euml;z ose organizat&euml;.</p>
+            <p>Kjo etiket&euml; duhet t&euml; p&euml;rdoret n&euml; m&euml;nyr&euml; ideale p&euml;r t&euml; shfaqur informacionin e kontaktit q&euml; lidhet me vet&euml; dokumentin, si&ccedil; &euml;sht&euml; autori i artikullit. Shumica e shfletuesve shfaqin nj&euml; bllok adresash me tekst t&euml; pjerrt&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;address&gt;
+&nbsp; &nbsp;SHM Sezai Surroi&lt;br&gt;
+&nbsp; &nbsp;rr. Migjeni pn&lt;br&gt;
+&nbsp; &nbsp;Bujanoc, SRB
+&lt;/address&gt;</code></pre>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="stilet-ne-html">
+
+            <h1>Stilet n&euml; HTML</h1>
+            <p>HTML &euml;sht&euml; mjaft i kufizuar kur b&euml;het fjal&euml; p&euml;r prezantimin e ueb faqes. Fillimisht u krijua si nj&euml; m&euml;nyr&euml; e thjesht&euml; e prezantimit t&euml; informacionit. CSS (<em>Cascading Style Sheets</em>) u prezantua n&euml; Dhjetor t&euml; vitit 1996 nga Konsorciumi World Wide Web (W3C) p&euml;r t&euml; siguruar nj&euml; m&euml;nyr&euml; m&euml; t&euml; mir&euml; p&euml;r t&euml; stilizuar HTML elementet.</p>
+            <p>Me CSS, b&euml;het shum&euml; e leht&euml; t&euml; cil&euml;sosh gj&euml;ra t&euml; tilla si, madh&euml;sia dhe fonti i tekstit, ngjyra e tekstit dhe sfondet, shtrirja e tekstit dhe imazheve, sasia e hap&euml;sir&euml;s midis elementeve, kufiri dhe vija e jashtme e elementeve dhe shum&euml; veti tjera t&euml; stilizimit.</p>
+            <h2>Shtimi i stileve n&euml; elementet HTML</h2>
+            <p>Informacioni i stilit mund t&euml; bashk&euml;ngjitet si nj&euml; dokument i ve&ccedil;ant&euml; ose i futur n&euml; vet dokumentin HTML. K&euml;to jan&euml; tri metodat e zbatimit t&euml; stilizimit n&euml; nj&euml; dokument HTML.</p>
+            <ul>
+                <li><strong>Stili n&euml; linj&euml; (<em>inline</em>)</strong> &ndash; P&euml;rdor atributin style n&euml; etiket&euml;n fillestare</li>
+                <li><strong>Stili i brendsh&euml;m</strong> &ndash; P&euml;rdor elementin &lt;style&gt; n&euml; seksionin head t&euml; dokumentit.</li>
+                <li><strong>Stili i jasht&euml;m</strong> &ndash; &nbsp;P&euml;rdor elementin &lt;link&gt;, p&euml;r t&euml; lidhur me nj&euml; fajll t&euml; jasht&euml;m CSS.</li>
+            </ul>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Stilet inline kan&euml; prioritet m&euml; t&euml; lart&euml;, gjersa stili i jasht&euml;m &euml;sht&euml; me prioritet m&euml; t&euml; ult&euml;. Pra, do t&euml; thot&euml; n&euml;se cil&euml;soni stilet p&euml;r paragraf&euml;t tuaj, sikur stilin e brendsh&euml;m ashtu edhe at&euml; t&euml; jasht&euml;m, rregulli i konfliktit t&euml; stilit t&euml; brendsh&euml;m do ta mbishkruaj stilin e jasht&euml;m.</p>
+            </div>
+            <h3>Stilet inline</h3>
+            <p>Stilet inline p&euml;rdoren p&euml;r t&euml; aplikuar rregullat e stilit unik n&euml; nj&euml; element, duke vendosur rregullat CSS direkt n&euml; etiket&euml;n fillestare. Ky stil mund t'i bashk&euml;ngjitet nj&euml; elementi duke p&euml;rdorur atributin style.</p>
+            <p>Atributi i stilit p&euml;rfshin nj&euml; varg t&euml; vetive dhe vlerave t&euml; CSS-s&euml;. &Ccedil;do &nbsp;veti:vler&euml;&nbsp; &euml;sht&euml; e ndar&euml; me pik&euml;presje (;), ashtu si do t&euml; shkruani n&euml; nj&euml; stili t&euml; brendsh&euml;m apo t&euml; jasht&euml;m. Por, n&euml; stilin inline duhet q&euml; k&euml;to t&euml; dh&euml;na t&euml; jen&euml; t&euml; gjitha n&euml; nj&euml; rresht.</p>
+            <p>Shembulli i m&euml;posht&euml;m tregon se si t&euml; vendosni ngjyr&euml;n dhe madh&euml;sin&euml; e shkronjave n&euml; tekst:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;h1 style="color:red; font-size:30px;"&gt;Ky &euml;sht&euml; nj&euml; titull&lt;/h1&gt;
+&lt;p style="color:green; font-size:18px;"&gt;Ky &euml;sht&euml; nj&euml; paragraf.&lt;/p&gt;
+&lt;div style="color:blue; font-size:16px;"&gt;Ky &euml;sht&euml; nj&euml; tekst.&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+            <p>P&euml;rdorimi i stileve inline zakonisht konsiderohet si nj&euml; praktik&euml; jo e mir&euml;. Meqen&euml;se rregullat e stilit jan&euml; t&euml; futura direkt brenda etiket&euml;s HTML, kjo b&euml;n q&euml; prezantimi (stilizimi) t&euml; p&euml;rzihet me p&euml;rmbajtjen e dokumentit, gj&euml; q&euml; e b&euml;n shum&euml; t&euml; v&euml;shtir&euml; p&euml;rdit&euml;simin ose mir&euml;mbajtjen e nj&euml; ueb sajti.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: &Euml;sht&euml; e pamundur t&euml; stilizosh pseudo-elemente dhe pseudo-klasa p&euml;rmes stileve inline. Prandaj, duhet t&euml; shmangni p&euml;rdorimin e atributeve brenda fajllit tuaj HTML. P&euml;rdorimi i stilit t&euml; jasht&euml;m &euml;sht&euml; m&euml;nyra e preferuar p&euml;r t&euml; shtuar stil n&euml; nj&euml; dokument HTML.</p>
+            </div>
+            <h2>Stilet e brendsh&euml;m</h2>
+            <p>Stilet e brendsh&euml;m definohen n&euml; seksionin &lt;head&gt; t&euml; nj&euml; dokumenti HTML duke p&euml;rdorur etiket&euml;n &lt;style&gt;. Mund t&euml; definoni cilindo num&euml;r t&euml; elementeve &lt;style&gt; brenda seksionit &lt;head&gt;.</p>
+            <p>Shembulli i m&euml;posht&euml;m demonstron se si rregullat e stilit jan&euml; t&euml; lidhura brenda nj&euml; ueb faqeje.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;head&gt;
+&nbsp; &nbsp;&lt;style&gt;
+&nbsp; &nbsp; &nbsp; body { background-color: YellowGreen; }
+&nbsp; &nbsp; &nbsp; h1 { color: blue; }
+&nbsp; &nbsp; &nbsp; p { color: red; }
+&nbsp; &nbsp;&lt;/style&gt;
+&lt;/head&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Stili i jasht&euml;m</h2>
+            <p>Nj&euml; stil i jasht&euml;m &euml;sht&euml; ideal kur stili zbatohet n&euml; shum&euml; faqe.</p>
+            <p>Nj&euml; stil i jasht&euml;m mban t&euml; gjitha rregullat e stilit n&euml; nj&euml; dokument t&euml; ve&ccedil;ant&euml; t&euml; cilin mund ta lidhni nga &ccedil;do dokument HTML n&euml; sajtin tuaj. Stili i jasht&euml;m &euml;sht&euml; m&euml; fleksibil, sepse me nj&euml; stil t&euml; jasht&euml;m, mund t&euml; ndryshoni pamjen e nj&euml; ueb sajti n&euml; t&euml;r&euml;si duke p&euml;rdit&euml;suar vet&euml;m nj&euml; fajll.</p>
+            <p>Ju mund t&euml; bashk&euml;ngjitni stilin e jasht&euml;m n&euml; dy m&euml;nyra &ndash; p&euml;rmes <em>lidhjes</em> dhe <em>importimit</em>:</p>
+            <h3>Lidhja e stilit t&euml; jasht&euml;m</h3>
+            <p>Nj&euml; stil i jasht&euml;m mund t&euml; lidhet me nj&euml; dokument HTML duke p&euml;rdorur etiket&euml;n &lt;link&gt;.</p>
+            <p>Etiketa &lt;link&gt; vendoset brenda seksionit &lt;head&gt;, si&ccedil; tregohet m&euml; posht&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;head&gt;
+&nbsp; &nbsp;&lt;link rel="stylesheet" href="css/stili.css"&gt;
+&lt;/head&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Importimi i stilit t&euml; jasht&euml;m</h3>
+            <p>Rregulli @import &euml;sht&euml; nj&euml; m&euml;nyr&euml; tjet&euml;r p&euml;r t&euml; ngarkuar stil t&euml; jasht&euml;m. Deklarata @import udh&euml;zon shfletuesin t&euml; ngarkoj&euml; nj&euml; stili t&euml; jasht&euml;m dhe t&euml; p&euml;rdor&euml; stilet e saj.</p>
+            <p>Mund ta p&euml;rdorni k&euml;t&euml; stil n&euml; dy m&euml;nyra. M&euml;nyra m&euml; e thjesht&euml; &euml;sht&euml; ta p&euml;rdorni at&euml; brenda elementit &lt;style&gt; n&euml; seksionin &lt;head&gt;. Vini re, rregullat e tjera t&euml; CSS mund t&euml; p&euml;rfshihen ende n&euml; elementin &lt;style&gt;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;style&gt;
+&nbsp; &nbsp;@import url("css/stili.css");
+&nbsp; &nbsp;p {
+&nbsp; &nbsp; &nbsp; color: blue;
+&nbsp; &nbsp; &nbsp; font-size: 16px;
+&nbsp; &nbsp;}
+&lt;/style&gt;</code></pre>
+                </div>
+            </div>
+            <p>Ngjash&euml;m, mund t&euml; p&euml;rdorni rregullin @import p&euml;r t&euml; importuar nj&euml; stili brenda nj&euml; stili tjet&euml;r.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>@import url("css/paraqitja.css");
+@import url("css/ngjyrat.css");
+body {
+&nbsp; &nbsp;color: blue;
+&nbsp; &nbsp;font-size: 14px;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: T&euml; gjith&euml; rregullat @import duhet t&euml; ndodhin n&euml; fillim t&euml; flet&euml;s s&euml; stilit. &Ccedil;do rregull stili i definuar n&euml; flet&euml;n e stilit vet&euml;vetiu mbizot&euml;ron rregullin kontradiktor n&euml; stilin e importuar. Rregulli @import mund t&euml; shkaktoj&euml; probleme t&euml; performanc&euml;s, n&euml; p&euml;rgjith&euml;si duhet t&euml; shmangni importimin e stileve n&euml; k&euml;t&euml; m&euml;nyr&euml;.</p>
+            </div>
+
+        </section>
+
+        <section id="imazhet">
+            <h1>Imazhet</h1>
+            <h2>Futja e imazheve n&euml; ueb faqe</h2>
+            <p>Imazhet p&euml;rmir&euml;sojn&euml; pamjen vizuale t&euml; ueb faqeve duke i b&euml;r&euml; ato m&euml; t&euml;rheq&euml;se dhe m&euml; piktoresk.</p>
+            <p>Etiketa &lt;img&gt; p&euml;rdoret p&euml;r t&euml; vendosur imazhe n&euml; dokumentet HTML. &Euml;sht&euml; nj&euml; element i zbrazt&euml; dhe p&euml;rmban vet&euml;m atribute. Sintaksa e etiket&euml;s &lt;img&gt; duket k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>&lt;img src="<em>url</em>" alt="<em>teksti_alternativ</em>"&gt;</code></pre>
+            </div>
+            <p>Shembulli i m&euml;posht&euml;m vendos tri imazhe n&euml; ueb faqe:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;img src="natyra.jpg" alt="Natyra e gjall&euml;"&gt;
+&lt;img src="qielli.jpg" alt="Qielli i kalt&euml;r"&gt;
+&lt;img src="balonat.jpg" alt="Balonat"&gt;</code></pre>
+                </div>
+            </div>
+            <p>&Ccedil;do imazh duhet t&euml; ket&euml; t&euml; pakt&euml;n dy atribute: atributin src dhe atributin alt.</p>
+            <p>Atributi src i tregon shfletuesit se ku mund ta gjej&euml; imazhin. Vlera e tij &euml;sht&euml; URL-ja e fajllit t&euml; imazhit.</p>
+            <p>Atributi alt ofron nj&euml; tekst alternativ p&euml;r imazhin, n&euml;se ai imazh nuk &euml;sht&euml; i disponuesh&euml;m ose nuk mund t&euml; shfaqet p&euml;r ndonj&euml; arsye. Vlera e tij duhet t&euml; jet&euml; nj&euml; z&euml;vend&euml;sim kuptimplot&euml; i imazhit.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Ashtu sikur &lt;br&gt;, elementi &lt;img&gt; &euml;sht&euml; gjithashtu nj&euml; element i zbrat&euml; dhe nuk ka nj&euml; etiket&euml; mbyll&euml;se. Sidoqoft&euml;, n&euml; XHTML mbyllet duke p&euml;rfunduar me "/&gt;".</p>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Atributi i k&euml;rkuar alt siguron nj&euml; p&euml;rshkrim alternativ tekstual p&euml;r nj&euml; imazh n&euml;se p&euml;rdoruesi p&euml;r ndonj&euml; arsye nuk mund ta shoh&euml; at&euml; p&euml;r shkak t&euml; lidhjes s&euml; ngadalt&euml;, imazhi nuk &euml;sht&euml; i disponuesh&euml;m n&euml; URL-n&euml; e specifikuar, etj.</p>
+            </div>
+            <h2>Cil&euml;simi i gjer&euml;sis&euml; dhe lart&euml;sis&euml; s&euml; imazhit</h2>
+            <p>Atributet width dhe height p&euml;rdoren p&euml;r t&euml; specifikuar gjer&euml;sin&euml; dhe lart&euml;sin&euml; e nj&euml; imazhi.</p>
+            <p>Vlerat e k&euml;tyre atributeve interpretohen n&euml; piksell si parazgjedhje.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;img src="natyra.jpg" alt="Natyra" width="300" height="300"&gt;
+&lt;img src="qielli.jpg" alt="Qielli" width="250" height="150"&gt;
+&lt;img src="balonat.jpg" alt="Balonat" width="200" height="200"&gt;</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; p&euml;rdorni atributin style p&euml;r t&euml; specifikuar gjer&euml;sin&euml; dhe lart&euml;sin&euml; e imazheve. Kjo parandalon q&euml; flet&euml;t e stilit t&euml; mos ndryshojn&euml; madh&euml;sin&euml; e imazhit aksidentalisht, pasi stili inline ka prioritet m&euml; t&euml; lart&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;img src="natyra.jpg" alt="Natyra" style="width: 300px; height: 300px;"&gt;
+&lt;img src="qielli.jpg" alt="Qielli" style="width: 250px; height: 150px;"&gt;
+&lt;img src="balonat.jpg" alt="Balonat" style="width: 200px; height: 200px;"&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: &Euml;sht&euml; nj&euml; praktik&euml; e mir&euml; t&euml; specifikoni atributet width dhe height p&euml;r nj&euml; imazh, n&euml; m&euml;nyr&euml; q&euml; shfletuesi t&euml; mund t&euml; alokoj&euml; at&euml; hap&euml;sir&euml; p&euml;r imazhin p&euml;rpara se t&euml; paraqitet. P&euml;rndryshe, ngarkimi i imazhit mund t&euml; shkaktoj&euml; shtremb&euml;rim ose dridhje t&euml; p&euml;rmbajtjes n&euml; ueb sajtin tuaj.</p>
+            </div>
+            <h2>P&euml;rdorimi i elementit HTML5 <em>picture</em></h2>
+            <p>Ndonj&euml;her&euml;, shkall&euml;zimi i nj&euml; imazhi n&euml; vlera t&euml; larta ose t&euml; poshtme p&euml;r t'iu p&euml;rshtatur pajisjeve t&euml; ndryshme (ose madh&euml;sive t&euml; ekranit) nuk funksionon si&ccedil; jan&euml; pritshm&euml;rit&euml;. Gjithashtu, zvog&euml;limi i dimensionit t&euml; figur&euml;s duke p&euml;rdorur atributin ose vetin&euml; width dhe height nuk zvog&euml;lon madh&euml;sin&euml; origjinale t&euml; fajllit. P&euml;r t&euml; adresuar k&euml;to probleme, HTML5 ka prezantuar etiket&euml;n &lt;picture&gt; q&euml; ju lejon t&euml; p&euml;rcaktoni shum&euml; versione t&euml; nj&euml; imazhi e p&euml;r t&euml; synuar lloje t&euml; ndryshme t&euml; pajisjeve.</p>
+            <p>Elementi &lt;picture&gt; nuk p&euml;rmban asnj&euml; element &lt;source&gt; ose mund t&euml; p&euml;rmbaj disa t&euml; till&euml;, e t&euml; cil&euml;t ju referohen burimeve t&euml; ndryshme t&euml; imazhit si dhe nj&euml; elementi &lt;img&gt; n&euml; fund. Gjithashtu &ccedil;do element &lt;source&gt; ka atributin media q&euml; specifikon nj&euml; kusht&euml;zim t&euml; medias (t&euml; ngjashme me <em>media query</em>) q&euml; p&euml;rdoret nga shfletuesi p&euml;r t&euml; p&euml;rcaktuar se kur duhet t&euml; p&euml;rdoret nj&euml; burim i ve&ccedil;ant&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;picture&gt;
+&nbsp; &nbsp;&lt;source media="(min-width: 1000px)" srcset="logo-madhe.png"&gt;
+&nbsp; &nbsp;&lt;source media="(max-width: 500px)" srcset="logo-vogel.png"&gt;
+&nbsp; &nbsp;&lt;img src="logo.png" alt="Logoja ime"&gt;
+&lt;/picture&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Shfletuesi do t&euml; vler&euml;soj&euml; secilin element f&euml;mij&euml; &lt;source&gt; dhe do t&euml; zgjedh&euml; at&euml; q&euml; p&euml;rputhet m&euml; mir&euml; midis tyre; n&euml;se nuk p&euml;rputhet asnj&euml; vler&euml;, p&euml;rdoret URL-ja e atributit src t&euml; elementit &lt;img&gt;. Gjithashtu, etiketa &lt;img&gt; duhet t&euml; specifikohet si f&euml;mija i fundit i elementit &lt;picture&gt;.</p>
+            </div>
+            <h2>Puna me hartat e imazheve</h2>
+            <p>Harta e imazhit (<em>image maps</em>) ju lejon t&euml; p&euml;rcaktoni pikat e r&euml;nd&euml;sishme (hotspots) n&euml; nj&euml; imazh q&euml; t&euml; veprojn&euml; si hiperlidhje.</p>
+            <p>Ideja themelore pas krijimit t&euml; hart&euml;s s&euml; imazhit &euml;sht&euml; sigurimi i nj&euml; m&euml;nyr&euml; t&euml; thjesht&euml; p&euml;r tu lidhur me pjes&euml; t&euml; ndryshme t&euml; nj&euml; imazhi pa e ndar&euml; at&euml; n&euml; fajlla t&euml; posa&ccedil;&euml;m. P&euml;r shembull, nj&euml; hart&euml; e bot&euml;s mund t&euml; ket&euml; hiperlidhje p&euml;r secilin vend me informacione t&euml; m&euml;tejshme n&euml; lidhje me at&euml; vend.</p>
+            <p>Le t&euml; provojm&euml; nj&euml; shembull t&euml; thjesht&euml; p&euml;r t&euml; kuptuar se si funksionon n&euml; t&euml; v&euml;rtet&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;img src="objekte.png" usemap="#objekte" alt="Objekte"&gt;&lt;map name="objekte"&gt;
+&lt;area shape="circle" coords="137,231,71" href="ora.html" alt="Ora"&gt;
+&lt;area shape="poly" coords="363,146,273,302,452,300" href="trekendesh.html" alt="Trek&euml;nd&euml;sh"&gt;
+&lt;area shape="rect" coords="520,160,641,302" href="libri.html" alt="Libri"&gt;&lt;/map&gt;</code></pre>
+                </div>
+            </div>
+            <p>Atributi name i etiket&euml;s &lt;map&gt; p&euml;rdoret p&euml;r t&rsquo;ju referuar hart&euml;s nga etiketa &lt;img&gt; duke p&euml;rdorur atributin e saj usemap. Etiketa &lt;area&gt; p&euml;rdoret brenda elementit &lt;map&gt; p&euml;r t&euml; definuar zonat e klikueshme n&euml; nj&euml; imazh. Ju mund t&euml; p&euml;rcaktoni shum&euml; zona t&euml; klikueshme brenda nj&euml; imazhi.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Hartat e imazhit nuk duhet t&euml; p&euml;rdoret p&euml;r navigim t&euml; ueb sajtit. Ato nuk jan&euml; miq&euml;sor&euml; p&euml;r motor&euml;t e k&euml;rkimit. Nj&euml; p&euml;rdorim i vlefsh&euml;m i nj&euml; harte imazhi &euml;sht&euml; harta gjeografike.</p>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Ka shum&euml; n&euml; dispozicion vegla n&euml; Internet p&euml;r krijimin e hartave t&euml; imazheve. Disa editor&euml; t&euml; avancuar si Adobe Dreamweaver gjithashtu ofrojn&euml; nj&euml; s&euml;r&euml; veglash p&euml;r krijimin e leht&euml; t&euml; hartave nga imazhet.</p>
+            </div>
+
+        </section>
+
+        <section id="tabelat">
+            <h1>Tabelat</h1>
+            <p>Tabela HTML ju lejon t&rsquo;i paraqitni t&euml; dh&euml;nat n&euml; rreshta dhe kolona. Ato p&euml;rdoren zakonisht p&euml;r t&euml; shfaqur t&euml; dh&euml;na tabelare si p.sh. listat e produkteve, detajet e klient&euml;ve, raportet financiare, etj.</p>
+            <p>Mund t&euml; krijoni nj&euml; tabel&euml; duke p&euml;rdorur elementin &lt;table&gt;. Brenda elementit &lt;table&gt;, ju mund t&euml; p&euml;rdorni elementet &lt;tr&gt; p&euml;r t&euml; krijuar rreshta, nd&euml;rsa p&euml;r t&euml; krijuar kolona brenda nj&euml; rreshti mund t&euml; p&euml;rdorni elementet &lt;td&gt;. Gjithashtu mund t&euml; definoni nj&euml; celul&euml; si nj&euml; kok&euml; p&euml;r nj&euml; grup celulash t&euml; tabel&euml;s duke p&euml;rdorur elementin &lt;th&gt;.</p>
+            <p>Shembulli i m&euml;posht&euml;m demonstron struktur&euml;n m&euml; themelore t&euml; nj&euml; tabele.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;table&gt;
+&nbsp; &nbsp;&lt;tr&gt;
+&nbsp; &nbsp; &nbsp; &lt;th&gt;Nr.&lt;/th&gt;
+&nbsp; &nbsp; &nbsp; &lt;th&gt;Emri&lt;/th&gt;
+&nbsp; &nbsp; &nbsp; &lt;th&gt;Mosha&lt;/th&gt;
+&nbsp; &nbsp;&lt;/tr&gt;
+&nbsp; &nbsp;&lt;tr&gt;
+&nbsp; &nbsp; &nbsp; &lt;td&gt;1&lt;/td&gt;
+&nbsp; &nbsp; &nbsp; &lt;td&gt;Agim Bajrami&lt;/td&gt;
+&nbsp; &nbsp; &nbsp; &lt;td&gt;16&lt;/td&gt;
+&nbsp; &nbsp;&lt;/tr&gt;
+&nbsp; &nbsp;&lt;tr&gt;
+&nbsp; &nbsp; &nbsp; &lt;td&gt;2&lt;/td&gt;
+&nbsp; &nbsp; &nbsp; &lt;td&gt;Vlora Hyseni&lt;/td&gt;
+&nbsp; &nbsp; &nbsp; &lt;td&gt;17&lt;/td&gt;
+&nbsp; &nbsp;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+            </div>
+            <p>Tabelat nuk kan&euml; asnj&euml; kufiz&euml; si parazgjedhje. Mund t&euml; p&euml;rdorni vetin&euml; CSS border p&euml;r t&euml; shtuar kufij n&euml; tabela. Gjithashtu, celulat e tabel&euml;s jan&euml; me madh&euml;si aq t&euml; m&euml;dha sa t&euml; p&euml;rshtaten me p&euml;rmbajtjen si parazgjedhje. P&euml;r t&euml; shtuar m&euml; shum&euml; hap&euml;sir&euml; p&euml;rreth p&euml;rmbajtjes n&euml; celulat e tabel&euml;s mund t&euml; p&euml;rdorni vetin&euml; CSS padding .</p>
+            <p>Rregullat e m&euml;poshtme t&euml; stilizimit shtojn&euml; nj&euml; kufiz&euml; prej 1 pikselli n&euml; tabel&euml; dhe 10 piksell hap&euml;sir&euml; n&euml; celulat e saj.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>table, th, td {
+&nbsp; &nbsp;border: 1px solid black;
+}
+th, td {
+&nbsp; &nbsp;padding: 10px;
+}</code></pre>
+                </div>
+            </div>
+            <p>Si parazgjedhje, kufijt&euml; rreth tabel&euml;s dhe celulat e tyre jan&euml; t&euml; ndara nga nj&euml;ra-tjetra. Por ju mund t'i bashkoni ato n&euml; nj&euml; duke p&euml;rdorur vetin&euml; border-collapse n&euml; elementin &lt;table&gt;.</p>
+            <p>Gjithashtu, teksti brenda elementeve &lt;th&gt; shfaqet me font t&euml; trash&euml;, i radhitur n&euml; m&euml;nyr&euml; horizontale n&euml; qend&euml;r t&euml; celul&euml;s si parazgjedhje. P&euml;r t&euml; ndryshuar radhitjen e paracaktuar mund t&euml; p&euml;rdorni vetin&euml; CSS text-align.</p>
+            <p>Rregullat e m&euml;poshtme t&euml; stilizimit bashkojn&euml; kufijt&euml; e tabel&euml;s dhe zhvendosin tekstin e kok&euml;s s&euml; tabel&euml;s n&euml; an&euml;n e majt&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>table {
+    border-collapse: collapse;
+}
+th {
+    text-align: left;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Num&euml;r m&euml; i madh i atributeve t&euml; elementit &lt;table&gt; si&ccedil; jan&euml; border, cellpadding, width, align, etj. p&euml;r stilizimin e tabelave &euml;sht&euml; p&euml;rdorur n&euml; versionet e m&euml;hershme t&euml; HTML-s&euml;, k&euml;shtu q&euml; shmangni p&euml;rdorimin e tyre. P&euml;rdorni CSS p&euml;r t&euml; stilizuar tabelat HTML.</p>
+            </div>
+            <h2>Bashkimi i rreshtave dhe kolonave t&euml; shum&euml;fishta</h2>
+            <p>Bashkimi ju lejon t&euml; zgjasni rreshtat dhe kolonat e tabel&euml;s n&euml; shum&euml; rreshta dhe kolona t&euml; tjera.</p>
+            <p>Normalisht, nj&euml; celul&euml; e tabel&euml;s nuk mund t&euml; kaloj&euml; n&euml; hap&euml;sir&euml;n posht&euml; ose mbi nj&euml; celul&euml; tjet&euml;r t&euml; tabel&euml;s. Por, mund t&euml; p&euml;rdorni atributet rowspan ose colspan p&euml;r t&euml; shtrir&euml; rreshta ose kolona t&euml; shum&euml;fishta n&euml; nj&euml; tabel&euml;.</p>
+            <p>Le t&euml; provojm&euml; shembullin e m&euml;posht&euml;m p&euml;r t&euml; kuptuar se si punon n&euml; thelb colspan:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Emri&lt;/th&gt;
+        &lt;th colspan="2"&gt;Telefonat&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Filan Fisteku&lt;/td&gt;
+        &lt;td&gt;017653726&lt;/td&gt;
+        &lt;td&gt;017653826&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; p&euml;rdorni atributin rowspan p&euml;r t&euml; krijuar nj&euml; celul&euml; q&euml; p&euml;rfshin m&euml; shum&euml; se nj&euml; rresht. Le t&euml; provojm&euml; nj&euml; shembull p&euml;r t&euml; kuptuar se si funksionon n&euml; p&euml;rgjith&euml;si rowspan:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Emri:&lt;/th&gt;
+        &lt;td&gt;Filan Fisteku&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th rowspan="2"&gt;Telefonat:&lt;/th&gt;
+        &lt;td&gt;017653226&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;017653826&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Shtimi i nj&euml; mbishkrimi n&euml; tabela</h2>
+            <p>Mund t&euml; specifikoni nj&euml; mbishkrim (ose titull) p&euml;r tabelat tuaja duke p&euml;rdorur elementin &lt;caption&gt;.</p>
+            <p>Elementi &lt;caption&gt; duhet t&euml; vendoset menj&euml;her&euml; pas etiket&euml;s hap&euml;se &lt;table&gt;. Si parazgjedhje, mbishkrimi shfaqet n&euml; krye t&euml; tabel&euml;s, por mund ta ndryshoni pozicionin e saj duke p&euml;rdorur vetin&euml; CSS caption-side.</p>
+            <p>Shembulli i m&euml;posht&euml;m tregon m&euml;nyr&euml;n e p&euml;rdorimit t&euml; k&euml;tij elementi n&euml; nj&euml; tabel&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;table&gt;
+    &lt;caption&gt;Informacione p&euml;r p&euml;rdoruesit&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Nr.&lt;/th&gt;
+        &lt;th&gt;Emri&lt;/th&gt;
+        &lt;th&gt;Mosha&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;Agim Salihu&lt;/td&gt;
+        &lt;td&gt;16&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;Luana Kadriu&lt;/td&gt;
+        &lt;td&gt;17&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Definimi i kreut, trupit dhe fundit t&euml; tabel&euml;s</h2>
+            <p>HTML ofron nj&euml; seri etiketash &lt;thead&gt;, &lt;tbody&gt; dhe &lt;tfoot&gt; q&euml; ju ndihmojn&euml; t&euml; krijoni nj&euml; tabel&euml; m&euml; t&euml; strukturuar, duke p&euml;rcaktuar p&euml;rkat&euml;sisht seksionet e kok&euml;s, trupit dhe fundit t&euml; tabel&euml;s.</p>
+            <p>Shembulli i m&euml;posht&euml;m demonstron p&euml;rdorimin e k&euml;tyre elementeve.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Artikuj&lt;/th&gt;
+            &lt;th&gt;Shpenzimet&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Patundshm&euml;rit&euml;&lt;/td&gt;
+            &lt;td&gt;2,000&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Orendit&euml;&lt;/td&gt;
+            &lt;td&gt;10,000&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Totali&lt;/th&gt;
+            &lt;td&gt;12,000&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml; HTML5, elementi &lt;tfoot&gt; mund t&euml; vendoset para ose pas elementeve &lt;tbody&gt; dhe &lt;tr&gt;, por duhet t&euml; shfaqet pas &ccedil;do elementi &lt;caption&gt;, &lt;colgroup&gt; dhe &lt;thead&gt;.</p>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Mos p&euml;rdorni tabela p&euml;r krijimin e planit t&euml; ueb faqeve (layouts). Planet e ueb faqeve t&euml; krijuara me tabela jan&euml; m&euml; t&euml; ngadalta n&euml; paraqitje dhe shum&euml; t&euml; v&euml;shtira p&euml;r tu mir&euml;mbajtur. Tabelat duhet t&euml; p&euml;rdoret vet&euml;m p&euml;r t&euml; shfaqur t&euml; dh&euml;na tabelore.</p>
+            </div>
+            
+        </section>
+
+        <section id="listat">
+            <h1>Listat</h1>
+            <p>Listat HTML p&euml;rdoren p&euml;r t&euml; paraqitur sa m&euml; mir&euml; lista t&euml; informacionit n&euml; m&euml;nyr&euml; semantike. Ekzistojn&euml; tri lloje t&euml; ndryshme t&euml; listave n&euml; HTML dhe secila prej tyre ka nj&euml; q&euml;llim dhe kuptim specifik<strong>. </strong></p>
+            <ul>
+                <li><strong>Listat e parenditura (<em>Unordered list</em>)</strong> &ndash; P&euml;rdoret p&euml;r t&euml; krijuar nj&euml; list&euml; t&euml; artikujve t&euml; lidhur, pa ndonj&euml; renditje t&euml; posa&ccedil;me.</li>
+                <li><strong>Lista e renditura (<em>Ordered list</em>)</strong> &ndash; P&euml;rdoret p&euml;r t&euml; krijuar nj&euml; list&euml; t&euml; artikujve t&euml; lidhur, n&euml; nj&euml; renditje specifike.</li>
+                <li><strong>Listat p&euml;rshkruese (<em>Description list</em>)</strong> &ndash; P&euml;rdoret p&euml;r t&euml; krijuar nj&euml; list&euml; t&euml; termave dhe p&euml;rshkrimet e tyre.</li>
+            </ul>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Brenda nj&euml; artikulli t&euml; list&euml;s mund t&euml; vendosni tekst, imazhe, linqe, etj. Gjithashtu mund t&euml; vendosni nj&euml; list&euml; t&euml; t&euml;r&euml; brenda nj&euml; artikulli t&euml; list&euml;s p&euml;r t&euml; krijuar list&euml; brenda list&euml;s.</p>
+            </div>
+            <h2>Listat e parenditura</h2>
+            <p>Nj&euml; list&euml; e parenditur krijohet duke p&euml;rdorur elementin &lt;ul&gt; dhe secili artikull i list&euml;s fillon me elementin &lt;li&gt;.</p>
+            <p>Artikujt e listave n&euml; listat e parenditura sh&euml;nohen me pika, t&euml; ashtuquajtur <em>bullets</em>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;Kafe&lt;/li&gt;
+    &lt;li&gt;Qum&euml;sht&lt;/li&gt;
+    &lt;li&gt;Moll&euml;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/lista-ul.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <p>Gjithashtu mund t&euml; ndryshoni llojin e pik&euml;s n&euml; list&euml;n tuaj t&euml; parenditur duke p&euml;rdorur vetin&euml; CSS list-style-type. Rregulli i m&euml;posht&euml;m i stilit ndryshon llojin e pik&euml;s nga <em>disku</em> i paracaktuar n&euml; <em>katror</em>:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ul {
+    list-style-type: square;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Listat e renditura</h2>
+            <p>Nj&euml; list&euml; e renditur krijohet duke p&euml;rdorur elementin &lt;ol&gt; dhe secili artikull i list&euml;s fillon me elementin &lt;li&gt;. Listat e renditura p&euml;rdoren kur renditja e artikujve t&euml; list&euml;s &euml;sht&euml; e r&euml;nd&euml;sishme.</p>
+            <p>Artikujt e list&euml;s n&euml; nj&euml; list&euml; t&euml; renditur sh&euml;nohen me numra.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;Janar&lt;/li&gt;
+    &lt;li&gt;Shkurt&lt;/li&gt;
+    &lt;li&gt;Mars&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/lista-ol.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <p>Num&euml;rimi i artikujve n&euml; nj&euml; list&euml; t&euml; renditur zakonisht fillon nga numri 1. Megjithat&euml;, n&euml;se d&euml;shironi ta ndryshoni, mund t&euml; p&euml;rdorni atributin start, si&ccedil; tregohet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;ol start="10"&gt;
+    &lt;li&gt;Tetor&lt;/li&gt;
+    &lt;li&gt;N&euml;ntor&lt;/li&gt;
+    &lt;li&gt;Dhjetor&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/lista-ol-s.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <p>Ashtu sikur tek lista e parenditur, gjithashtu mund t&euml; p&euml;rdorni vetin&euml; CSS list-style-type p&euml;r t&euml; ndryshuar llojin e num&euml;rimit n&euml; nj&euml; list&euml; t&euml; renditur. Rregulli i m&euml;posht&euml;m i stilit ndryshon llojin e sh&euml;nuesit n&euml; numra romak&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ol {
+    list-style-type: upper-roman;
+}</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Gjithashtu mund t&euml; p&euml;rdorni atributit type p&euml;r t&euml; ndryshuar llojin e num&euml;rimit p.sh. type = "I". Sidoqoft&euml;, duhet t&rsquo;i shmangeni k&euml;tij atributi, n&euml; vend t&euml; saj p&euml;rdorni vetin&euml; CSS list-style-type.</p>
+            </div>
+            <h2>Listat p&euml;rshkruese</h2>
+            <p>Nj&euml; list&euml; p&euml;rshkrimi &euml;sht&euml; nj&euml; list&euml; e artikujve me nj&euml; p&euml;rshkrim ose p&euml;rkufizim t&euml; secilit artikull.</p>
+            <p>Lista p&euml;rshkruese krijohet duke p&euml;rdorur elementin &lt;dl&gt;. Elementi &lt;dl&gt; p&euml;rdoret s&euml; bashku me elementin &lt;dt&gt; q&euml; specifikon nj&euml; term dhe elementin &lt;dd&gt; q&euml; specifikon p&euml;rkufizimin e atij termi.</p>
+            <p>Ueb shfletuesit zakonisht paraqesin listat e p&euml;rkufizimeve duke vendosur termat dhe p&euml;rkufizimet n&euml; rreshta t&euml; ve&ccedil;ant&euml;, ku p&euml;rkufizimet e termit shtyhen paksa n&euml; t&euml; djatht&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;dl&gt;
+    &lt;dt&gt;Buk&euml;&lt;/dt&gt;
+    &lt;dd&gt;Ushqim i pjekur i b&euml;r&euml; nga mielli.&lt;/dd&gt;
+    &lt;dt&gt;Kafe&lt;/dt&gt;
+    &lt;dd&gt;Pije e b&euml;r&euml; nga kokrrat e pjekura t&euml; kafes&euml;.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/lista-dl.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+
+        </section>
+
+        <section id="format">
+            <h1>Format</h1>
+            <p>Format n&euml; HTML nevojiten p&euml;r t&euml; mbledhur lloje t&euml; ndryshme t&euml; t&euml; dh&euml;nave t&euml; p&euml;rdoruesve, t&euml; tilla si detajet e kontaktit si emri, adresa e post&euml;s elektronike, numrat e telefonit ose informacioni i kart&euml;s s&euml; kreditit, etj.</p>
+            <p>Format p&euml;rmbajn&euml; elemente t&euml; ve&ccedil;anta t&euml; quajtur forma kontrolluese si <em>inputbox</em>, <em>checkbox</em>, <em>radio</em>-<em>butona</em>, <em>butonat</em> <em>e</em> <em>dor&euml;zimit</em>, etj. P&euml;rdoruesit zakonisht plot&euml;sojn&euml; nj&euml; form&euml; duke plot&euml;suar kontrollet e saj p.sh. futja e tekstit, zgjedhja e artikujve, etj. dhe dor&euml;zimi i k&euml;saj forme n&euml; nj&euml; ueb server p&euml;r p&euml;rpunim t&euml; m&euml;tejsh&euml;m.</p>
+            <p>Etiketa &lt;form&gt; p&euml;rdoret p&euml;r t&euml; krijuar nj&euml; form&euml; n&euml; HTML.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form&gt;
+    &lt;label&gt;P&euml;rdoruesi: &lt;input type="text"&gt;&lt;/label&gt;
+    &lt;label&gt;Fjal&euml;kalimi: &lt;input type="password"&gt;&lt;/label&gt;
+    &lt;input type="submit" value="Dor&euml;zo"&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <p>Sektor&euml;t e m&euml;posht&euml;m p&euml;rshkruajn&euml; tipe t&euml; ndryshme t&euml; kontrolleve q&euml; mund t&euml; p&euml;rdorni n&euml; form&euml;n tuaj.</p>
+            <h2>Elementi Input</h2>
+            <p>Ky &euml;sht&euml; elementi zakonisht m&euml; i p&euml;rdorur n&euml; format e HTML-s&euml;.</p>
+            <p>Kjo ju lejon t&euml; specifikoni lloje t&euml; ndryshme t&euml; fushave t&euml; p&euml;rdoruesit, n&euml; var&euml;si nga atributi type. Nj&euml; element input mund t&euml; jet&euml; i tipit text, password, checkbox, radio, submit, reset, etj.</p>
+            <h3>Fushat e tekstit</h3>
+            <p>Fushat e tekstit jan&euml; sip&euml;rfaqe me nj&euml; rresht q&euml; i lejojn&euml; p&euml;rdoruesin t&euml; fus&euml; tekst.</p>
+            <p>Kontrollet e futjes s&euml; tekstit n&euml; nj&euml; rresht krijohen duke p&euml;rdorur elementin &lt;input&gt;, atributi type i t&euml; cilit ka vler&euml;n text.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form&gt;
+    &lt;label for="perdoruesi"&gt;P&euml;rdoruesi:&lt;/label&gt;
+    &lt;input type="text" name="perdoruesi" id="perdoruesi"&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/input-teksti.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Etiketa &lt;label&gt; p&euml;rdoret p&euml;r t&euml; p&euml;rcaktuar em&euml;rtimet p&euml;r elementet &lt;input&gt;. N&euml;se d&euml;shironi q&euml; p&euml;rdoruesi juaj t&euml; fus&euml; disa rreshta, at&euml;her&euml; duhet t&euml; p&euml;rdorni &lt;textarea&gt;.</p>
+            </div>
+            <h3>Fusha e fjal&euml;kalimit</h3>
+            <p>Fushat e fjal&euml;kalimit jan&euml; t&euml; ngjashme me fushat e tekstit. I vetmi ndryshim &euml;sht&euml;; karakteret n&euml; nj&euml; fush&euml; fjal&euml;kalimi jan&euml; t&euml; maskuara, d.m.th. ato tregohen si yje ose pika. Kjo b&euml;het p&euml;r t&euml; parandaluar q&euml; dikush tjet&euml;r t&euml; lexoj&euml; fjal&euml;kalimin n&euml; ekran. Ky &euml;sht&euml; gjithashtu nj&euml; kontroll p&euml;r futje teksti n&euml; nj&euml; rresht duke p&euml;rdorur elementin &lt;input&gt; atributi type i t&euml; cilit ka vler&euml;n password.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form&gt;
+    &lt;label for="user-pwd"&gt;Fjal&euml;kalimi:&lt;/label&gt;
+    &lt;input type="password" name="user-password" id="user-pwd"&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/input-pwd.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <h3>Butonat radio</h3>
+            <p>Butonat e radios p&euml;rdoren p&euml;r t&rsquo;ju mund&euml;suar p&euml;rdoruesit t&euml; zgjedh&euml; sakt&euml;sisht nj&euml; opsion nga nj&euml; grup opsionesh t&euml; paracaktuar. Krijohet duke p&euml;rdorur element &lt;input&gt; atributi type i t&euml; cilit ka vler&euml;n radio.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form&gt;
+    &lt;input type="radio" name="gjinia" id="mashkull"&gt;
+    &lt;label for="mashkull"&gt;Mashkull&lt;/label&gt;
+    &lt;input type="radio" name="gjinia" id="femer"&gt;
+    &lt;label for="femer"&gt;Fem&euml;r&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/input-radio.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <h3>Checkbox-at</h3>
+            <p>Checkbox-at i lejojn&euml; p&euml;rdoruesit t&euml; zgjedh&euml; nj&euml; ose m&euml; shum&euml; opsione nga nj&euml; grup opsionesh t&euml; paracaktuara. Krijohet duke p&euml;rdorur elementin &lt;input&gt; atributi type i t&euml; cilit ka vler&euml;n checkbox.</p>
+            <p>K&euml;tu keni nj&euml; shembull t&euml; checkbox-ave q&euml; mund t&euml; p&euml;rdoren p&euml;r t&euml; mbledhur informacione n&euml; lidhje me hobin e p&euml;rdoruesve:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form&gt;
+    &lt;input type="checkbox" name="hobi" id="futboll"&gt;
+    &lt;label for="futboll"&gt;Futboll&lt;/label&gt;
+    &lt;input type="checkbox" name="hobi" id="basketboll"&gt;
+    &lt;label for="basketboll"&gt;Basketboll&lt;/label&gt;
+    &lt;input type="checkbox" name="hobi" id="vrapim"&gt;
+    &lt;label for="vrapim"&gt;Vrapim&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/input-check.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml;se d&euml;shironi me parazgjedhje ta b&euml;ni nj&euml; radio-buton ose nj&euml; checkbox t&euml; zgjedhur, mund t&euml; shtoni atributin checked n&euml; elementin input, si &nbsp;&lt;input type="checkbox" checked&gt;.</p>
+            </div>
+            <h3>Zgjedhja e fajllit</h3>
+            <p>Fushat e fajllit i lejojn&euml; nj&euml; p&euml;rdoruesi t&euml; k&euml;rkoj&euml; nj&euml; fajll lokal dhe ta d&euml;rgoj&euml; at&euml; si nj&euml; bashk&euml;ngjitje me t&euml; dh&euml;nat e formularit. Ueb shfletuesit si Google Chrome dhe Firefox paraqesin nj&euml; fush&euml; input t&euml; zgjedhjes s&euml; fajllit me nj&euml; buton p&euml;r shfletim q&euml; i mund&euml;son p&euml;rdoruesit t&euml; navigoj n&euml; hard diskun lokal dhe t&euml; zgjedh&euml; nj&euml; fajll.</p>
+            <p>Kjo gjithashtu krijohet duke p&euml;rdorur elementin &lt;input&gt;, atributi type i t&euml; cilit ka vler&euml;n file.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form&gt;
+    &lt;label for="zgjedh-fajllin"&gt;Ngarko:&lt;/label&gt;
+    &lt;input type="file" name="ngarko" id="zgjedh-fajllin"&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/input-file.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Ekzistojn&euml; edhe disa tipe t&euml; tjer&euml; t&euml; input-eve. Shfletoni n&euml; Internet p&euml;r k&euml;to tipe tjera.</p>
+            </div>
+            <h2>Textarea &ndash; sip&euml;rfaqe teksti</h2>
+            <p>Textarea &euml;sht&euml; nj&euml; futje e tekstit n&euml; shum&euml; rreshta q&euml; i lejon p&euml;rdoruesit t&euml; fus&euml; m&euml; shum&euml; se nj&euml; rresht teksti. Kontrollet e futjes s&euml; tekstit me shum&euml; rreshta krijohen duke p&euml;rdorur elementin &lt;textarea&gt;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form&gt;
+    &lt;label for="adresa"&gt;Adresa:&lt;/label&gt;
+    &lt;textarea rows="3" cols="30" name="adresa" id="adresa"&gt;&lt;/textarea&gt;
+&lt;/form&gt</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/textarea.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <h2>Kutia zgjedh&euml;se &ndash; <em>Select box</em></h2>
+            <p>Nj&euml; kuti e zgjedhjes &euml;sht&euml; nj&euml; list&euml; zbrit&euml;se e opsioneve q&euml; u lejon p&euml;rdorues&euml;ve t&euml; zgjedh&euml; nj&euml; ose m&euml; shum&euml; opsione nga nj&euml; list&euml; r&euml;n&euml;se. Kutia e zgjedhjes krijohet duke p&euml;rdorur elementin &lt;select&gt; dhe elementin &lt;option&gt;.</p>
+            <p>Elementet &lt;option&gt; brenda elementit &lt;select&gt; definojn&euml; secilin artikull t&euml; list&euml;s.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form&gt;
+    &lt;label for="qyteti"&gt;Zgjidh qytetin:&lt;/label&gt;
+    &lt;select name="qyteti" id="qyteti"&gt;
+        &lt;option value="bujanoc"&gt;Bujanoc&lt;/option&gt;
+        &lt;option value="presheve"&gt;Preshev&euml;&lt;/option&gt;
+        &lt;option value="medvegje"&gt;Medvegj&euml;&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/select-box.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <h2>Butonat e dor&euml;zimit dhe resetimit</h2>
+            <p>Butoni i dor&euml;zimit p&euml;rdoret p&euml;r t&euml; d&euml;rguar t&euml; dh&euml;nat e formularit n&euml; nj&euml; ueb server. Kur klikohet butoni i dor&euml;zim, t&euml; dh&euml;nat e formularit d&euml;rgohen n&euml; fajllin e specifikuar me atributin action t&euml; form&euml;s p&euml;r t&euml; procesuar t&euml; dh&euml;nat e paraqitura.</p>
+            <p>Butoni resetimit rivendos t&euml; gjitha kontrollet e formave n&euml; vlerat e paracaktuara. Provoni shembullin vijues duke shkruar emrin tuaj n&euml; fush&euml;n e tekstit dhe klikoni n&euml; butonin dor&euml;zoj p&euml;r ta par&euml; at&euml; n&euml; veprim.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form action="action.php" method="post"&gt;
+    &lt;label for="emri"&gt;Emri juaj:&lt;/label&gt;
+    &lt;input type="text" name="emri" id="emri"&gt;
+    &lt;input type="submit" value="Dor&euml;zo"&gt;
+    &lt;input type="reset" value="Reset"&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/submit-reset.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Mund t&euml; krijoni butona gjithashtu duke p&euml;rdorur elementin &lt;button&gt;. Butonat e krijuar me elementit &lt;button&gt; kan&euml; funksion t&euml; ngjash&euml;m ashtu si butonat e krijuar me elementin input, por ato ofrojn&euml; mund&euml;si m&euml; t&euml; pasura paraqitjes duke lejuar vendosjen e elementeve t&euml; tjer&euml; HTML.</p>
+            </div>
+            <h2>Grupimi i kontrolleve t&euml; formave</h2>
+            <p>Gjithashtu mund t&euml; gruponi kontrollet dhe etiketat e nd&euml;rlidhura logjikisht brenda nj&euml; ueb forme duke p&euml;rdorur elementin &lt;legend&gt;. Grupimi i kontrolleve t&euml; formave n&euml; kategori e b&euml;n m&euml; t&euml; leht&euml; p&euml;r p&euml;rdoruesit q&euml; t&euml; gjej nj&euml; kontroll e cila e b&euml;n form&euml;n m&euml; miq&euml;sore p&euml;r p&euml;rdoruesit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Detaje t&euml; kontaktit&lt;/legend&gt;
+        &lt;label&gt;E-mail: &lt;input type="email" name="email"&gt;&lt;/label&gt;
+        &lt;label&gt;Nr. tel.: &lt;input type="text" name="tel"&gt;&lt;/label&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <p>Rezultati i shembullit t&euml; m&euml;sip&euml;rm do t&euml; duket k&euml;sisoj:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/fieldset.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+
+        </section>
+
+        <section id="iframe">
+            <h1>iFrame</h1>
+            <p>Nj&euml; iFrame (<em>Inline Frame</em> &ndash; korniz&euml; n&euml; linj&euml;) p&euml;rdoret p&euml;r t&euml; shfaqur objekte t&euml; jashtme, p&euml;rfshir&euml; ueb faqe t&euml; tjera brenda nj&euml; ueb faqe. Nj&euml; iframe pothuajse vepron si nj&euml; mini shfletues brenda nj&euml; shfletuesi. Gjithashtu, p&euml;rmbajtja brenda nj&euml; iframe ekziston plot&euml;sisht e pavarur nga element&euml;t p&euml;rreth.</p>
+            <p>Sintaksa themelore p&euml;r shtimin e nj&euml; iframe n&euml; nj&euml; ueb faqe mund t&euml; duket k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>&lt;iframe src="URL"&gt;&lt;/iframe&gt;</code></pre>
+            </div>
+            <p>URL-ja e specifikuar n&euml; atributin src tregon p&euml;r vendndodhjen e nj&euml; objekti t&euml; jasht&euml;m ose nj&euml; ueb faqe.</p>
+            <p>Shembulli i m&euml;posht&euml;m paraqet fajllin "faqe.html" brenda nj&euml; iframe n&euml; dokumentin aktual.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;iframe src="faqe.html"&gt;&lt;/iframe&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Vendosja e gjer&euml;sis&euml; dhe lart&euml;sis&euml; n&euml; nj&euml; iFrame</h2>
+            <p>Atributet height dhe width p&euml;rdoren p&euml;r t&euml; specifikuar lart&euml;sin&euml; dhe gjer&euml;sin&euml; e iframe-it.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;iframe src="faqe.html" width="400" height="200"&gt;&lt;/iframe&gt;</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; p&euml;rdorni CSS-n&euml; p&euml;r t&euml; vendosur gjer&euml;sin&euml; dhe lart&euml;sin&euml; e nj&euml; iframe.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;iframe src="faqe.html" style="width:400px; height:200px;"&gt;&lt;/iframe&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vlerat e atributeve width dhe height specifikohen n&euml; piksell si parazgjedhje, por gjithashtu mund t'i vendosni k&euml;to vlera n&euml; p&euml;rqindje, t&euml; tilla si 50%, 100%, etj. Gjer&euml;sia e paracaktuar e nj&euml; iframe &euml;sht&euml; 300 piksell, nd&euml;rsa lart&euml;sia e paracaktuar &euml;sht&euml; 150 piksell.</p>
+            </div>
+            <h2>Heqja e kufiz&euml;s s&euml; parazgjedhur</h2>
+            <p>Iframe ka nj&euml; kufiz&euml; rreth tij si parazgjedhje. Sidoqoft&euml;, n&euml;se doni t&euml; modifikoni ose hiqni kufijt&euml; e iframe-it, m&euml;nyra m&euml; e mir&euml; &euml;sht&euml; t&euml; p&euml;rdorni vetin&euml; CSS border.</p>
+            <p>Shembulli i m&euml;posht&euml;m thjesht do t&euml; paraqes nj&euml;&nbsp; iframe pa asnj&euml; kufiz&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;iframe src="faqe.html" style="border: none;"&gt;&lt;/iframe&gt;</code></pre>
+                </div>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; p&euml;rdorni vetin&euml; border p&euml;r t&euml; paraqitur kufiza q&euml; i zgjidhni n&euml; nj&euml; iframe. Shembulli i m&euml;posht&euml;m do t&euml; paraqes iframe-in me kufiz&euml;n e kalt&euml;r me trash&euml;si 2 piksell.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;iframe src="faqe.html" style="border: 2px solid blue;"&gt;&lt;/iframe&gt;</code></pre>
+                </div>
+            </div>
+            <h2>P&euml;rdorimi i nj&euml; iFrame me target linku</h2>
+            <p>Nj&euml; iframe mund t&euml; p&euml;rdoret gjithashtu si nj&euml; target p&euml;r hiperlidhjet.</p>
+            <p>Nj&euml; iframe mund t&euml; em&euml;rohet duke p&euml;rdorur atributin name. Kjo n&euml;nkupton q&euml; kur klikohet nj&euml; link me nj&euml; atribut target me at&euml; em&euml;r si vler&euml;, burimi i lidhur do t&euml; hapet n&euml; at&euml; iframe.</p>
+            <p>Le t&euml; provojm&euml; nj&euml; shembull p&euml;r t&euml; kuptuar se si funksionon n&euml; thelb:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p&gt;&lt;a href="http://www.sezaisurroi.com" target="korniza"&gt;Ueb faqja: Sezai Surroi&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src="foto.jpg" name="korniza"&gt;&lt;/iframe&gt;</code></pre>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="audio">
+
+            <h1>Audio</h1>
+            <h2>Vendosja e audios n&euml; dokumentin HTML</h2>
+            <p>Vendosja e audios n&euml; nj&euml; ueb faqe nuk ishte e leht&euml; m&euml; par&euml;, sepse ueb shfletuesit nuk kishin nj&euml; standard uniform p&euml;r p&euml;rcaktimin e vendosjes s&euml; medieve si&ccedil; &euml;sht&euml; audio.</p>
+            <p>N&euml; k&euml;t&euml; nj&euml;si ne do t&euml; demonstrojm&euml; disa nga m&euml;nyrat p&euml;r t&euml; vendosur z&euml;rin n&euml; ueb faqen tuaj, nga p&euml;rdorimi i nj&euml; linku t&euml; thjesht&euml; deri te p&euml;rdorimi i elementit t&euml; fundit HTML5 &lt;audio&gt;.</p>
+            <h2>P&euml;rdorimi i Elementit HTML5 audio</h2>
+            <p>Elementi i ri n&euml; HTML5 &lt;audio&gt; ofron nj&euml; m&euml;nyr&euml; standarde p&euml;r t&euml; vendosur audion n&euml; ueb faqe. Sidoqoft&euml;, elementi audio &euml;sht&euml; relativisht i ri por funksionon n&euml; shumic&euml;n e ueb shfletuesve modern.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;audio controls="controls" src="media/audio.mp3"&gt;
+    Shfletuesi juaj nuk e mb&euml;shtet&euml; elementin HTML5 Audio.
+&lt;/audio&gt;</code></pre>
+                </div>
+            </div>
+            <p>Nj&euml; audio, duke p&euml;rdorur grupin e paracaktuar t&euml; kontrolleve t&euml; shfletuesit, me burime alternative.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;audio controls="controls"&gt;
+    &lt;source src="media/audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="media/audio.ogg" type="audio/ogg"&gt;
+    Shfletuesi juaj nuk e mb&euml;shtet&euml; elementin HTML5 Audio.
+&lt;/audio&gt;</code></pre>
+                </div>
+            </div>
+            <p>Formati 'ogg' n&euml; shembullin e m&euml;sip&euml;rm funksionon n&euml; Firefox, Opera dhe Chrome, nd&euml;rsa i nj&euml;jti audio n&euml; formatin 'mp3' shtohet p&euml;r ta b&euml;r&euml; audion t&euml; funksionoj&euml; n&euml; Internet Explorer dhe Safari.</p>
+            <h2>Lidhja tek fajllat audio</h2>
+            <p>Ju mund t&euml; krijoni linqe me fajllat tuaj audio dhe ta luani duke klikuar n&euml; to.</p>
+            <p>Le t&euml; provojm&euml; shembullin vijues p&euml;r t&euml; kuptuar se si funksionon kjo n&euml; thelb:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;a href="media/audio1.mp3"&gt;Audio 1&lt;/a&gt;
+&lt;a href="media/audio2.mp3"&gt;Audio 2&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+            <h2>P&euml;rdorimi i elementit object</h2>
+            <p>Elementi &lt;object&gt; p&euml;rdoret p&euml;r t&euml; vendosur lloje t&euml; ndryshme t&euml; media fajllave n&euml; nj&euml; dokument HTML. Fillimisht, ky element &euml;sht&euml; p&euml;rdorur p&euml;r t&euml; futur kontrollet ActiveX, por sipas specifikimit, nj&euml; objekt mund t&euml; jet&euml; &ccedil;do media objekt si audio, video, fajlla PDF, animacione Flash apo edhe imazhe.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;object data="media/audio.mp3"&gt;&lt;/object&gt;
+&lt;object data="media/audio.ogg"&gt;&lt;/object&gt;</code></pre>
+                </div>
+            </div>
+            <div class="paralajmerim">
+                <p><strong>Paralajm&euml;rim</strong>: Elementi &lt;object&gt; nuk mb&euml;shtetet gjer&euml;sisht dhe varet shum&euml; nga lloji i objektit q&euml; &euml;sht&euml; vendosur. Metoda t&euml; tjera si&ccedil; jan&euml; elementi HTML5 &lt;audio&gt; ose lexuesit audio HTML5 t&euml; pal&euml;ve t&euml; treta mund t&euml; jen&euml; nj&euml; zgjedhje m&euml; e mir&euml; n&euml; shum&euml; raste.</p>
+            </div>
+            <h2>P&euml;rdorimi i Elementit embed</h2>
+            <p>Elementi &lt;embed&gt; p&euml;rdoret p&euml;r t&euml; vendosur p&euml;rmbajtjen multimediale n&euml; nj&euml; dokument HTML.</p>
+            <p>Fragmenti i kodit t&euml; m&euml;posht&euml;m vendos fajllat audio n&euml; nj&euml; ueb faqe.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;embed src="media/audio.mp3"&gt;
+&lt;embed src="media/audio.ogg"&gt;</code></pre>
+                </div>
+            </div>
+            <div class="paralajmerim">
+                <p><strong>Paralajm&euml;rim</strong>: Meqen&euml;se elementi &lt;embed&gt; mb&euml;shtetet shum&euml; mir&euml; n&euml; shfletuesit aktual&euml; dhe p&euml;rcaktohet si standard n&euml; HTML5, por audio juaj mund t&euml; mos luhet p&euml;r shkak t&euml; munges&euml;s s&euml; mb&euml;shtetjes s&euml; shfletuesit p&euml;r at&euml; format t&euml; fajllit ose munges&euml;s s&euml; disponueshm&euml;ris&euml; s&euml; shtojcave.</p>
+            </div>
+
+        </section>
+
+        <section id="video">
+
+            <h1>Video</h1>
+            <h2>Vendosja e videos n&euml; dokumentin HTML</h2>
+            <p>Vendosja e videos ngjash&euml;m sikur vendosja e audios n&euml; nj&euml; ueb faqe nuk ishte e leht&euml; m&euml; par&euml;, sepse ueb shfletuesit nuk kishin nj&euml; standard uniform p&euml;r p&euml;rcaktimin e vendosjes s&euml; medieve si&ccedil; &euml;sht&euml; video.</p>
+            <p>N&euml; k&euml;t&euml; nj&euml;si do t&euml; demonstrojm&euml; disa nga m&euml;nyrat e shumta t&euml; shtimit t&euml; videove n&euml; ueb faqe, nga elementi m&euml; i fundit n&euml; HTML5 &lt;video&gt; deri tek videot e njohura nga YouTube.</p>
+            <h2>P&euml;rdorimi i elementit HTML5 video</h2>
+            <p>Elementi i ri n&euml; HTML5 &lt;video&gt; ofron nj&euml; m&euml;nyr&euml; standarde p&euml;r t&euml; vendosur video n&euml; ueb faqe. Sidoqoft&euml;, elementi video &euml;sht&euml; relativisht i ri por funksionon n&euml; shumic&euml;n e ueb shfletuesve modern.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;video controls="controls" src="media/video.mp4"&gt;
+    Shfletuesi juaj nuk e mb&euml;shtet&euml; elementin HTML5 Video.
+&lt;/video&gt;</code></pre>
+                </div>
+            </div>
+            <p>Nj&euml; video, duke p&euml;rdorur grupin e paracaktuar t&euml; kontrolleve t&euml; shfletuesit, me burime alternative.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;video controls="controls"&gt;
+    &lt;source src="media/video.mp4" type="video/mp4"&gt;
+    &lt;source src="media/video.ogg" type="video/ogg"&gt;
+    Shfletuesi juaj nuk e mb&euml;shtet&euml; elementin HTML5 Video.
+&lt;/video&gt;</code></pre>
+                </div>
+            </div>
+            <h2>P&euml;rdorimi i elementit object</h2>
+            <p>Elementi &lt;object&gt; p&euml;rdoret p&euml;r t&euml; vendosur lloje t&euml; ndryshme t&euml; media fajllave n&euml; nj&euml; dokument HTML. Fillimisht, ky element &euml;sht&euml; p&euml;rdorur p&euml;r t&euml; futur kontrollet ActiveX, por sipas specifikimit, nj&euml; objekt mund t&euml; jet&euml; &ccedil;do media objekt si audio, video, fajlla PDF, animacione Flash apo edhe imazhe.</p>
+            <p>Fragmenti i m&euml;posht&euml;m i kodit vendos nj&euml; video <em>Flash</em> n&euml; nj&euml; ueb faqe.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;object data="media/video.swf" width="400px" height="200px"&gt;&lt;/object&gt;</code></pre>
+                </div>
+            </div>
+            <p>Vet&euml;m shfletuesit ose aplikacionet q&euml; mb&euml;shtesin Flash-in do t&euml; luajn&euml; k&euml;t&euml; video.</p>
+            <div class="paralajmerim">
+                <p><strong>Paralajm&euml;rim</strong>: Elementi &lt;object&gt; nuk mb&euml;shtetet gjer&euml;sisht dhe varet shum&euml; nga lloji i objektit q&euml; &euml;sht&euml; vendosur. Metodat e tjera mund t&euml; jen&euml; nj&euml; zgjedhje m&euml; e mir&euml; n&euml; shum&euml; raste. Pajisjet iPad dhe iPhone nuk mund t&euml; shfaqin videon Flash.</p>
+            </div>
+            <h2>P&euml;rdorimi i Elementit embed</h2>
+            <p>Elementi &lt;embed&gt; p&euml;rdoret p&euml;r t&euml; vendosur p&euml;rmbajtjen multimediale n&euml; nj&euml; dokument HTML.</p>
+            <p>Fragmenti i kodit t&euml; m&euml;posht&euml;m vendos videon Flash n&euml; nj&euml; ueb faqe.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;embed src="media/video.swf" width="400px" height="200px"&gt;</code></pre>
+                </div>
+            </div>
+            <div class="paralajmerim">
+                <p><strong>Paralajm&euml;rim</strong>: Meqen&euml;se elementi &lt;embed&gt; mb&euml;shtetet shum&euml; mir&euml; n&euml; ueb shfletuesit aktual&euml; dhe p&euml;rcaktohet gjithashtu si standard n&euml; HTML5, megjithat&euml; videoja juaj mund t&euml; mos shfaqet p&euml;r shkak t&euml; munges&euml;s s&euml; mb&euml;shtetjes s&euml; shfletuesit p&euml;r Flash ose munges&euml;s s&euml; disponueshm&euml;ris&euml; s&euml; shtojcave.</p>
+            </div>
+            <h2>Vendosja e videove nga YouTube</h2>
+            <p>Kjo &euml;sht&euml; m&euml;nyra m&euml; e leht&euml; dhe m&euml; e popullarizuar p&euml;r t&euml; futur video fajlle n&euml; ueb faqe. Ngarkoni videon tuaj n&euml; YouTube dhe sh&euml;noni kodin HTML p&euml;r ta shfaqur at&euml; video n&euml; ueb faqen tuaj.</p>
+            <p>K&euml;tu kemi nj&euml; shembull, ku shpjegohet i gjith&euml; procesi:</p>
+            <h3>Hapi 1: Ngarko video</h3>
+            <p>Shkoni n&euml; faqen e ngarkimit t&euml; videos n&euml; YouTube dhe ndiqni udh&euml;zimet p&euml;r t&euml; ngarkuar videon tuaj.</p>
+            <h3>Hapi 2: Krijimi i kodit HTML p&euml;r t&euml; vendosur videon</h3>
+            <p>Kur hapni videon tuaj t&euml; ngarkuar n&euml; YouTube do t&euml; shihni di&ccedil;ka t&euml; ngjashme si n&euml; figur&euml;n vijuese n&euml; pjes&euml;n e poshtme t&euml; videos. Tani shikoni butonin e ndarjes &ldquo;share&rdquo; q&euml; ndodhet posht&euml; videos, si&ccedil; tregohet n&euml; figur&euml;.</p>
+            <div class="img-kodi ">
+                <img src="foto/youtube.jpg" alt="YouTube">
+            </div>
+            <p>Kur klikoni n&euml; butonin e ndarjes &ldquo;share&rdquo;, do t&euml; hapet nj&euml; dritare q&euml; shfaq disa butona p&euml;r shp&euml;rndarje. Tani klikoni n&euml; butonin <em>Embed</em>, ai do t&euml; gjeneroj&euml; kodin HTML p&euml;r ta vendosur direkt videon n&euml; ueb faqen tuaj. Thjesht kopjoni dhe ngjisni k&euml;t&euml; kod n&euml; dokumentin tuaj HTML ku d&euml;shironi t&euml; shfaqni videon dhe gjith&ccedil;ka &euml;sht&euml; gati. Me parazgjedhje video vendoset brenda nj&euml; iframe.</p>
+            <div class="img-kodi">
+                <img src="foto/youtube-embed.jpg" alt="YouTube embed">
+            </div>
+            <p>Ju mund ta personalizoni m&euml; tej k&euml;t&euml; kod t&euml; vendosur si&ccedil; &euml;sht&euml; ndryshimi i madh&euml;sis&euml; s&euml; videos duke ndryshuar m&euml; pas vler&euml;n e atributeve width dhe height n&euml; kodin e vendosur.</p>
+            <p>Shembulli i m&euml;posht&euml;m thjesht do t&euml; vendos videon nga YouTube.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Video nga YouTube&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/UB1O30fR-EE" 
+    frameborder="0" allow="accelerometer; autoplay; 
+    clipboard-write; encrypted-media; gyroscope; 
+    picture-in-picture" allowfullscreen&gt;
+    &lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<footer>
+    <p>&copy; Copyright <a href="https://amemeti.netlify.app" target="_blank">Abaz Memeti</a> MMXXI</p>
+</footer>
+
+</div>
+
+<script src="../script/script.js"></script>
+</body>
+</html>

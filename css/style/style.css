@@ -1,0 +1,9 @@
+section h1, aside h3, article h3, .nata section h1, .nata aside h3, .nata article h3  {
+    border-bottom: 2px solid rgb(12,115,184);
+}
+
+@media(max-width: 767px) {
+    nav {
+        background-color: rgb(12,115,184);
+    }
+}

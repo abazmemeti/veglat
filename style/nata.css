@@ -1,0 +1,170 @@
+.nata::-webkit-scrollbar, .nata code::-webkit-scrollbar {
+    width: 17px;
+}
+.nata, .nata code {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #333;
+}
+.nata::-webkit-scrollbar-track, .nata code::-webkit-scrollbar-track {
+    background: #333;
+}
+.nata::-webkit-scrollbar-thumb, .nata code::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 2px;
+    border: 1px solid #333;
+}
+
+body.nata {
+    background-color: #222;
+}
+.nata #wrapper {
+    background-color: #222;
+}
+.nata #grid {
+    background-color: #222;
+}
+.nata section {
+    color: #ddd;
+}
+
+.nata .shembull {
+    border: 1px dotted #666;
+}    
+.nata .sintaksa code {
+    border: 1px dotted #666;
+}  
+.nata .shenim  {
+    border: 1px solid #d5e9f6;
+    color: #d5e9f6;
+    background-color: rgba(20,65,80,0.5);
+}
+.nata .keshille {
+    border: 1px solid #d5efc2;
+    color: #d5efc2;
+    background-color: rgba(45,80,20,0.5);
+}
+.nata .paralajmerim {
+    border: 1px solid #ecd2d7; 
+    color: #ecd2d7;
+    background-color: rgba(145,57,68,0.5);
+}
+
+.nata img {
+    -webkit-filter: invert(86.5%) hue-rotate(90deg);
+    filter: invert(86.5%) hue-rotate(90deg);
+}
+.nata .jonata img {
+    -webkit-filter: invert(0%);
+    filter: invert(0%);
+}
+
+.nata iframe {
+    background-color: #999;
+}
+
+.nata .hljs, .nata .hljs-subst {
+    color: #aaa;
+    background-color: #191919;
+}
+.nata .hljs-name {
+    color: rgb(216, 62, 147);
+    font-weight: 500;
+}
+.nata .hljs-attr {
+    color: rgb(165, 209, 78);
+}
+.nata .hljs-string {
+    color: rgb(75, 190, 240);
+}
+.nata .hljs-meta {
+    color: #888;
+}
+.nata .hljs-selector-tag {
+    color: rgb(165, 209, 78);
+}
+.nata .hljs-attribute {
+    font-weight:normal;
+    color: rgb(216, 62, 147);
+}
+
+.nata header {
+    background-color: #23384e;
+}
+.nata header .logo a {
+    color: #fff;
+}
+.nata nav {
+    background-color: #23384e;
+}
+.nata nav a {
+     color: white;
+}
+.nata aside, .nata article {
+    background-color: #282828;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    color: #eee;
+}
+
+.nata aside li a, .nata article li a {
+   color: #eee;
+}
+.nata footer {
+    background-color: #23384e;
+    color: #fff;
+}
+.nata footer a {
+    color: #fff;
+}
+
+.nata .lang {
+    color: #fff;
+ }
+ .nata .lang a {
+      color: #fff;
+ }
+ 
+ .nata #html {
+     background-color: rgba(230,81,39, 0.65);
+     text-shadow: -1px 0 rgb(230, 81, 39), 0 1px rgb(230, 81, 39), 1px 0 rgb(230, 81, 39), 0 -1px rgb(230, 81, 39);
+ }
+ .nata #html a {
+     background-color: rgb(230, 81, 39);
+ }
+ .nata #css {
+     background-color: rgba(12,115,184, 0.65);
+     text-shadow: -1px 0 rgb(12,115,184), 0 1px rgb(12,115,184), 1px 0 rgb(12,115,184), 0 -1px rgb(12,115,184);
+ }
+ .nata #css a {
+     background-color: rgb(12,115,184);
+ }
+ .nata #js {
+     background-color: rgba(99,168,20, 0.65);
+     text-shadow: -1px 0 rgb(99,168,20), 0 1px rgb(99,168,20), 1px 0 rgb(99,168,20), 0 -1px rgb(99,168,20);
+ }
+ .nata #js a {
+     background-color: rgb(99,168,20);
+ }
+ .nata #sql {
+     background-color: rgba(155,71,140, 0.65);
+     text-shadow: -1px 0 rgb(155,71,140), 0 1px rgb(155,71,140), 1px 0 rgb(155,71,140), 0 -1px rgb(155,71,140);
+ }
+ .nata #sql a {
+     background-color: rgb(155,71,140);
+ }
+
+
+@media(max-width: 767px) {
+    .nata .wrapper:after {
+        background-color: #000;
+    }
+    .nata .menu:after {
+        background-color: #000;
+    }
+    .nata #burger .viza {
+        background-color: #fff;
+    }
+    .nata nav {
+        border-top: 1px solid #304458;
+    }
+}
