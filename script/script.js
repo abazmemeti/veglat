@@ -12,9 +12,19 @@ function resizeIframe(obj) {
 
     let nata = document.getElementById('nata');
 
+    /* Tema e errtë dhe e ndritshme */
+    const temaAktuale = localStorage.getItem("tema");
+    if(temaAktuale == 'terr') {
+        document.body.classList.add('nata');
+    }
     nata.addEventListener('click', () => {
         document.body.classList.toggle('nata');
-    })
+        let tema = 'drite';
+        if(document.body.classList.contains('nata')) {
+            tema = 'terr';
+        }
+        localStorage.setItem('tema', tema);
+    });
     
     burger.addEventListener('click', hapjaMbyllja);
     
