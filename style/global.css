@@ -193,6 +193,12 @@ section .figure img {
 .kodi {
     padding: 15px 0 0 0;
 }
+.kodi pre {
+	border-left: 5px solid #666;
+}
+.kodi code {
+	padding: 10px 12px;
+}
 iframe {
     display: block;
     margin: 10px 0;
