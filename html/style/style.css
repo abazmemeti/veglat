@@ -2,6 +2,10 @@ section h1, aside h3, article h3, .nata section h1, .nata aside h3, .nata articl
     border-bottom: 2px solid rgb(241,89,41);
 }
 
+.kodi pre {
+	border-left: 4px solid rgb(241,89,41);
+}
+
 @media(max-width: 767px) {
     nav {
         background-color: rgb(241,89,41);

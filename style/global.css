@@ -193,9 +193,6 @@ section .figure img {
 .kodi {
     padding: 15px 0 0 0;
 }
-.kodi pre {
-	border-left: 4px solid #777;
-}
 .kodi code {
 	padding: 10px 12px;
 }
