@@ -48,7 +48,7 @@
 #html {
     background-image: url("../foto/html.png");
     background-color: rgba(230,81,39, 0.65);
-    border: 2px solid rgb(230, 81, 39);
+    border: 1px solid rgb(230, 81, 39);
     text-shadow: -1px 0 rgb(230, 81, 39), 0 1px rgb(230, 81, 39), 1px 0 rgb(230, 81, 39), 0 -1px rgb(230, 81, 39);
 }
 #html a {
@@ -57,7 +57,7 @@
 #css {
     background-image: url("../foto/css.png");
     background-color: rgba(12,115,184, 0.65);
-    border: 2px solid rgb(12, 115, 184);
+    border: 1px solid rgb(12, 115, 184);
     text-shadow: -1px 0 rgb(12,115,184), 0 1px rgb(12,115,184), 1px 0 rgb(12,115,184), 0 -1px rgb(12,115,184);
 }
 #css a {
@@ -66,7 +66,7 @@
 #js {
     background-image: url("../foto/js.png");
     background-color: rgba(99,168,20, 0.65);
-    border: 2px solid rgb(99, 168, 20);
+    border: 1px solid rgb(99, 168, 20);
     text-shadow: -1px 0 rgb(99,168,20), 0 1px rgb(99,168,20), 1px 0 rgb(99,168,20), 0 -1px rgb(99,168,20);
 }
 #js a {
