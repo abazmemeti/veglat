@@ -15,17 +15,17 @@
 html {
     scroll-behavior: smooth;
 }
- body::-webkit-scrollbar, code::-webkit-scrollbar {
+ *::-webkit-scrollbar {
     width: 17px;
   }
-  body, code {
+  * {
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
   }
-  body::-webkit-scrollbar-track, code::-webkit-scrollbar-track {
+  *::-webkit-scrollbar-track {
     background: var(--scrollbarBG);
   }
-  body::-webkit-scrollbar-thumb, code::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     background-color: var(--thumbBG) ;
     border-radius: 2px;
     border: 1px solid var(--scrollbarBG);

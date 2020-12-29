@@ -1,14 +1,14 @@
-.nata::-webkit-scrollbar, .nata code::-webkit-scrollbar {
+.nata::-webkit-scrollbar, .nata *::-webkit-scrollbar {
     width: 17px;
 }
-.nata, .nata code {
+.nata, .nata * {
     scrollbar-width: thin;
     scrollbar-color: #888 #333;
 }
-.nata::-webkit-scrollbar-track, .nata code::-webkit-scrollbar-track {
+.nata::-webkit-scrollbar-track, .nata *::-webkit-scrollbar-track {
     background: #333;
 }
-.nata::-webkit-scrollbar-thumb, .nata code::-webkit-scrollbar-thumb {
+.nata::-webkit-scrollbar-thumb, .nata *::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 2px;
     border: 1px solid #333;
