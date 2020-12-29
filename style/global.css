@@ -435,6 +435,9 @@ footer a {
         background-color: #fff;
         transition: all 0.4s;
     }
+    #burger .viza:nth-child(2){
+        width: 70%;
+    }
     .burger > .viza:first-child {
         -ms-transform: rotate(40deg) translate(5px, 5px);
         -webkit-transform: rotate(40deg) translate(5px, 5px);
