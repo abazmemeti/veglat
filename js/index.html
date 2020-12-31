@@ -78,13 +78,293 @@
     <main>
 
         <section id="javascript-njohuri-themelore">
-
             <h1>JavaScript &ndash; Njohuri themelore</h1>
-            <p>JavaScript &euml;sht&euml; gjuh&euml; m&euml; e p&euml;rhapur&euml; e skriptimit nga ana e klientit.</p>
+            <p><strong>JavaScript</strong> &euml;sht&euml; gjuh&euml; skriptimi nga ana e klientit m&euml; e popullarizuara dhe me aplikim shum&euml; t&euml; gjer&euml;.</p>
             <div class="figure jonata">
                 <img src="foto/js.png" alt="JavaScript">
             </div>
+            <p>Skriptimi nga ana e klientit u referohet skripteve q&euml; ekzekutohen brenda shfletuesit tuaj t&euml; internetit. JavaScript &euml;sht&euml; krijuar p&euml;r t&euml; shtuar nd&euml;rveprim dhe efekte dinamike n&euml; ueb-faqe duke manipuluar p&euml;rmbajtjen q&euml; vije nga nj&euml; ueb-server.</p>
+            <p>JavaScript u zhvillua fillimisht si LiveScript nga Netscape n&euml; mes t&euml; viteve 1990-ta. M&euml; von&euml; u riem&euml;rua n&euml; JavaScript n&euml; vitin 1995 dhe u b&euml; nj&euml; standard ECMA n&euml; vitin 1997. Tani JavaScript &euml;sht&euml; gjuha standarde e skriptimit nga ana e klientit p&euml;r aplikacione t&euml; bazuara n&euml; ueb, dhe p&euml;rkrahet nga pothuajse t&euml; gjith&euml; ueb- shfletuesit &nbsp;t&euml; disponuesh&euml;m sot, t&euml; tilla si Google Chrome, Mozilla Firefox, Apple Safari, etj.</p>
+            <p>JavaScript &euml;sht&euml; nj&euml; gjuh&euml; e orientuar n&euml; objekte, dhe gjithashtu ka disa ngjashm&euml;ri n&euml; sintaks&euml; me gjuh&euml;n programuese Java. Megjithat&euml;, JavaScript nuk ka lidhshm&euml;ri me Java n&euml; asnj&euml; m&euml;nyr&euml;.</p>
+            <p>JavaScript mir&euml;mbahet zyrtarisht nga ECMA (<em>European Computer Manufacturers Association &ndash; Shoqata Evropiane e Prodhuesve t&euml; Kompjuter&euml;ve</em>) si ECMAScript. ECMAScript 6 (ose ES6) &euml;sht&euml; versioni i fundit i standardit ECMAScript.</p>
+            <h2>&Ccedil;far&euml; mund t&euml; b&euml;ni me JavaScript?</h2>
+            <p>Shum&euml; gj&euml;ra mund t&euml; b&euml;ni me JavaScript.</p>
+            <ul>
+            <li>Mund t&euml; modifikoni p&euml;rmbajtjen e nj&euml; ueb-faqeje duke shtuar ose hequr elemente.</li>
+            <li>Mund t&euml; ndryshoni stilin dhe pozicionin e elementeve n&euml; nj&euml; ueb-faqe.</li>
+            <li>Mund t&euml; monitoroni ngjarje (<em>events</em>) si klikimi i miut, hover efekti, etj. dhe t&euml; reagosh ndaj tij.</li>
+            <li>Mund t&euml; kryeni dhe kontrolloni tranzicionet dhe animacionet.</li>
+            <li>Mund t&euml; krijoni dritare <em>pop-up</em> p&euml;r t&euml; shfaqur informacione ose mesazhe paralajm&euml;ruese tek p&euml;rdoruesi.</li>
+            <li>Mund t&euml; kryeni operacione t&euml; bazuar nga futja e t&euml; dh&euml;nave nga p&euml;rdoruesit dhe t&rsquo;i shfaqni rezultatet.</li>
+            <li>Mund t&euml; validoni sh&euml;nimet e p&euml;rdorueseve p&euml;rpara se t&rsquo;i paraqisni ato n&euml; server.</li>
+            </ul>
+            <p>Lista nuk p&euml;rfundon k&euml;tu, ka shum&euml; gj&euml;ra t&euml; tjera interesante q&euml; mund t&euml; b&euml;ni me JavaScript. Ju do t&euml; m&euml;soni p&euml;r t&euml; gjitha n&euml; detaje n&euml; kapitujt e ardhsh&euml;m.</p>
         </section>
+
+        <section id="ueb-sherbimet">
+            <h1>Ueb sh&euml;rbimet</h1>
+            <h2>Ueb serveri</h2>
+            <p><strong>Ueb serveri&nbsp;</strong>&euml;sht&euml; nj&euml; kompjuter ku ruhet p&euml;rmbajtja e uebit.&nbsp;N&euml; thelb ueb serveri p&euml;rdoret p&euml;r t&euml; ruajtur (<em>hostuar</em>) ueb-sajtet, gjithashtu ekzistojn&euml; ueb server&euml; t&euml; tjer&euml; p&euml;r t&euml; hostuar loj&euml;ra, hap&euml;sira ruajt&euml;se, FTP, email, etj.&nbsp;</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Ueb sajti &euml;sht&euml; koleksion i ueb faqeve nd&euml;rsa&nbsp;ueb serveri &euml;sht&euml;&nbsp;nj&euml; softuer&nbsp;q&euml; i p&euml;rgjigjet k&euml;rkes&euml;s p&euml;r burime t&euml; uebit.</p>
+            </div>
+            <h3>Puna e ueb serverit</h3>
+            <p>Ueb serveri i p&euml;rgjigjet k&euml;rkes&euml;s s&euml; klientit n&euml; nj&euml;r&euml;n nga dy m&euml;nyrat e m&euml;poshtme:</p>
+            <ul>
+                <li>D&euml;rgimi i fajllit tek klienti t&euml; shoq&euml;ruar nga URL-ja e k&euml;rkuar.</li>
+                <li>Gjenerimi i p&euml;rgjigjes duke thirrur nj&euml; skript&euml; dhe duke komunikuar me baz&euml;n e t&euml; dh&euml;nave.</li>
+            </ul>
+            <div class="img-kodi elementet-html" style="text-align: center;">
+                <img src="foto/ueb-serveri.jpg" alt="Ueb Serveri">
+            </div>
+            <p><strong>Pikat kryesore</strong></p>
+            <ul>
+                <li>Kur klienti d&euml;rgon k&euml;rkes&euml; p&euml;r nj&euml; ueb faqe, ueb serveri k&euml;rkon p&euml;r faqen e k&euml;rkuar, n&euml;se gjendet faqja e k&euml;rkuar, at&euml;her&euml; ai do t'ia d&euml;rgoj&euml; at&euml; klientit me nj&euml; p&euml;rgjigje HTT</li>
+                <li>N&euml;se ueb faqja e k&euml;rkuar nuk gjendet, ueb serveri do t&euml; d&euml;rgoj&euml; nj&euml; <strong>HTTP response: Error 404 Not found.</strong></li>
+                <li>N&euml;se klienti ka k&euml;rkuar p&euml;r disa burime tjera, ueb serveri do t&euml; kontaktoj&euml; me ueb serverin e aplikacionit dhe baz&euml;n e t&euml; dh&euml;nave p&euml;r t&euml; krijuar p&euml;rgjigjen HTTP.</li>
+            </ul>
+            <p>Ueb server&euml;t kryesor&euml; q&euml; jan&euml; sot n&euml; dispozicion:</p>
+            <ul>
+                <li>Apache HTTP Server</li>
+                <li>Internet Information Services (IIS)</li>
+                <li>Sun Java System Web Server, etj.</li>
+            </ul>
+            <h2>Ueb shfletuesi</h2>
+            <p>Ueb Shfletuesi (<em>Web Browser</em>) &euml;sht&euml; nj&euml; softuer aplikativ q&euml; na lejon t&euml; shohim dhe t&euml; eksplorojm&euml; informacione n&euml; ueb. Shfryt&euml;zuesi mund t&euml; k&euml;rkoj&euml; &ccedil;do ueb faqe duke futur vet&euml;m nj&euml; URL n&euml; shiritin e adresave.</p>
+            <p>Ueb Shfletuesi mund t&euml; paraqes tekst, audio, video, animacion, etj. &Euml;sht&euml; p&euml;rgjegj&euml;si e ueb shfletuesit t&euml; interpretoj&euml; tekstin dhe komandat q&euml; p&euml;rmbahen n&euml; ueb faqe.</p>
+            <p>M&euml; par&euml; ueb shfletuesit ishin t&euml; bazuar n&euml; tekst nd&euml;rsa tani n&euml; dit&euml;t e sotme ueb shfletuesit bazohen gjithashtu n&euml; grafik&euml; ose n&euml; z&euml;. M&euml; posht&euml; jan&euml; ueb shfletuesit m&euml; t&euml; zakonsh&euml;m t&euml; disponuesh&euml;m sot:</p>
+            <table>
+                <tr>
+                <td>
+                <p><strong>Shfletuesi</strong></p>
+                </td>
+                <td>
+                <p><strong>Prodhuesi</strong></p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>Microsoft Edge</p>
+                </td>
+                <td>
+                <p>Microsoft</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>Google Chrome</p>
+                </td>
+                <td>
+                <p>Google</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>Mozilla Firefox</p>
+                </td>
+                <td>
+                <p>Mozilla</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>Opera</p>
+                </td>
+                <td>
+                <p>Opera Software</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>Safari</p>
+                </td>
+                <td>
+                <p>Apple</p>
+                </td>
+                </tr>
+            </table>
+            <h3>Arkitektura</h3>
+            <p>Ka shum&euml; ueb shfletues t&euml; disponuesh&euml;m n&euml; treg. T&euml; gjith&euml; ata interpretojn&euml; dhe shfaqin informacione n&euml; ekran, megjithat&euml; aft&euml;sit&euml; dhe struktura e tyre ndryshojn&euml; n&euml; var&euml;si t&euml; implementimit. Por komponenta m&euml; themelore q&euml; t&euml; gjith&euml; ueb shfletuesit duhet t&euml; shfaqin jan&euml; radhitur m&euml; posht&euml;:</p>
+            <ul>
+                <li>Kontrolleri/ Dispe&ccedil;eri</li>
+                <li>Interpretuesi</li>
+                <li>Programet e Klientit</li>
+            </ul>
+            <p><strong>Kontrolleri</strong> punon si nj&euml;si kontrolli n&euml; CPU. Ai merr inputet (hyrjet) nga tastiera ose miu, i interpreton ato dhe b&euml;n q&euml; sh&euml;rbime t&euml; tjera t&euml; funksionojn&euml; n&euml; baz&euml; t&euml; inputit q&euml; merr.</p>
+            <p><strong>Interpretuesi</strong> pranon informacionin nga kontrolleri dhe ekzekuton udh&euml;zimet rresht p&euml;r rresht. Disa interpretues jan&euml; t&euml; detyruesh&euml;m nd&euml;rsa disa jan&euml; opsional. P&euml;r shembull, interpretuesi i programit HTML &euml;sht&euml; i detyruesh&euml;m dhe interpretuesi java &euml;sht&euml; opsional.</p>
+            <p><strong>Programi i Klientit</strong> p&euml;rshkruan protokollin specifik q&euml; do t&euml; p&euml;rdoret p&euml;r tu qas&euml; n&euml; nj&euml; sh&euml;rbim t&euml; ve&ccedil;ant&euml;. N&euml; vijim jan&euml; programet e klientit q&euml; p&euml;rdoren zakonisht:</p>
+            <ul>
+                <li>HTTP</li>
+                <li>SMTP</li>
+                <li>FTP,etj.</li>
+            </ul>
+            <div class="img-kodi elementet-html" style="text-align: center;">
+                <img src="foto/klienti.jpg" alt="Klienti">
+            </div>
+            <h2>Ueb faqja</h2>
+            <p><strong>Ueb faqja</strong> &euml;sht&euml; nj&euml; dokument i disponuesh&euml;m n&euml; rrjetin bot&euml;ror (<em>world wide web</em> &ndash; <em>www</em>). Ueb faqet ruhen n&euml; ueb server dhe mund t&euml; shikohen duke p&euml;rdorur nj&euml; ueb shfletues.</p>
+            <p>Nj&euml; ueb faqe mund t&euml; p&euml;rmbaj&euml; shum&euml; informacione duke p&euml;rfshir&euml; tekst, grafik&euml;, audio, video dhe hiperlidhje. K&euml;to hiperlidhje jan&euml; lidhje me ueb faqet tjera.</p>
+            <p>Koleksioni i ueb faqeve t&euml; lidhura n&euml; nj&euml; ueb server njihet si <strong>uebsajt</strong>. Ekziston nj&euml; Lokator Unik i Burimeve Uniform&euml; (<em>Uniform Resourse Locator &ndash; URL</em>) q&euml; shoq&euml;rohet me secil&euml;n ueb faqe.&nbsp;&nbsp;&nbsp;</p>
+            <h3>Ueb faqet statike</h3>
+            <p><strong>Ueb Faqet Statike</strong> njihen gjithashtu si faqe t&euml; sheshta ose stacionare. Ato lexohen n&euml; shfletuesin e klientit ashtu si&ccedil; jan&euml; t&euml; ruajtura sakt&euml;sisht n&euml; ueb serverin. Ueb faqe t&euml; tilla p&euml;rmbajn&euml; vet&euml;m informacione statike. Shfryt&euml;zuesi mundet vet&euml;m t&euml; lexoj&euml; informacionin por nuk mund t&euml; b&euml;j&euml; ndonj&euml; modifikim ose t&euml; nd&euml;rveproj&euml; me informacionin.</p>
+            <p>Ueb faqet statike krijohen duke p&euml;rdorur vet&euml;m HTML. Ueb Faqet statike p&euml;rdoren vet&euml;m at&euml;her&euml; kur informacioni nuk k&euml;rkohet m&euml; p&euml;r t'u ndryshuar.</p>
+            <div class="img-kodi elementet-html" style="text-align: center;">
+                <img src="foto/ueb-faqja-statike.jpg" alt="Ueb faqja statike">
+            </div>
+            <h2>Ueb faqe dinamike</h2>
+            <p><strong>Ueb faqja dinamike</strong> tregon informacione t&euml; ndryshme n&euml; momente t&euml; ndryshme kohore. &Euml;sht&euml; e mundur t&euml; ndryshoni nj&euml; pjes&euml; t&euml; nj&euml; ueb faqe pa e ngarkuar p&euml;rs&euml;ri t&euml;r&euml; ueb faqen. Kjo b&euml;het e mundur duke p&euml;rdorur teknologjin&euml; <strong>Ajax</strong>.</p>
+            <h3>Ueb faqe dinamike nga ana e serverit</h3>
+            <p>Krijohet duke p&euml;rdorur skriptingun nga ana e serverit. Ekzistojn&euml; parametra t&euml; skriptimit nga ana e serverit q&euml; p&euml;rcaktojn&euml; se si t&euml; nd&euml;rtoni nj&euml; ueb faqe t&euml; re, e cila gjithashtu p&euml;rfshin vendosjen e m&euml; shum&euml; procesimeve nga ana e klientit.</p>
+            <h3>Ueb faqe dinamike nga ana e klientit</h3>
+            <p>K&euml;to faqe krijohen duke p&euml;rdorur skriptimin nga ana e klientit si&ccedil; &euml;sht&euml; <strong>JavaScript</strong>, dhe pastaj p&euml;rcillen n&euml; Modelin e Objektit t&euml; Dokumentit (<strong><em>Document Object Model &ndash; DOM</em></strong>).</p>
+            <div class="img-kodi elementet-html" style="text-align: center;">
+                <img src="foto/ueb-faqja-dinamike.jpg" alt="Ueb faqja dinamike">
+            </div>
+
+        </section>
+
+        <section>
+            <h1>Gjuh&euml;t Skriptuese</h1>
+            <p>Nj&euml; gjuh&euml; skriptimi &euml;sht&euml; gjuh&euml; programimi q&euml; interpretohet, q&euml; do t&euml; thot&euml; se p&euml;rkthehet n&euml; kodin e makin&euml;s kur ekzekutohet kodi.&nbsp;Gjuh&euml;t e skriptimit p&euml;rdoren shpesh p&euml;r skripte t&euml; shkurtra n&euml; vend t&euml; programeve t&euml; plota kompjuterike.&nbsp;PHP, Perl dhe Python jan&euml; shembuj t&euml; zakonsh&euml;m t&euml; gjuh&euml;ve skriptuese.</p>
+            <p>Gjuh&euml; skriptimi (e njohur gjithashtu si skripting, ose skript&euml;) p&euml;rcaktohet qart&euml; si nj&euml;&nbsp;seri urdhrash q&euml; jan&euml; n&euml; gjendje t&euml; ekzekutohen pa pasur nevoj&euml; p&euml;r kompajlim&nbsp;.&nbsp;Derisa t&euml; gjitha gjuh&euml;t e skriptimit jan&euml; gjuh&euml; programimi, jo t&euml; gjitha gjuh&euml;t e programimit jan&euml; gjuh&euml; skriptimi.&nbsp;&nbsp;</p>
+            <p>Gjuh&euml;t e skriptimit p&euml;rdorin nj&euml; program t&euml; njohur si interpretues &ndash; p&euml;rkthyes&nbsp;p&euml;r t&euml; p&euml;rkthyer urdhrat dhe q&euml; interpretohen drejtp&euml;rdrejt nga kodi burimor, duke mos k&euml;rkuar nj&euml;&nbsp;hap&nbsp;kompjalimi&nbsp;.&nbsp;Nga ana tjet&euml;r, gjuh&euml;t e tjera t&euml; programimit, mund t&euml; k&euml;rkojn&euml; q&euml; nj&euml;&nbsp;<em>kompajler&nbsp;</em>t&euml; p&euml;rkthej&euml; urdhrat n&euml; kodin e makin&euml;s para se t&euml; ekzekutoj&euml; ato urdhra.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p>Nj&euml; gjuh&euml; e interpretuar e programimit &euml;sht&euml; nj&euml; gjuh&euml; e krijuar p&euml;r t&euml; ekzekutuar kodin burimor direkt dhe pa nevoj&euml;n e kompajlimit t&euml; nj&euml; programi n&euml; instruksionet e gjuh&euml;n s&euml; makin&euml;s.&nbsp;Nj&euml; interpretues do t&euml; ekzekutoj&euml; programin duke p&euml;rkthyer deklaratat (<em>statements</em>) n&euml; nj&euml; seri prej nj&euml; ose m&euml; shum&euml; n&euml;nrutinave p&euml;rpara se t'i p&euml;rkthej&euml; ato p&euml;rfundimisht n&euml; nj&euml; gjuh&euml; tjet&euml;r, si&ccedil; &euml;sht&euml; kodi i makin&euml;s.</p>
+            <p>N&euml; gjuh&euml;t programuese t&euml; kompajluara, nj&euml; program kompajlues p&euml;rkthen kodin e shkruar prej nj&euml; gjuhe programimi t&euml; nivelit t&euml; lart&euml; n&euml; nj&euml; gjuh&euml; t&euml; nivelit m&euml; t&euml; ul&euml;t n&euml; m&euml;nyr&euml; q&euml; programi t&euml; ekzekutohet.&nbsp;Programet C ose Java zakonisht duhet t&euml; kompajlohen s&euml; pari n&euml; m&euml;nyr&euml; q&euml; t&euml; ekzekutohen.&nbsp;Dy kompajler t&euml; njohur jan&euml;&nbsp;<em>Eclipse</em>&nbsp;p&euml;r Java dhe&nbsp;<em>gcc</em>&nbsp;p&euml;r C dhe C ++.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <h2>Skriptimi nga ana e serverit krahas skriptimit nga ana e klientit</h2>
+            <p>Ekzistojn&euml; dy lloje t&euml; gjuh&euml;ve t&euml; skriptimit: nga ana e serverit dhe nga ana e klientit.&nbsp;I vetmi ndryshim i r&euml;nd&euml;sish&euml;m midis t&euml; dyve &euml;sht&euml; se i pari k&euml;rkon nj&euml; server p&euml;r ta proceduar.&nbsp;</p>
+            <p>Gjuh&euml;t e skriptimit nga ana e serverit ekzekutohen n&euml; nj&euml; ueb server.&nbsp;Kur nj&euml; klient d&euml;rgon nj&euml; k&euml;rkes&euml;, serveri p&euml;rgjigjet duke i d&euml;rguar p&euml;rmbajtjen p&euml;rmes HTTP.&nbsp;N&euml; t&euml; kund&euml;rt, gjuh&euml;t e skriptimit nga ana e klientit ekzekutohen n&euml; an&euml;n e klientit - n&euml; shfletuesin e tyre t&euml; internetit.</p>
+            <p>P&euml;rfitimi i skripteve nga ana e klientit &euml;sht&euml; se ato mund t&euml; reduktojn&euml; k&euml;rkesat n&euml; server, duke lejuar q&euml; ueb faqet t&euml; lexohen m&euml; shpejt.&nbsp;Nd&euml;rsa, nj&euml; p&euml;rfitim i r&euml;nd&euml;sish&euml;m i skripteve nga ana e serverit &euml;sht&euml; se ato nuk jan&euml; t&euml; dukshme nga publiku si&ccedil; jan&euml; skriptet nga ana e klientit.</p>
+            <p>Kur vendosni se n&euml; cil&euml;n m&euml;nyr&euml; t&rsquo;ju qaseni nj&euml; projekti, mbani n&euml; mend se skriptimi nga ana e klientit &euml;sht&euml; m&euml; i fokusuar n&euml; nd&euml;rfaqen e p&euml;rdoruesit (<em>user interface</em>) dhe funksionalitet.&nbsp;N&euml; t&euml; kund&euml;rt, skriptimi nga ana e serverit fokusohet n&euml; procedim m&euml; t&euml; shpejt&euml;, qasje n&euml; t&euml; dh&euml;na dhe zgjidhjen e gabimeve.</p>
+            <h3>Shembuj t&euml;&nbsp;gjuh&euml;ve t&euml;&nbsp;skriptimit nga&nbsp;ana e serverit</h3>
+            <p>M&euml; posht&euml; jan&euml; dh&euml;n&euml; shembuj t&euml; gjuh&euml;ve t&euml; skriptimit nga ana e serverit.&nbsp;</p>
+
+            <table>
+            <tr>
+            <td>
+            <p><strong>Gjuh&euml;</strong></p>
+            </td>
+            <td>
+            <p><strong>Komente</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>PHP</p>
+            </td>
+            <td>
+            <p>Gjuha m&euml; e njohur nga ana e serverit q&euml; p&euml;rdoret n&euml; ueb.</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>ASP.NET</p>
+            </td>
+            <td>
+            <p>Biblioteka (framework) e ueb aplikacioneve e zhvilluar nga Microsoft.</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>Node.js</p>
+            </td>
+            <td>
+            <p>Mund t&euml; ekzekutohet n&euml; nj&euml; mori platformash, p&euml;rfshir&euml; Windows, Linux, Unix, Mac, etj.</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>Java</p>
+            </td>
+            <td>
+            <p>P&euml;rdoret n&euml; gjith&ccedil;ka, nga Bluetooth stereoja e makin&euml;s suaj deri tek aplikacionet e NASA-s.</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>Ruby</p>
+            </td>
+            <td>
+            <p>Dinamik.&nbsp;P&euml;rqendrohet shum&euml; tek thjesht&euml;sia.</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>Perl</p>
+            </td>
+            <td>
+            <p>Nj&euml; grim&euml;&nbsp;kombinimi&nbsp;midis C, skriptave shell, AWK dhe sed.</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>Python</p>
+            </td>
+            <td>
+            <p>E shk&euml;lqyeshme p&euml;r fillestar&euml;t p&euml;r t&euml; m&euml;suar.&nbsp;P&euml;rdor kodin m&euml; t&euml; shkurt&euml;r.</p>
+            </td>
+            </tr>
+            </table>
+            <h3>Shembuj t&euml; gjuh&euml;ve t&euml; skriptimit nga ana e klientit</h3>
+            <p>M&euml; posht&euml; jan&euml; shembuj t&euml; gjuh&euml;ve skriptuese nga ana e klientit.</p>
+
+            <table>
+            <tr>
+            <td>
+            <p><strong>Gjuh&euml;</strong></p>
+            </td>
+            <td>
+            <p><strong>Komente</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>HTML</p>
+            </td>
+            <td>
+            <p>Themeli i zhvillimit t&euml; ueb-it.</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>CSS</p>
+            </td>
+            <td>
+            <p>P&euml;rmir&euml;son pamjen dhe grafikun n&euml; faqet e&nbsp; ueb shfletuesin tuaj.</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p><strong>JavaScript</strong></p>
+            </td>
+            <td>
+            <p>Megjith&euml;se tipik nga&nbsp;ana e&nbsp;klientit,&nbsp;her&euml; pas here mund t&euml; p&euml;rdoret edhe nga ana e serverit.</p>
+            </td>
+            </tr>
+            </table>
+        </section>
+
+        <section id="hyrje-ne-javascript">
+            <h1>Hyrje n&euml;&nbsp;JavaScript</h1>
+            <p>N&euml; k&euml;t&euml; material m&euml;simor do t&euml; m&euml;soni se si t&euml; krijoni nj&euml; ueb-faqe me JavaScript.</p>
+            <p>K&euml;tu, ju do t&euml; m&euml;soni se sa e leht&euml; &euml;sht&euml; t&euml; shtoni nd&euml;rveprimin (ineraktivitet) n&euml; nj&euml; ueb-faqe duke p&euml;rdorur JavaScript. Por, para k&euml;saj, duhet q&euml; t&euml; keni disa njohuri pune n&euml; HTML dhe CSS.</p>
+            <h2>Shtimi i JavaScript n&euml; faqet tuaja t&euml; uebit</h2>
+            <p>Zakonisht ekzistojn&euml; tri m&euml;nyra p&euml;r t&euml; shtuar JavaScript-in n&euml; nj&euml; ueb-faqe:</p>
+            <ul>
+            <li>Vendosja e kodit JavaScript brenda n&euml; HTML n&euml; mes etiketave &lt;script&gt; dhe &lt;/script&gt;.</li>
+            <li>Krijimi i nj&euml; fajlli t&euml; jasht&euml;m JavaScript me ekstensionin .<strong>js</strong> dhe m&euml; pas t&euml; krijohet nj&euml; lidhje p&euml;rmes atributit <strong>src</strong> nga etiketa &lt;script&gt;.</li>
+            <li>Vendosja e kodit JavaScript direkt brenda nj&euml; etikete HTML duke p&euml;rdorur atributet speciale t&euml; etiketave t&euml; tilla si <em>onclick</em>, <em>onmouseover</em>, <em>onkeypress</em>, <em>onload</em>, etj.</li>
+            </ul>
+            <h2>Vendosja e kodit JavaScript brenda n&euml; HTML</h2>
+            <p>Ju mund ta vendosni kodin JavaScript direkt n&euml; ueb-faqet tuaja duke e vendosur at&euml; n&euml; mes etiketave &lt;script&gt; dhe &lt;/script&gt;. Etiketa &lt;script&gt; i tregon shfletuesit se udh&euml;zimet q&euml; p&euml;rmbahen duhet t&euml; t&euml; interpretohen si kod i ekzekutuesh&euml;m dhe jo HTML.</p>
+                    
+
+
+
+        </section>         
+        
+        
+        
+        
 
     </main>
 
