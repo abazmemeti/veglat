@@ -66,6 +66,7 @@
             <li><a href="#gjenerimi-i-rezultateve">Gjenerimi i rezultateve</a></li>
             <li><a href="#tipet-e-te-dhenave">Tipet e të dhënave</a></li>
             <li><a href="#operatoret">Operatorët</a></li>
+            <li><a href="#eventet">Ngjarjet (eventet)</a></li>
         </ul>
     </aside>
 
@@ -1486,10 +1487,211 @@ alert(x >= y);  // Rezultati: false</code></pre>
                 </div>
 	        </div> 
 
+        </section>
+
+        <section id="eventet">
+            <h1>Ngjarjet (<em>Eventet</em>)</h1>
+            <p>Nj&euml; event &euml;sht&euml; di&ccedil;ka q&euml; ndodh kur p&euml;rdoruesi nd&euml;rvepron me ueb faqen, t&euml; tilla si: kur ai klikon n&euml; nj&euml; link ose buton, fut tekst n&euml; nj&euml; input boks ose n&euml; tekstarea, selekton n&euml; nj&euml; boks t&euml; zgjedhur, shtyp nj&euml; tast n&euml; tastier&euml;, l&euml;viz treguesin e mausit , paraqet nj&euml; form&euml;, etj. N&euml; disa raste, vet&euml; Shfletuesi mund t&euml; shkaktoj&euml; nj&euml; event, t&euml; tilla si eventi i ngarkimit dhe shkarkimit t&euml; faqes.</p>
+            <p>Kur ndodh nj&euml; event, mund t&euml; p&euml;rdorni nj&euml; mbajt&euml;s t&euml; eventeve JavaScript &ndash; <em>event handler</em> (ose nj&euml; d&euml;gjues eventesh &ndash; <em>event</em> <em>listener</em>) p&euml;r t'i zbuluar ato dhe p&euml;r t&euml; kryer detyra specifike ose grupe detyrash. Sipas konvencionit, emrat p&euml;r mbajt&euml;sit e eventeve gjithmon&euml; fillojn&euml; me fjal&euml;n "<code>on</code>", k&euml;shtu q&euml; nj&euml; mbajt&euml;s i eventeve p&euml;r klikim quhet <code>onclick</code>, n&euml; m&euml;nyr&euml; t&euml; ngjashme nj&euml; mbajt&euml;s i eventeve p&euml;r ngarkimin e ueb faqes quhet <code>onload</code>, dhe k&euml;shtu me radh&euml;.</p>
+            <p>Ka disa m&euml;nyra p&euml;r t&euml; caktuar nj&euml; mbajt&euml;s t&euml; eventeve. M&euml;nyra m&euml; e thjesht&euml; &euml;sht&euml; t'i shtoni ato direkt n&euml; etiket&euml;n fillestare t&euml; elementeve HTML duke p&euml;rdorur atributet speciale t&euml; mbajt&euml;sit t&euml; eventit. P&euml;r shembull, p&euml;r t&euml; caktuar nj&euml; mbajt&euml;s klikimi p&euml;r nj&euml; buton, mund t&euml; p&euml;rdorim atributin <code>onclick</code>, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;button type="button" onclick="alert('P&euml;rsh&euml;ndetje!')"&gt;Kliko&lt;/button&gt;</code></pre>
+                </div>
+            </div>
+            <p>Sidoqoft&euml;, p&euml;r t&euml; mbajtur JavaScript-in t&euml; ndar&euml; nga HTML-ja, mund ta cil&euml;soni mbajt&euml;sin e eventit n&euml; nj&euml; fajll JavaScript t&euml; jasht&euml;m ose ta cil&euml;soni brenda etiketave <code>&lt;script&gt;</code> dhe <code>&lt;script&gt;</code>, k&euml;sisoj:</p>       
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;button type="button" id="btn"&gt;Kliko&lt;/button&gt;
+&lt;script&gt;
+    function persh() {
+        alert('P&euml;rsh&euml;ndetje!');
+    }
+    document.getElementById("btn").onclick = persh;
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Meqen&euml;se atributet HTML nuk jan&euml; t&euml; ndjeshme n&euml; shkronja t&euml; m&euml;dha, k&euml;shtu q&euml; <code>onclick</code> mund t&euml; shkruhet edhe si <code>onClick, OnClick</code> ose <code>ONCLICK</code>. Por <strong>vlera</strong> e tij &euml;sht&euml; e ndjeshme n&euml; shkronja t&euml; m&euml;dha.</p>
+            </div>
+            <p>N&euml; p&euml;rgjith&euml;si, eventet mund t&euml; kategorizohen n&euml; kat&euml;r grupe kryesore &ndash; <strong>eventet e mausit</strong>, <strong>eventet e</strong> <strong>tastier&euml;s</strong>, <strong>eventet e form&euml;s</strong> dhe <strong>eventet e dokumentit / dritares</strong>. Ekzistojn&euml; shum&euml; evente tjera, p&euml;r t&euml; cil&euml;t do t&euml; shohim kapitujt e m&euml;vonsh&euml;m.</p>
+            <h2>Eventet e mausit</h2>
+            <p>Eventi i mausit shkaktohet kur p&euml;rdoruesi klikon n&euml; nj&euml; element, l&euml;viz treguesin e mausit mbi nj&euml; element, etj. K&euml;tu jan&euml; disa nga eventet m&euml; t&euml; r&euml;nd&euml;sishme t&euml; mausit dhe mbajt&euml;si i eventeve t&euml; tyre.</p>
+            <h3>Eventi i klikimit (<em>onclick</em>)</h3>
+            <p>Eventi i klikimit ndodh kur p&euml;rdoruesi klikon n&euml; nj&euml; element n&euml; ueb faqe. Shpeshher&euml;, k&euml;to jan&euml; elemente t&euml; form&euml;s dhe linqe. Mund t&euml; trajtoni nj&euml; event klikimi me nj&euml; mbajt&euml;s t&euml; eventeve <code>onclick</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;button type="button" onclick="alert('Klikuat n&euml; buton!');"&gt;Kliko&lt;/button&gt;
+&lt;a href="#" onclick="alert('Klikuat linkun!');"&gt;Linku&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Eventi i menys&euml; s&euml; kontekstit (<em>oncontextmenu</em>)</h3>
+            <p>Eventi i menys&euml; s&euml; kontekstit ndodh kur nj&euml; p&euml;rdorues klikon butonin e djatht&euml; t&euml; mausit mbi nj&euml; element p&euml;r t&euml; hapur nj&euml; menu konteksti. Ju mund t&euml; trajtoni nj&euml; event t&euml; menys&euml; s&euml; kontekstit me nj&euml; mbajt&euml;s t&euml; eventeve <code>oncontextmenu</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;button type="button" oncontextmenu="alert('Klikuat me t&euml; djatht&euml;n e mausit n&euml; buton!');"&gt;Kliko me t&euml; djatht&euml;&lt;/button&gt;
+&lt;a href="#" oncontextmenu="alert('Klikuat me t&euml; djatht&euml;n e mausit n&euml; link!');"&gt;Kliko me t&euml; djatht&euml;&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Eventi Maus-Over (<em>onmouseover</em>)</h3>
+            <p>Eventi i maus-over ndodh kur nj&euml; p&euml;rdorues l&euml;viz treguesin e mausit mbi nj&euml; element.</p>
+            <p>Ju mund ta trajtoni eventin maus-over me mbajt&euml;sin e eventit <code>onmouseover</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;button type="button" onmouseover="alert('Kaluat me maus mbi k&euml;t&euml; buton!');"&gt;Kalo me maus&lt;/button&gt;
+&lt;a href="#" onmouseover="alert('Kaluat me maus mbi k&euml;t&euml; link!');"&gt;Kalo me maus&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Eventi Maus-Out (<em>onmouseout</em>)</h3>
+            <p>Eventi maus-out ndodh kur p&euml;rdoruesi l&euml;viz treguesin e mausit jasht&euml; nj&euml; elementi.</p>
+            <p>Mund ta trajtoni k&euml;t&euml; event me mbajt&euml;sin e eventit <code>onmouseout</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi kur ndodh eventi i maus-out.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;button type="button" onmouseout="alert('L&euml;viz&euml;t me muas jasht&euml; k&euml;tij butoni!');"&gt;Vendosni mausin brenda meje dhe l&euml;vizni jasht&euml;&lt;/button&gt;
+&lt;a href="#" onmouseout="alert(''L&euml;viz&euml;t me muas jasht&euml; k&euml;tij linku!');"&gt;Vendosni mausin brenda meje dhe l&euml;vizni jasht&euml;&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Eventet e tastier&euml;s</h2>
+            <p>Nj&euml; event n&euml; tastier&euml; aktivizohet kur p&euml;rdoruesi shtyp ose l&euml;shon nj&euml; buton n&euml; tastier&euml;. K&euml;tu jan&euml; disa evente m&euml; t&euml; r&euml;nd&euml;sishme t&euml; tastier&euml;s si dhe mbajt&euml;sit i tyre.</p>
+            <h3>Eventi Keydown (<em>onkeydown</em>)</h3>
+            <p>Eventi <em>keydown</em> ndodh kur p&euml;rdoruesi shtyp nj&euml; buton n&euml; tastier&euml;.</p>
+            <p>Mund ta trajtoni eventin e k&euml;till&euml; me mbajt&euml;sin e eventit <code>onkeydown</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi kur ndodh eventi <em>keydown</em>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;input type="text" onkeydown="alert('Shtyp&euml;t nj&euml; tast brenda tekst-inputit!')"&gt;
+&lt;textarea onkeydown="alert('Shtyp&euml;t nj&euml; tast brenda fush&euml;s tekstuale!')"&gt;&lt;/textarea&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Eventi Keyup (<em>onkeyup</em>)</h3>
+            <p>Eventi <em>keyup</em> ndodh kur p&euml;rdoruesi l&euml;shon nj&euml; tast nga tastiera.</p>
+            <p>Mund ta trajtoni k&euml;t&euml; event me mbajt&euml;sin e eventit <code>onkeyup</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi kur ndodh eventi <em>keyup</em>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;input type="text" onkeyup="alert('L&euml;shuat tastin brenda tekst-inputit!')"&gt;
+&lt;textarea onkeyup="alert('L&euml;shuat nj&euml; tast brenda fush&euml;s tekstuale!')"&gt;&lt;/textarea&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Eventi Keypress (<em>onkeypress</em>)</h3>
+            <p>Eventi i shtypjes s&euml; tasteve - <em>keypress</em> ndodh kur nj&euml; p&euml;rdorues shtyp nj&euml; tast n&euml; tastier&euml; e q&euml; ka nj&euml; vler&euml; t&euml; karakterit q&euml; shtypet. P&euml;r shembull, tastet si Ctrl, Shift, Alt, Esc, shigjetat, etj. nuk do t&euml; gjenerojn&euml; nj&euml; event kur shtypen, por do t&euml; gjenerojn&euml; nj&euml; event <em>keydown</em> dhe <em>keyup</em>.</p>
+            <p>Mund ta trajtoni eventin <em>keypress</em> me mbajt&euml;sin e eventit <code>onkeypress</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi kur ndodh eventi <em>keypress</em>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;input type="text" onkeypress="alert('Shtyp&euml;t nj&euml; tast brenda tekst-inputit!')"&gt;
+&lt;textarea onkeypress="alert('Shtyp&euml;t nj&euml; tast brenda fush&euml;s tekstuale!')"&gt;&lt;/textarea&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Eventet e form&euml;s</h2>
+            <p>Nj&euml; event i form&euml;s aktivizohet kur nj&euml; kontroll i form&euml;s merr ose humb fokusin apo kur p&euml;rdoruesi modifikon nj&euml; vler&euml; t&euml; kontrollit t&euml; form&euml;s, t&euml; till&euml; si sh&euml;nimi i tekstit n&euml; nj&euml; input-tekstual, zgjedhja e ndonj&euml; opsioni n&euml; nj&euml; kutin&euml; selektuese, etj. K&euml;tu jan&euml; disa nga eventet m&euml; t&euml; r&euml;nd&euml;sishme t&euml; form&euml;s dhe mbajt&euml;si i eventeve t&euml; tyre.</p>
+            <h3>Eventi i fokusit (<em>onfocus</em>)</h3>
+            <p>Eventi i fokusit ndodh kur p&euml;rdoruesi i jep fokus nj&euml; elementi n&euml; nj&euml; ueb faqe.</p>
+            <p>Mund ta trajtoni eventin e fokusit me mbajt&euml;sin e eventit <code>onfocus</code>. Shembulli i m&euml;posht&euml;m do t&euml; nxjerr&euml; n&euml; pah sfondin e futjes s&euml; tekstit me ngjyr&euml; t&euml; verdh&euml; kur fokusohet.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;script&gt;
+    function theksoInputin(elm) {
+        elm.style.background = "yellow";
+    }
+&lt;/script&gt;
+&lt;input type="text" onfocus="theksoInputin(this)"&gt;
+&lt;button type="button"&gt;Butoni&lt;/button&gt;</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vlera e fjal&euml;s ky&ccedil;e <code>this</code> brenda nj&euml; mbajt&euml;si t&euml; eventeve i referohet elementit q&euml; ka mbajt&euml;sin n&euml; at&euml; (d.m.th. aty ku eventi po ngjan aktualisht).</p>
+            </div>
+            <h3>Eventi Blur (<em>onblur</em>)</h3>
+            <p>Eventi <em>blur</em> ndodh kur p&euml;rdoruesi heq fokusin nga nj&euml; element i form&euml;s apo nj&euml; dritare.</p>
+            <p>Mund ta trajtoni eventin e k&euml;till&euml;t me mbajt&euml;sin e eventit <code>onblur</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi kur elementi tekst-input humb fokusin.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;input type="text" onblur="alert('Tekst-inputi humb fokusin!')"&gt;
+&lt;button type="button"&gt;Paraqit&lt;/button&gt;</code></pre>
+                </div>
+            </div>
+            <p>P&euml;r ta larguar fokusin nga nj&euml; element i form&euml;s, s&euml; pari klikoni brenda tij, pastaj shtypni tastin tab n&euml; tastier&euml;, pra, jepni fokusin n&euml; di&ccedil;ka tjet&euml;r, ose klikoni me maus jasht&euml; atij elementi.</p>
+            <h3>Eventi i ndryshimit (<em>onchange</em>)</h3>
+            <p>Eventi i ndryshimit ndodh kur nj&euml; p&euml;rdorues ndryshon vler&euml;n e nj&euml; elementi t&euml; form&euml;s.</p>
+            <p>Mund ta trajtoni eventin e ndryshimit me mbajt&euml;sin e eventit <code>onchange</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi kur ndryshoni opsionin n&euml; kutin&euml; selektuese.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;select onchange="alert('Ndryshuat zgjedhjen!');"&gt;
+    &lt;option&gt;Zgjidh&lt;/option&gt;
+    &lt;option&gt;Mashkull&lt;/option&gt;
+    &lt;option&gt;Fem&euml;r&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Eventi i dor&euml;zimit (<em>onsubmit</em>)</h3>
+            <p>Eventi i dor&euml;zimit ndodh vet&euml;m kur p&euml;rdoruesi paraqet nj&euml; form&euml; n&euml; nj&euml; ueb faqe.</p>
+            <p>Mund ta trajtoni eventin e dor&euml;zimit me mbajt&euml;sin e eventit <code>onsubmit</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi kur dor&euml;zoni formularin n&euml; server.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;form action="action.php" method="post" onsubmit="alert('T&euml; dh&euml;nat nga formulari do t&euml; dor&euml;zohen n&euml; server!');"&gt;
+    &lt;label&gt;Emri:&lt;/label&gt;
+    &lt;input type="text" name="emri" required&gt;
+    &lt;input type="submit" value="Paraqit"&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+            <h2>Eventet e Document/Windows</h2>
+            <p>Eventet iniciohen gjithashtu n&euml; situata kur faqja &euml;sht&euml; ngarkuar ose kur p&euml;rdoruesi ndryshon p&euml;rmasat e dritares s&euml; shfletuesit, etj. K&euml;tu jan&euml; disa nga eventet m&euml; t&euml; r&euml;nd&euml;sishme t&euml; document/ window dhe mbajt&euml;si i eventeve t&euml; tyre.</p>
+            <h3>Eventi i ngarkes&euml;s (<em>onload</em>)</h3>
+            <p>Eventi i ngarkes&euml;s ndodh kur nj&euml; ueb faqe ka p&euml;rfunduar ngarkimin e p&euml;rmbajtjes n&euml; shfletues.</p>
+            <p>Mund ta trajtoni eventin e ngarkes&euml;s me mbajt&euml;sin e eventit <code>onload</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi sapo faqja t&euml; mbaroj&euml; s&euml; ngarkuari.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;body onload="window.alert('Faqja u ngarkua me sukses!');"&gt;
+    &lt;h1&gt;Ky &euml;sht&euml; nj&euml; titull&lt;/h1&gt;
+    &lt;p&gt;Ky &euml;sht&euml; nj&euml; tekst n&euml; paragraf.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Eventi i shkarkes&euml;s (<em>onunload</em>)</h3>
+            <p>Eventi i shkarkes&euml;s ndodh kur nj&euml; p&euml;rdorues largohet nga ueb faqja aktuale.</p>
+            <p>Mund ta trajtoni eventin e shkarkes&euml;s me mbajt&euml;sin e eventit <code>onunload</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi kur tentoni t&euml; largoheni nga faqja.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;body onunload="alert('A jeni i sigurt se d&euml;shironi t&euml; dilni nga faqja?');"&gt;
+    &lt;h1&gt;Ky &euml;sht&euml; nj&euml; titull &lt;/h1&gt;
+    &lt;p&gt;Ky &euml;sht&euml; nj&euml; tekst n&euml; paragraf.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+                </div>
+            </div>
+            <h3>Eventi i ndryshimit t&euml; p&euml;rmasave (<em>onresize</em>)</h3>
+            <p>Eventi i ndryshimit t&euml; p&euml;rmas&euml;s ndodh kur nj&euml; p&euml;rdorues ndryshon p&euml;rmasat e dritares s&euml; shfletuesit. Eventi i ndryshimit t&euml; p&euml;rmasave ndodh gjithashtu n&euml; situata kur dritarja e shfletuesit minimizohet ose maksimizohet.</p>
+            <p>Mund ta trajtoni eventin e ndryshimit t&euml; p&euml;rmasave me mbajt&euml;sin e eventit <code>onresize</code>. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; nj&euml; mesazh alarmi kur ndryshoni p&euml;rmasat e dritares s&euml; shfletuesit n&euml; gjer&euml;si dhe lart&euml;si t&euml; re.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;p id="rezultati"&gt;&lt;/p&gt;
+&lt;script&gt;
+    function displayWindowSize() {
+        var w = window.outerWidth;
+        var h = window.outerHeight;
+        var tekst = "P&euml;rmasa e dritares: gjer&euml;sia = " + w + ", lart&euml;sia = " + h;
+        document.getElementById("rezultati").innerHTML = tekst;
+    }
+    window.onresize = displayWindowSize;
+&lt;/script&gt;</code></pre>
+                </div>
+	        </div> 
 
 
-
-        
         </section>
 
     </main>
