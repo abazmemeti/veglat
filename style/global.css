@@ -211,6 +211,9 @@ section table th, section table td {
 .kodi {
     padding: 15px 0 0 0;
 }
+code {
+    font-size: 15px;
+}
 .kodi code {
 	padding: 10px 12px;
 }
@@ -270,7 +273,7 @@ iframe {
 .hljs-attr {
     color: #690;
 }
-.hljs-string {
+.hljs-string, .hljs-keyword {
     color: #07a;
 }
 .hljs-meta {
