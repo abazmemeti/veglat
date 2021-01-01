@@ -14,6 +14,7 @@ section h1, aside h3, article h3, .nata section h1, .nata aside h3, .nata articl
 #operatoret .tabela {
     width: 100%;
     overflow-x: auto;
+    margin-bottom: 10px;
 }
 
 #operatoret table {
