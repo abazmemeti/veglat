@@ -18,4 +18,5 @@ section h1, aside h3, article h3, .nata section h1, .nata aside h3, .nata articl
 
 #operatoret table {
     min-width: 592px;
+    margin-bottom: 5px;
 }
