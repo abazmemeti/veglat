@@ -870,7 +870,612 @@ typeof function(){};  // Tipi: "function"</code></pre>
 
         </section>
         
+        <section id="operatoret">
+            <h1>Operator&euml;t n&euml; JavaScript</h1>
+            <p>Operator&euml;t jan&euml; simbole ose fjal&euml; ky&ccedil;e q&euml; i thon&euml; JavaScript-it t&euml; kryej&euml; disa veprime. P&euml;r shembull, simboli i mbledhjes (+) &euml;sht&euml; nj&euml; operator q&euml; i thot&euml; JavaScript-it t&euml; shtoj&euml; dy variabla ose vlera, nd&euml;rsa simbolet e barazimeve (==), m&euml; e m&euml;dha se (&gt;) ose m&euml; vog&euml;l se (&lt;) jan&euml; operator&euml; q&euml; i thon&euml; JavaScript-it t&euml; krahasoj&euml; dy variabla ose vlera, etj.</p>
+            <h2>Operator&euml;t aritmetik&euml;</h2>
+            <p>Operator&euml;t aritmetik&euml; p&euml;rdoren p&euml;r t&euml; kryer veprime t&euml; zakonshme aritmetike, t&euml; tilla si mbledhja, zbritja, shum&euml;zimi etj. M&euml; posht&euml; &euml;sht&euml; paraqitur nj&euml; list&euml; e plot&euml; e operator&euml;ve aritmetik&euml; n&euml; JavaScript:</p>
         
+            <table>
+                <tr>
+                <td>
+                <p><strong>Operatori</strong></p>
+                </td>
+                <td>
+                <p><strong>P&euml;rshkrimi</strong></p>
+                </td>
+                <td>
+                <p><strong>Shembull</strong></p>
+                </td>
+                <td>
+                <p><strong>Rezultati</strong></p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>+</p>
+                </td>
+                <td>
+                <p>Mbledhja</p>
+                </td>
+                <td>
+                <p>x + y</p>
+                </td>
+                <td>
+                <p>Shuma e x dhe y</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>-</p>
+                </td>
+                <td>
+                <p>Zbritja</p>
+                </td>
+                <td>
+                <p>x - y</p>
+                </td>
+                <td>
+                <p>Diferenca e x dhe y.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>*</p>
+                </td>
+                <td>
+                <p>Shum&euml;zimi</p>
+                </td>
+                <td>
+                <p>x * y</p>
+                </td>
+                <td>
+                <p>Prodhimi i x dhe y.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>/</p>
+                </td>
+                <td>
+                <p>Ndarja</p>
+                </td>
+                <td>
+                <p>x / y</p>
+                </td>
+                <td>
+                <p>Her&euml;si i x dhe y</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>%</p>
+                </td>
+                <td>
+                <p>Moduli</p>
+                </td>
+                <td>
+                <p>x % y</p>
+                </td>
+                <td>
+                <p>Pjesa e mbetur prej x e ndar&euml; me y</p>
+                </td>
+                </tr>
+            </table>
+            <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; k&euml;ta operator&euml; aritmetik&euml; n&euml; veprim:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 10;
+var y = 4;
+alert(x + y); // Dalja: 14
+alert(x - y); // Dalja: 6
+alert(x * y); // Dalja: 40
+alert(x / y); // Dalja: 2.5
+alert(x % y); // Dalja: 2</code></pre>
+                </div>
+	        </div> 
+            <h2>Operator&euml;t e caktimit</h2>
+            <p>Operator&euml;t e caktimit (<em>assignment operators</em>) p&euml;rdoren p&euml;r t&rsquo;ju caktuar vlera variablave:</p>
+            <table>
+            <tr>
+            <td>
+            <p><strong>Operatori</strong></p>
+            </td>
+            <td>
+            <p><strong>P&euml;rshkrimi</strong></p>
+            </td>
+            <td>
+            <p><strong>Shembull</strong></p>
+            </td>
+            <td>
+            <p><strong>&Euml;sht&euml; e nj&euml;jt&euml; me</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>=</p>
+            </td>
+            <td>
+            <p>Cakto</p>
+            </td>
+            <td>
+            <p>x = y</p>
+            </td>
+            <td>
+            <p>x = y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>+=</p>
+            </td>
+            <td>
+            <p>Shto dhe cakto</p>
+            </td>
+            <td>
+            <p>x += y</p>
+            </td>
+            <td>
+            <p>x = x + y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>-=</p>
+            </td>
+            <td>
+            <p>Zbrit dhe cakto</p>
+            </td>
+            <td>
+            <p>x -= y</p>
+            </td>
+            <td>
+            <p>x = x - y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>*=</p>
+            </td>
+            <td>
+            <p>Shum&euml;zo dhe cakto</p>
+            </td>
+            <td>
+            <p>x *= y</p>
+            </td>
+            <td>
+            <p>x = x * y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>/=</p>
+            </td>
+            <td>
+            <p>Ndani dhe caktoni her&euml;sin</p>
+            </td>
+            <td>
+            <p>x /= y</p>
+            </td>
+            <td>
+            <p>x = x / y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>%=</p>
+            </td>
+            <td>
+            <p>Ndani dhe caktoni modulin</p>
+            </td>
+            <td>
+            <p>x %= y</p>
+            </td>
+            <td>
+            <p>x = x % y</p>
+            </td>
+            </tr>
+            </table>
+            <p>&nbsp;Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; n&euml; veprim k&euml;ta operator&euml; t&euml; caktimit:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x;    // Deklarimi i variablës
+ 
+x = 10;
+alert(x); // Dalja: 10
+     
+x = 20;
+x += 30;
+alert(x); // Dalja: 50
+     
+x = 50;
+x -= 20;
+alert(x); // Dalja: 30
+     
+x = 5;
+x *= 25;
+alert(x); // Dalja: 125
+     
+x = 50;
+x /= 10;
+alert(x); // Dalja: 5
+     
+x = 100;
+x %= 15;
+alert(x); // Dalja: 10</code></pre>
+                </div>
+	        </div> 
+            <h2>Operator&euml;t e stringjeve</h2>
+            <p>Ekzistojn&euml; dy operator&euml; t&euml; cil&euml;t mund t&euml; p&euml;rdoren gjithashtu tek stringjet.</p>
+            <table>
+            <tr>
+            <td>
+            <p><strong>Operatori</strong></p>
+            </td>
+            <td>
+            <p><strong>P&euml;rshkrimi</strong></p>
+            </td>
+            <td>
+            <p><strong>Shembull</strong></p>
+            </td>
+            <td >
+            <p><strong>Rezultati</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>+</p>
+            </td>
+            <td>
+            <p>Bashkimi</p>
+            </td>
+            <td>
+            <p>str1 + str2</p>
+            </td>
+            <td>
+            <p>Bashkimi i str1 dhe str2</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>+=</p>
+            </td>
+            <td>
+            <p>Bashkimi i vler&euml;s s&euml; caktuar</p>
+            </td>
+            <td>
+            <p>str1 += str2</p>
+            </td>
+            <td>
+            <p>Shtimi i str2 tek str1</p>
+            </td>
+            </tr>
+            </table>
+            <p>Shembulli m&euml;posht&euml;m do t'ju tregoj&euml; k&euml;ta operator&euml; t&euml; stringjeve n&euml; veprim:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str1 = "Përshëndetje";
+var str2 = " Botë!";
+     
+alert(str1 + str2); // Dalja: Përshëndetje Botë!
+     
+str1 += str2;
+alert(str1); // Dalja: Përshëndetje Botë!</code></pre>
+                </div>
+            </div>
+            <h2>Operator&euml;t p&euml;r rritje dhe zbritje</h2>
+            <p>Operator&euml;t e rritjes / zbritjes p&euml;rdoren p&euml;r t&euml; rritur / zvog&euml;luar vler&euml;n e nj&euml; variable.</p>
+            <table>
+            <tr>
+            <td>
+            <p><strong>Operatori</strong></p>
+            </td>
+            <td>
+            <p><strong>Em&euml;rtimi</strong></p>
+            </td>
+            <td>
+            <p><strong>Efekti</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>++x</p>
+            </td>
+            <td>
+            <p>Para-rritja</p>
+            </td>
+            <td>
+            <p>Rritja e x-it p&euml;r nj&euml;, pastaj kthimi i x-it</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>x++</p>
+            </td>
+            <td>
+            <p>Pas-rritja</p>
+            </td>
+            <td>
+            <p>Kthimi i x-it, pastaj rritja e x-it p&euml;r nj&euml;</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>--x</p>
+            </td>
+            <td>
+            <p>Para-zbritja</p>
+            </td>
+            <td>
+            <p>Zvog&euml;limi i x-it p&euml;r nj&euml;, pastaj kthimi i x-it</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>x--</p>
+            </td>
+            <td>
+            <p>Pas-zbritja</p>
+            </td>
+            <td>
+            <p>Kthimi i x-it, pastaj zvog&euml;limi i x-it p&euml;r nj&euml;</p>
+            </td>
+            </tr>
+            </table>
+            <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si funksionojn&euml; n&euml; t&euml; v&euml;rtet&euml; operator&euml;t e rritjes dhe zbritjes:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x; // Deklarimi i variablës
+ 
+x = 10;
+alert(++x); // Dalja: 11
+alert(x);   // Dalja: 11
+     
+x = 10;
+alert(x++); // Dalja: 10
+alert(x);   // Dalja: 11
+     
+x = 10;
+alert(--x); // Dalja: 9
+alert(x);   // Dalja: 9
+     
+x = 10;
+alert(x--); // Dalja: 10
+alert(x);   // Dalja: 9</code></pre>
+                </div>
+            </div>
+            <h2>Operator&euml;t logjik</h2>
+            <p>Operator&euml;t logjik&euml; zakonisht p&euml;rdoren p&euml;r t&euml; kombinuar pohimet e kusht&euml;zuara.</p>
+            <table>
+            <tr>
+            <td>
+            <p><strong>Operatori</strong></p>
+            </td>
+            <td>
+            <p><strong>Emri</strong></p>
+            </td>
+            <td>
+            <p><strong>Shembull</strong></p>
+            </td>
+            <td>
+            <p><strong>Rezultati</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>&amp;&amp;</p>
+            </td>
+            <td>
+            <p>And</p>
+            </td>
+            <td>
+            <p>x &amp;&amp; y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se edhe x edhe y jan&euml; <code>true</code></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>||</p>
+            </td>
+            <td>
+            <p>Or</p>
+            </td>
+            <td>
+            <p>x || y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x ose y jan&euml; <code>true</code></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>!</p>
+            </td>
+            <td>
+            <p>Not</p>
+            </td>
+            <td>
+            <p>!x</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x nuk &euml;sht&euml; <code>true</code></p>
+            </td>
+            </tr>
+            </table>
+            <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si funksionojn&euml; n&euml; t&euml; v&euml;rtet&euml; k&euml;ta operator&euml; logjik&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var viti = 2020;
+ 
+// Vitet e brishtë plotëpjestohen me 400 ose me 4 por jo me 100
+if((viti % 400 == 0) || ((viti % 100 != 0) && (viti % 4 == 0))){
+    alert(viti + " është vit i brishtë.");
+} else {
+    alert(viti + " nuk është vit i brishtë.");
+}</code></pre>
+                </div>
+	        </div> 
+            <h2>Operator&euml;t e krahasimit</h2>
+            <p>Operator&euml;t e krahasimit p&euml;rdoren p&euml;r t&euml; krahasuar dy vlera Boolean.</p>
+            <table>
+            <tr>
+            <td>
+            <p><strong>Operatori</strong></p>
+            </td>
+            <td>
+            <p><strong>Emri</strong></p>
+            </td>
+            <td>
+            <p><strong>Shembull</strong></p>
+            </td>
+            <td>
+            <p><strong>Rezultati</strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>==</p>
+            </td>
+            <td>
+            <p>Barazi</p>
+            </td>
+            <td>
+            <p>x == y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x &euml;sht&euml; baras me y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>===</p>
+            </td>
+            <td>
+            <p>Identik</p>
+            </td>
+            <td>
+            <p>x === y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x &euml;sht&euml; baras me y dhe jan&euml; tip i nj&euml;jt&euml;</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>!=</p>
+            </td>
+            <td>
+            <p>Jo barazi</p>
+            </td>
+            <td>
+            <p>x != y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x nuk &euml;sht&euml; baras me y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>!==</p>
+            </td>
+            <td>
+            <p>Jo identik</p>
+            </td>
+            <td>
+            <p>x !== y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x nuk &euml;sht&euml; baras me y dhe nuk jan&euml; tip i nj&euml;jt&euml;</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>&lt;&nbsp;</p>
+            </td>
+            <td>
+            <p>M&euml; e vog&euml;l se</p>
+            </td>
+            <td>
+            <p>x &lt; y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x &euml;sht&euml; e vog&euml;l se y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>&gt;&nbsp;</p>
+            </td>
+            <td>
+            <p>M&euml; e madhe se</p>
+            </td>
+            <td>
+            <p>x &gt; y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x &euml;sht&euml; e madhe se y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>&gt;=</p>
+            </td>
+            <td>
+            <p>M&euml; e madhe ose e barabart&euml;</p>
+            </td>
+            <td>
+            <p>x &gt;= y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x &euml;sht&euml; m&euml; e madhe ose e barabart&euml; me y</p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>&lt;=</p>
+            </td>
+            <td>
+            <p>M&euml; e vog&euml;l ose e barabart&euml;</p>
+            </td>
+            <td>
+            <p>x &lt;= y</p>
+            </td>
+            <td>
+            <p><code>true</code> n&euml;se x &euml;sht&euml; m&euml; e vog&euml;l ose e barabart&euml; me y</p>
+            </td>
+            </tr>
+            </table>
+            <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; k&euml;ta operator&euml; krahasimi n&euml; veprim:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 25;
+var y = 35;
+var z = "25";
+     
+alert(x == z);  // Rezultati: true
+alert(x === z); // Rezultati: false
+alert(x != y);  // Rezultati: true
+alert(x !== z); // Rezultati: true
+alert(x < y);   // Rezultati: true
+alert(x > y);   // Rezultati: false
+alert(x <= y);  // Rezultati: true
+alert(x >= y);  // Rezultati: false</code></pre>
+                </div>
+	        </div> 
+
+
+
+
+        
+        </section>
 
     </main>
 
