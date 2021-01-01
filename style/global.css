@@ -336,6 +336,9 @@ iframe {
     .hljs, .hljs-subst {
         font-size: 14px;
     }
+    code {
+        font-size: 14px;
+    }
 }
 
 /* Footer */
