@@ -11,17 +11,22 @@ function resizeIframe(obj) {
     let nav = document.querySelector('nav');
 
     let nata = document.getElementById('nata');
+    let imgLogo = document.getElementById('img-logo');
 
     /* Tema e errtë dhe e ndritshme */
     const temaAktuale = localStorage.getItem("tema");
     if(temaAktuale == 'terr') {
         document.body.classList.add('nata');
+        imgLogo.setAttribute('src', 'foto/dielli.svg');
     }
     nata.addEventListener('click', () => {
         document.body.classList.toggle('nata');
+        imgLogo.setAttribute('src', 'foto/hena.svg');
+
         let tema = 'drite';
         if(document.body.classList.contains('nata')) {
             tema = 'terr';
+            imgLogo.setAttribute('src', 'foto/dielli.svg');
         }
         localStorage.setItem('tema', tema);
     });

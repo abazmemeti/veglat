@@ -169,7 +169,7 @@ section li {
     padding-top: 3px;
     padding-bottom: 3px;
 }
-img {
+section img {
     margin-top: 10px;
     margin-bottom: 10px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
@@ -479,29 +479,22 @@ footer a {
 }
 
 /* Ikona Terr/Dritë */
+
 #nata {
-    width: 16px;
-    height: 16px;
-    border: 2px solid #fff;
-    border-radius: 50%;
+    width: 24px;
+    height: 24px;
     display: inline-block;
-    transform: translateY(2px);
     margin-left:8px;
     cursor: pointer;
 }
-#dita {
-    width: 8px;
-    height: 16px;
-    border-radius: 0 16px 16px 0;
-    background-color: #fff;
-    transform: translate(6px,-2px);
+#nata img {
+    transform: translateY(6px) scale(0.8);
 }
-
 @media (max-width: 767px) {
     #nata {
         position: static;
-        float:right;
-        transform: translate(-15px, 16px);
+        float: right;
+        transform: translate(-15px, 6px);
     }
 
     .scroll-down nav {
