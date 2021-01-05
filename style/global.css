@@ -479,7 +479,6 @@ footer a {
 }
 
 /* Ikona Terr/Dritë */
-
 #nata {
     width: 24px;
     height: 24px;
@@ -488,7 +487,7 @@ footer a {
     cursor: pointer;
 }
 #nata img {
-    transform: translateY(6px) scale(0.8);
+    transform: translateY(6px) scale(0.7);
 }
 @media (max-width: 767px) {
     #nata {
