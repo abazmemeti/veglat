@@ -73,6 +73,7 @@
             <li><a href="#iframe">iFrame</a></li>
             <li><a href="#audio">Audio</a></li>
             <li><a href="#video">Video</a></li>
+            <li><a href="#html-layout">Faqja HTML - Layout</a></li>
         </ul>
     </aside>
 
@@ -1502,6 +1503,309 @@ th {
 &lt;/html&gt;</code></pre>
                 </div>
             </div>
+
+        </section>
+
+        <section id="html-layout">
+            <h1>Faqja HTML &ndash; <em>Layout</em></h1>
+            <p>Krijimi i nj&euml; faqeje n&euml; ueb sajt paraqet aktivitetin e pozicionimit t&euml; elementeve t&euml; ndrysh&euml;m q&euml; e b&euml;jn&euml; nj&euml; ueb faqe mir&euml; t&euml; strukturuar dhe i japin nj&euml; pamje t&euml;rheq&euml;se ueb sajtit.</p>
+            <p>Sigurisht keni par&euml; q&euml; shumica e ueb sajteve zakonisht shfaqin p&euml;rmbajtjen e tyre n&euml; disa rreshta dhe kolona, t&euml; formatuara ngjash&euml;m sikur nj&euml; revist&euml; ose gazet&euml; p&euml;r t'ju siguruar p&euml;rdoruesve nj&euml; mjedis m&euml; t&euml; mir&euml; leximi dhe shkrimi. Kjo mund t&euml; arrihet leht&euml;sisht duke p&euml;rdorur etiketat HTML, t&euml; tilla si &lt;<code>table</code>&gt;, &lt;<code>div</code>&gt;, &lt;<code>header</code>&gt;, &lt;<code>footer</code>&gt;, &lt;<code>section</code>&gt;, etj., dhe duke shtuar stilizim CSS n&euml; to.</p>
+            <h2>Paraqitja e faqes bazuar n&euml; tabel&euml;</h2>
+            <p>Tabela ofron m&euml;nyr&euml;n m&euml; t&euml; thjesht&euml; p&euml;r krijimin e faqeve n&euml; HTML. N&euml; p&euml;rgjith&euml;si, kjo p&euml;rfshin procesin e vendosjes s&euml; p&euml;rmbajtjeve, si tekst, imazhe e k&euml;shtu me radh&euml; n&euml; rreshta dhe kolona.</p>
+            <p>Paraqitja e m&euml;poshtme &euml;sht&euml; krijuar duke p&euml;rdorur nj&euml; tabel&euml; HTML me 3 rreshta dhe 2 kolona - rreshti i par&euml; dhe i fundit bashkojn&euml; t&euml; dy kolonat duke p&euml;rdorur atributin <code>colspan</code> t&euml; tabel&euml;s:</p>        
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="sq"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Faqja HTML me tabel&euml;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body style="margin:0px;"&gt;
+    &lt;table style="width:100%; border-collapse:collapse; font:14px Arial,sans-serif;"&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2" style="padding:10px 20px; background-color:#acb3b9;"&gt;
+                &lt;h1 style="font-size:24px;"&gt;Veglat Softuerike&lt;/h1&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr style="height:170px;"&gt;
+            &lt;td style="width:35%; padding:20px; background-color:#d4d7dc; vertical-align: top;"&gt;
+                &lt;ul style="list-style:none; padding:0px; line-height:24px;"&gt;
+                    &lt;li&gt;&lt;a href="#" style="color:#333;"&gt;Ballina&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" style="color:#333;"&gt;Rreth nesh&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" style="color:#333;"&gt;Kontakti&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/td&gt;
+            &lt;td style="padding:20px; background-color:#f2f2f2; vertical-align:top;"&gt;
+                &lt;h2&gt;Mir&euml; se vini n&euml; ueb sajtin ton&euml;!&lt;/h2&gt;
+                &lt;p&gt;K&euml;tu do t&euml; m&euml;soni si nd&euml;rtohen ueb sajtet...&lt;/p&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2" style="padding:5px; background-color:#acb3b9; text-align:center;"&gt;
+                &lt;p&gt;copyright &amp;copy; veglat.netlify.app&lt;/p&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+            <p>Kodi HTML m&euml; lart do t&euml; gjeneroj&euml; rezultatin e m&euml;posht&euml;m:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/layout-table.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <div class="paralajmerim">
+                <p><strong>Paralajm&euml;rim</strong>: Metoda e p&euml;rdorur p&euml;r krijimin e faqes n&euml; shembullin e m&euml;sip&euml;rm nuk &euml;sht&euml; e gabuar, por nuk rekomandohet. Shmangni tabelat dhe stilet inline p&euml;r krijimin e faqeve. Faqet e krijuara duke p&euml;rdorur tabela shpesh lexohen shum&euml; ngadal&euml;. Tabelat duhet t&euml; p&euml;rdoren vet&euml;m p&euml;r t&euml; shfaqur t&euml; dh&euml;na tabelore.</p>
+            </div>
+            <h2>Paraqitja e faqes bazuar n&euml; div</h2>
+            <p>P&euml;rdorimi i elementeve &lt;<code>div</code>&gt; &euml;sht&euml; metoda m&euml; e zakonshme p&euml;r krijimin e faqeve n&euml; HTML. Elementi &lt;<code>div</code>&gt; (q&euml; n&euml;nkupton ndarje &ndash; <em>division</em>) p&euml;rdoret p&euml;r t&euml; sh&euml;nuar nj&euml; bllok t&euml; p&euml;rmbajtjes, ose p&euml;r t&euml; grupuar disa elemente t&euml; tjer&euml; brenda nj&euml; dokumenti HTML. Gjithashtu mund t&euml; p&euml;rmbaj&euml; m&euml; tej element&euml; t&euml; tjer&euml; div n&euml;se k&euml;rkohet.</p>
+            <p>Shembulli i m&euml;posht&euml;m p&euml;rdor element&euml;t <code>div</code> p&euml;r t&euml; krijuar kolona t&euml; shum&euml;fishta t&euml; faqes. Gjithashtu do t&euml; prodhoj&euml; t&euml; nj&euml;jtin rezultat si n&euml; shembullin e m&euml;parsh&euml;m ku p&euml;rdoren elementet e tabel&euml;s:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="sq"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Faqja HTML me DIV&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font: 14px Arial,sans-serif;
+            margin: 0px;
+        }
+        .header {
+            padding: 10px 20px;
+            background: #acb3b9;
+        }
+        .header h1 {
+            font-size: 24px;
+        }
+        .container {
+            width: 100%;
+            background: #f2f2f2;
+        }
+        .nav, .section {
+            float: left;
+            padding: 20px;
+            min-height: 170px;
+            box-sizing: border-box;
+        }
+        .nav {
+            width: 35%;
+            background: #d4d7dc;
+        }
+        .section {
+            width: 65%;
+        }
+        .nav ul {
+            list-style: none;
+            line-height: 24px;
+            padding: 0px;
+        }
+        .nav ul li a {
+            color: #333;
+        }
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .footer {
+            background: #acb3b9;
+            text-align: center;
+            padding: 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="header"&gt;
+            &lt;h1&gt;Veglat Softuerike&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class="wrapper clearfix"&gt;
+            &lt;div class="nav"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Ballina&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Rreth nesh&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Kontakti&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="section"&gt;
+                &lt;h2&gt;Mir&euml; se vini n&euml; ueb sajtin ton&euml;!&lt;/h2&gt;
+                &lt;p&gt;K&euml;tu do t&euml; m&euml;soni si nd&euml;rtohen ueb sajtet...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="footer"&gt;
+            &lt;p&gt;copyright &amp;copy; veglat.netlify.app&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+            <p>Kodi HTML m&euml; lart do t&euml; gjeneroj&euml; rezultatin e m&euml;posht&euml;m:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/layout-div.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <p>Kemi krijuar k&euml;t&euml; faqe duke p&euml;rdorur teknikat <em>CSS float</em>, pasi q&euml; shumica e shfletuesve i mb&euml;shtesin ato. P&euml;rndryshe, mund t&euml; p&euml;rdorni gjithashtu <em>CSS3 flexbox</em> p&euml;r t&euml; krijuar faqe moderne dhe m&euml; fleksibile.</p>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Paraqitjet m&euml; t&euml; mira t&euml; ueb sajteve mund t&euml; krijohen duke p&euml;rdorur elementet DIV dhe CSS. Mund t&euml; ndryshoni paraqitjen e t&euml; gjitha faqeve t&euml; ueb sajtit tuaj duke edituar vet&euml;m nj&euml; fajll CSS. M&euml;soni m&euml; shum&euml; rreth CSS.</p>
+            </div>
+            <h2>P&euml;rdorimi i elementeve strukturore HTML5</h2>
+            <p>HTML5 ka prezantuar elementet e reja strukturore t&euml; tilla si &lt;<code>header</code>&gt;, &lt;<code>footer</code>&gt;, &lt;<code>nav</code>&gt;, &lt;<code>section</code>&gt;, etj., p&euml;r t&euml; p&euml;rcaktuar pjes&euml;t e ndryshme t&euml; ueb faqes n&euml; nj&euml; m&euml;nyr&euml; m&euml; semantike.</p>
+            <p>Mund t'i konsideroni k&euml;to elemente si nj&euml; z&euml;vend&euml;sim t&euml; klasave t&euml; p&euml;rdorura zakonisht si .<code>header</code>, .<code>footer</code>, .<code>nav</code>, .<code>section</code>, etj. Shembulli i m&euml;posht&euml;m p&euml;rdor elementet e rinj strukturor&euml; HTML5 p&euml;r t&euml; krijuar t&euml; nj&euml;jt&euml;n paraqitje q&euml; kemi krijuar n&euml; shembujt e m&euml;parsh&euml;m.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="sq"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Paraqitja e ueb faqes - HTML5&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font: 14px Arial,sans-serif;
+            margin: 0px;
+        }
+        header {
+            padding: 10px 20px;
+            background: #acb3b9;
+        }
+        header h1 {
+            font-size: 24px;
+        }
+        .container {
+            width: 100%;
+            background: #f2f2f2;
+        }
+        nav, section {
+            float: left;
+            padding: 20px;
+            min-height: 170px;
+            box-sizing: border-box;
+        }
+        nav {
+            width: 35%;
+            background: #d4d7dc;
+        }
+        section {
+            width: 65%;
+        }
+        nav ul {
+            list-style: none;
+            line-height: 24px;
+            padding: 0px;
+        }
+        nav ul li a {
+            color: #333;
+        }
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        footer {
+            background: #acb3b9;
+            text-align: center;
+            padding: 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;header&gt;
+            &lt;h1&gt;Veglat Softuerike&lt;/h1&gt;
+        &lt;/header&gt;
+        &lt;div class="wrapper clearfix"&gt;
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Ballina&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Rreth nesh&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Kontakti&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;section&gt;
+                &lt;h2&gt;Mir&euml; se vini n&euml; ueb sajtin ton&euml;!&lt;/h2&gt;
+                &lt;p&gt;K&euml;tu do t&euml; m&euml;soni si nd&euml;rtohen ueb sajtet...&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+        &lt;footer&gt;
+            &lt;p&gt;copyright &amp;copy; veglat.netlify.app&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+            <p>Kodi HTML m&euml; lart do t&euml; gjeneroj&euml; rezultatin e m&euml;posht&euml;m:</p>
+            <div class="rezultati">
+                <iframe src="rezultatet/layout-html5.html" scrolling='no' onload="resizeIframe(this)"></iframe>
+            </div>
+            <p>Tabela e m&euml;poshtme jep nj&euml; p&euml;rmbledhje t&euml; shkurt&euml;r t&euml; elementeve t&euml; reja strukturore n&euml; HTML5.</p>
+            <table>
+                <tr>
+                <td>
+                <p><strong>Etiketa</strong></p>
+                </td>
+                <td>
+                <p><strong>Përshkrimi</strong></p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>&lt;header&gt;</p>
+                </td>
+                <td>
+                <p>P&euml;rfaq&euml;son kok&euml;n e nj&euml; dokumenti ose t&euml; nj&euml; seksioni.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>&lt;footer&gt;</p>
+                </td>
+                <td>
+                <p>P&euml;rfaq&euml;son fundin e nj&euml; dokumenti ose t&euml; nj&euml; seksioni.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>&lt;nav&gt;</p>
+                </td>
+                <td>
+                <p>P&euml;rfaq&euml;son nj&euml; seksion t&euml; lidhjeve t&euml; navigimit.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>&lt;section&gt;</p>
+                </td>
+                <td>
+                <p>P&euml;rfaq&euml;son nj&euml; pjes&euml; t&euml; nj&euml; dokumenti, t&euml; tilla si header, footer etj.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>&lt;article&gt;</p>
+                </td>
+                <td>
+                <p>P&euml;rfaq&euml;son nj&euml; artikull, postim n&euml; blog, ose nj&euml;si tjet&euml;r informacioni t&euml; pavarur.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>&lt;aside&gt;</p>
+                </td>
+                <td>
+                <p>P&euml;rfaq&euml;son disa p&euml;rmbajtje t&euml; lidhura me p&euml;rmbajtjen e faqes.</p>
+                </td>
+                </tr>
+                </table>
 
         </section>
 
