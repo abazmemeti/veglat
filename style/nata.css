@@ -14,6 +14,12 @@
     border: 1px solid #333;
 }
 
+@media(max-width: 767px) {
+    .nata::-webkit-scrollbar, .nata *::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+
 body.nata {
     background-color: #222;
 }
