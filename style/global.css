@@ -213,6 +213,7 @@ section table th, section table td {
 }
 code {
     font-size: 15.5px;
+    max-height: 400px;
 }
 .kodi code {
 	padding: 10px 12px;
