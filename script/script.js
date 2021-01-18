@@ -3,36 +3,7 @@ function resizeIframe(obj) {
 }
 
 (function(){
-    
-    /* Pamja e nav-igimit kur skrollohet 
-    const scrollUp = "scroll-up";
-    const scrollDown = "scroll-down";
-    let lastScroll = 0;
 
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.pageYOffset;
-        if (currentScroll <= 0) {
-          document.body.classList.remove(scrollUp);
-          return;
-        }
-        
-        if (currentScroll > lastScroll && !document.body.classList.contains(scrollDown)) {
-          // down
-          document.body.classList.remove(scrollUp);
-          document.body.classList.add(scrollDown);
-        } else if (currentScroll < lastScroll && document.body.classList.contains(scrollDown)) {
-          // up
-          document.body.classList.remove(scrollDown);
-          document.body.classList.add(scrollUp);
-        }
-        lastScroll = currentScroll;
-    });
-    */
-
-})();
-
-
-window.addEventListener('load', () => {
     let burger = document.getElementById("burger");
     let aside = document.querySelector('aside');
     let elAside = document.querySelectorAll('aside ul li a');
@@ -99,5 +70,36 @@ window.addEventListener('load', () => {
         document.body.classList.toggle('shih-nav');
         burger.classList.toggle('burger');
     })
+    
+    /* Pamja e nav-igimit kur skrollohet 
+    const scrollUp = "scroll-up";
+    const scrollDown = "scroll-down";
+    let lastScroll = 0;
+
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+          document.body.classList.remove(scrollUp);
+          return;
+        }
+        
+        if (currentScroll > lastScroll && !document.body.classList.contains(scrollDown)) {
+          // down
+          document.body.classList.remove(scrollUp);
+          document.body.classList.add(scrollDown);
+        } else if (currentScroll < lastScroll && document.body.classList.contains(scrollDown)) {
+          // up
+          document.body.classList.remove(scrollDown);
+          document.body.classList.add(scrollUp);
+        }
+        lastScroll = currentScroll;
+    });
+    */
+
+})();
+
+
+window.addEventListener('load', () => {
+    
     
 });

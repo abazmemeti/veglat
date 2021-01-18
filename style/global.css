@@ -520,14 +520,18 @@ footer a {
         border-top: 1px solid #33485e;
         left: 0;
         z-index: 9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     #btn-bottom {
         color: #f5f5f5;
+        font-size: 0.95em;
+        width: 95%;
         border: 1px solid;
-        margin: 7px 15px;
         padding: 5px;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
         text-align: center;
         cursor: pointer;
     }
@@ -536,21 +540,14 @@ footer a {
         margin-bottom:50px;
         z-index: 8;
     }
-
     #nata {
         position: fixed;
         right: 65px;
-        /*
-        float: right;
-        transform: translate(-15px, 6px);
-        */
-        
     }
     nav {
         transform: translate3d(0, -100%, 0);
         transition: transform 0.5s;
     }
-      
     .shih-nav nav {
         transform: none;
         transition: transform 0.5s;
