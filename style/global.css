@@ -315,14 +315,13 @@ iframe {
         font-size: 0.95em;
     }
     section:not(:first-child) {
-        
         padding-top: 90px;
         padding-bottom:30px;
         margin-top:-75px;
         
     }
     section:first-child h1 {
-        padding-top:110px;
+        padding-top:80px;
     }
     section ul, section ol {
         padding-left: 20px
@@ -538,11 +537,6 @@ footer a {
         z-index: 8;
     }
 
-    .nata .btn-bottom {
-        background-color: #111;
-      }
-
-
     #nata {
         position: fixed;
         right: 65px;
@@ -552,7 +546,6 @@ footer a {
         */
         
     }
-
     nav {
         transform: translate3d(0, -100%, 0);
         transition: transform 0.5s;

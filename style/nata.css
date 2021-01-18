@@ -184,4 +184,7 @@ body.nata {
     .nata nav {
         border-top: 1px solid #304458;
     }
+    .nata .btn-bottom {
+        background-color: #111 !important;
+    }
 }
