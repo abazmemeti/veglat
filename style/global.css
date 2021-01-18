@@ -317,7 +317,7 @@ iframe {
     section:not(:first-child) {
         padding-top: 90px;
         padding-bottom:30px;
-        margin-top:-75px;
+        margin-top:-70px;
         
     }
     section:first-child h1 {
