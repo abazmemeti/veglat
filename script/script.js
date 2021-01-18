@@ -3,12 +3,42 @@ function resizeIframe(obj) {
 }
 
 (function(){
+    
+    /* Pamja e nav-igimit kur skrollohet 
+    const scrollUp = "scroll-up";
+    const scrollDown = "scroll-down";
+    let lastScroll = 0;
 
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+          document.body.classList.remove(scrollUp);
+          return;
+        }
+        
+        if (currentScroll > lastScroll && !document.body.classList.contains(scrollDown)) {
+          // down
+          document.body.classList.remove(scrollUp);
+          document.body.classList.add(scrollDown);
+        } else if (currentScroll < lastScroll && document.body.classList.contains(scrollDown)) {
+          // up
+          document.body.classList.remove(scrollDown);
+          document.body.classList.add(scrollUp);
+        }
+        lastScroll = currentScroll;
+    });
+    */
+
+})();
+
+
+window.addEventListener('load', () => {
     let burger = document.getElementById("burger");
     let aside = document.querySelector('aside');
     let elAside = document.querySelectorAll('aside ul li a');
-    let main = document. querySelector('main');
+    let main = document.querySelector('main');
     let nav = document.querySelector('nav');
+    let permbajtja = document.getElementById('btn-bottom')   
 
     let nata = document.getElementById('nata');
     let imgLogo = document.getElementById('img-logo');
@@ -31,7 +61,7 @@ function resizeIframe(obj) {
         localStorage.setItem('tema', tema);
     });
     
-    burger.addEventListener('click', hapjaMbyllja);
+    permbajtja.addEventListener('click', hapjaMbyllja);
     
     for(let i = 0; i < elAside.length; i++) {
         elAside[i].addEventListener('click', hapjaMbyllja);
@@ -46,7 +76,7 @@ function resizeIframe(obj) {
             aside.style.right = '-250px';
             main.classList = '';
             nav.classList = '';
-            burger.classList = '';
+            permbajtja.innerHTML = 'Përmbajtja'
         }
     }
 
@@ -55,38 +85,19 @@ function resizeIframe(obj) {
             aside.style.right = '-250px';
             main.classList = '';
             nav.classList = '';
-            burger.classList = '';
-    
+            permbajtja.innerHTML = 'Përmbajtja'
+            
         } else {
             aside.style.right = '0px';
             main.classList = 'main';
             nav.classList = 'menu';
-            burger.classList = 'burger';
+            permbajtja.innerHTML = 'Mbyll Përmbajtjen'
         }
     }
 
-    /* Pamja e nav-igimit kur skrollohet */
-    const scrollUp = "scroll-up";
-    const scrollDown = "scroll-down";
-    let lastScroll = 0;
-
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.pageYOffset;
-        if (currentScroll <= 0) {
-          document.body.classList.remove(scrollUp);
-          return;
-        }
-        
-        if (currentScroll > lastScroll && !document.body.classList.contains(scrollDown)) {
-          // down
-          document.body.classList.remove(scrollUp);
-          document.body.classList.add(scrollDown);
-        } else if (currentScroll < lastScroll && document.body.classList.contains(scrollDown)) {
-          // up
-          document.body.classList.remove(scrollDown);
-          document.body.classList.add(scrollUp);
-        }
-        lastScroll = currentScroll;
-      });
-
-})();
+    burger.addEventListener('click', () => {
+        document.body.classList.toggle('shih-nav');
+        burger.classList.toggle('burger');
+    })
+    
+});

@@ -82,6 +82,9 @@
     background-color: rgb(155,71,140);
 }
 
+.btn-bottom {
+    display: none;
+}
 
 @media(max-width: 1023px) {
     #wrapper {
@@ -90,8 +93,13 @@
 }
 
 @media(max-width: 767px) {
+    /*
     header {
         justify-content: center;
+    }
+    */
+    .btn-bottom {
+        display: none;
     }
     nav {
         border-top: 1px solid #304458;
@@ -108,7 +116,7 @@
         grid-template-columns: 1fr;
         gap: 15px;
         height: auto;
-        margin: 65px 15px 35px 15px;
+        margin: 15px 15px 35px 15px;
 
     }
     .lang {
@@ -121,6 +129,7 @@
 
     footer {
         position: fixed;
+        margin-bottom: 0 !important;
         bottom: 0;
         right: 0;
         left: 0;

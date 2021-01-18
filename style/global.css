@@ -82,7 +82,7 @@ header .logo a {
 nav {
     grid-area: nav;
     text-align: right;
-    padding-right: 20px;
+    padding-right: 52px;
 }
 nav a {
     display: inline-block;
@@ -93,9 +93,10 @@ nav a {
     font-weight: 700;
     text-decoration: none;
 }
-nav a:hover {
+nav a:hover, nav a.aktiv {
     text-decoration: underline;
 }
+
 
 /* Wrapper */
 #wrapper {
@@ -314,9 +315,11 @@ iframe {
         font-size: 0.95em;
     }
     section:not(:first-child) {
-        padding-top: 110px;
+        
+        padding-top: 90px;
         padding-bottom:30px;
         margin-top:-75px;
+        
     }
     section:first-child h1 {
         padding-top:110px;
@@ -433,7 +436,7 @@ footer a {
     .main {
         position: relative;
     }
-    .main:after {
+    .main:after, .article:after, .footer:after {
         position: absolute;
         content: '';
         top: 0;
@@ -492,26 +495,77 @@ footer a {
     width: 24px;
     height: 24px;
     display: inline-block;
-    margin-left:8px;
     cursor: pointer;
+    position: fixed;
+    right: 22px;
+    top: 13px;
 }
 #nata img {
-    transform: translateY(6px) scale(0.7);
+    transform: scale(0.65);
 }
+
+/* Permbajtja e fiksuar e fshehur */
+.btn-bottom {
+    display: none;
+}
+
 @media (max-width: 767px) {
-    #nata {
+    /* Permbajtja e fiksuar posht */
+    .btn-bottom {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background-color: #23384e !important;
+        border-top: 1px solid #33485e;
+        left: 0;
+        z-index: 9;
+    }
+    #btn-bottom {
+        color: #f5f5f5;
+        border: 1px solid;
+        margin: 7px 15px;
+        padding: 5px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        cursor: pointer;
+    }
+    footer {
         position: static;
-        float: right;
-        transform: translate(-15px, 6px);
+        margin-bottom:50px;
+        z-index: 8;
     }
 
-    .scroll-down nav {
+    .nata .btn-bottom {
+        background-color: #111;
+      }
+
+
+    #nata {
+        position: fixed;
+        right: 65px;
+        /*
+        float: right;
+        transform: translate(-15px, 6px);
+        */
+        
+    }
+
+    nav {
         transform: translate3d(0, -100%, 0);
         transition: transform 0.5s;
-      }
+    }
       
-      .scroll-up nav {
+    .shih-nav nav {
         transform: none;
         transition: transform 0.5s;
-      }
+    }
+}
+
+@media(max-width: 359px) {
+    header .logo a {
+        font-size: 1.15em;
+    }
 }
