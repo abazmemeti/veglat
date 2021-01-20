@@ -60,6 +60,8 @@
         <h3>CSS</h3>
         <ul>
             <li><a href="#CSS-njohuri-themelore">Njohuri themelore</a></li>
+            <li><a href="#hyrje-ne-css">Hyrje në CSS</a></li>
+            <li><a href="#sintaksa-css">Sintaksa CSS</a></li>
             
         </ul>
     </aside>
@@ -72,6 +74,180 @@
             <div class="figure jonata">
                 <img src="foto/css3.png" alt="CSS">
             </div>
+            <p><strong>CSS</strong> &euml;sht&euml; akronim nga <strong><em>C</em></strong><em>ascading <strong>S</strong>tyle <strong>S</strong>heets</em>. CSS &euml;sht&euml; nj&euml; gjuh&euml; standarde p&euml;r stilizim t&euml; faqeve q&euml; p&euml;rdoret n&euml; p&euml;rshkrim t&euml; prezantimit (d.m.th. paraqitjen dhe formatimin) e ueb faqeve.</p>
+            <p>Para CSS, gati t&euml; gjitha atributet prezantuese t&euml; dokumenteve HTML ishin t&euml; p&euml;rmbajtura brenda kodit HTML (specifikisht brenda etiketave HTML); t&euml; gjitha ngjyrat e shkronjave, stilet e sfondit, radhitjet e elementeve, kufijt&euml; dhe madh&euml;sit&euml; duhej t&euml; p&euml;rshkruheshin qart&euml; n&euml; HTML.</p>
+            <p>Si rezultat, zhvillimi i ueb sajteve t&euml; m&euml;dha u b&euml; nj&euml; proces i v&euml;shtir&euml; dhe i shtrenjt&euml;, pasi stilizimi duhet shtuar duke u p&euml;rs&euml;ritur n&euml; &ccedil;do ueb faqe individuale t&euml; ueb sajit.</p>
+            <p>P&euml;r t&euml; zgjidhur k&euml;t&euml; problem, CSS u prezantua n&euml; vitin 1996 nga <em>World Wide Web Consortium</em> (W3C), i cili gjithashtu mir&euml;mban standardin e tij. CSS u krijua p&euml;r t&euml; mund&euml;suar ndarjen e prezantimit (stilizimit) dhe p&euml;rmbajtjes. Tani ueb dizajner&euml;t mund t&euml; zhvendosin informacionin e formatimit t&euml; ueb faqeve n&euml; nj&euml; fajll stilizimi t&euml; ve&ccedil;ant&euml; e q&euml; rezulton me fajlla m&euml; t&euml; thjesht&euml; t&euml; HTML-s&euml; dhe mir&euml;mbajtje m&euml; t&euml; mir&euml;.</p>
+            <p>CSS3 &euml;sht&euml; versioni m&euml; i fundit i specifikimeve CSS. CSS3 shton disa ve&ccedil;ori t&euml; reja n&euml; stilizim dhe mund&euml;son avancim t&euml; p&euml;rmir&euml;suar n&euml; prezantimet e ueb faqeve.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: K&euml;to m&euml;sime p&euml;r CSS do t'ju ndihmoj&euml; t&euml; m&euml;soni bazat e gjuh&euml;s m&euml; t&euml; fundit t&euml; CSS3, nga temat m&euml; elementare deri tek ato t&euml; avancuara hap pas hapi.</p>
+            </div>
+
+            <h2>&Ccedil;far&euml; mund t&euml; b&euml;ni me CSS?</h2>
+            <p>Ka shum&euml; gj&euml;ra q&euml; mund t&euml; b&euml;ni me CSS.</p>
+            <ul>
+            <li>Mund t&euml; zbatoni me leht&euml;si stilizim t&euml; nj&euml;jt&euml; n&euml; disa elemente.</li>
+            <li>Mund t&euml; kontrolloni prezantimin e shum&euml; ueb faqeve t&euml; nj&euml; ueb sajti me nj&euml; fajll t&euml; vet&euml;m t&euml; stilizimit.</li>
+            <li>Mund ta paraqisni t&euml; nj&euml;jt&euml;n faqe ndryshe n&euml; pajisje t&euml; ndryshme.</li>
+            <li>Mund t&euml; stilizoni gjendje dinamike t&euml; elementeve t&euml; tilla si hover, fokus, etj. E q&euml; nuk &euml;sht&euml; e mundur ndryshe.</li>
+            <li>Mund t&euml; ndryshoni pozicionin e nj&euml; elementi n&euml; nj&euml; ueb faqe pa e ndryshuar sh&euml;nimin.</li>
+            <li>Mund t&euml; ndryshoni shfaqjen e elementeve ekzistuese n&euml; HTML.</li>
+            <li>Mund t&euml; transformoni elemente si shkalla, rrotullimi, pjerrt&euml;simi, etj. n&euml; hap&euml;sir&euml;n 2D ose 3D.</li>
+            <li>Mund t&euml; krijoni efekte animacioni dhe tranzicioni pa e p&euml;rdorur JavaScript-in.</li>
+            <li>Mund t&euml; krijoni nj&euml; version p&euml;r shtypje t&euml; ueb faqeve.</li>
+            </ul>
+            <p>Lista nuk p&euml;rfundon k&euml;tu, ka shum&euml; gj&euml;ra t&euml; tjera interesante q&euml; mund t&euml; b&euml;ni me CSS.</p>
+            <h2>P&euml;rpar&euml;sit&euml; e p&euml;rdorimit t&euml; CSS-s&euml;</h2>
+            <p>P&euml;rpar&euml;sia m&euml; e madhe e CSS-s&euml; &euml;sht&euml; se lejon ndarjen e stilit dhe paraqitjes nga p&euml;rmbajtja e dokumentit. K&euml;tu kemi dh&euml;n&euml; edhe disa p&euml;rpar&euml;si tjera:</p>
+            <ul>
+            <li><strong>CSS kursen shum&euml; koh&euml;</strong> &ndash; CSS jep shum&euml; fleksibilitet p&euml;r t&euml; vendosur vetit&euml; e stilit t&euml; nj&euml; elementi. Mund t&euml; shkruani CSS-n&euml; nj&euml; her&euml;; dhe pastaj i nj&euml;jti kod mund t&euml; zbatohet n&euml; grupet t&euml; elementeve HTML, e gjithashtu mund t&euml; rip&euml;rdoret n&euml; shum&euml; faqe HTML.</li>
+            <li><strong>Mir&euml;mbajtje e thjesht&euml;</strong> &ndash; CSS ofron nj&euml; mjet t&euml; thjesht&euml; p&euml;r t&euml; p&euml;rdit&euml;suar formatimin e dokumenteve dhe p&euml;r t&euml; ruajtur q&euml;ndrueshm&euml;rin&euml; n&euml; shum&euml; dokumente. P&euml;r shkak se p&euml;rmbajtja e t&euml;r&euml;sis&euml; s&euml; ueb faqeve mund t&euml; kontrollohet leht&euml;sisht duke p&euml;rdorur nj&euml; ose m&euml; shum&euml; fajlla p&euml;r stilzim.</li>
+            <li><strong>Faqet lexohen m&euml; shpejt&euml;</strong> &ndash; CSS i mund&euml;son disa faqeve p&euml;r t&euml; ndar&euml; informacionin e formatimit, e q&euml; zvog&euml;lon kompleksitetin dhe p&euml;rs&euml;ritjen n&euml; p&euml;rmbajtjen strukturale t&euml; dokumenteve. Gjithashtu ndjesh&euml;m zvog&euml;lon madh&euml;sin&euml; e transferimit t&euml; fajllit, e q&euml; rezulton n&euml; nj&euml; lexim m&euml; t&euml; shpejt&euml; t&euml; faqes.</li>
+            <li><strong>Stilet m&euml; superiore n&euml; HTML</strong> &ndash; CSS ka aft&euml;si prezantuese shum&euml; m&euml; t&euml; m&euml;dha se HTML dhe siguron kontroll shum&euml; m&euml; t&euml; mir&euml; t&euml; paraqitjes s&euml; ueb faqeve. K&euml;sisoj mund t'i jepni nj&euml; pamje shum&euml; m&euml; t&euml; mir&euml; ueb faqeve n&euml; krahasim me elementet dhe atributet prezantuese t&euml; HTML-s&euml;.</li>
+            </ul>
+            <p><strong>P&euml;rputhshm&euml;ri n&euml; pajisje t&euml; ndryshme</strong> &ndash; CSS lejon gjithashtu q&euml; ueb faqet t&euml; optimizohen p&euml;r m&euml; shum&euml; se nj&euml; lloj pajisjeje ose media. P&euml;rdorimi i CSS-it n&euml; t&euml; nj&euml;jtin dokument HTML mund t&euml; paraqitet n&euml; stile t&euml; ndryshme shikimi p&euml;r pajisje (ekrane) si desktop, telefona inteligjent&euml;, etj.</p>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Tani shumica e atributeve HTML po zhvler&euml;sohen dhe nuk rekomandohet t&euml; p&euml;rdoren. Prandaj &euml;sht&euml; nj&euml; ide e mir&euml; t&euml; p&euml;rdorni sa m&euml; shum&euml; CSS p&euml;r t&euml; rritur p&euml;rshtatshm&euml;rin&euml; e ueb sajtit dhe t'i b&euml;ni ato t&euml; p&euml;rputhshme me shfletuesit e ardhsh&euml;m.</p>
+            </div>
+        </section>
+        <section id="hyrje-ne-css">
+            <h1>Hyrje n&euml; CSS</h1>
+            <p>N&euml; k&euml;t&euml; kaptin&euml; do t&euml; m&euml;soni se sa e leht&euml; &euml;sht&euml; t&euml; shtoni informacione p&euml;r stilin dhe formatimin n&euml; ueb faqe duke p&euml;rdorur CSS. Por, para se t&euml; filloni, duhet t&euml; keni disa njohuri p&euml;r HTML.</p>
+            <h2>P&euml;rfshirja e CSS-it n&euml; dokumentet HTML</h2>
+            <p>CSS mund t&euml; bashk&euml;ngjitet si nj&euml; dokument i ve&ccedil;ant&euml; ose i sh&euml;nuar n&euml; vet&euml; dokumentin HTML. Ekzistojn&euml; tri metoda p&euml;r t&euml; p&euml;rfshir&euml; CSS-n&euml; n&euml; nj&euml; dokument HTML:</p>
+            <ul>
+            <li><strong>Stilet inline</strong> &ndash; P&euml;rdorimi i atributit style n&euml; etiket&euml;n fillestare HTML.</li>
+            <li><strong>Stilet e brendshme</strong> &ndash; P&euml;rdorimi i elementit <code>&lt;style&gt;</code> n&euml; pjes&euml;n kryesore t&euml; dokumentit HTML.</li>
+            <li><strong>Stilet e jasht&euml;m</strong> &ndash; P&euml;rdorimi i elementit <code>&lt;link&gt;</code>, p&euml;r tu lidhur me nj&euml; fajll t&euml; jasht&euml;m CSS.</li>
+            </ul>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Stilet inline kan&euml; p&euml;rpar&euml;sin&euml; m&euml; t&euml; lart&euml;, dhe stilet e jasht&euml;m kan&euml; m&euml; t&euml; ult&euml;n. Do t&euml; thot&euml; n&euml;se specifikoni stilet p&euml;r nj&euml; element si n&euml; stilin e <em>brendsh&euml;m </em>ashtu edhe n&euml; at&euml; t&euml; stilit t&euml; <em>jasht&euml;m</em>, sipas rregullit stili i brendsh&euml;m do t&euml; mbizot&euml;roj stilin e jasht&euml;m.</p>
+            </div>
+            <h3>Stilet inline</h3>
+            <p>Stilet inline p&euml;rdoren p&euml;r t&euml; zbatuar rregullat e stilit unik n&euml; nj&euml; element duke vendosur rregullat CSS direkt n&euml; etiket&euml;n fillestare. Mund t'i bashk&euml;ngjitet nj&euml; elementi duke p&euml;rdorur atributin <code>style</code>.</p>
+            <p>Atributi <code>style</code> p&euml;rfshin nj&euml; varg t&euml; &ccedil;ifteve t&euml; vetive dhe vlerave t&euml; CSS-it. &Ccedil;do pal&euml; <code>"veti: vler&euml;"</code> ndahet me nga nj&euml; pik&euml;presje (<code>;</code>), ashtu si do t&euml; shkruani n&euml; stilin e brendsh&euml;m ose t&euml; jasht&euml;m, por duhet t&euml; jet&euml; e gjitha n&euml; nj&euml; rresht, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;h1 style="color:red; font-size:30px;"&gt;Ky &euml;sht&euml; titulli&lt;/h1&gt;
+&lt;p style="color:green; font-size:22px;"&gt;Ky &euml;sht&euml; nj&euml; paragraf.&lt;/p&gt;
+&lt;div style="color:blue; font-size:14px;"&gt;Kjo &euml;sht&euml; nj&euml; p&euml;rmbajtje tekstuale.&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+            <p>P&euml;rdorimi i stileve inline zakonisht konsiderohet si praktik&euml; jo e mir&euml;. Meqen&euml;se stilet futen direkt brenda etiket&euml;s HTML, kjo b&euml;n q&euml; prezantimi t&euml; p&euml;rzihet me p&euml;rmbajtjen e dokumentit; gj&euml; q&euml; e b&euml;n kodin e v&euml;shtir&euml; p&euml;r tu mir&euml;mbajtur dhe e mohon q&euml;llimin e p&euml;rdorimit t&euml; CSS-s&euml;.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Tek stilizimi inline &euml;sht&euml; e pamundur stilizimi i pseudo-elemente dhe pseudo-klasave. Prandaj, duhet t&euml; shmangni p&euml;rdorimin e atributeve t&euml; stilit n&euml; kodin tuaj. P&euml;rdorimi i fajllit p&euml;r stilizim t&euml; jasht&euml;m &euml;sht&euml; m&euml;nyra e preferuar p&euml;r t&euml; shtuar stile n&euml; dokumentet HTML.</p>
+            </div>
+            <h3>Stilet e brendshme</h3>
+            <p>Stilet e brendsh&euml;m zbatohen vet&euml;m n&euml; dokumentin n&euml; t&euml; cilin jan&euml; sh&euml;nuara.</p>
+            <p>Stili i brendsh&euml;m definohet n&euml; seksionin <code>&lt;head&gt;</code> t&euml; dokumentit HTML duke p&euml;rdorur elementin <code>&lt;style&gt;</code>. Mund t&euml; definoni m&euml; shum&euml; se nj&euml; her&euml; elementet <code>&lt;style&gt;</code> n&euml; dokument HTML, por ato duhet t&euml; shfaqen midis etiketave <code>&lt;head&gt;</code> dhe <code>&lt;/head&gt;</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="sq"&gt;
+&lt;head&gt;
+    &lt;title&gt;Dokumenti HTML&lt;/title&gt;
+    &lt;style&gt;
+        body { background-color: YellowGreen; }
+        p { color: #fff; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Ky &euml;sht&euml; titulli&lt;/h1&gt;
+    &lt;p&gt;Ky &euml;sht&euml; nj&euml; paragraf tekstual.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Tipi i atributit t&euml; etiketave <code>&lt;style&gt;</code> dhe <code>&lt;link&gt;</code> (d.m.th. <code>type="text/css"</code>) definon gjuh&euml;n e stilizimit. Ky atribut &euml;sht&euml; thjesht informues. Mund ta hiqni k&euml;t&euml; pasi CSS &euml;sht&euml; gjuh&euml; standarde dhe e paracaktuar e stilizimit n&euml; HTML5.</p>
+            </div>
+            <h3>Stilet e jasht&euml;m</h3>
+<p>Nj&euml; stil i jasht&euml;m &euml;sht&euml; ideal kur stili zbatohet n&euml; shum&euml; faqe t&euml; ueb sajtit.</p>
+<p>Nj&euml; fajll me stil t&euml; jasht&euml;m mban t&euml; gjitha rregullat e stilit n&euml; nj&euml; dokument t&euml; ve&ccedil;ant&euml; q&euml; mund ta lidhni nga &ccedil;do dokument HTML n&euml; faqen tuaj. Stilet e jasht&euml;m jan&euml; m&euml; fleksib&euml;l, sepse nga nj&euml; fajll i vet&euml;m, mund t&euml; ndryshoni pamjen e t&euml;r&euml; ueb sajtit.</p>
+<p>Mund t&euml; bashk&euml;ngjitni fajllat e stilit t&euml; jasht&euml;m n&euml; dy m&euml;nyra &ndash; <em>lidhja</em> dhe <em>importimi</em>.</p>
+<p><strong>Lidhja e stilit t&euml; jasht&euml;m</strong></p>
+<p>Para krijimit t&euml; lidhjes, duhet s&euml; pari t&euml; krijojm&euml; nj&euml; fajll stilizimi. Hapim editorin tuaj t&euml; preferuar t&euml; kodit dhe krijojm&euml; nj&euml; fajll t&euml; ri. Tani shtypim kodin e m&euml;posht&euml;m CSS brenda k&euml;tij fajlli dhe ruajm&euml; at&euml; si "<code>stili.css</code>".</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>body {
+    background: lightyellow;
+    font: 18px Arial, sans-serif;
+}
+h1 {
+    color: orange;
+}</code></pre>
+                </div>
+            </div>
+            <p>Nj&euml; fajll me stil t&euml; jasht&euml;m mund t&euml; lidhet me nj&euml; dokument HTML duke p&euml;rdorur etiket&euml;n <code>&lt;link&gt;</code>. Etiketa <code>&lt;link&gt;</code> hyn brenda seksionit <code>&lt;head&gt;</code>, si&ccedil; mund ta shihni n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="sq"&gt;
+&lt;head&gt;
+    &lt;title&gt;Dokumenti HTML&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/stili.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Ky &euml;sht&euml; titulli&lt;/h1&gt;
+    &lt;p&gt;Ky &euml;sht&euml; nj&euml; paragraf tekstual.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Nga tri metodat, p&euml;rdorimi i stilit t&euml; jasht&euml;m &euml;sht&euml; metoda m&euml; e mir&euml; p&euml;r definimin dhe zbatimin e stileve n&euml; dokumentet HTML. Si&ccedil; mund ta shihni qart&euml; me stil t&euml; jasht&euml;m, fajlli HTML q&euml; lidh fajllin e jasht&euml;m CSS k&euml;rkon ndryshime minimale n&euml; sh&euml;njim.</p>
+            </div>
+            <p><strong>Importimi i stilit t&euml; jasht&euml;m</strong></p>
+            <p>Rregulli <code>@import</code> &euml;sht&euml; nj&euml; m&euml;nyr&euml; tjet&euml;r p&euml;r t&euml; ngarkuar nj&euml; stil t&euml; jasht&euml;m. Deklarata <code>@import</code> udh&euml;zon shfletuesin t&euml; ngarkoj&euml; nj&euml; stil t&euml; jasht&euml;m dhe t&euml; p&euml;rdor&euml; stilet e saj.</p>
+            <p>Mund ta p&euml;rdorni n&euml; dy m&euml;nyra. M&euml; e thjesht&euml; &euml;sht&euml; brenda seksionit head t&euml; dokumentit tuaj. Vini re se, rregulla tjera t&euml; CSS-s&euml; mund t&euml; p&euml;rfshihen akoma n&euml; elementin <code>&lt;style&gt;</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;style&gt;
+    @import url("css/stili.css");
+    p {
+        color: blue;
+        font-size: 16px;
+    }
+&lt;/style&gt;</code></pre>
+                </div>
+            </div>
+            <p>Ngjash&euml;m, mund t&euml; p&euml;rdorni rregullin <code>@import</code> p&euml;r t&euml; importuar nj&euml; stil brenda nj&euml; stili tjet&euml;r.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>@import url("css/modeli.css");
+@import url("css/ngjyra.css");
+body {
+    color: blue;
+    font-size: 14px;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: T&euml; gjith&euml; rregullat <code>@import</code> duhet t&euml; vendosen n&euml; fillim t&euml; flet&euml;s s&euml; stilit. &Ccedil;do rregull stili i definuar n&euml; stilin e dh&euml;n&euml; mbizot&euml;ron rregullat kund&euml;rshtuese nga stilet e importuar. Sidoqoft&euml;, importimi i nj&euml; stili brenda nj&euml; stili tjet&euml;r nuk rekomandohet p&euml;r shkak t&euml; &ccedil;&euml;shtjes s&euml; performanc&euml;s.</p>
+            </div>
+        </section>
+        <section id="sintaksa-css">
+            <h1>Sintaksa CSS</h1>
+            <p>Nj&euml; flet&euml; stilesh e CSS-s&euml; p&euml;rb&euml;het nga nj&euml; grup rregullash q&euml; interpretohen nga ueb shfletuesi dhe m&euml; pas aplikohen n&euml; elementet p&euml;rkat&euml;se si paragraf&euml;t, titujt, etj.</p>
+            <p>Rregulli i CSS-s&euml; ka dy pjes&euml; kryesore, nj&euml; selektor dhe nj&euml; ose m&euml; shum&euml; deklarata:</p>
+            <div class="img-kodi elementet-html" style="text-align: center;">
+                <img src="foto/css-selector.png" alt="Kodi CSS">
+            </div>
+            <p>Selektori specifikon se n&euml; cilin element ose n&euml; cilat elemente n&euml; faqen HTML zbatohet rregulli CSS.</p>
+            <p>Deklaratat brenda bllokut p&euml;rcaktojn&euml; m&euml;nyr&euml;n e formatimit t&euml; elementeve n&euml; nj&euml; ueb faqe. Secila deklarat&euml; p&euml;rb&euml;het nga nj&euml; veti dhe nj&euml; vler&euml; e ndar&euml; nga dy pika (<code>:</code>) dhe q&euml; mbaron me pik&euml;presje (<code>;</code>), e grupet e deklarimit jan&euml; t&euml; vendosura nga kllapat e m&euml;dha <code>{}</code>.</p>
+            <p>Vetia &euml;sht&euml; atribut i stilit q&euml; d&euml;shironi ta ndryshoni; ato mund t&euml; jen&euml; fonte, ngjyra, sfonde, etj. &Ccedil;do veti ka nj&euml; vler&euml;, p&euml;r shembull vetia e ngjyr&euml;s mund t&euml; ket&euml; vler&euml;n <code>blue</code> ose <code>#0000FF</code>, etj.</p>
+
+
+
+
+
+
         </section>
 
     </main>
