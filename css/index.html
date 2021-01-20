@@ -62,6 +62,7 @@
             <li><a href="#CSS-njohuri-themelore">Njohuri themelore</a></li>
             <li><a href="#hyrje-ne-css">Hyrje në CSS</a></li>
             <li><a href="#sintaksa-css">Sintaksa CSS</a></li>
+            <li><a href="#selektoret">Selektorët</a></li>
             
         </ul>
     </aside>
@@ -242,7 +243,84 @@ body {
             <p>Selektori specifikon se n&euml; cilin element ose n&euml; cilat elemente n&euml; faqen HTML zbatohet rregulli CSS.</p>
             <p>Deklaratat brenda bllokut p&euml;rcaktojn&euml; m&euml;nyr&euml;n e formatimit t&euml; elementeve n&euml; nj&euml; ueb faqe. Secila deklarat&euml; p&euml;rb&euml;het nga nj&euml; veti dhe nj&euml; vler&euml; e ndar&euml; nga dy pika (<code>:</code>) dhe q&euml; mbaron me pik&euml;presje (<code>;</code>), e grupet e deklarimit jan&euml; t&euml; vendosura nga kllapat e m&euml;dha <code>{}</code>.</p>
             <p>Vetia &euml;sht&euml; atribut i stilit q&euml; d&euml;shironi ta ndryshoni; ato mund t&euml; jen&euml; fonte, ngjyra, sfonde, etj. &Ccedil;do veti ka nj&euml; vler&euml;, p&euml;r shembull vetia e ngjyr&euml;s mund t&euml; ket&euml; vler&euml;n <code>blue</code> ose <code>#0000FF</code>, etj.</p>
+            <div class="sintaksa">
+<pre><code>h1 {color:blue; text-align:center;}</code></pre>
+            </div>
+            <p>P&euml;r ta b&euml;r&euml; CSS-n&euml; m&euml; t&euml; lexueshme, &ccedil;do deklarat&euml; mund&nbsp; ta sh&euml;noni n&euml; rresht t&euml; ri, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    color: blue;
+    text-align: center;
+}</code></pre>
+                </div>
+            </div>
+            <p>N&euml; shembullin e m&euml;sip&euml;rm h1 &euml;sht&euml; selektor, <code>color</code> dhe <code>test-align</code> jan&euml; veti t&euml; CSS-s&euml;, pastaj <code>blue</code> dhe <code>center</code> jan&euml; vlerat p&euml;rkat&euml;se t&euml; k&euml;tyre vetive.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Nj&euml; deklarat&euml; CSS gjithmon&euml; p&euml;rfundon me nj&euml; pik&euml;presje "<code>;</code>", dhe grupet e deklarimit jan&euml; gjithmon&euml; brenda kllapave gjarp&euml;rore "<code>{}</code>".</p>
+            </div>
+            <h2>Sh&euml;nimi i komenteve n&euml; CSS</h2>
+            <p>Komentet zakonisht shtohen me q&euml;llim q&euml; ta b&euml;jn&euml; kodin burimor m&euml; t&euml; leht&euml; p&euml;r t'u kuptuar. Mund t&rsquo;i ndihmoj&euml; zhvilluesit tjet&euml;r (ose juve n&euml; t&euml; ardhmen kur editoni kodin burimor) t&euml; kuptojn&euml; se &ccedil;far&euml; po p&euml;rpiqeshit t&euml; b&euml;nit me CSS. Komentet jan&euml; dometh&euml;n&euml;se p&euml;r programuesit, por injorohen nga shfletuesit.</p>
+            <p>Nj&euml; koment n&euml; CSS fillon me <code>/*</code> dhe p&euml;rfundon me <code>*/</code>, si&ccedil; tregohet n&euml; shembullin m&euml; posht&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>/* Ky është një koment në CSS */
+h1 {
+    color: blue;
+    text-align: center;
+}
+/* Ky është koment CSS i gjatë
+    në shumë rreshta */
+p {
+    font-size: 18px;
+    text-transform: uppercase;
+}</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; komentoni nj&euml; pjes&euml; t&euml; kodit tuaj CSS p&euml;r q&euml;llime korrigjimi, si&ccedil; tregohet m&euml; posht&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    color: blue;
+    text-align: center;
+}
+/*
+p {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+*/</code></pre>
+                </div>
+            </div>
+            <h2>Ndjeshm&euml;ria e shkronjave n&euml; CSS (<em>Case Sensivity</em>)</h2>
+            <p>Emrat e vetive n&euml; CSS dhe shum&euml; vlera nuk jan&euml; t&euml; ndjeshme n&euml; shkronja t&euml; m&euml;dha. Nd&euml;rsa, selektor&euml;t e CSS-s&euml; zakonisht jan&euml; t&euml; ndjesh&euml;m n&euml; shkronja, p&euml;r shembull, selektori i klas&euml;s <code>.maincontent</code> nuk &euml;sht&euml; i nj&euml;jt&euml; me <code>.mainContent</code>.</p>
+            <p>Prandaj, p&euml;r t&euml; qen&euml; m&euml; t&euml; sigurt, duhet t&euml; supozoni se t&euml; gjith&euml; komponentet e rregullave t&euml; CSS jan&euml; t&euml; ndjesh&euml;m ndaj shkronjave.</p>
+        </section>
 
+        <section id="selektoret">
+            <h1>Selektor&euml;t</h1>
+            <p>Selektori CSS &euml;sht&euml; nj&euml; model q&euml; p&euml;rputhet me elementet e nj&euml; ueb faqeje. Rregullat e stilit t&euml; shoq&euml;ruara me at&euml; selektor do t&euml; aplikohen n&euml; elementet q&euml; p&euml;rputhen me modelin e selektorit.</p>
+            <p>Selektor&euml;t jan&euml; nj&euml; prej aspekteve m&euml; t&euml; r&euml;nd&euml;sishme t&euml; CSS-s&euml;, pasi ato ju mund&euml;sojn&euml; t&euml; p&euml;rzgjidhni elemente specifike n&euml; ueb faqen tuaj q&euml; t&euml; stilizohen n&euml; m&euml;nyra t&euml; ndryshme.</p>
+            <p>Disa lloje t&euml; selektor&euml;ve CSS jan&euml; n&euml; dispozicion, le t'i hedhim nj&euml; v&euml;shtrim:</p>
+            <h2>Selektori universal</h2>
+            <p>Selektori universal, i sh&euml;nuar me nj&euml; yll (<code>*</code>), p&euml;rputhet me &ccedil;do element n&euml; ueb faqe.</p>
+            <p>Selektori universal mund t&euml; hiqet n&euml;se ekzistojn&euml; kushte t&euml; tjera n&euml; element. Ky selektor shpesh p&euml;rdoret p&euml;r t&euml; hequr margjinat dhe mbushjet e paracaktuara nga element&euml;t me q&euml;llim t&euml; testimit t&euml; shpejt&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>* {
+    margin: 0;
+    padding: 0;
+}</code></pre>
+                </div>
+            </div>
+            <p>Rregullat e stilit brenda selektorit <code>*</code> do t&euml; zbatohen p&euml;r &ccedil;do element n&euml; nj&euml; dokument.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Rekomandohet t&euml; mos p&euml;rdorni selektorin universal (<code>*</code>) shum&euml; shpesh n&euml; nj&euml; mjedis paraqitjeje, pasi q&euml; ky selektor p&euml;rputhet me &ccedil;do element n&euml; ueb faqe e q&euml; ushtron presion t&euml; panevojsh&euml;m n&euml; shfletues. N&euml; vend t&euml; tij p&euml;rdorni selektor t&euml; tipit element ose selektor t&euml; klas&euml;s.</p>
+            </div>
 
 
 
