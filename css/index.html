@@ -319,12 +319,154 @@ p {
             </div>
             <p>Rregullat e stilit brenda selektorit <code>*</code> do t&euml; zbatohen p&euml;r &ccedil;do element n&euml; nj&euml; dokument.</p>
             <div class="shenim">
-                <p><strong>Sh&euml;nim</strong>: Rekomandohet t&euml; mos p&euml;rdorni selektorin universal (<code>*</code>) shum&euml; shpesh n&euml; nj&euml; mjedis paraqitjeje, pasi q&euml; ky selektor p&euml;rputhet me &ccedil;do element n&euml; ueb faqe e q&euml; ushtron presion t&euml; panevojsh&euml;m n&euml; shfletues. N&euml; vend t&euml; tij p&euml;rdorni selektor t&euml; tipit element ose selektor t&euml; klas&euml;s.</p>
+                <p><strong>Sh&euml;nim</strong>: Rekomandohet t&euml; <em>mos p&euml;rdorni</em> selektorin universal (<code>*</code>) shum&euml; shpesh n&euml; nj&euml; mjedis paraqitjeje, pasi q&euml; ky selektor p&euml;rputhet me &ccedil;do element n&euml; ueb faqe e q&euml; ushtron presion t&euml; panevojsh&euml;m n&euml; shfletues. N&euml; vend t&euml; tij p&euml;rdorni selektor t&euml; tipit element ose selektor t&euml; klas&euml;s.</p>
             </div>
-
-
-
-
+            <h2>Selektor&euml;t e tipit t&euml; elementit</h2>
+            <p>Nj&euml; selektor i tipit t&euml; elementit p&euml;rputhet me t&euml; gjitha instancat e elementit n&euml; dokument me emrin e tipit p&euml;rkat&euml;s t&euml; elementit. T&euml; provojm&euml; nj&euml; shembull p&euml;r t&euml; par&euml; se si funksionon n&euml; t&euml; v&euml;rtet&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    color: blue;
+}</code></pre>
+                </div>
+            </div>
+            <p>Rregullat e stilit brenda selektorit <code>p</code> do t&euml; zbatohen n&euml; &ccedil;do element <code>&lt;p&gt;</code> (apo paragraf) n&euml; dokument dhe e ngjyrosin at&euml; me ngjyr&euml; t&euml; kalt&euml;r (<code>blue</code>), pavar&euml;sisht nga pozicioni i tyre n&euml; pem&euml;n e dokumentit.</p>
+            <h2>Selektor&euml;t ID</h2>
+            <p>Selektori ID p&euml;rdoret p&euml;r t&euml; definuar rregullat e stilit p&euml;r nj&euml; element t&euml; <em>vet&euml;m</em> ose <em>unik</em>.</p>
+            <p>Selektori ID definohet me shenj&euml;n (<code>#</code>), e m&euml; pas e ndjekur nga vlera e ID-s&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>#error {
+    color: red;
+}</code></pre>
+                </div>
+            </div>
+            <p>Ky stil e paraqet tekstin e nj&euml; elementi me t&euml; kuqe, atributi <code>id</code> i t&euml; cilit e ka vler&euml;n <code>error</code>.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vlera e nj&euml; atributi ID duhet t&euml; jet&euml; unike brenda nj&euml; dokumenti t&euml; caktuar &ndash; q&euml; do t&euml; thot&euml; se dy element&euml; n&euml; dokumentin HTML nuk mund t&euml; ken&euml; t&euml; nj&euml;jt&euml;n vler&euml; t&euml; ID-s&euml;.</p>
+            </div>
+            <h2>Selektor&euml;t e klasave</h2>
+            <p>Selektor&euml;t e klasave mund t&euml; p&euml;rdoren p&euml;r t&euml; zgjedhur &ccedil;do element HTML q&euml; kan&euml; atributin <code>class</code>. T&euml; gjith&euml; element&euml;t q&euml; kan&euml; at&euml; klas&euml; do t&euml; formatohen sipas rregullit t&euml; p&euml;rcaktuar.</p>
+            <p>Selektori i klas&euml;s definohet me shenj&euml;n (<code>.</code>), e m&euml; pas e ndjekur nga vlera e klas&euml;s.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>.kalter {
+    color: blue;
+}</code></pre>
+                </div>
+            </div>
+            <p>Rregullat e stilit t&euml; m&euml;sip&euml;rm e b&euml;jn&euml; tekstin me ngjyr&euml; t&euml; kalt&euml;r p&euml;r &ccedil;do element n&euml; dokument q&euml; posedon atributin <code>class</code> me vler&euml; <code>blue</code>. Mund ta b&euml;ni at&euml; m&euml; t&euml; ve&ccedil;ant&euml;. P&euml;r shembull:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p.kalter {
+    color: blue;
+}</code></pre>
+                </div>
+            </div>
+            <p>Stili brenda selektorit <code>p.blue</code> e b&euml;n tekstin e kalt&euml;r vet&euml;m p&euml;r elementet <code>&lt;p&gt;</code> q&euml; kan&euml; atributin <code>class</code> me vler&euml;n <code>blue</code> dhe nuk ka asnj&euml; efekt n&euml; paragraf&euml;t e tjer&euml;.</p>
+            <h2>Selektor&euml;t pasardh&euml;s</h2>
+            <p>Mund t'i p&euml;rdorni k&euml;to selektor&euml; kur duhet t&euml; zgjidhni nj&euml; element q&euml; &euml;sht&euml; pasardh&euml;s i nj&euml; elementi tjet&euml;r, p&euml;r shembull, n&euml;se doni t&euml; p&euml;rzgjidhni vet&euml;m ato etiketa <code>a</code> q&euml; p&euml;rmbahen n&euml; nj&euml; list&euml; t&euml; parenditur <code>ul</code>, n&euml; vend q&euml; t&euml; p&euml;rzgjidhni t&euml; gjith&euml; element&euml;t <code>a</code> n&euml; at&euml; dokument.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ul.menu li a {
+    text-decoration: none;
+}
+h1 em {
+    color: green;
+}</code></pre>
+                </div>
+            </div>
+            <p>Rregullat e stilit brenda selektorit <code>ul.menu li a</code> zbatohen vet&euml;m p&euml;r ato elemente <code>&lt;a&gt;</code> q&euml; gjinden brenda nj&euml; elementi <code>&lt;ul&gt;</code> q&euml; ka klas&euml;n <code>.menu</code>, dhe nuk ka asnj&euml; efekt n&euml; linqet tjer&euml; brenda dokumentit.</p>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, rregullat e stilit brenda selektorit <code>h1 em</code> do t&euml; zbatohen vet&euml;m p&euml;r ato elemente <code>&lt;em&gt;</code> q&euml; p&euml;rmbahen brenda elementit <code>&lt;h1&gt;</code> dhe nuk ka efekt n&euml; element&euml;t e tjer&euml; <code>&lt;em&gt;</code>.</p>
+            <h2>Selektor&euml;t e f&euml;mij&euml;ve</h2>
+            <p>Selektor&euml;t e f&euml;mij&euml;ve p&euml;rdoren p&euml;r t&euml; zgjedhur vet&euml;m ato elemente q&euml; jan&euml; f&euml;mij&euml;t e drejtp&euml;rdrejt&euml; t&euml; nj&euml; elementi.</p>
+            <p>Selektor&euml;t e f&euml;mij&euml;ve p&euml;rb&euml;het nga dy ose m&euml; shum&euml; selektor&euml; t&euml; ndar&euml; me simbolin m&euml; i madh se (<code>&gt;</code>). Mund ta p&euml;rdorni k&euml;t&euml; selektor, p&euml;r shembull, p&euml;r t&euml; zgjedhur nivelin e par&euml; t&euml; elementeve t&euml; list&euml;s brenda nj&euml; liste t&euml; futur q&euml; ka m&euml; shum&euml; se nj&euml; nivel. Le t&euml; shikojm&euml; nj&euml; shembull p&euml;r t&euml; kuptuar se si funksionon:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ul > li {
+    list-style: square;
+}
+ul > li ol {
+    list-style: none;
+}</code></pre>
+                </div>
+            </div>
+            <p>Rregulli i stilit brenda selektorit <code>ul &gt; li</code> zbatohet vet&euml;m p&euml;r ato element&euml; <code>&lt;li&gt;</code> q&euml; jan&euml; f&euml;mij&euml; t&euml; drejtp&euml;rdrejt&euml; t&euml; elementeve <code>&lt;ul&gt;</code> dhe nuk ka asnj&euml; efekt mbi element&euml;t e tjer&euml; t&euml; list&euml;s.</p>
+            <h2>Selektor&euml;t fqinj&euml; sibling</h2>
+            <p>Selektor&euml;t fqinj&euml; sibling mund t&euml; p&euml;rdoren p&euml;r t&euml; zgjedhur element&euml; n&euml; t&euml; nj&euml;jtin nivel. Ky selektor ka sintaks&euml;n k&euml;sisoj: <code>E1 + E2</code>, ku <code>E2</code> &euml;sht&euml; sh&euml;njestra e selektorit.</p>
+            <p>Selektori <code>h1 + p</code> n&euml; shembullin vijues do t&euml; zgjedh&euml; elementet <code>&lt;p&gt;</code> vet&euml;m n&euml;se t&euml; dy elementet <code>&lt;h1&gt;</code> dhe <code>&lt;p&gt;</code> ndajn&euml; t&euml; nj&euml;jtin prind n&euml; pem&euml;n e dokumentit dhe <code>&lt;h1&gt;</code> i paraprin dhe &euml;sht&euml; fqinj me elementin <code>&lt;p&gt;</code>. Kjo do t&euml; thot&euml; se vet&euml;m ata paragraf&euml; q&euml; vijn&euml; menj&euml;her&euml; pas &ccedil;do titulli <code>&lt;h1&gt;</code> do t&euml; p&euml;rzgjidhen. Le t&euml; shohim se si funksionon n&euml; t&euml; v&euml;rtet&euml; ky selektor:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 + p {
+    color: blue;
+    font-size: 18px;
+}
+ul.task + p {
+    color: #f0f;
+    text-indent: 30px;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Selektor&euml;t e p&euml;rgjithsh&euml;m sibling</h2>
+            <p>Selektori i p&euml;rgjithsh&euml;m sibling &euml;sht&euml; i ngjash&euml;m me selektorin fqinj sibling (<code>E1 + E2</code>), por &euml;sht&euml; m&euml; pak i rrept&euml;. Selektori i p&euml;rgjithsh&euml;m sibling p&euml;rb&euml;het nga dy selektor&euml; t&euml; thjesht&euml; t&euml; ndar&euml; nga karakteri (<code>&sim;</code>). Mund t&euml; shkruhet k&euml;sisoj: <code>E1 &sim; E2</code>, ku <code>E2</code> &euml;sht&euml; sh&euml;njestra e selektorit.</p>
+            <p>Selektori <code>h1 &sim; p</code> n&euml; shembullin m&euml; posht&euml; do t&euml; zgjedh&euml; t&euml; gjith&euml; element&euml;t <code>&lt;p&gt;</code> q&euml; paraprihen nga elementi <code>&lt;h1&gt;</code>, ku t&euml; gjith&euml; element&euml;t ndajn&euml; t&euml; nj&euml;jtin prind n&euml; pem&euml;n e dokumentit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 ∼ p {
+    color: blue;
+    font-size: 18px;
+}
+ul.task ∼ p {
+    color: #f0f;
+    text-indent: 30px;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Grupimi i selektor&euml;ve</h2>
+            <p>Shpesh disa selektor&euml; n&euml; nj&euml; flet&euml; t&euml; stilit ndajn&euml; t&euml; nj&euml;jtat deklarata t&euml; rregullave t&euml; stilit. Mund t'i gruponi n&euml; nj&euml; list&euml; t&euml; ndar&euml; me presje p&euml;r t&euml; minimizuar kodin n&euml; flet&euml;n tuaj t&euml; stilit. Gjithashtu ju pamund&euml;son t&euml; p&euml;rs&euml;risni t&euml; nj&euml;jtat rregulla t&euml; stilit disa her&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    font-size: 36px;
+    font-weight: normal;
+}
+h2 {
+    font-size: 28px;
+    font-weight: normal;
+}
+h3 {
+    font-size: 22px;
+    font-weight: normal;
+}</code></pre>
+                </div>
+            </div>
+            <p>Si&ccedil; mund ta shihni n&euml; shembullin e m&euml;sip&euml;rm, i nj&euml;jti rregull i stilit <code>font-weight: normal;</code> p&euml;rdoret nga selektor&euml;t <code>h1</code>, <code>h2</code> dhe <code>h3</code>, k&euml;shtu q&euml; mund t&euml; grupohen n&euml; nj&euml; list&euml; t&euml; ndar&euml; me presje, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1, h2, h3 {
+    font-weight: normal;
+}
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-size: 28px;
+}
+h3 {
+    font-size: 22px;
+}</code></pre>
+                </div>
+            </div>
 
         </section>
 
