@@ -1696,6 +1696,183 @@ alert(x >= y);  // Rezultati: false</code></pre>
 
         </section>
 
+        <section id="stringjet">
+            <h1>Stringjet</h1>
+            <p>Nj&euml; string &euml;sht&euml; nj&euml; varg i shkronjave, numrave, karaktereve speciale dhe vlerave aritmetike ose kombinimi i t&euml; gjithave. Stringjet mund t&euml; krijohen duke mbyllur vargun fjal&euml; p&euml;r fjal&euml; (d.m.th. karakteret e vargut) ose brenda thonj&euml;zave t&euml; nj&euml;fishta (<code>'</code>) ose thonj&euml;zave t&euml; dyfishta (<code>"</code>), si&ccedil; tregohet n&euml; shembullin m&euml; posht&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str1 = 'Përshëndetje Botë!'; // Stringu me thonjëza të njëfishta
+var str2 = "Përshëndetje Botë!"; // Stringu me thonjëza të dyfishta</code></pre>
+                </div>
+            </div>
+            <p>Mund t&rsquo;i p&euml;rdorni thonj&euml;zat brenda stringut deri sa nuk jan&euml; t&euml; nj&euml;jta me thonj&euml;zat q&euml; e rrethojn&euml; at&euml; string:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str1 = "Do t'i nis punimet.";
+var str2 = 'Ai tha "Mirupafshim!"';
+var str3 = "Ajo u përgjigj 'Qetësohu, të lutem!'";
+var str4 = 'Tungjatjeta!"; // Gabim në sintaksë – thonjëzat duhet të përputhen</code></pre>
+                </div>
+            </div>
+            <p>Megjithat&euml;, p&euml;rs&euml;ri mund t&euml; p&euml;rdorni thonj&euml;za t&euml; nj&euml;fishta brenda nj&euml; stringu q&euml; nd&euml;rtohet nga thonj&euml;zat e nj&euml;fishta ose thonj&euml;za t&euml; dyfishta brenda stringut t&euml; nd&euml;rtuar nga thonj&euml;zat e dyfishta duke vendosur p&euml;rpara nj&euml; karakter prapavij&euml; (<em>backslash - </em><em>\</em>) , k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str1 = 'Do t\'i nis punimet.';
+var str2 = "Ai tha \"Mirupafshim!\"";
+var str3 = 'Ajo u përgjigj \'Qetësohu, të lutem!\'';</code></pre>
+                </div>
+            </div>
+            <p>Beksllesh &ndash; ang.<em>Backslash</em> (<code>\</code>) quhet karakter <em>escape</em>, nd&euml;rsa <code>\'</code> dhe <code>\"</code> q&euml; kemi p&euml;rdorur n&euml; shembullin e m&euml;sip&euml;rm quhen sekuenca <em>escape</em>.</p>
+            <h2>Sekuencat <em>Escape</em></h2>
+            <p>Sekuencat escape jan&euml; gjithashtu t&euml; dobishme p&euml;r situatat kur d&euml;shironi t&euml; p&euml;rdorni karaktere q&euml; nuk mund t&euml; shtypen duke p&euml;rdorur tastier&euml;n. K&euml;tu jan&euml; disa sekuenca tjera m&euml; t&euml; p&euml;rdorura:</p>
+            <ul>
+                <li><code>\n</code> &ndash; z&euml;vend&euml;sohet nga karakteri i linj&euml;s s&euml; re</li>
+                <li><code>\t</code> &ndash; z&euml;vend&euml;sohet nga karakteri <em>tab</em></li>
+                <li><code>\r</code> &ndash; z&euml;vend&euml;sohet nga karakteri <em>carriage-return</em></li>
+                <li><code>\b</code> &ndash; z&euml;vend&euml;sohet nga karakteri <em>backspace</em></li>
+                <li><code>\\</code> &ndash; z&euml;vend&euml;sohet nga nj&euml; beksllesh i vet&euml;m (<code>\</code>)</li>
+            </ul>
+            <p>Ja nj&euml; shembull p&euml;r t&euml; sqaruar se si funksionojn&euml; n&euml; t&euml; v&euml;rtet&euml; sekuencat <em>escape</em>:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str1 = "JavaScript është \n gjuhë programuese.";
+document.write("&lt;pre&gt;"&nbsp;+&nbsp;str1&nbsp;+&nbsp;"&lt;/pre&gt;"); // Krijimi i linjës së re
+     
+var str2 = "C:\Users\Downloads";
+document.write(str2); // Shtyp C:UsersDownloads
+     
+var str3 = "C:\\Users\\Downloads";
+document.write(str3); // Shtyp C:\Users\Downloads</code></pre>
+                </div>
+            </div>
+            <h2>Kryerja e operacioneve tek stringjet</h2>
+            <p>JavaScript ofron disa veti dhe metoda p&euml;r t&euml; kryer veprime n&euml; vlerat e stringut. Teknikisht, vet&euml;m objektet mund t&euml; ken&euml; veti dhe metoda. Por n&euml; JavaScript, tipet e t&euml; dh&euml;nave primitive mund t&euml; veprojn&euml; si objekte kur ju referoheni atyre p&euml;rmes vetis&euml; me qasje t&euml; notacionit &ndash; ang. <em>property access notation</em> (dmth. sh&euml;nimi me pik&euml;).</p>
+            <p>JavaScript e b&euml;n&euml; t&euml; mundur duke krijuar nj&euml; objekt t&euml; p&euml;rkohsh&euml;m mb&euml;shtjell&euml;s p&euml;r tipet primitive t&euml; t&euml; dh&euml;nave. Ky proces b&euml;het automatikisht nga interpretuesi JavaScript n&euml; sfond.</p>
+            <h3>Marrja e gjat&euml;sis&euml; t&euml; nj&euml; stringu</h3>
+            <p>Vetia e gjat&euml;sis&euml; (<em>length</em>) kthen gjat&euml;sin&euml; e stringut, e q&euml; &euml;sht&euml; numri i karaktereve q&euml; p&euml;rmbahen n&euml; string. Kjo p&euml;rfshin gjithashtu numrin e karaktereve special, t&euml; till&euml; si <code>\t</code> ose <code>\n</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str1 = "Ky është një paragraf i tekstit.";
+document.write(str1.length); // Shtyp 32
+     
+var str2 = "Ky është një \n paragraf i tekstit.";
+document.write(str2.length); // Shtyp 34, sepse \n është vetëm një karakter</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Meqen&euml;se <code>length</code> &euml;sht&euml; nj&euml; veti, jo nj&euml; funksion, prandaj mos p&euml;rdorni kllapa pas saj si <code>str.length()</code>. N&euml; vend t&euml; k&euml;saj thjesht shkruani <code>str.length</code>, p&euml;rndryshe do t&euml; gjenerohet nj&euml; gabim.</p>
+            </div>
+            <h3>Gjetja e nj&euml; stringu brenda nj&euml; stringu tjet&euml;r</h3>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n <code>indexOf()</code> p&euml;r t&euml; gjetur nj&euml; substring ose nj&euml; string brenda nj&euml; stringu tjet&euml;r. Kjo metod&euml; kthen indeksin ose pozicionin e termit t&euml; par&euml; t&euml; nj&euml; stringu t&euml; specifikuar brenda nj&euml; stringu.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Nëse faktet nuk i përshtaten teorisë, ndryshoni faktet.";
+var pos = str.indexOf("faktet");
+alert(pos); // Dalja: 5</code></pre>
+                </div>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; p&euml;rdorni metod&euml;n <code>lastIndexOf()</code> p&euml;r t&euml; marr&euml; indeksin ose pozicionin e stringut s&euml; fundit t&euml; specifikuar brenda nj&euml; stringu, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Nëse faktet nuk i përshtaten teorisë, ndryshoni faktet.";
+var pos = str.lastIndexOf("faktet");
+alert(pos); // Dalja: 48</code></pre>
+                </div>
+            </div>
+            <p>T&euml; dy metodat <code>indexOf()</code> dhe <code>lastIndexOf()</code> e kthejn&euml; vler&euml;n -1 n&euml;se nuk gjendet substringu. T&euml; dy metodat gjithashtu pranojn&euml; nj&euml; paramet&euml;r opsional intexher, e q&euml; specifikon pozicionin brenda stringut n&euml; t&euml; cilin do t&euml; filloj&euml; k&euml;rkimi. Ja nj&euml; shembull:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Nëse faktet nuk i përshtaten teorisë, ndryshoni faktet.";
+ 
+// Kërkimi përpara
+var pos1 = str.indexOf("faktet", 20);
+alert(pos1); // Dalja: 48
+     
+// Kërkimi prapa
+var pos2 = str.lastIndexOf("faktet", 20);
+alert(pos2); // Dalja: 5</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Karakteret n&euml; nj&euml; string indeksohen nga e majta n&euml; t&euml; djatht&euml;. Indeksi i karakterit t&euml; par&euml; &euml;sht&euml; <code>0</code>, dhe indeksi i karakterit t&euml; fundit t&euml; nj&euml; stringu t&euml; quajtur <code>myStr</code> &euml;sht&euml; <code>myStr.length-1</code>.</p>
+            </div>
+            <h2>K&euml;rkimi i nj&euml; modeli brenda nj&euml; stringu</h2>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n <code>search()</code> p&euml;r t&euml; k&euml;rkuar nj&euml; pjes&euml; t&euml; ve&ccedil;ant&euml; t&euml; tekstit ose modelit brenda nj&euml; stringu.</p>
+            <p>Ashtu sikur metoda <code>indexOf()</code>, edhe metoda <code>search()</code> gjithashtu kthen indeksin e p&euml;rputhjes s&euml; par&euml;, dhe kthen <code>-1</code> n&euml;se nuk gjendet ndonj&euml; element q&euml; p&euml;rputhet, por ndryshe nga metoda <code>indexOf()</code> kjo metod&euml; gjithashtu mund t&euml; marr&euml; nj&euml; shprehje t&euml; rregullt (<em>regular expression</em>) si argument t&euml; saj p&euml;r t&euml; siguruar aft&euml;sit&euml; e avancuara t&euml; k&euml;rkimit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Ngjyra e kuqe është më e ngrohtë se ngjyra e kaltër.";
+ 
+// Kërkim i ndjeshëm ndaj madhësisë së shkronjave
+var pos1 = str.search("ngjyra");
+alert(pos1); // Dalja: 36
+     
+// Kërkim jo i ndjeshëm ndaj shkronjave duke përdorur regexp
+var pos2 = str.search(/ngjyra/i);
+alert(pos2); // Dalja: 0</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Metoda <code>search()</code> nuk mb&euml;shtet k&euml;rkimet globale; ajo injoron flamurin <code>g</code> ose modifikuesin (p.sh. <code>/modeli/g</code>) e argumentit t&euml; shprehjes s&euml; tij t&euml; rregullt.</p>
+            </div>
+            <h2>Nxjerrja e nj&euml; n&euml;nstringu nga nj&euml; string</h2>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n <code>slice()</code> p&euml;r t&euml; nxjerr&euml; nj&euml; pjes&euml; ose substring nga nj&euml; string.</p>
+            <p>Kjo metod&euml; p&euml;rdor 2 parametra: <em>indeksi i fillimit </em>(indeksi nga i cili do t&euml; filloj&euml; nxjerrja), dhe nj&euml; <em>indeks</em> <em>opsional</em> <em>p&euml;rfundimtar</em> (indeksi para t&euml; cilit do t&euml; p&euml;rfundoj&euml; nxjerrja), si p.sh. <code>str.slice(indFill, indPer)</code>.</p>
+            <p>Shembulli i m&euml;posht&euml;m do t&euml; nxjerr&euml; nj&euml; pjes&euml; t&euml; vargut nga pozicioni 13 deri n&euml; pozicionin 32:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Njeriu është produkt i mendimeve të tij.";
+var subStr = str.slice(13, 32);
+document.write(subStr); // Shtypja: produkt i mendimeve</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; p&euml;rdorni metod&euml;n <code>substring()</code> p&euml;r t&euml; nxjerr&euml; nj&euml; pjes&euml; t&euml; stringut t&euml; dh&euml;n&euml; t&euml; bazuar n&euml; indekset e fillimit dhe t&euml; fundit, si <code>str.substring(indFill, indPer)</code>. Metoda <code>substring()</code> &euml;sht&euml; shum&euml; e ngjashme me metod&euml;n <code>slice()</code>, p&euml;rve&ccedil; disa dallimeve:</p>
+            <ul>
+                <li>N&euml;se cilido argument &euml;sht&euml; m&euml; i vog&euml;l se <code>0</code> ose &euml;sht&euml; <code>NaN</code>, ai konsiderohet si <code>0</code>.</li>
+                <li>N&euml;se cilido argument &euml;sht&euml; m&euml; i madh se gjat&euml;sia e stringut (<code>str.length</code>), ai konsiderohet sikur t&euml; ishte i barabart&euml; me gjat&euml;sin&euml; e stringut.</li>
+                <li>N&euml;se <code>indFill</code> &euml;sht&euml; m&euml; i madh se <code>indPer</code>, at&euml;her&euml; <code>substring()</code> do t'i nd&euml;rroj&euml; k&euml;to dy argumente; p&euml;r shembull, <code>substring(5, 0) == str.substring(0, 5)</code>.</li>
+            </ul>
+            <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si funksionon kjo metod&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Njeriu është produkt i mendimeve të tij.";
+document.write(str.substring(13, 32)); // Shtypja: produkt i mendimeve
+document.write(str.substring(5, 0)); // Shtypja: Njeriu
+document.write(str.substring(-27, -20)); // Nuk shtyp asgjë
+document.write(str.substring(23)); // Shtypja: mendimeve të tij.</code></pre>
+                </div>
+            </div>
+            <h3>Nxjerrja e nj&euml; numri fiks t&euml; karaktereve nga nj&euml; string</h3>
+            <p>JavaScript gjithashtu ofron metod&euml;n <code>substr()</code> e cila &euml;sht&euml; e ngjashme me <code>slice()</code> por me nj&euml; ndryshim t&euml; leht&euml;, parametri i dyt&euml; specifikon numrin e karaktereve p&euml;r t&euml; nxjerr&euml; n&euml; vend t&euml; indeksit p&euml;rfundimtar, si <code>str.substr(indFill, gjatesia)</code>. N&euml;se gjat&euml;sia &euml;sht&euml; 0 apo nj&euml; num&euml;r negativ, do t&euml; kthehet nj&euml; string i zbrazt&euml;. Shembulli i m&euml;posht&euml;m demonstron se si funksionon kjo metod&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Njeriu është produkt i mendimeve të tij.";
+document.write(str.substr(13, 32)); // Shtypja: produkt i mendimeve
+document.write(str.substr(-27, -20)); // Nuk shtyp asgjë
+document.write(str.substr(-27, 7)); // Shtypja: produkt
+document.write(str.substr(23)); // Shtypja: mendimeve të tij.</code></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+        </section>
+
     </main>
 
 </div>
