@@ -71,7 +71,7 @@
             <li><a href="#stringjet">Stringjet</a></li>
             <li><a href="#numrat">Numrat</a></li>
             <li><a href="#kushtet-if-else">Kushtet If...Else</a></li>
-            <li><a href="#deklarata-switch-case">Deklarata Switch...Case</a></li>
+            <li><a href="#vargjet-arrays">Vargjet (Arrays)</a></li>
         </ul>
     </aside>
 
@@ -2401,10 +2401,8 @@ alert(personi); // Rezultati: I rritur</code></pre>
             <div class="keshille">
                 <p><strong>K&euml;shill&euml;</strong>: Kodi i shkruar duke p&euml;rdorur operatorin ternar mund t&euml; jet&euml; i v&euml;shtir&euml; p&euml;r tu lexuar ndonj&euml;her&euml;. Megjithat&euml;, ai siguron nj&euml; m&euml;nyr&euml; t&euml; shk&euml;lqyeshme p&euml;r t&euml; shkruar deklarata kompakte <code>if...else</code>.</p>
             </div>
-        </section>
-
-        <section id="deklarata-switch-case">
-            <h1>Deklarata <em>Switch...Case</em></h1>
+        
+            <h2>Deklarata <em>Switch...Case</em></h2>
             <p>Deklarata<em> switch...case </em>&euml;sht&euml; nj&euml; alternativ&euml; ndaj deklarat&euml;s<em> if...else if...else</em>, e cila b&euml;n pothuajse t&euml; nj&euml;jt&euml;n gj&euml;. Deklarata<em> switch...case </em>teston nj&euml; variab&euml;l ose shprehje kundrejt nj&euml; serie vlerash derisa t&euml; gjej&euml; nj&euml; vler&euml; q&euml; p&euml;rputhet dhe m&euml; pas ekzekuton bllokun e kodit q&euml; i p&euml;rgjigjet p&euml;rputhjes s&euml; vler&euml;s. Sintaksa &euml;sht&euml; k&euml;sisoj:</p>
             <div class="sintaksa">
 <pre><code>switch(x){
@@ -2453,7 +2451,7 @@ switch(d.getDay()) {
 }</code></pre>
                 </div>
             </div>
-            <p>Metoda <code>getDay()</code> e kthen dit&euml;n e jav&euml;s si vler&euml; numerike nga <code>0</code> dhe <code>6</code>, ku <code>0</code> p&euml;rfaq&euml;son dit&euml;n e diel, <code>1</code> p&euml;rfaq&euml;son dit&euml;n e h&euml;n&euml;, e k&euml;shtu me radh&euml;.</p>
+            <p>Metoda <code>getDay()</code> e kthen dit&euml;n e jav&euml;s si vler&euml; numerike nga <code>0</code> deri n&euml; <code>6</code>, ku <code>0</code> p&euml;rfaq&euml;son dit&euml;n e diel, <code>1</code> p&euml;rfaq&euml;son dit&euml;n e h&euml;n&euml;, e k&euml;shtu me radh&euml;.</p>
             <div class="shenim">
                 <p><strong>Sh&euml;nim</strong>: N&euml; nj&euml; deklarat&euml; <em>switch...case</em>, vlera e shprehjes ose variabl&euml;s krahasohet me vler&euml;n e dh&euml;n&euml; duke p&euml;rdorur operatorin e barazis&euml; s&euml; trefisht&euml; (<code>===</code>). Kjo do t&euml; thot&euml; n&euml;se <code>x="0"</code>, nuk p&euml;rputhet me <code>case 0:</code>, sepse tipet e t&euml; dh&euml;nave t&euml; tyre nuk jan&euml; t&euml; nj&euml;jta.</p>
             </div>
@@ -2478,7 +2476,7 @@ switch(d.getDay()) {
 }</code></pre>
                 </div>
             </div>
-            <h2>Rastet e shumta q&euml; ndajn&euml; t&euml; nj&euml;jtin veprim</h2>
+            <h3>Rastet e shumta q&euml; ndajn&euml; t&euml; nj&euml;jtin veprim</h3>
             <p>&Ccedil;do vler&euml; e dh&euml;n&euml; <code>case</code> duhet t&euml; jet&euml; unike brenda nj&euml; deklarate <em>switch</em>. Sidoqoft&euml;, raste (<code>case</code>) t&euml; ndryshme nuk kan&euml; nevoj&euml; t&euml; ken&euml; nj&euml; veprim unik. Disa raste (<code>case</code>) mund t&euml; ndajn&euml; t&euml; nj&euml;jtin veprim, si&ccedil; tregohet n&euml; shembullin vijues:</p>
             <div class="shembull">
                 <p>Shembull:</p>
@@ -2500,6 +2498,466 @@ switch(d.getDay()) {
     default: 
         alert("Shijoni çdo ditë të jetës suaj.");
 }</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="vargjet-arrays">
+            <h1>Vargjet (<em>Arrays</em>)</h1>
+            <p>Vargjet jan&euml; variabla komplekse q&euml; lejojn&euml; t&euml; ruajm&euml; m&euml; shum&euml; se nj&euml; vler&euml; ose nj&euml; grup vlerash n&euml;n nj&euml; em&euml;r t&euml; vet&euml;m t&euml; variabl&euml;s. Vargjet n&euml; JavaScript mund t&euml; ruajn&euml; &ccedil;do vler&euml; valide, duke p&euml;rfshir&euml; stringjet, numrat, objektet, funksionet, madje edhe vargjet tjera, duke b&euml;r&euml; k&euml;shtu t&euml; mundur krijimin e strukturave m&euml; komplekse t&euml; t&euml; dh&euml;nave si nj&euml; varg objektesh ose nj&euml; varg t&euml; vargjeve.</p>
+            <p>Le t&euml; supozojm&euml; se d&euml;shironi t&euml; ruani emrin e ngjyrave n&euml; kodin tuaj JavaScript. Ruajtja e emrave t&euml; ngjyrave nj&euml; nga nj&euml; n&euml; nj&euml; variab&euml;l mund t&euml; duket di&ccedil;ka e till&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyra1 = "Kuqe";
+var ngjyra2 = "Gjelbër";
+var ngjyra3 = "Kaltër";</code></pre>
+                </div>
+            </div>
+            <p>Por &ccedil;far&euml; ndodh n&euml;se ju duhet t&euml; ruani emrat e shteteve ose qyteteve t&euml; nj&euml; vendi n&euml; variabla dhe k&euml;t&euml; her&euml; jo t&euml; ruani vet&euml;m tre shtete apo qytet, por mund t&euml; ruani p.sh. nj&euml;qind. &Euml;sht&euml; mjaft e v&euml;shtir&euml; dhe e m&euml;rzitshme t&euml; ruash secilin prej tyre n&euml; nj&euml; variab&euml;l t&euml; ve&ccedil;ant&euml;. Gjithashtu, p&euml;rdorimi i kaq shum&euml; variablave nj&euml;koh&euml;sisht dhe mbajtja n&euml;n kontroll e t&euml; gjithave do t&euml; jet&euml; nj&euml; detyr&euml; shum&euml; e v&euml;shtir&euml;. Dhe n&euml; k&euml;to raste vije n&euml; shprehje vargu - <strong><em>array</em></strong>. Pra, vargjet e zgjidhin k&euml;t&euml; problem duke siguruar nj&euml; struktur&euml; t&euml; rregulluar p&euml;r ruajtjen e vlerave t&euml; shum&euml;fishta ose nj&euml; grup vlerash.</p>
+            <h2>Krijimi i vargut</h2>
+            <p>M&euml;nyra m&euml; e thjesht&euml; p&euml;r t&euml; krijuar nj&euml; varg n&euml; JavaScript &euml;sht&euml; mbyllja e nj&euml; liste t&euml; vlerave t&euml; ndara me presje brenda kllapave t&euml; mesme (<code>[]</code>), si&ccedil; tregohet n&euml; sintaks&euml;n e m&euml;poshtme:</p>
+            <div class="sintaksa">
+<pre><code>var varguIm = [elementi0, elementi1, ..., elementiN];</code></pre>
+            </div>
+            <p>Vargu gjithashtu mund t&euml; krijohet duke p&euml;rdorur konstruktorin <code>Array()</code> si&ccedil; tregohet n&euml; sintaks&euml;n e m&euml;poshtme. Sidoqoft&euml;, p&euml;r shkak t&euml; thjesht&euml;sis&euml; rekomandohet sintaksa e m&euml;parshme.</p>
+            <div class="sintaksa">
+<pre><code>var varguIm = new Array(elementi0, elementi1, ..., elementiN);</code></pre>
+            </div>
+            <p>K&euml;tu kemi dh&euml;n&euml; disa shembuj t&euml; vargjeve t&euml; krijuara duke p&euml;rdorur sintaks&euml;n e drejtp&euml;rdrejt&euml; (<em>literal</em> <em>syntax</em>) t&euml; vargut:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyra = ["Kuqe", "Gjelbër", "Kaltër"]; 
+var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+var qytete = ["Bujanoc", "Preshevë", "Gjilan"];
+var person = ["Filan", "Fisteku", 38];</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Nj&euml; varg (<em>array</em>) &euml;sht&euml; nj&euml; koleksion i radhitur i vlerave. &Ccedil;do vler&euml; n&euml; nj&euml; varg quhet element dhe secili element ka nj&euml; pozicion numerik n&euml; nj&euml; varg, i njohur si indeksi i tij.</p>
+            </div>
+            <h2>Qasja n&euml; elementet e vargut</h2>
+            <p>Elementeve t&euml; vargut mund t&rsquo;ju qasemi nga indeksi i tyre duke p&euml;rdorur sh&euml;nimin me kllapa t&euml; mesme. Indeksi &euml;sht&euml; nj&euml; num&euml;r q&euml; p&euml;rfaq&euml;son pozicionin e nj&euml; elementi n&euml; varg.</p>
+            <p>Indekset e vargjeve fillojn&euml; nga vlera zero (0). Kjo do t&euml; thot&euml; q&euml; elementi i par&euml; i nj&euml; vargu ruhet n&euml; indeksin 0, e jo 1, elementi i dyt&euml; ruhet n&euml; indeksin 1, etj. Indekset e vargjeve fillojn&euml; me 0 dhe shkojn&euml; deri n&euml; numrin e elementeve minus 1. Pra, vargu me pes&euml; elementeve do t&euml; kishte indekse nga 0 n&euml; 4.</p>
+            <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si t&euml; nxirrni elementin individual t&euml; vargut sipas indeksit t&euml; tij.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+ 
+document.write(fruta[0]); // Mollë
+document.write(fruta[1]); // Dardhë
+document.write(fruta[2]); // Pjeshkë
+document.write(fruta[fruta.length - 1]); // Rrush</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml; JavaScript, vargjet n&euml; t&euml; v&euml;rtet&euml; jan&euml; vet&euml;m nj&euml; lloj i ve&ccedil;ant&euml; i objekteve q&euml; ka indekse numerike si &ccedil;el&euml;sa. Operatori <code>typeof</code> do t&euml; kthej&euml; rezultatin "<code>object</code>" p&euml;r vargjet.</p>
+            </div>
+            <h2>Marrja e gjat&euml;sis&euml; s&euml; nj&euml; vargu</h2>
+            <p>Vetia (<em>property</em>) <code>length</code> kthen gjat&euml;sin&euml; e nj&euml; vargu, q&euml; paraqet numrin e p&euml;rgjithsh&euml;m t&euml; elementeve q&euml; p&euml;rmbahen n&euml; varg. Gjat&euml;sia e vargut &euml;sht&euml; gjithmon&euml; m&euml; e madhe se indeksi i cilitdo element.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+document.write(fruta.length); // Shtypet: 5</code></pre>
+                </div>
+            </div>
+            <h2>Unazat p&euml;rmes elementeve t&euml; vargut</h2>
+            <p>Mund t&euml; p&euml;rdorni unaz&euml;n (<em>loop</em>) <strong>for</strong> p&euml;r t&rsquo;u qas&euml; n&euml; secilin element t&euml; nj&euml; vargu n&euml; m&euml;nyr&euml; sekuenciale, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+ 
+// Përsëritja e ekzekutimit të elementeve të vargut
+for(var i = 0; i &lt; fruta.length; i++) {    
+    document.write(fruta[i] + "&lt;br&gt;"); // Shtypen elementet e vargut
+}</code></pre>
+                </div>
+            </div>
+            <p>ECMAScript 6 ka prezantuar nj&euml; m&euml;nyr&euml; m&euml; t&euml; thjesht&euml; p&euml;r t&euml; p&euml;rs&euml;ritur elementet e vargut, e kjo &euml;sht&euml; unaza <strong><code>for-of</code></strong>. N&euml; k&euml;t&euml; unaz&euml; nuk keni nevoj&euml; t&euml; inicializoni dhe t&euml; ndjekeni variabl&euml;n e num&euml;ruesit t&euml; unaz&euml;s (<code>i</code>).</p>
+            <p>M&euml; posht&euml; &euml;sht&euml; dh&euml;n&euml; i nj&euml;jti shembull, por tani duke p&euml;rdorur unaz&euml;n <code>for-of</code>:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+ 	
+// Përsëritja e ekzekutimit të elementeve të vargut
+for(var fruti of fruta) {    
+    document.write(fruti + "&lt;br&gt;"); // Shtypen elementet e vargut
+}</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; p&euml;rs&euml;risni mbi elementet e vargut duke p&euml;rdorur unaz&euml;n <code>for-in</code>, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+ 
+// Unaza përmes të gjitha elementeve në varg 
+for(var i in fruta) {  
+    document.write(fruta[i] + "&lt;br&gt;"); // Shtypen elementet e vargut
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Unaza <code>for-in</code> nuk duhet t&euml; p&euml;rdoret p&euml;r t&euml; p&euml;rs&euml;ritur n&euml; nj&euml; varg ku renditja e indeksit &euml;sht&euml; e r&euml;nd&euml;sishme. Unaza <code>for-in</code> &euml;sht&euml; e optimizuar p&euml;r p&euml;rs&euml;ritjen e vetive t&euml; objektit, andaj duhet t&euml; p&euml;rdorni m&euml; mir&euml; unaz&euml;n <code>for</code> me nj&euml; indeks numerik ose unaz&euml;n <code>for-of</code>.</p>
+            </div>
+            <h2>Shtimi i elementeve t&euml; ri n&euml; varg</h2>
+            <p>P&euml;r t&euml; shtuar nj&euml; element t&euml; ri n&euml; fund t&euml; nj&euml; vargu, thjesht p&euml;rdorni metod&euml;n <code>push()</code>, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyrat = ["Kuq", "Gjelbër", "Kaltër"]; 
+ngjyrat.push("Verdhë");
+     
+document.write(ngjyrat); // Shtypja: Kuq,Gjelbër,Kaltër,Verdhë
+document.write(ngjyrat.length); // Shtypja: 4</code></pre>
+                </div>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, p&euml;r t&euml; shtuar nj&euml; element t&euml; ri n&euml; fillim t&euml; nj&euml; vargu p&euml;rdorni metod&euml;n <code>unshift()</code>, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyrat = ["Kuq", "Gjelbër", "Kaltër"]; 
+colors.unshift("Verdhë");
+     
+document.write(ngjyrat); // Shtypja: Verdhë,Kuq,Gjelbër,Kaltër
+document.write(ngjyrat.length); // Shtypja: 4</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; shtoni m&euml; shum&euml; elemente n&euml; t&euml; nj&euml;jt&euml;n koh&euml; duke p&euml;rdorur metodat <code>push()</code> dhe <code>unshift()</code>, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyrat = ["Kuq", "Gjelbër", "Kaltër"]; 
+ngjyrat.push("Rozë", "Vjollcë");
+ngjyrat.unshift("Verdhë", "Gri");
+     
+document.write(ngjyrat); // Shtypja: Verdhë,Gri,Kuq,Gjelbër,Kaltër,Rozë,Vjollcë
+document.write(ngjyrat.length); // Shtypja: 7</code></pre>
+                </div>
+            </div>
+            <h2>Heqja e elementeve nga vargu</h2>
+            <p>P&euml;r t&euml; hequr elementin e fundit nga vargu mund t&euml; p&euml;rdorni metod&euml;n <code>pop()</code>. Kjo metod&euml; kthen vler&euml;n e hequr. Ja nj&euml; shembull:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyrat = ["Kuq", "Gjelbër", "Kaltër"]; 
+var iFundit = ngjyrat.pop();
+     
+document.write(iFundit); // Shtypja: Kaltër
+document.write(ngjyrat.length); // Shtypja: 2</code></pre>
+                </div>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; hiqni elementin e par&euml; nga nj&euml; varg duke p&euml;rdorur metod&euml;n <code>shift()</code>. Kjo metod&euml; gjithashtu kthen vler&euml;n e zhvendosur. Ja nj&euml; shembull:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyrat = ["Kuq", "Gjelbër", "Kaltër"]; 
+var iPari = ngjyrat.shift();
+     
+document.write(iPari); // Shtypja: Kuq
+document.write(ngjyrat.length); // Shtypja: 2</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Metodat <code>push()</code> dhe <code>pop()</code> funksionojn&euml; m&euml; shpejt sesa <code>unshift()</code> dhe <code>shift()</code>. Meqen&euml;se &nbsp;metodat <code>push()</code> dhe <code>pop()</code> thjesht shtojn&euml; dhe heqin elemente n&euml; fund t&euml; nj&euml; vargu, elementet tjer&euml; nuk l&euml;vizin, gjersa <code>unshift()</code> dhe <code>shift()</code> shtojn&euml; dhe heqin elemente n&euml; fillim t&euml; vargut, andaj k&euml;rkojn&euml; riindeksim t&euml; t&euml; gjith&euml; vargut.</p>
+            </div>
+            <h2>Shtimi ose heqja e elementeve n&euml; &ccedil;do pozicion t&euml; vargut</h2>
+            <p>Metoda <code>splice()</code> &euml;sht&euml; nj&euml; metod&euml; e vargjeve shum&euml; e gjithanshme q&euml; lejon t&euml; shtohen ose hiqen elemente nga &ccedil;do indeks i vargut, duke p&euml;rdorur k&euml;t&euml; sintaks&euml;:</p>
+            <div class="sintaksa">
+<pre><code>vargu.splice(indeksiFill, numriFshirjes, elem1, ..., elemN)</code></pre>
+            </div>
+            <p>Kjo metod&euml; p&euml;rdor tre parametra: parametri i par&euml; &euml;sht&euml; indeksi nga i cili fillon shtimi i elementeve n&euml; varg, &euml;sht&euml; i domosdosh&euml;m; parametri i dyt&euml; &euml;sht&euml; numri i elementeve p&euml;r tu hequr (p&euml;rdorni 0 n&euml;se nuk doni t&euml; hiqni ndonj&euml; element), &euml;sht&euml; opsional; dhe parametrat e radh&euml;s jan&euml; nj&euml; grup element&euml;sh q&euml; do t&euml; shtohen, jan&euml; gjithashtu opsional. Shembulli i m&euml;posht&euml;m tregon se si funksionon kjo metod&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyrat = ["Kuq", "Gjelbër", "Kaltër"]; 
+var heqja = ngjyrat.splice(0,1); // Heqja e elementit të parë
+     
+document.write(ngjyrat); // Shtypja: Gjelbër,Kaltër
+document.write(heqja); // Shtypja: Kuq (një element i vargut)
+document.write(heqja.length); // Shtypja: 1
+     
+heqja = ngjyrat.splice(1, 0, "Rozë", "Verdhë"); // Shtimi i dy elementeve nga pozicioni një
+document.write(ngjyrat); // Shtypja: Gjelbër,Rozë,Verdhë,Kaltër
+document.write(heqja); // Varg i zbrazët
+document.write(heqja.length); // Shtypja: 0
+     
+heqja = ngjyrat.splice(1, 1, "Gri", "Vjollce"); // Shtimi i dy vlerave, heqja e një vlere
+document.write(ngjyrat); // Shtypja: Gjelbër,Gri,Vjollce,Verdhë,Kaltër
+document.write(heqja); // Shtypja: Rozë (një element i vargut)
+document.write(heqja.length); // Shtypja: 1</code></pre>
+                </div>
+            </div>
+            <p>Metoda <code>splice()</code> kthen nj&euml; varg t&euml; elementeve t&euml; fshir&euml;, ose nj&euml; varg t&euml; zbraz&euml;t n&euml;se nuk &euml;sht&euml; fshir&euml; asnj&euml; element, si&ccedil; mund ta shihni n&euml; shembullin e m&euml;sip&euml;rm. N&euml;se argumenti i dyt&euml; nuk p&euml;rdoret, t&euml; gjith&euml; element&euml;t nga fillimi deri n&euml; fund t&euml; vargut hiqen. Ndryshe nga metodat slice() dhe concat() (do t&euml; m&euml;sojm&euml; n&euml; vazhdim), metoda splice() modifikon vargun n&euml; t&euml; cilin thirret.</p>
+            <h2>Krijimi i stringut nga nj&euml; varg</h2>
+            <p>Mund t&euml; ket&euml; situata kur thjesht d&euml;shironi t&euml; krijoni nj&euml; string duke bashkuar elementet e nj&euml; vargu. P&euml;r ta b&euml;r&euml; k&euml;t&euml; mund t&euml; p&euml;rdorni metod&euml;n join(). Kjo metod&euml; merr nj&euml; paramet&euml;r opsional i cili &euml;sht&euml; nj&euml; string ndar&euml;s q&euml; shtohet nd&euml;rmjet secilit element. N&euml;se e anashkalojm&euml; ndar&euml;sin, at&euml;her&euml; JavaScript do t&euml; p&euml;rdor&euml; presjen (,) si parazgjedhje. Shembulli i m&euml;posht&euml;m tregon se si funksionon kjo metod&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyrat = ["Kuq", "Gjelbër", "Kaltër"];
+ 
+document.write(ngjyrat.join()); // Shtypja: Kuq,Gjelbër,Kaltër
+document.write(ngjyrat.join("")); // Shtypja: KuqGjelbërKaltër
+document.write(ngjyrat.join("-")); // Shtypja: Kuq-Gjelbër-Kaltër
+document.write(ngjyrat.join(", ")); // Shtypja: Kuq, Gjelbër, Kaltër</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; shnd&euml;rroni nj&euml; varg n&euml; nj&euml; string t&euml; ndar&euml; me presje duke p&euml;rdorur metod&euml;n <code>toString()</code>. Kjo metod&euml; nuk e pranon parametrin ndar&euml;s sikur <code>join()</code>. Ja nj&euml; shembull:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var ngjyrat = ["Kuq", "Gjelbër", "Kaltër"];
+document.write(ngjyrat.toString()); // Shtypja: Kuq,Gjelbër,Kaltër</code></pre>
+                </div>
+            </div>
+            <h2>Nxjerrja e nj&euml; pjese nga vargu</h2>
+            <p>N&euml;se d&euml;shironi t&euml; nxirrni nj&euml; pjes&euml; nga vargu (d.m.th. n&euml;n-varg / <em>subarray</em>) por ta mbani vargun origjinal t&euml; paprekur, mund t&euml; p&euml;rdorni metod&euml;n <code>slice()</code>. Kjo metod&euml; merr 2 parametra: indeksi i fillimit (indeksi nga i cili do t&euml; filloj&euml; nxjerrja), dhe nj&euml; indeks opsional p&euml;rfundimtar (indeksi para t&euml; cilit do t&euml; p&euml;rfundoj&euml; nxjerrja), si <code>vargu.slice(indFill, indPerf)</code>. Ja nj&euml; shembull:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+var nenVargu = fruta.slice(1, 3);
+document.write(nenVargu); // Shtypja: Dardhë,Pjeshkë</code></pre>
+                </div>
+            </div>
+            <p>N&euml;se parametri indPerf hiqet, t&euml; gjith&euml; element&euml;t deri n&euml; fund t&euml; vargut do t&euml; nxirren. Gjithashtu mund t&euml; specifikoni indekse negative &ndash; n&euml; at&euml; rast metoda <code>slice()</code> nxjerr elementet nga fundi i vargut, n&euml; vend se nga fillimi.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+ 
+document.write(fruta.slice(2)); // Shtypja: Pjeshkë,Qershi,Rrush
+document.write(fruta.slice(-2)); // Shtypja: Qershi,Rrush
+document.write(fruta.slice(2, -1)); // Shtypja: Pjeshkë,Qershi</code></pre>
+                </div>
+            </div>
+            <h2>Bashkimi i vargjeve</h2>
+            <p>Metoda <code>concat()</code> mund t&euml; p&euml;rdoret p&euml;r t&euml; bashkuar ose kombinuar dy ose m&euml; shum&euml; vargje. Kjo metod&euml; nuk i ndryshon vargjet ekzistuese, p&euml;rkundrazi krijon nj&euml; varg t&euml; ri.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var kafsheShtepiake = ["Macë", "Qen", "Papagall"];
+var kafsheEgra = ["Tigër", "Ujk", "Luan"];
+     
+// Krijimi i një vargu të ri duke kombinuar vargun e kafshëve shtëpiake dhe vargun e kafshëve të egra 
+var kafshe = kafsheShtepiake.concat(kafsheEgra); 
+document.write(kafshe); // Shtypja: Macë,Qen,Papagall,Tigër,Ujk,Luan</code></pre>
+                </div>
+            </div>
+            <p>Metoda <code>concat()</code> mund t&euml; pranoj &ccedil;far&euml;do numri t&euml; argumenteve t&euml; vargjeve, k&euml;sisoj mund t&euml; krijoni nj&euml; varg nga disa vargje tjera, si&ccedil; tregohet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var kafsheShtepiake = ["Macë", "Qen", "Papagall"];
+var kafsheEgra = ["Tigër", "Ujk", "Luan"];
+var insekte = ["Milingonë", "Bletë"];
+     
+// Krijimi i një vargu duke kombinuar kafshët shtëpiake, kafshët e egra dhe insektet
+var kafshe = kafsheShtepiake.concat(kafsheEgra, insekte);
+document.write(kafshe); // Shtypja: Macë,Qen,Papagall,Tigër,Ujk,Luan,Milingonë,Bletë</code></pre>
+                </div>
+            </div>
+            <h2>K&euml;rkimi brenda vargut</h2>
+            <p>N&euml;se d&euml;shironi t&euml; k&euml;rkoni n&euml; nj&euml; varg ndonj&euml; vler&euml; specifike, thjesht mund t&euml; p&euml;rdorni metodat <code>indexOf()</code> dhe <code>lastIndexOf()</code>. N&euml;se vlera &euml;sht&euml; gjetur, t&euml; dy metodat si rezultat japin indeksin q&euml; p&euml;rfaq&euml;son elementin e vargut. N&euml;se vlera nuk gjendet, rezultati do t&euml; jet&euml; <code>-1</code>. Metoda <code>indexOf()</code> jep indeksin e elementin t&euml; par&euml; t&euml; gjetur, nd&euml;rsa <code>lastIndexOf()</code> jep indeksin e elementit t&euml; fundit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+ 
+document.write(fruta.indexOf("Mollë")); // Shtypja: 0
+document.write(fruta.indexOf("Pjeshkë")); // Shtypja: 2
+document.write(fruta.indexOf("Kajsi")); // Shtypja: -1</code></pre>
+                </div>
+            </div>
+            <p>T&euml; dy metodat gjithashtu pranojn&euml; nj&euml; num&euml;r t&euml; plot&euml; si paramet&euml;r opsional nga indeksi q&euml; specifikon indeksin brenda vargut n&euml; t&euml; cilin do t&euml; filloj&euml; k&euml;rkimi.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var vargu = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+// Kërkimi përpara, duke filluar nga indeksi
+document.write(vargu.indexOf(1, 2)); // Shtypja: 3
+     
+// Kërkimi prapa, duke filluar nga indeksi
+document.write(vargu.lastIndexOf(1, 2)); // Shtypja: 0</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; p&euml;rdorni metod&euml;n <code>include()</code> p&euml;r t&euml; gjetur n&euml;se vargu p&euml;rmban nj&euml; element t&euml; caktuar apo jo. Kjo metod&euml; merr t&euml; nj&euml;jtat parametra si metodat <code>indexOf()</code> dhe <code>lastIndexOf()</code>, por si rezultat kthen <code>true</code> ose <code>false</code> n&euml; vend t&euml; indeksit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var vargu = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+document.write(vargu.includes(1)); // Shtypja: true
+document.write(vargu.includes(6)); // Shtypja: false
+document.write(vargu.includes(1, 2)); // Shtypja: true
+document.write(vargu.includes(3, 4)); // Shtypja: false</code></pre>
+                </div>
+            </div>
+            <p>N&euml;se d&euml;shironi t&euml; k&euml;rkoni n&euml; varg duke u bazuar n&euml; nj&euml; gjendje t&euml; sigurt, at&euml;her&euml; mund t&euml; p&euml;rdorni metod&euml;n JavaScript <code>find()</code> e cila &euml;sht&euml; prezantuar rishtas n&euml; ES6. Kjo metod&euml; jep si rezultat vler&euml;n e <em>elementit t&euml; par&euml;</em> n&euml; varg q&euml; k&euml;naq funksionin e dh&euml;n&euml; t&euml; testimit, p&euml;rndryshe jep rezultatin padefinuar &ndash;&nbsp; <code>undefined</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var vargu = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+var rezultati = vargu.find(function(elementi) {
+    return elementi > 4;
+});
+document.write(rezultati); // Shtypja: 5</code></pre>
+                </div>
+            </div>
+            <p>Ekziston edhe nj&euml; metod&euml; e ngjashme, ajo &euml;sht&euml; metoda <code>findIndex()</code>, e cila jep si rezultat indeksin e nj&euml; elementi t&euml; gjetur n&euml; grup n&euml; vend t&euml; vler&euml;s s&euml; tij.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var vargu = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+var rezultati = vargu.findIndex(function(elementi) {
+    return elementi > 6;
+});
+document.write(rezultati); // Shtypja: 8</code></pre>
+                </div>
+            </div>
+            <p>Metoda <code>find()</code> k&euml;rkon vet&euml;m elementin e par&euml; q&euml; k&euml;naq funksionin e dh&euml;n&euml; t&euml; testimit. Sidoqoft&euml;, n&euml;se d&euml;shironi t&rsquo;i gjeni t&euml; gjith&euml; element&euml;t q&euml; p&euml;rputhen, mund t&euml; p&euml;rdorni metod&euml;n <code>filter()</code>.</p>
+            <p>Metoda <code>filter()</code> krijon nj&euml; varg t&euml; ri me t&euml; gjith&euml; element&euml;t q&euml; kalojn&euml; me sukses testin e dh&euml;n&euml;. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si funksionon kjo n&euml; t&euml; v&euml;rtet&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var vargu = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+var rezultati = vargu.filter(function(elementi) {
+    return elementi > 4;
+});
+document.write(rezultati); // Shtypja: 5,7
+document.write(rezultati.length); // Shtypja: 2</code></pre>
+                </div>
+            </div>
+
+            <h2>Renditja e vargjeve</h2>
+            <p>Renditja &euml;sht&euml; nj&euml; detyr&euml; e zakonshme kur punohet me vargje. Do t&euml; p&euml;rdorej, p&euml;r shembull, n&euml;se doni t&rsquo;i shfaqni emrat e qyteteve ose t&euml; shteteve n&euml; nj&euml; radhitje alfabetike.</p>
+            <p>Objekti i vargut n&euml; JavaScript ka nj&euml; metod&euml; t&euml; integruar <code>sort()</code> p&euml;r klasifikimin e elementeve t&euml; vargjeve n&euml; radhitje alfabetike.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+var renditja = fruta.sort();
+    
+alert(fruta); // Dalja: Dardhë,Mollë,Pjeshkë,Qershi,Rrush
+alert(renditja); // Dalja: Dardhë,Mollë,Pjeshkë,Qershi,Rrush</code></pre>
+                </div>
+            </div>
+            <h3>Kthimi mbrapsht&euml; i vargut</h3>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n reverse() p&euml;r t&euml; kthyer n&euml; t&euml; kund&euml;rt&euml;n rendin e elementeve t&euml; nj&euml; vargu.</p>
+            <p>Kjo metod&euml; kthen mbrapsht&euml; nj&euml; varg ashtu q&euml; elementi i par&euml; i vargut b&euml;het i fundit, dhe elementi i fundit b&euml;het i pari.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var numrat = ["një", "dy", "tre", "katër", "pesë"];
+var mprapshte = numrat.reverse(); 
+    
+alert(numrat); // Dalja: pesë,katër,tre,dy,një
+alert(mprapshte); // Dalja: pesë,katër,tre,dy,një</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Metodat <code>sort()</code> dhe <code>reverse()</code> modifikojn&euml; vargun origjinal dhe japin nj&euml; referenc&euml; n&euml; t&euml; nj&euml;jt&euml;n varg, si&ccedil; mund ta shihni n&euml; shembujt e m&euml;sip&euml;rm.</p>
+            </div>
+            <h3>Renditja e vargjeve numerike</h3>
+            <p>Metoda <code>sort()</code> mund t&euml; prodhoj&euml; nj&euml; rezultat t&euml; papritur kur zbatohet n&euml; vargjet numerike (d.m.th. vargjet q&euml; p&euml;rmbajn&euml; vlera numerike).</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var numra = [5, 20, 10, 75, 50, 100];
+numra.sort(); // Renditja e vargut numerik
+alert(numra); // Dalja: 10,100,20,5,50,75</code></pre>
+                </div>
+            </div>
+            <p>Si&ccedil; mund ta shihni, rezultati &euml;sht&euml; ndryshe nga ai q&euml; kemi pritur. Kjo ndodh sepse metoda <code>sort()</code> rendit elementet e vargut numerik duke i shnd&euml;rruar n&euml; stringje (p.sh. 20 b&euml;het "20", 100 b&euml;het "100", e k&euml;shtu me radh&euml;), k&euml;sisoj karakteri i par&euml; i stringut "20" (dmth. "2") vjen pas karakterit t&euml; par&euml; t&euml; sringut "100" (dmth. "1"), prandaj vlera 20 renditet pas vler&euml;s 100.</p>
+            <p>P&euml;r ta rregulluar k&euml;t&euml; problem t&euml; renditjes s&euml; nj&euml; vargu numerik, mund t&euml; aplikoni nj&euml; funksion krahasimi, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var numra = [5, 20, 10, 75, 50, 100];
+
+// Renditja e vargut duke përdorur funksionin e krahasimit
+numra.sort(function(a, b) {
+    return a - b;
+});
+alert(numra); // Dalja: 5,10,20,50,75,100</code></pre>
+                </div>
+            </div>
+            <p>Si&ccedil; mund ta shihni, k&euml;t&euml; her&euml; kemi marr&euml; rezultatin e duhur. Le ta shohim se si funksionon.</p>
+            <p>Kur specifikohet funksioni i krahasimit, elementet e vargut renditen sipas vler&euml;s s&euml; kthimit t&euml; funksionit t&euml; krahasimit. P&euml;r shembull, kur krahason a dhe b:</p>
+            <ul>
+            <li>N&euml;se funksioni i krahasimit jep nj&euml; vler&euml; m&euml; t&euml; vog&euml;l se <strong>0</strong>, at&euml;her&euml; <strong>a</strong> vendoset e para.</li>
+            <li>N&euml;se funksioni i krahasimit jep nj&euml; vler&euml; m&euml; t&euml; madhe se <strong>0</strong>, at&euml;her&euml;<strong> b</strong> vendoset e para.</li>
+            <li>N&euml;se funksioni i krahasimit jep vler&euml;n <strong>0</strong>, <strong>a</strong> dhe <strong>b</strong> mbeten t&euml; pandryshuara n&euml; lidhje me nj&euml;ra-tjetr&euml;n, por t&euml; renditura n&euml; lidhje me t&euml; gjith&euml; element&euml;t e tjer&euml;.</li>
+            </ul>
+            <p>Prandaj, meqen&euml;se <strong>5 - 20 = -15</strong> &euml;sht&euml; m&euml; e vog&euml;l se <strong>0</strong>, numri <strong>5</strong> vendoset i pari, pastaj <strong>20 - 10 = 10 </strong>q&euml; &euml;sht&euml; m&euml; i madh se <strong>0</strong>, prandaj numri <strong>10</strong> vendoset para numrit <strong>20</strong>, po k&euml;shtu <strong>20 - 75 = -55</strong> q&euml; &euml;sht&euml; m&euml; i vog&euml;l se <strong>0</strong> , k&euml;shtu q&euml; numri <strong>20</strong> vendoset para numrit <strong>75</strong>, n&euml; m&euml;nyr&euml; t&euml; ngjashme numri <strong>50</strong> vendoset para numrit <strong>75</strong>, e k&euml;shtu me radh&euml;.</p>
+            <h3>Gjetja e vler&euml;s maksimale dhe minimale n&euml; varg</h3>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n apply() n&euml; kombinim me Math.max() dhe Math.min() p&euml;r t&euml; gjetur vler&euml;n maksimale dhe minimale brenda nj&euml; vargu.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var numra = [3, -7, 10, 8, 15, 2];
+
+// Definimi i funksionit për të gjetur vlerën maksimale
+function gjejMax(vargu) {
+    return Math.max.apply(null, vargu);
+}
+    
+// Definimi i funksionit për të gjetur vlerën minimale
+function gjejMin(vargu) {
+    return Math.min.apply(null, vargu);
+}
+    
+alert(gjejMax(numra)); // Dalja: 15
+alert(gjejMin(numra)); // Dalja: -7</code></pre>
+                </div>
+            </div>
+            <p>Metoda <code>apply()</code> siguron nj&euml; m&euml;nyr&euml; t&euml; p&euml;rshtatshme p&euml;r t&euml; kaluar vlerat e vargut si argumente n&euml; nj&euml; funksion q&euml; pranon disa argumente n&euml; nj&euml; m&euml;nyr&euml; t&euml; ngjashme me vargun, por jo nj&euml; grup (p.sh. metodat <code>Math.max()</code> dhe <code>Math.min()</code>). Pra, funksioni <code>Math.max.apply(null,numrat)</code> n&euml; shembullin e m&euml;sip&euml;rm &euml;sht&euml; ekuivalent me <code>Math.max(3,-7,10,8,15,2)</code>.</p>
+            <h3>Renditja e nj&euml; grupi objektesh</h3>
+            <p>Metoda <code>sort()</code> mund t&euml; p&euml;rdoret gjithashtu p&euml;r klasifikimin e vargjeve t&euml; objekteve duke p&euml;rdorur funksionin e krahasimit.</p>
+            <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si t&euml; renditni nj&euml; varg objektesh sipas vlerave t&euml; vetive (<em>property</em>):</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var persona = [
+    { emri: "Drin", mosha: 14 },
+    { emri: "Vlora", mosha: 30 },
+    { emri: "Besa", mosha: 21 },
+    { emri: "Amar", mosha: 42 },
+    { emri: "Adi", mosha: 16 }
+];
+
+// Klasifikim sipas moshës
+persona.sort(function (a, b) {
+    return a.mosha - b.mosha;
+});
+
+console.log(persona);
+
+// Klasifikim sipas emrit
+persona.sort(function(a, b) {
+    var x = a.emri.toLowerCase(); // injoro shkronjat e mëdha
+    var y = b.emri.toLowerCase(); // injoro shkronjat e mëdha
+    if(x &lt; y) {
+        return -1;
+    }
+    if(x &gt; y) {
+        return 1;
+    }
+    // emrat duhet të jenë të njëjtë
+    return 0;
+});
+
+console.log(persona);
+</code></pre>
                 </div>
             </div>
         </section>
