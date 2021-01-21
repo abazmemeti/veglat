@@ -69,6 +69,9 @@
             <li><a href="#operatoret">Operatorët</a></li>
             <li><a href="#eventet">Ngjarjet (eventet)</a></li>
             <li><a href="#stringjet">Stringjet</a></li>
+            <li><a href="#numrat">Numrat</a></li>
+            <li><a href="#kushtet-if-else">Kushtet If...Else</a></li>
+            <li><a href="#deklarata-switch-case">Deklarata Switch...Case</a></li>
         </ul>
     </aside>
 
@@ -1866,12 +1869,639 @@ document.write(str.substr(-27, 7)); // Shtypja: produkt
 document.write(str.substr(23)); // Shtypja: mendimeve të tij.</code></pre>
                 </div>
             </div>
+            <h2>Z&euml;vend&euml;simi i p&euml;rmbajtjes s&euml; nj&euml; stringu</h2>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n <code>replace()</code> p&euml;r t&euml; z&euml;vend&euml;suar nj&euml; pjes&euml; t&euml; nj&euml; vargu me nj&euml; varg tjet&euml;r. Kjo metod&euml; merr dy parametra, nj&euml; shprehje t&euml; rregullt (<em>regular expression &ndash; regexp</em>) p&euml;r tu p&euml;rputhur ose nj&euml; substring p&euml;r t&euml; z&euml;vend&euml;suar me nj&euml; string z&euml;vend&euml;sues, k&euml;sisoj <code>str.replace(regexp | substr, substrRi)</code>.</p>
+            <p>Kjo metod&euml; <code>replace()</code> kthen nj&euml; string t&euml; ri, nuk ndikon n&euml; stringun origjinal q&euml; do t&euml; mbetet i pandryshuar. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si funksionon:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Ngjyra e kuqe është më e ngrohtë se ngjyra e kaltër.";
+var rezultati = str.replace("ngjyra", "piktura");
+alert(rezultati); // Dalja: Ngjyra e kuqe është më e ngrohtë se piktura e kaltër.</code></pre>
+                </div>
+            </div>
+            <p>Si parazgjedhje, metoda <code>replace()</code> z&euml;vend&euml;son vet&euml;m p&euml;rputhjen e par&euml;, dhe &euml;sht&euml; e ndjeshme ndaj shkronjave. P&euml;r t&euml; z&euml;vend&euml;suar substringun brenda nj&euml; stringu n&euml; nj&euml; m&euml;nyr&euml; t&euml; pandjeshme ndaj shkronjave, mund t&euml; p&euml;rdorni nj&euml; <em>shprehje t&euml; rregullt</em> &ndash; <strong><em>regular expression</em></strong> (<em>regexp</em>) me nj&euml; modifikues i, si&ccedil; tregohet n&euml; shembullin m&euml; posht&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Ngjyra e kuqe është më e ngrohtë se ngjyra e kaltër.";
+var rezultati = str.replace(/ngjyra/i, "piktura");
+alert(rezultati); // Dalja: piktura e kuqe është më e ngrohtë se ngjyra e kaltër.</code></pre>
+                </div>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, p&euml;r t&euml; z&euml;vend&euml;suar t&euml; gjitha shprehjet e nj&euml; substringu brenda nj&euml; stringu n&euml; m&euml;nyr&euml; t&euml; pandjeshme ndaj shkronjave, mund t&euml; p&euml;rdorni modifikuesin <code>g</code> s&euml; bashku me modifikuesin <code>i</code>, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Ngjyra e kuqe është më e ngrohtë se ngjyra e kaltër.";
+var rezultati = str.replace(/ngjyra/ig, "piktura");
+alert(rezultati); // Dalja: piktura e kuqe është më e ngrohtë se piktura e kaltër.</code></pre>
+                </div>
+            </div>
+            <p>Shnd&euml;rrimi i nj&euml; stringu n&euml; shkronja t&euml; m&euml;dha ose t&euml; vogla</p>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n <code>toUpperCase()</code> p&euml;r t&euml; shnd&euml;rruar nj&euml; string n&euml; shkronja t&euml; m&euml;dha.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Përshëndetje Botë!";
+var rezultati = str.toUpperCase();
+document.write(rezultati); // Shtypja: PËRSHËNDETJE BOTË!</code></pre>
+                </div>
+            </div>
+            <p>Ngjash&euml;m, mund t&euml; p&euml;rdorni <code>toLowerCase()</code> p&euml;r t&euml; shnd&euml;rruar nj&euml; string n&euml; shkronja t&euml; vogla.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Përshëndetje Botë!";
+var rezultati = str.toLowerCase();
+document.write(rezultati); // Shtypja: përshëndetje botë!</code></pre>
+                </div>
+            </div>
+            <h2>Bashkimi i dy ose m&euml; shum&euml; stringjeve</h2>
+            <p>Mund t&euml; bashkoni ose kombinoni dy ose m&euml; shum&euml; stringje duke p&euml;rdorur operator&euml;t e caktimit <code>+</code> dhe <code>+=</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var persh = "Përshëndetje";
+var bote = "Botë";
+var str = persh + " " + bote;
+document.write(str); // Shtypja: Përshëndetje Botë
+     
+var urim  = "Urime";
+    urim += " Viti i Ri";
+document.write(urim); // Shtypja: Urime Viti i Ri</code></pre>
+                </div>
+            </div>
+            <p>JavaScript gjithashtu ofron metod&euml;n <code>concat()</code> p&euml;r t&euml; kombinuar stringjet, por nuk rekomandohet.</p>
+            <h2>Qasja n&euml; karakteret individuale nga nj&euml; string</h2>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n <code>charAt()</code> p&euml;r t&rsquo;u qas&euml; n&euml; karaktere individuale n&euml; nj&euml; string, k&euml;sisoj <code>str.charAt(indeksi)</code>. Indeksi i specifikuar duhet t&euml; jet&euml; nj&euml; num&euml;r i plot&euml; nd&euml;rmjet <code>0</code> dhe <code>str.length - 1</code>. N&euml;se nuk sigurohet asnj&euml; indeks, at&euml;her&euml; do t&euml; kthehet karakteri i par&euml; nga stringu, pasi q&euml; parazgjedhja &euml;sht&euml; <code>0</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Përshëndetje Botë!";
+document.write(str.charAt());  // Shtypja: P
+document.write(str.charAt(13)); // Shtypja: B
+document.write(str.charAt(20)); // Shtypja: asgjë
+document.write(str.charAt(str.length - 1)); // Shtypja: !</code></pre>
+                </div>
+            </div>
+            <p>Ekziston edhe nj&euml; m&euml;nyr&euml; m&euml; e mir&euml; p&euml;r ta b&euml;r&euml; k&euml;t&euml;. Meqen&euml;se ECMAScript 5, stringjet mund t&rsquo;i trajtoj si vargje vet&euml;m p&euml;r lexim (<em>read-only arrays</em>), andaj mund t&rsquo;ju qaseni karaktereve individuale nga nj&euml; string duke p&euml;rdorur kllapa t&euml; mesme (<code>[]</code>) n&euml; vend t&euml; metod&euml;s <code>charAt()</code>, si&ccedil; demonstrohet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "Përshëndetje Botë!";
+document.write(str[0]);  // Shtypja: P
+document.write(str[13]); // Shtypja: B
+document.write(str[str.length - 1]); // Shtypja: !
+document.write(str[20]); // Shtypja: undefined</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Dallimi i vet&euml;m midis qasjes n&euml; karaktere nga nj&euml; string duke p&euml;rdorur <code>charAt()</code> dhe kllapat e mesme (<code>[]</code>) &euml;sht&euml; se n&euml;se nuk gjendet asnj&euml; karakter, <code>[]</code> kthejn&euml; rezultatin undefined, nd&euml;rsa metoda <code>charAt()</code> kthen nj&euml; string bosh.</p>
+            </div>
+            <h2>Ndarja e stringut n&euml; varg</h2>
+            <p>Metoda <code>split()</code> mund t&euml; p&euml;rdoret p&euml;r t&euml; ndar&euml; nj&euml; string n&euml; nj&euml; varg stringjesh, duke p&euml;rdorur sintaks&euml;n <code>str.split(ndaresi, limiti)</code>. Argumenti i <em>ndar&euml;sit</em> specifikon stringun n&euml; t&euml; cilin duhet t&euml; ndodh&euml; secila ndarje, nd&euml;rsa argumenti <em>limit</em> p&euml;rcakton gjat&euml;sin&euml; maksimale t&euml; vargut.</p>
+            <p>N&euml;se argumenti i ndar&euml;sit hiqet ose nuk gjendet n&euml; stringun e dh&euml;n&euml;, i gjith&euml; stringu i caktohet elementit t&euml; par&euml; t&euml; vargut. Shembulli i m&euml;posht&euml;m tregon se si funksionon:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var strFruta = "Mollë, Banane, Mango, Dardhë, Pjeshkë";
+var vargFruta = strFruta.split(", ");
+document.write(vargFruta[0]); // Shtypja: Mollë
+document.write(vargFruta[2]); // Shtypja: Mango
+document.write(vargFruta[vargFruta.length - 1]); // Shtypja: Pjeshkë
+     
+// Unaza që krijohet për të gjithë elementet e vargut të frutave 
+for(var i in vargFruta) {  
+    document.write("&lt;p&gt;"&nbsp;+&nbsp;vargFruta[i]&nbsp;+&nbsp;"&lt;/p&gt;");
+}</code></pre>
+                </div>
+            </div>
+            <p>P&euml;r t&euml; ndar&euml; nj&euml; string n&euml; nj&euml; varg karakteresh, specifikoni nj&euml; string bosh ("") si ndar&euml;s.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var str = "JAVASCRIPT";
+var strArr = str.split("");
+document.write(strArr[0]); // Shtypja: J
+document.write(strArr[1]); // Shtypja: A
+document.write(strArr[strArr.length - 1]); // Shtypja: T
+     
+// Unaza e krijuar për të gjithë elementet e vargut të karaktereve
+for(var i in strArr) {  
+    document.write("&lt;br&gt;" + strArr[i]);
+}</code></pre>
+                </div>
+            </div>
 
 
 
 
 
 
+        </section>
+
+        <section id="numrat">
+            <h1>Numrat</h1>
+            <p>JavaScript mb&euml;shtet numrat e plot&euml; (<em>integer</em>) poashtu edhe ato me pik&euml; l&euml;viz&euml;se (<em>floating-points</em>) q&euml; mund t&euml; paraqiten n&euml; sh&euml;nime decimale, heksadecimale ose oktale. Ndryshe nga gjuh&euml;t e tjera programuese, JavaScript nuk i trajton ndryshe numrat e plot&euml; dhe numrat me pik&euml; l&euml;viz&euml;se. T&euml; gjith&euml; numrat n&euml; JavaScript p&euml;rfaq&euml;sohen si numra me pik&euml; l&euml;viz&euml;se.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 2;  // numër i plotë
+var y = 3.14;  // numër me pikë lëvizëse
+var z = 0xff;  // numër heksadecimal</code></pre>
+                </div>
+            </div>
+            <p>Numrat shum&euml; t&euml; m&euml;dhenj mund t&euml; paraqiten n&euml; sh&euml;nimin eksponencial, p.sh. <code>6.02e+23</code>  (nj&euml;jt&euml; sikur 6.02x10<sup>23</sup>).</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 1.57e4;   // njëjtë si 15700
+var y = 4.25e+6;  // njëjtë si 4.25e6 ose 4250000
+var z = 4.25e-6;  // njëjtë si 0.00000425</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Numri i plot&euml; m&euml; i madh dhe m&euml; i sigurt n&euml; JavaScript &euml;sht&euml; <code>9007199254740991</code> (2<sup>53</sup>-1), nd&euml;rsa numri i plot&euml; m&euml; i vog&euml;l i sigurt &euml;sht&euml; <code>-9007199254740991</code> (- (2<sup>53</sup>-1)).</p>
+            </div>
+            <p>Numrat gjithashtu mund t&euml; paraqiten me simbolet heksadecimale (baza 16). Numrat heksadecimal jan&euml; me parashtres&euml; <code>0x</code>. Ata p&euml;rdoren zakonisht p&euml;r t&euml; paraqitur ngjyrat.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 0xff;  // njëjtë si 255
+var y = 0xb4;  // njëjtë si 180
+var z = 0x00;  // njëjtë si 0</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Numrat e plot&euml; mund t&euml; paraqiten me simbole decimale, heksadecimale dhe oktale. Numrat me pik&euml; l&euml;viz&euml;se mund t&euml; paraqiten me simbole decimale ose eksponenciale.</p>
+            </div>
+            <h2>Operacionet n&euml; numra dhe stringje</h2>
+            <p>Si&ccedil; keni m&euml;suar m&euml; par&euml;, operatori + p&euml;rdoret si p&euml;r mbledhjen ashtu edhe p&euml;r bashkim t&euml; stringjeve. Pra, kryerja e veprimeve matematikore n&euml; numra dhe stringje mund t&euml; gjeneroj rezultate interesante. Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se &ccedil;far&euml; ndodh kur mblidhni numra dhe stringje:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 10;
+var y = 20;
+var z = "30";
+    
+// Mbledhja e dy numrave, rezultati do të jetë shuma e numrave
+console.log(x + y); // 30
+    
+// Mbledhja e dy stringjeve, rezultati do të jetë bashkimi i stringjeve
+console.log(z + z); // '3030'
+    
+// Mbledhja e numrit me string, rezultati do të jetë bashkimi i tyre
+console.log(x + z); // '1030'
+    
+// Mbledhja e stringut me numër, rezultati do të jetë bashkimi i tyre
+console.log(z + x); // '3010'
+    
+// Mbledhja e stringjeve me numra, rezultati do të jetë bashkimi i sringjeve
+console.log("Rezultati është: " + x + y); // 'Rezultati është: 1020'
+    
+// Mbledhja e numrave me strigje, kalkulimi kryhet nga e majta në të djathtë
+console.log(x + y + z); // '3030'</code></pre>
+                </div>
+            </div>
+            <p>N&euml;se v&euml;zhgoni me kujdes shembullin e m&euml;sip&euml;rm, do t&euml; shihni se rezultati i operacionit t&euml; fundit nuk &euml;sht&euml; thjesht nj&euml; bashkim i stringut, pasi operator&euml;t me t&euml; nj&euml;jtin prioritet vler&euml;sohen nga e <em>majta n&euml; t&euml; djatht&euml;</em>. Kjo &euml;sht&euml; arsyeja pse variablat <code>x</code> dhe <code>y</code> q&euml; t&euml; dy jan&euml; numra, s&euml; pari mblidhen mes vete, at&euml;her&euml; rezultati bashkohet me variabl&euml;n <code>z</code> q&euml; &euml;sht&euml; nj&euml; string, me k&euml;t&euml; fitojm&euml; rezultatin p&euml;rfundimtar <code>30 + "30" = "3030"</code>.</p>
+            <p>Por, n&euml;se kryeni operacione tjera matematikore si shum&euml;zimi, pjes&euml;timi ose zbritja, rezultati do t&euml; jet&euml; ndryshe. JavaScript automatikisht do t&rsquo;i shnd&euml;rroj&euml;<em> stringjet numerike</em> (d.m.th. stringjet q&euml; p&euml;rmbajn&euml; vlera numerike) n&euml; <em>numra</em> p&euml;r t&euml; gjitha operacionet numerike.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 10;
+var y = 20;
+var z = "30";
+    
+// Zbritja e numrit nga numri
+console.log(y - x); // 10
+    
+// Zbritja e numrit nga stringu numerik
+console.log(z - x); // 20
+    
+// Shumëzimi i numrit me stringun numerik
+console.log(x * z); // 300
+    
+// Pjesëtimi i numrit me stringun numerik
+console.log(z / x); // 3</code></pre>
+                </div>
+            </div>
+            <p>P&euml;r m&euml; tep&euml;r, n&euml;se tentoni t&euml; shum&euml;zoni ose t&euml; pjes&euml;toni numra me stringje q&euml; nuk jan&euml; numerike, rezultati do t&euml; jet&euml; <code>NaN</code> (<em>Not a Number</em> &ndash; Jo num&euml;r). Gjithashtu, n&euml;se p&euml;rdorni <code>NaN</code> n&euml; nj&euml; operacion matematikor, rezultati do t&euml; jet&euml; gjithashtu <code>NaN</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 10;
+var y = "str";
+var z = NaN;
+    
+// Zbritja e numrit prej stringut jonumerik
+console.log(y - x); // NaN
+    
+// Shumëzimi i numrit me stringun jonumerik
+console.log(x * y); // NaN
+    
+// Pjesëtimi i numrit me stringun jonumerik
+console.log(x / y); // NaN
+    
+// Mbledhja e Nan me numër 
+console.log(x + z); // NaN
+                            
+// Mbledhja e NaN me string 
+console.log(y + z); // strNaN</code></pre>
+                </div>
+            </div>
+            <h2>Paraqitja e pafund&euml;sin&euml; (<em>Infinity</em>)</h2>
+            <p>Pafund&euml;sia p&euml;rfaq&euml;son nj&euml; num&euml;r shum&euml; t&euml; madh p&euml;r ta trajtuar JavaScript. JavaScript ka fjal&euml;t ky&ccedil;e speciale <code>Infinity</code> dhe <code>&ndash;Infinity</code> p&euml;r t&euml; paraqitur pafund&euml;sin&euml; pozitive dhe negative, respektivisht. P&euml;r shembull, pjes&euml;timi me <code>0</code> jep rezultatin <code>Infinity</code>, si&ccedil; demonstrohet m&euml; posht&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+ <pre><code>var x = 5 / 0;
+console.log(x); // Infinity
+    
+var y = -5 / 0;
+console.log(y); // -Infinity</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Pafund&euml;sia &euml;sht&euml; nj&euml; vler&euml; e ve&ccedil;ant&euml; q&euml; paraqet pafund&euml;sin&euml; matematikore <code>&infin;</code>, e cila &euml;sht&euml; m&euml; e madhe se &ccedil;do num&euml;r. Operatori <code>typeof</code> jep rezultatin <code>number</code> p&euml;r vler&euml;n <code>Infinity</code>.</p>
+            </div>
+            <h2>Shmangia e problemeve me sakt&euml;sin&euml;</h2>
+            <p>Ndonj&euml;her&euml;, operacionet n&euml; numrat me pik&euml; l&euml;viz&euml;se prodhojn&euml; rezultate t&euml; papritura, si&ccedil; tregohet k&euml;tu:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 0.1 + 0.2;
+console.log(x) // 0.30000000000000004</code></pre>
+                </div>
+            </div>
+            <p>Si&ccedil; mund ta shihni, rezultati &euml;sht&euml; <code>0.3000000000000000004</code> e jo <code>0.3</code> si&ccedil; duhet t&euml; ishte. Ky dallim quhet gabim i paraqitjes (<em>error representation</em>) ose gabim i p&euml;rafrimit (<em>roundoff error</em>). Kjo ndodh sepse JavaScript dhe shum&euml; gjuh&euml; t&euml; tjera programuese p&euml;rdorin form&euml;n binare (baza 2) p&euml;r t&euml; paraqitur numrat decimal (baza 10) p&euml;r brenda. P&euml;r fat t&euml; keq, shumica e fraksioneve decimale nuk mund t&euml; p&euml;rfaq&euml;sohen sakt&euml;sisht n&euml; form&euml; binare, k&euml;shtu q&euml; ndodhin k&euml;to dallime t&euml; vogla.</p>
+            <p>P&euml;r t&euml; shmangur k&euml;t&euml; problem mund t&euml; p&euml;rdorni k&euml;t&euml; zgjidhje:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = (0.1 * 10 + 0.2 * 10) / 10;
+console.log(x) // 0.3</code></pre>
+                </div>
+            </div>
+            <p>JavaScript i rrumbullakon n&euml; 17 shifra numrat me pik&euml; t&euml; l&euml;vizshme, q&euml; &euml;sht&euml; mjaft sakt&euml; p&euml;r shumic&euml;n e rasteve. Gjithashtu, numrat e plot&euml; (numrat pa fraksione ose sh&euml;nime eksponenciale) jan&euml; t&euml; sakt&euml; deri n&euml; 15 shifra, si&ccedil; demonstrohet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 999999999999999;
+console.log(x); // 999999999999999
+    
+var y = 9999999999999999;
+console.log(y); // 10000000000000000</code></pre>
+                </div>
+            </div>
+            <h2>Kryerja e operacioneve me numra</h2>
+            <p>JavaScript ofron disa veti dhe metoda p&euml;r t&euml; kryer veprime me numra. Si&ccedil; e dini tashm&euml; nga kaptinat e m&euml;parshme, tipet primitive t&euml; t&euml; dh&euml;nave n&euml; JavaScript mund t&euml; veprojn&euml; si objekte kur u referoheni atyre me t&euml; ashtuquajtur <em>property access notation</em> (d.m.th. sh&euml;nimi me pik&euml; - <em>dot notation).</em></p>
+            <p>N&euml; seksionet vijuese, do t&euml; shohim metodat e numrave q&euml; p&euml;rdoren m&euml; shpesh.</p>
+            <h3>Nxjerrja e numrave t&euml; plot&euml; nga stringjet</h3>
+            <p>Metoda <code>parseInt()</code> mund t&euml; p&euml;rdoret p&euml;r t&euml; nxjerr nj&euml; num&euml;r t&euml; plot&euml; nga nj&euml; string. Kjo metod&euml; &euml;sht&euml; ve&ccedil;an&euml;risht e dobishme n&euml; situata kur keni t&euml; b&euml;ni me vlera, si&ccedil; jan&euml; nj&euml;sit&euml; n&euml; CSS p.sh. 50px, 12pt, etj. dhe d&euml;shironi t&euml; nxirrni vler&euml;n numerike prej saj.</p>
+            <p>N&euml;se metoda <code>parseInt()</code> has n&euml; nj&euml; karakter q&euml; nuk &euml;sht&euml; numerik n&euml; baz&euml;n e specifikuar, ajo ndalon nxjerrjen dhe kthen vler&euml;n e plot&euml; t&euml; analizuar deri n&euml; at&euml; pik&euml;. N&euml;se karakteri i par&euml; nuk mund t&euml; shnd&euml;rrohet n&euml; nj&euml; num&euml;r, metoda do t&euml; kthej&euml; <code>NaN</code> (jo num&euml;r).</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>console.log(parseInt("3.14"));  // 3
+console.log(parseInt("50px"));  // 50
+console.log(parseInt("12pt"));  // 12
+console.log(parseInt("0xFF", 16));  // 255
+console.log(parseInt("20 vite"));  // 20
+console.log(parseInt("Viti 2048"));  // NaN
+console.log(parseInt("10 12 2020"));  // 10</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Metoda <code>parseInt()</code> kufizon numrat n&euml; vlera t&euml; plota, por nuk duhet t&euml; p&euml;rdoret si z&euml;vend&euml;sim i metod&euml;s <code>Math.floor()</code>.</p>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, ju mund t&euml; p&euml;rdorni metod&euml;n <code>parseFloat()</code> p&euml;r t&euml; nxjerr numrin me pik&euml;s l&euml;viz&euml;se nga nj&euml; string. Metoda <code>parseFloat()</code> funksionon n&euml; t&euml; nj&euml;jt&euml;n m&euml;nyr&euml; si metoda <code>parseInt()</code>, me p&euml;rjashtim t&euml; asaj se nxjerr edhe numrat e plot&euml; edhe numrat me decimale.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+ <pre><code>console.log(parseFloat("3.14"));  // 3.14
+console.log(parseFloat("50px"));  // 50
+console.log(parseFloat("1.6em"));  // 1.6
+console.log(parseFloat("124.5 lbs"));  // 124.5
+console.log(parseFloat("pesha 124.5 lbs"));  // NaN
+console.log(parseFloat("6.5 hektarë"));  // 6.5</code></pre>
+                </div>
+            </div>
+            <h3>Shnd&euml;rrimi i numrave n&euml; stringje</h3>
+            <p>Metoda <code>toString()</code> mund t&euml; p&euml;rdoret p&euml;r t&euml; kthyer nj&euml; num&euml;r n&euml; ekuivalentin e tij t&euml; stringut. Kjo metod&euml; n&euml; m&euml;nyr&euml; opsionale pranon nj&euml; paramet&euml;r &ndash; num&euml;r t&euml; plot&euml; n&euml; intervalin prej 2 deri n&euml; 36 duke specifikuar baz&euml;n q&euml; do t&euml; p&euml;rdoret p&euml;r t&euml; p&euml;rfaq&euml;suar vlerat numerike.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 10;
+var y = x.toString();
+console.log(y);  // '10'
+console.log(typeof y);  // string
+console.log(typeof x);  // number
+    
+console.log((12).toString());  // '12'
+console.log((15.6).toString());  // '15.6'
+console.log((6).toString(2));  // '110'
+console.log((255).toString(16));  // 'ff'</code></pre>
+                </div>
+            </div>
+            <h3>Formatimi i numrave n&euml; sh&euml;nimin eksponencial</h3>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n <code>toExponential()</code> p&euml;r t&euml; formatuar ose paraqitur nj&euml; num&euml;r n&euml; sh&euml;nimin eksponencial. Kjo metod&euml; n&euml; m&euml;nyr&euml; opsionale pranon nj&euml; paramet&euml;r t&euml; plot&euml; q&euml; specifikon numrin e shifrave pas pik&euml;s dhjetore. Gjithashtu, vlera e kthyer &euml;sht&euml; nj&euml; string, jo nj&euml; num&euml;r.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 67.1234;
+
+console.log(x.toExponential());  // 6.71234e+1
+console.log(x.toExponential(6));  // 6.712340e+1
+console.log(x.toExponential(4));  // 6.7123e+1
+console.log(x.toExponential(2));  // 6.71e+1</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Sh&euml;nimi eksponencial &euml;sht&euml; i dobish&euml;m p&euml;r t&euml; p&euml;rfaq&euml;suar numra q&euml; jan&euml; ose shum&euml; t&euml; m&euml;dhenj ose shum&euml; t&euml; vegj&euml;l. P&euml;r shembull, 62500000000 mund t&euml; shkruhet si <code>625e+8</code> ose <code>6.25e+10</code>.</p>
+            </div>
+            <h3>Formatimi i numrave n&euml; decimale fikse</h3>
+            <p>Mund t&euml; p&euml;rdorni metod&euml;n <code>toFixed()</code> kur d&euml;shironi t&euml; formatoni nj&euml; num&euml;r me nj&euml; num&euml;r fiks t&euml; shifrave n&euml; t&euml; djatht&euml; t&euml; pik&euml;s dhjetore. Vlera e kthyer nga kjo metod&euml; &euml;sht&euml; nj&euml; string dhe ka sakt&euml;sisht numrin e specifikuar t&euml; shifrave pas pik&euml;s dhjetore. N&euml;se parametri i shifrave nuk specifikohet ose hiqet, ai trajtohet si 0.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 72.635;
+
+console.log(x.toFixed());  // '73' (rrumbullakimi i vlerës, pa fraksione)
+console.log(x.toFixed(2));  // '72.64' (rrumbullakimi i vlerës)
+console.log(x.toFixed(1));  // '72.6'
+    
+var y = 6.25e+5;
+console.log(y.toFixed(2)); // '625000.00'
+    
+var z = 1.58e-4;
+console.log(z.toFixed(2));  // '0.00' (pasi 1.58e-4 është baras me 0.000158)</code></pre>
+                </div>
+            </div>
+            <h3>Formatimi i numrave me sakt&euml;si</h3>
+            <p>N&euml;se d&euml;shironi form&euml;n m&euml; t&euml; p&euml;rshtatshme t&euml; nj&euml; numri, mund t&euml; p&euml;rdorni metod&euml;n <code>toPrecision()</code>. Kjo metod&euml; kthen nj&euml; string q&euml; p&euml;rfaq&euml;son numrin n&euml; sakt&euml;sin&euml; e specifikuar.</p>
+            <p>N&euml;se sakt&euml;sia &euml;sht&euml; mjaft e madhe p&euml;r t&euml; p&euml;rfshir&euml; t&euml; gjitha shifrat e pjes&euml;s s&euml; plot&euml; t&euml; numrit, at&euml;her&euml; numri formatohet duke p&euml;rdorur sh&euml;nimin me pik&euml; fikse. P&euml;rndryshe, numri formatohet duke p&euml;rdorur sh&euml;nimin eksponencial. Parametri i sakt&euml;sis&euml; &euml;sht&euml; opsional.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var x = 6.235;
+
+console.log(x.toPrecision());  // '6.235'
+console.log(x.toPrecision(3));  // '6.24' (rrumbullakimi i vlerës)
+console.log(x.toPrecision(2));  // '6.2'
+console.log(x.toPrecision(1));  // '6'
+    
+var y = 47.63;
+console.log(y.toPrecision(2)); // '48' (rrumbullakimi i vlerës, pa fraksione)
+    
+var z = 1234.5;
+console.log(z.toPrecision(2));  // '1.2e+3'</code></pre>
+                </div>
+            </div>
+            <h3>Gjetja e numrave m&euml; t&euml; m&euml;dhenj dhe m&euml; t&euml; vegj&euml;l t&euml; mundsh&euml;m</h3>
+            <p>Objekti <code>Number</code> ka gjithashtu disa veti t&euml; lidhura me t&euml;. Vetit&euml; <code>Number.MAX_VALUE</code> dhe <code>Number.MIN_VALUE</code> t&euml; objektit <code>Number</code> p&euml;rfaq&euml;sojn&euml; numrat m&euml; t&euml; m&euml;dhenj dhe m&euml; t&euml; vegj&euml;l (m&euml; af&euml;r zeros, jo m&euml; negativ) t&euml; mundsh&euml;m pozitiv&euml; q&euml; mund t&euml; trajtoj&euml; JavaScript. Ato jan&euml; konstante dhe vlerat e tyre aktuale jan&euml; p&euml;rkat&euml;sisht <code>1.7976931348623157e+308</code>, dhe <code>5e-324</code>.</p>
+            <p>Nj&euml; num&euml;r q&euml; bie jasht&euml; rrezes s&euml; numrave t&euml; mundsh&euml;m p&euml;rfaq&euml;sohet nga nj&euml; konstant&euml; <code>Number.POZITIVE_INFINITY</code> ose <code>Number.NEGATIVE_INFINITY</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var a = Number.MAX_VALUE;
+console.log(a); // 1.7976931348623157e+308
+    
+var b = Number.MIN_VALUE;
+console.log(b); // 5e-324
+    
+var x = Number.MAX_VALUE * 2;
+console.log(x); // Infinity
+    
+var y = -1 * Number.MAX_VALUE * 2;
+console.log(y); // -Infinity</code></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </section>
+
+        <section id="kushtet-if-else">
+            <h1>Kushtet <em>If...Else</em></h1>
+            <p>Ashtu si shum&euml; gjuh&euml; t&euml; tjera programuese, JavaScript gjithashtu lejon q&euml; t&euml; shkruani kod q&euml; kryen veprime t&euml; ndryshme duke u bazuar n&euml; rezultatet e nj&euml; testi logjik ose krahasues n&euml; koh&euml;n e ekzekutimit. Kjo do t&euml; thot&euml;, q&euml; mund t&euml; krijoni kushte n&euml; form&euml; t&euml; shprehjeve q&euml; vler&euml;sohen si t&euml; v&euml;rteta () ose jo t&euml; v&euml;rteta (<code>false</code>) dhe duke u bazuar n&euml; k&euml;to rezultate mund t&euml; kryeni veprime t&euml; caktuara.</p>
+            <p>Ekzistojn&euml; disa deklarata (<em>statements</em>) t&euml; kushteve n&euml; JavaScript t&euml; cilat mund t'i p&euml;rdorni p&euml;r t&euml; marr&euml; vendime:</p>
+            <ul>
+                <li>Deklarata <strong><code>if</code></strong></li>
+                <li>Deklarata <strong><code>if...else</code></strong></li>
+                <li>Deklarata <strong><code>if...else if...else</code></strong></li>
+                <li>Deklarata <strong><code>switch...case</code></strong></li>
+            </ul>
+            <h2>Deklarata <em>if</em></h2>
+            <p>Deklarata <em>if</em> p&euml;rdoret p&euml;r t&euml; ekzekutuar nj&euml; bllok kodi vet&euml;m n&euml;se kushti i specifikuar vler&euml;sohet si i v&euml;rtet&euml; (<code>true</code>). Kjo &euml;sht&euml; deklarata m&euml; e thjesht&euml; e kushteve n&euml; JavaScript dhe mund t&euml; shkruhet si m&euml; posht&euml;:</p>
+            <div class="sintaksa">
+<pre><code>if(kushti) {
+    // Kodi që ekzekutohet
+}</code></pre>
+            </div>
+            <p>Shembulli i m&euml;posht&euml;m do t&euml; jap&euml; "Kalo nj&euml; fundjav&euml; t&euml; k&euml;ndshme!" n&euml;se dita aktuale &euml;sht&euml; e premte:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var sot = new Date();
+var diteJaves = sot.getDay(); // E diel – E shtunë : 0 - 6
+    
+if(diteJaves == 5) {
+    alert("Kalo një fundjavë të këndshme!");
+}</code></pre>
+                </div>
+            </div>
+            <h2>Deklarata <em>if...else</em></h2>
+            <p>Mund t&euml; p&euml;rmir&euml;soni aft&euml;sit&euml; e vendimmarrjes s&euml; programit tuaj n&euml; JavaScript, duke siguruar nj&euml; zgjedhje alternative pasi t&euml; shtoni nj&euml; deklarat&euml; <em>else</em> n&euml; deklarat&euml;n <em>if</em>.</p>
+            <p>Deklarata <em>if...else </em>ju lejon t&euml; ekzekutoni nj&euml; bllok kodi n&euml;se kushti i specifikuar vler&euml;sohet i v&euml;rtet&euml; dhe nj&euml; bllok tjet&euml;r kodi n&euml;se vler&euml;sohet si jo i v&euml;rtet&euml;.</p>
+            <div class="sintaksa">
+<pre><code>if(kushti) {
+    // Kodi që ekzekutohet nëse kushti është i vërtetë (true)
+} else {
+    // Kodi që ekzekutohet nëse kushti nuk është i vërtetë (false)
+}</code></pre>
+            </div>
+            <p>Kodi JavaScript n&euml; shembullin vijues do t&euml; paraqes tekstin "Kalo nj&euml; fundjav&euml; t&euml; k&euml;ndshme!" n&euml;se dita aktuale &euml;sht&euml; e premte, p&euml;rndryshe do t&euml; paraqes tekstin "Kalo nj&euml; dit&euml; t&euml; mbar&euml;!".</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var sot = new Date();
+var diteJaves = sot.getDay(); // E diel – E shtunë : 0 - 6
+    
+if(diteJaves == 5) {
+    alert("Kalo një fundjavë të këndshme!");
+} else {
+    alert("Kalo një ditë të mbarë!");
+}</code></pre>
+                </div>
+            </div>
+            <h2>Deklarata <em>if...else if...else</em></h2>
+            <p>Deklarata<em> if...else if...else </em>&euml;sht&euml; nj&euml; deklarat&euml; e ve&ccedil;ant&euml; q&euml; p&euml;rdoret p&euml;r t&euml; kombinuar deklaratat<em> if...else</em>.</p>
+            <div class="sintaksa">
+<pre><code>if(kushti1) {
+    // Kodi ekzekutohet nëse kushti1 është i vërtetë (true) 
+} else if(kushti2) {
+    // Kodi ekzekutohet nëse kushti1 nuk është i vërtetë (false) dhe kushti2 është i vërtetë (true) 
+} else {
+    // Kodi ekzekutohet nëse të dy kushtet nuk janë të vërteta (false) 
+}</code></pre>
+            </div>
+            <p>Shembulli i m&euml;posht&euml;m do t&euml; paraqes tekstin "Kalo nj&euml; fundjav&euml; t&euml; k&euml;ndshme!" n&euml;se dita aktuale &euml;sht&euml; e premte, dhe "Kalo nj&euml; t&euml; diel t&euml; k&euml;ndshme!" n&euml;se dita aktuale &euml;sht&euml; e diel, p&euml;rndryshe do paraqes tekstin "Kaloi nj&euml; dit&euml; t&euml; mbar&euml;!"</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var sot = new Date();
+var diteJaves = sot.getDay(); // E diel – E shtunë : 0 - 6
+    
+if(diteJaves == 5) {
+    alert("Kalo një fundjavë të këndshme!");
+} else if(diteJaves == 0) {
+    alert("Kalo një të diele të këndshme!");
+} else {
+    alert("Kalo një ditë të mbarë!");
+}</code></pre>
+                </div>
+            </div>
+            <p>P&euml;r deklarat&euml;n e JavaScript-it<em> switch...case </em>do t&euml; m&euml;soni n&euml; nj&euml;sin&euml; m&euml;simore t&euml; posa&ccedil;me.</p>
+            <h2>Operatori Ternar</h2>
+            <p>Operatori terna (i trefisht&euml;) ofron nj&euml; m&euml;nyr&euml; t&euml; shkurt&euml;r p&euml;r t&euml; shkruar deklaratat<em> if...else</em>. Operatori ternar p&euml;rfaq&euml;sohet nga simboli i pik&euml;pyetjes (<code>?</code>) dhe i nevojiten tre operand&euml;: nj&euml; kusht p&euml;r t&euml; kontrolluar, rezultati p&euml;r t&euml; v&euml;rtet&euml;n (<code>true</code>) dhe rezultati p&euml;r jo t&euml; v&euml;rtet&euml;n (<code>false</code>). Sintaksa e saj themelore &euml;sht&euml; k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>var rezultati = (kushti) ? vlera1 : vlera2</code></pre>
+            </div>
+            <p>N&euml;se kushti vler&euml;sohet si i v&euml;rtet&euml; (<code>true</code>), vlera1 do t&euml; paraqitet, p&euml;rndryshe do t&euml; paraqitet vlera2. P&euml;r t&euml; kuptuar se si funksionon ky operator, merrni parasysh shembujt e m&euml;posht&euml;m:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var personi;
+var mosha = 21;
+if(mosha < 18) {
+    personi = 'Fëmijë';
+} else {
+    personi = 'I rritur';
+}
+alert(personi); // Rezultati: I rritur</code></pre>
+                </div>
+            </div>
+            <p>N&euml;se p&euml;rdorim operatorin ternar, i nj&euml;jti kod mund t&euml; shkruhet n&euml; nj&euml; m&euml;nyr&euml; m&euml; kompakte:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var mosha = 21;
+var personi = mosha < 18 ? 'Fëmijë' : 'I rritur';
+alert(personi); // Rezultati: I rritur</code></pre>
+                </div>
+            </div>
+            <p>Si&ccedil; mund ta shihni n&euml; shembullin e m&euml;sip&euml;rm, meqen&euml;se kushti i specifikuar vler&euml;sohet si jo i v&euml;rtet&euml;, vlera n&euml; an&euml;n e djatht&euml; nga simboli (<code>:</code>) paraqitet, e q&euml; &euml;sht&euml; stringu 'I rritur'.</p>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Kodi i shkruar duke p&euml;rdorur operatorin ternar mund t&euml; jet&euml; i v&euml;shtir&euml; p&euml;r tu lexuar ndonj&euml;her&euml;. Megjithat&euml;, ai siguron nj&euml; m&euml;nyr&euml; t&euml; shk&euml;lqyeshme p&euml;r t&euml; shkruar deklarata kompakte <code>if...else</code>.</p>
+            </div>
+        </section>
+
+        <section id="deklarata-switch-case">
+            <h1>Deklarata <em>Switch...Case</em></h1>
+            <p>Deklarata<em> switch...case </em>&euml;sht&euml; nj&euml; alternativ&euml; ndaj deklarat&euml;s<em> if...else if...else</em>, e cila b&euml;n pothuajse t&euml; nj&euml;jt&euml;n gj&euml;. Deklarata<em> switch...case </em>teston nj&euml; variab&euml;l ose shprehje kundrejt nj&euml; serie vlerash derisa t&euml; gjej&euml; nj&euml; vler&euml; q&euml; p&euml;rputhet dhe m&euml; pas ekzekuton bllokun e kodit q&euml; i p&euml;rgjigjet p&euml;rputhjes s&euml; vler&euml;s. Sintaksa &euml;sht&euml; k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>switch(x){
+    case vlera1:
+        // Kodi ekzekutohet nëse x === vlera1
+        break;
+    case vlera2:
+        // Kodi ekzekutohet nëse x === vlera2
+        break;
+    ...
+    default:
+        // Kodi ekzekutohet nëse x është ndryshe nga të gjitha vlerat
+}</code></pre>
+            </div>
+            <p>Merrni parasysh shembullin e m&euml;posht&euml;m, q&euml; paraqet dit&euml;n e jav&euml;s.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var d = new Date();
+	
+switch(d.getDay()) {
+    case 0:
+        alert("Sot është e diel.");
+        break;
+    case 1:
+        alert("Sot është e hënë.");
+        break;
+    case 2:
+        alert("Sot është e martë.");
+        break;
+    case 3:
+        alert("Sot është e mërkurë.");
+        break;
+    case 4:
+        alert("Sot është e enjte.");
+        break;
+    case 5:
+        alert("Sot është e premte.");
+        break;
+    case 6:
+        alert("Sot është e shtunë.");
+        break;   
+    default:
+        alert("Asnjë informacion i disponueshëm për atë ditë.");
+        break;
+}</code></pre>
+                </div>
+            </div>
+            <p>Metoda <code>getDay()</code> e kthen dit&euml;n e jav&euml;s si vler&euml; numerike nga <code>0</code> dhe <code>6</code>, ku <code>0</code> p&euml;rfaq&euml;son dit&euml;n e diel, <code>1</code> p&euml;rfaq&euml;son dit&euml;n e h&euml;n&euml;, e k&euml;shtu me radh&euml;.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml; nj&euml; deklarat&euml; <em>switch...case</em>, vlera e shprehjes ose variabl&euml;s krahasohet me vler&euml;n e dh&euml;n&euml; duke p&euml;rdorur operatorin e barazis&euml; s&euml; trefisht&euml; (<code>===</code>). Kjo do t&euml; thot&euml; n&euml;se <code>x="0"</code>, nuk p&euml;rputhet me <code>case 0:</code>, sepse tipet e t&euml; dh&euml;nave t&euml; tyre nuk jan&euml; t&euml; nj&euml;jta.</p>
+            </div>
+            <p>Deklarata <em>switch...case</em> ndryshon nga deklarata <em>if...else</em> n&euml; nj&euml; m&euml;nyr&euml; t&euml; r&euml;nd&euml;sishme. Deklarata <em>switch</em> ekzekutohet rresht pas rreshti (d.m.th. deklarat&euml; pas deklarate) dhe pasi JavaScript gjen nj&euml; klauzol&euml; <code>case</code> q&euml; vler&euml;son si e v&euml;rtet&euml;, jo vet&euml;m q&euml; ekzekuton kodin q&euml; korrespondon me at&euml; klauzol&euml;, por gjithashtu ekzekuton t&euml; gjitha klauzolat tjera vijuese deri n&euml; fund t&euml; bllokut automatikisht.</p>
+            <p>P&euml;r t&euml; parandaluar k&euml;t&euml; duhet t&euml; p&euml;rfshini nj&euml; deklarat&euml; <code>break</code> pas secilit rast &ndash; <code>case</code> (si&ccedil; mund ta shihni n&euml; shembullin e m&euml;sip&euml;rm). Deklarata e nd&euml;rprerjes - <code>break</code> i thot&euml; interpretuesit JavaScript t&euml; dal&euml; nga blloku i deklarat&euml;s <em>switch...case</em> pasi t&euml; ekzekutoj&euml; kodin e lidhur me rastin e par&euml; t&euml; v&euml;rtet&euml;.</p>
+            <p>Deklarata <code>break</code> megjithat&euml; nuk &euml;sht&euml; e nevojshme p&euml;r klauzol&euml;n <code>case</code> ose <code>default</code>, kur ajo shfaqet n&euml; fund n&euml; nj&euml; deklarat&euml; kalimi. Megjith&euml;se, n&euml; nj&euml; deklarat&euml; <em>switch</em> &euml;sht&euml; nj&euml; praktik&euml; e mir&euml; programuese t&euml; p&euml;rfundosh case-in e fundit, ose klauzol&euml;n default me nj&euml; break. Kjo parandalon nj&euml; gabim t&euml; mundsh&euml;m m&euml; von&euml; n&euml;se nj&euml; deklarat&euml; tjet&euml;r <em>case</em> shtohet n&euml; deklarat&euml;n <em>switch</em>.</p>
+            <p>Klauzola <code>default</code> &euml;sht&euml; opsionale, e q&euml; specifikon veprimet q&euml; duhen kryer n&euml;se asnj&euml; <code>case</code> nuk p&euml;rputhet me shprehjen <em>switch</em>. Klauzola <code>default</code> mund t&euml; mos jet&euml; klauzola e fundit q&euml; shfaqet n&euml; nj&euml; deklarat&euml; <em>switch</em>. K&euml;tu kemi nj&euml; shembull, ku <code>default</code> nuk &euml;sht&euml; klauzola e fundit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var d = new Date();
+
+switch(d.getDay()) {
+    default: 
+        alert("Mezi po pres fundjavën.");
+        break;
+    case 6:
+        alert("Sot është e shtunë.");
+        break; 
+    case 0:
+        alert("Sot është e diel.");
+}</code></pre>
+                </div>
+            </div>
+            <h2>Rastet e shumta q&euml; ndajn&euml; t&euml; nj&euml;jtin veprim</h2>
+            <p>&Ccedil;do vler&euml; e dh&euml;n&euml; <code>case</code> duhet t&euml; jet&euml; unike brenda nj&euml; deklarate <em>switch</em>. Sidoqoft&euml;, raste (<code>case</code>) t&euml; ndryshme nuk kan&euml; nevoj&euml; t&euml; ken&euml; nj&euml; veprim unik. Disa raste (<code>case</code>) mund t&euml; ndajn&euml; t&euml; nj&euml;jtin veprim, si&ccedil; tregohet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var d = new Date();
+
+switch(d.getDay()) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        alert("Është ditë pune.");
+        break; 
+    case 0:
+    case 6:
+        alert("Është ditë pushimi.");
+        break;
+    default: 
+        alert("Shijoni çdo ditë të jetës suaj.");
+}</code></pre>
+                </div>
+            </div>
         </section>
 
     </main>
