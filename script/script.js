@@ -1,3 +1,8 @@
+window.addEventListener("load", function () {
+    const loader = document.querySelector("#loader");
+    loader.className += " hidden"; // class "loader hidden"
+});
+
 function resizeIframe(obj) {
     obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
 }
