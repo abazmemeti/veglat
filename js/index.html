@@ -72,6 +72,8 @@
             <li><a href="#numrat">Numrat</a></li>
             <li><a href="#kushtet-if-else">Kushtet If...Else</a></li>
             <li><a href="#vargjet-arrays">Vargjet (Arrays)</a></li>
+            <li><a href="#unazat">Unazat (Loops)</a></li>
+            <li><a href="#funksionet">Funksionet</a></li>
         </ul>
     </aside>
 
@@ -2960,6 +2962,393 @@ console.log(persona);
 </code></pre>
                 </div>
             </div>
+        </section>
+
+        <section id="unazat">
+            <h1>Unazat (<em>Loops</em>)</h1>
+            <p>Unazat p&euml;rdoren p&euml;r t&euml; ekzekutuar t&euml; nj&euml;jtin bllok t&euml; kodit disa her&euml;, p&euml;r sa koh&euml; q&euml; plot&euml;sohet nj&euml; kusht i caktuar. Ideja themelore prapa nj&euml; unaze &euml;sht&euml; automatizimi n&euml; detyrat e p&euml;rs&euml;ritura brenda nj&euml; programi p&euml;r t&euml; kursyer koh&euml; dhe tentativa. JavaScript-i tani mb&euml;shtet pes&euml; lloje t&euml; ndryshme t&euml; unazave:</p>
+            <ul>
+            <li>unaza&nbsp;<strong>while</strong> &ndash; ekzekuton nj&euml; bllok t&euml; kodit p&euml;r sa koh&euml; q&euml; gjendja e specifikuar vler&euml;son si e v&euml;rtet&euml;.</li>
+            <li>unaza&nbsp;<strong>do...while</strong> &ndash; ekzekuton nj&euml; bllok t&euml; kodit nj&euml; her&euml;; m&euml; pas vler&euml;sohet gjendja. N&euml;se kushti &euml;sht&euml; i v&euml;rtet&euml;, deklarata p&euml;rs&euml;ritet p&euml;r sa koh&euml; q&euml; kushti i specifikuar &euml;sht&euml; i v&euml;rtet&euml;.</li>
+            <li>unaza&nbsp;<strong>for</strong> &ndash; ekzekuton nj&euml; bllok t&euml; kodit derisa num&euml;ruesi t&euml; arrij&euml; nj&euml; num&euml;r t&euml; caktuar.</li>
+            <li>unaza&nbsp;<strong>for...in</strong> &ndash; ekzekutohet n&euml;p&euml;r vetit&euml; e nj&euml; objekti.</li>
+            <li>unaza&nbsp;<strong>for...of</strong> &ndash; kryhen operacione t&euml; p&euml;rs&euml;ritshme n&euml; objekte si vargje, stringje, etj.</li>
+            </ul>
+            <h2>Unaza <em>while</em></h2>
+            <p>Kjo &euml;sht&euml; deklarata m&euml; e thjesht&euml; e unazave q&euml; e ofrohet nga JavaScript.</p>
+            <p>Unaza while kalon disa her&euml; n&euml;p&euml;r nj&euml; bllok t&euml; kodit p&euml;r sa koh&euml; q&euml; kushti i specifikuar vler&euml;sohet si i v&euml;rtet&euml;. Sapo kushti t&euml; mos jet&euml; i v&euml;rtet&euml;, kalimi n&euml;p&euml;r kod do t&euml; nd&euml;rpritet. Sintaksa gjenerike e unaz&euml;s <strong>while</strong> &euml;sht&euml;:</p>
+            <div class="sintaksa">
+<pre><code>while(kushti) {
+    // Kodi që do të ekzekutohet
+}</code></pre>
+            </div>
+            <p>Shembulli i m&euml;posht&euml;m definon nj&euml; unaz&euml; q&euml; do t&euml; vazhdoj&euml; t&euml; ekzekutohet kodi brenda saj p&euml;r sa koh&euml; q&euml; variabla <code>i</code> &euml;sht&euml; m&euml; e vog&euml;l ose e barabart&euml; me 5. Variabla <code>i</code> do t&euml; rritet p&euml;r vler&euml;n <code>1</code> sa her&euml; q&euml; kodi ekzekutohet brenda unaz&euml;s:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var i = 1;
+while(i &lt;= 5) {    
+    document.write("&lt;p&gt;Numri&nbsp;&euml;sht&euml;&nbsp;"&nbsp;+&nbsp;i&nbsp;+&nbsp;"&lt;/p&gt;");
+    i++;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Duhet t&euml; sigurohuni q&euml; kushti i specifikuar n&euml; unaz&euml;n tuaj n&euml; fund t&euml; jet&euml; <code>false</code>, p&euml;rndryshe, unaza nuk do t&euml; ndaloj&euml; asnj&euml;her&euml; s&euml; p&euml;rs&euml;rituri, q&euml; njihet ndryshe si <em>unaz&euml; e pafund</em>. Nj&euml; gabim i zakonsh&euml;m &euml;sht&euml; t&euml; harrosh t&euml; zmadhosh variabl&euml;n e num&euml;rimit (variabl&euml;n <code>i</code> n&euml; rastin ton&euml;).</p>
+            </div>
+            <h2>Unaza <em>do...while</em></h2>
+            <p>Unaza <code>do-while</code> &euml;sht&euml; nj&euml; variant i unaz&euml;s <code>while</code>, e cili vler&euml;son gjendjen (kushtin) n&euml; fund t&euml; &ccedil;do p&euml;rs&euml;ritje t&euml; unaz&euml;s. Me nj&euml; unaz&euml; <code>do-while</code>, blloku i kodit ekzekutohet nj&euml; her&euml;, e pastaj vler&euml;sohet kushti, n&euml;se kushti &euml;sht&euml; i v&euml;rtet&euml; (<code>true</code>), deklarata p&euml;rs&euml;ritet p&euml;r sa koh&euml; q&euml; kushti i specifikuar vler&euml;sohet si i v&euml;rtet&euml; (<code>true</code>). Sintaksa gjenerike e unaz&euml;s <code>do-while</code> &euml;sht&euml;:</p>
+            <div class="sintaksa">
+<pre><code>do {
+    // Kodi që do të ekzekutohet
+}
+while(kushti);</code></pre>
+            </div>
+            <p>Kodi JavaScript n&euml; shembullin vijues p&euml;rcakton nj&euml; unaz&euml; q&euml; fillon me <code>i = 1</code>. M&euml; pas do t&euml; jap daljen dhe do t&euml; rris&euml; vler&euml;n e variabl&euml;s <code>i</code> p&euml;r <code>1</code>. Pas k&euml;saj vler&euml;sohet kushti, dhe unaza do t&euml; vazhdoj&euml; t&euml; ekzekutohet p&euml;r sa koh&euml; q&euml; variabla <code>i</code> &euml;sht&euml; m&euml; e vog&euml;l, ose e barabart&euml; me <code>5</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var i = 1;
+do {
+    document.write("&lt;p&gt;Numri&nbsp;&euml;sht&euml;&nbsp;"&nbsp;+&nbsp;i&nbsp;+&nbsp;"&lt;/p&gt;");
+    i++;
+}
+while(i &lt;= 5);</code></pre>
+                </div>
+            </div>
+            <h2>Diferenca n&euml; mes unaz&euml;s <em>while</em> dhe <em>do...while</em></h2>
+            <p>Unaza <code>while</code> ndryshon nga unaza <code>do-while</code> n&euml; nj&euml; m&euml;nyr&euml; t&euml; r&euml;nd&euml;sishme &ndash; n&euml; unaz&euml;n <code>while</code>, kushti q&euml; do t&euml; vler&euml;sohet, testohet n&euml; fillim t&euml; &ccedil;do cikli t&euml; unaz&euml;s, k&euml;sisoj n&euml;se shprehja e kusht&euml;zuar vler&euml;sohet si jo e v&euml;rtet&euml; (<code>false</code>), kodi n&euml; unaz&euml; nuk do t&euml; ekzekutohet asnj&euml;her&euml; .</p>
+            <p>Nga ana tjet&euml;r, n&euml; unaz&euml;n <code>do-while</code>, cikli do t&euml; ekzekutohet gjithmon&euml; nj&euml; her&euml; edhe n&euml;se shprehja e kusht&euml;zuar vler&euml;sohet si jo e v&euml;rtet&euml; (<code>false</code>), sepse ndryshe nga unaza <code>while</code>, kushti vler&euml;sohet n&euml; fund t&euml; ciklit t&euml; unaz&euml;s, e jo n&euml; fillim.</p>
+            <h2>Unaza <em>for</em></h2>
+            <p>Unaza <code>for</code> p&euml;rs&euml;rit nj&euml; bllok t&euml; kodit p&euml;r sa koh&euml; q&euml; plot&euml;sohet nj&euml; kusht i caktuar. Zakonisht p&euml;rdoret p&euml;r t&euml; ekzekutuar nj&euml; bllok t&euml; kodit p&euml;r disa her&euml;. Sintaksa e saj &euml;sht&euml; kjo:</p>
+            <div class="sintaksa">
+<pre><code>for(inicializimi; kushti; inkrementi) {
+    // Kodi që do të ekzekutohet
+}</code></pre>
+            </div>
+            <p>Parametrat e deklarat&euml;s s&euml; unaz&euml;n <code>for</code> kan&euml; k&euml;to kuptime:</p>
+            <ul>
+                <li><strong><em>inicializimi</em></strong> &ndash; p&euml;rdoret p&euml;r inicimin e variablave t&euml; num&euml;ruesit dhe vler&euml;sohet nj&euml; her&euml; pa ndonj&euml; kusht para ekzekutimit t&euml; par&euml; t&euml; kodit n&euml; unaz&euml;.</li>
+                <li><strong><em>kushti</em></strong> &ndash; vler&euml;sohet n&euml; fillim t&euml; &ccedil;do p&euml;rs&euml;ritje t&euml; ciklit t&euml; unaz&euml;s. N&euml;se vler&euml;simi &euml;sht&euml; si i v&euml;rtet&euml; (<code>true</code>), deklaratat n&euml; unaz&euml; do t&euml; ekzekutohen. N&euml;se vler&euml;simi &euml;sht&euml; jo i v&euml;rtet&euml; (<code>false</code>), ekzekutimi n&euml; unaz&euml; do t&euml; p&euml;rfundoj.</li>
+                <li><strong><em>inkrementi</em></strong> &ndash; p&euml;rdit&euml;son num&euml;ruesin e unaz&euml;s me nj&euml; vler&euml; t&euml; re sa her&euml; q&euml; ekzekutohet kodi n&euml; unaz&euml;.</li>
+            </ul>
+            <p>Shembulli i m&euml;posht&euml;m definon nj&euml; unaz&euml; q&euml; fillon me nj&euml; variab&euml;l <code>i = 1</code>. Cikli ekzekutues n&euml; unaz&euml; do t&euml; vazhdoj&euml; derisa vlera e variabl&euml;s <code>i</code> t&euml; jet&euml; m&euml; e vog&euml;l ose e barabart&euml; me <code>5</code>. Variabla <code>i</code> do t&euml; rritet p&euml;r <code>1</code> sa her&euml; q&euml; cikli p&euml;rs&euml;ritet:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>for(var i = 1; i &lt;= 5; i++) {
+    document.write("&lt;p&gt;Numri&nbsp;&euml;sht&euml;&nbsp;"&nbsp;+&nbsp;i&nbsp;+&nbsp;"&lt;/p&gt;");
+}</code></pre>
+                </div>
+            </div>
+            <p>Unaza <code>for</code> &euml;sht&euml; ve&ccedil;an&euml;risht e dobishme gjat&euml; p&euml;rs&euml;ritjes s&euml; elementeve t&euml; nj&euml; vargu (<em>array</em>). Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si t&euml; paraqitni secilin element t&euml; vargut n&euml; JavaScript.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Një varg me disa elemente
+var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+     
+// Kalimi nëpër të gjithë elementet e vargut 
+for(var i = 0; i &lt; fruta.length; i++) {
+    document.write("&lt;p&gt;"&nbsp;+&nbsp;fruta[i]&nbsp;+&nbsp;"&lt;/p&gt;");
+}</code></pre>
+                </div>
+            </div>
+            <h2>Unaza <em>for...in</em></h2>
+            <p>Unaza <code>for-in</code> &euml;sht&euml; tip special i unazave q&euml; b&euml;n&euml; cik&euml;l mbi vetit&euml; e objektit, ose elementeve t&euml; vargut. Sintaksa gjenerike e unaz&euml;s <code>for-in</code> &euml;sht&euml;:</p>
+            <div class="sintaksa">
+<pre><code>for(variabla in objekti) {
+    // Kodi që do të ekzekutohet
+}</code></pre>
+            </div>
+            <p>Num&euml;ruesi i unaz&euml;s d.m.th. <em>variabla</em> n&euml; unaz&euml;n <code>for-in</code> &euml;sht&euml; nj&euml; string, jo nj&euml; num&euml;r. Ai p&euml;rmban emrin e vetis&euml; aktuale ose indeksin e elementit aktual t&euml; vargut.</p>
+            <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si t&euml; kaloni n&euml;p&euml;r t&euml; gjitha vetit&euml; e nj&euml; objekti n&euml; JavaScript.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Një object me disa veti (properties) 
+var personi = {"emri": "Filan", "mbiemri": "Fisteku", "mosha": "36"};
+     
+// Kalimi nëpër të gjitha vetitë e objektit
+for(var vetia in person) {  
+    document.write("&lt;p&gt;" + vetia + " = " + personi[vetia] + "&lt;/p&gt;"); 
+}</code></pre>
+                </div>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; kaloni n&euml;p&euml;r element&euml;t e nj&euml; vargu, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Vargu me disa elemente
+var fruta = ["Mollë", "Dardhë", "Pjeshkë", "Qershi", "Rrush"];
+     
+// Kalimi nëpër të gjithë elementet e vargut 
+for(var i in fruta) {  
+    document.write("&lt;p&gt;" + fruta[i] + "&lt;/p&gt;");
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Unaza <code>for-in</code> nuk duhet t&euml; p&euml;rdoret n&euml; nj&euml; varg ku renditja e indeksit &euml;sht&euml; e r&euml;nd&euml;sishme. M&euml; mir&euml; &euml;sht&euml; t&euml; p&euml;rdorni unaz&euml;n <code>for</code> me nj&euml; indeks numerik.</p>
+            </div>
+            <h2>Unaza <em>for...of</em>&nbsp;&nbsp;<mark>ES6</mark></h2>
+            <p>ES6 (<em>EcmaScript6</em>) prezanton nj&euml; unaz&euml; t&euml; re <code>for-of</code> q&euml; na lejon t&euml; p&euml;rs&euml;risim cikle shum&euml; leht&euml; mbi vargje ose objekte t&euml; p&euml;rs&euml;ritshme (p.sh. stringje). Gjithashtu, kodi brenda unaz&euml;s ekzekutohet p&euml;r secilin element t&euml; objektit t&euml; p&euml;rs&euml;ritsh&euml;m.</p>
+            <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si t&euml; kaloni n&euml;p&euml;r vargje dhe stringje duke p&euml;rdorur k&euml;t&euml; unaz&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Përsëritje nëpër varg
+let shkronjat = ["a", "b", "c", "d", "e", "f"];
+    
+for(let shkronja of shkronjat) {
+    console.log(shkronja); // a,b,c,d,e,f
+}
+    
+// Përsëritje nëpër string
+let persh = "Përshëndetje Botë!";
+    
+for(let karakter of persh) {
+    console.log(karakter); // P,ë,r,s,h,ë,n,d,e,t,j,e, ,B,o,t,ë,!
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="funksionet">
+            <h1>Funksionet</h1>
+            <p>Nj&euml; funksion &euml;sht&euml; grup i deklaratave q&euml; kryejn&euml; detyra specifike dhe mund t&euml; mbahen dhe mir&euml;mbahen ve&ccedil;mas nga programi kryesor. Funksionet ofrojn&euml; nj&euml; m&euml;nyr&euml; p&euml;r t&euml; krijuar paketa t&euml; kodeve t&euml; rip&euml;rdorshme t&euml; cilat jan&euml; m&euml; dinamike dhe m&euml; t&euml; lehta p&euml;r tu korrigjuar nga gabimet. K&euml;tu kemi paraqitur disa p&euml;rpar&euml;si t&euml; p&euml;rdorimit t&euml; funksioneve:</p>
+            <p><strong>Funksionet zvog&euml;lojn&euml; p&euml;rs&euml;ritjen e kodit brenda programit </strong>&ndash; Funksioni lejon t&euml; nxjerrni bllok t&euml; kodit zakonisht t&euml; p&euml;rdorur n&euml; nj&euml; komponent t&euml; vet&euml;m. Andaj mund t&euml; kryeni t&euml; nj&euml;jt&euml;n detyr&euml; duke thirrur k&euml;t&euml; funksion kudo q&euml; d&euml;shironi brenda skript&euml;s tuaj pa pasur nevoj&euml; t&euml; kopjoni dhe ngjisni t&euml; nj&euml;jtin bllok t&euml; kodit.</p>
+            <p><strong>Funksionet mund&euml;sojn&euml; mir&euml;mbajtjen e kodit shum&euml; m&euml; leht&euml;</strong> &ndash; Meqen&euml;se nj&euml; funksion i krijuar nj&euml; her&euml; mund t&euml; p&euml;rdoret shum&euml; her&euml;, k&euml;shtu q&euml; &ccedil;do ndryshim i b&euml;r&euml; brenda nj&euml; funksioni zbatohet automatikisht n&euml; t&euml; gjitha vendet pa prekur disa fajlla.</p>
+            <p><strong>Funksionet e b&euml;jn&euml; m&euml; t&euml; leht&euml; eliminimin e gabimeve</strong> &ndash; Kur programi ndahet n&euml; funksione, n&euml;se ndodh ndonj&euml; gabim, ju e dini sakt&euml;sisht se cili funksion e shkakton gabimin dhe ku mund ta gjeni. Prandaj, p&euml;rmir&euml;simi i gabimeve b&euml;het shum&euml; m&euml; i leht&euml;.</p>
+            <h2>Definimi dhe thirrja e nj&euml; funksioni</h2>
+            <p>Deklarimi i nj&euml; funksioni fillon me fjal&euml;n ky&ccedil;e <code>function</code>, e ndjekur nga emri i funksionit q&euml; d&euml;shironi t&euml; krijoni, pastaj nga kllapat <code>()</code> dhe n&euml; fund sh&euml;noni kodin e funksionit tuaj n&euml; mes kllapave t&euml; m&euml;dha <code>{}</code>. M&euml; posht&euml; &euml;sht&euml; dh&euml;n&euml; sintaksa themelore p&euml;r deklarimin e nj&euml; funksioni:</p>
+            <div class="sintaksa">
+<pre><code>function emriFunksionit() {
+    // Kodi që do të ekzekutohet
+}</code></pre>
+            </div>
+            <p>M&euml; posht&euml; &euml;sht&euml; dh&euml;n&euml; nj&euml; shembull i thjesht&euml; i nj&euml; funksioni, q&euml; do t&euml; paraqes nj&euml; mesazh p&euml;rsh&euml;ndetje:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Definimi i funksionit
+function persh() {
+    alert("Përshëndetje, mirësevini në këtë uebsajt!");
+}
+     
+// Thirrja e funksionit
+persh(); // Dalja: Përshëndetje, mirësevini në këtë uebsajt!</code></pre>
+                </div>
+            </div>
+            <p>Pasi t&euml; definohet nj&euml; funksion, ai mund t&euml; thirret (<em>invoked</em>) nga kudo n&euml; dokument, duke sh&euml;nuar emrin e tij e m&euml; pas hapja dhe mbyllja e kllapave, k&euml;sisoj <code>persh()</code>, sikur n&euml; shembullin e m&euml;sip&euml;rm.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Emri i funksionit duhet t&euml; filloj&euml; me nj&euml; shkronj&euml; ose me karakterin n&euml;nviz&euml; e jo me nj&euml; num&euml;r, duke u ndjekur opsionalisht nga m&euml; shum&euml; shkronja, numra ose n&euml;nviza. Emrat e funksioneve jan&euml; t&euml; ndjesh&euml;m n&euml; shkronja t&euml; m&euml;dha e t&euml; vogla (<em>case sensitive</em>), ashtu si emrat e variablave.</p>
+            </div>
+            <h2>Shtimi i parametrave n&euml; funksione</h2>
+            <p>Mund t&euml; specifikoni parametrat kur definoni funksionin tuaj p&euml;r t&euml; pranuar vlerat hyr&euml;se n&euml; koh&euml;n e ekzekutimit. Parametrat funksionojn&euml; si variabla mbajt&euml;se brenda nj&euml; funksioni; ato z&euml;vend&euml;sohen n&euml; koh&euml;n e ekzekutimit nga vlerat (t&euml; njohura si argumente) e ju jepen funksionit n&euml; koh&euml;n e thirrjes.</p>
+            <p>Parametrat vendosen n&euml; rreshtin e par&euml; t&euml; funksionit brenda kllapave, k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>function emriFunksionit(parametri1, parametri2, parametri3) {
+    // Kodi që do të ekzekutohet
+}</code></pre>
+            </div>
+            <p>Funksioni <code>shuma()</code> n&euml; shembullin vijues merr dy numra si argumente, thjesht shtojini s&euml; bashku dhe m&euml; pas shfaqni rezultatin n&euml; shfletues.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Definimi i funksionit
+function shuma(num1, num2) {
+    var totali = num1 + num2;
+    alert(totali);
+}
+     
+// Thirrja e funksionit
+shuma(6, 20); // Dalja: 26
+shuma(-5, 17); // Dalja: 12</code></pre>
+                </div>
+            </div>
+            <p>Mund t&euml; p&euml;rcaktoni sa t&euml; doni parametra. Sidoqoft&euml;, p&euml;r secilin paramet&euml;r q&euml; specifikoni, nj&euml; argument p&euml;rkat&euml;s duhet ta pasoj&euml; kut t&euml; thirret funksioni, p&euml;rndryshe vlera e tij b&euml;het e pap&euml;rcaktuar &ndash; <code>undefined</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Definimi i funksionit
+function emriPlote(emri, mbiemri) {
+    alert(emri + " " + mbiemri);
+}
+     
+// Thirrja e funksionit
+emriPlote("Agron", "Destani"); // Dallja: Agron Destani
+emriPlote("Merita"); // Dalja: Merita undefined</code></pre>
+                </div>
+            </div>
+            <h2>Vlerat e paracaktuara p&euml;r parametrat e funksionit <mark>ES6</mark></h2>
+            <p>N&euml; ES6 (ECMAScript 6), tani mund t&euml; specifikoni vlerat e paracaktuara p&euml;r parametrat e funksionit. Kjo do t&euml; thot&euml; q&euml; n&euml;se nuk ofrohen argumente kur thirret funksioni, do t&euml; p&euml;rdoren k&euml;to vlera t&euml; parametrave t&euml; paracaktuar.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>function persh(emri = 'Filan') {
+    alert('Përshëndetje, ' + emri);
+}
+
+persh(); // Dalja: Përshëndetje, Filan
+persh('Gëzim'); // Dalja: Përshëndetje, Gëzim</code></pre>
+                </div>
+            </div>
+            <p>P&euml;rpara se t&euml; ekzistonte standardi ES6, p&euml;r t&euml; arritur t&euml; nj&euml;jtin rezultat, &euml;sht&euml; dasht&euml; t&euml; shkruanim di&ccedil;ka k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>function persh(emri) {
+    var emri = emri || 'Filan'; 
+    alert('Përshëndetje, ' + emri);
+}
+
+persh(); // Dalja: Përshëndetje, Filan
+persh(Gëzim); // Dalja: Përshëndetje, Gëzim</code></pre>
+                </div>
+            </div>
+            <h2>Kthimi i vlerave nga nj&euml; funksion</h2>
+            <p>Nj&euml; funksion mund t&euml; kthej&euml; nj&euml; vler&euml; p&euml;rs&euml;ri n&euml; skript&euml;n q&euml; e thirri funksionin si rezultat duke p&euml;rdorur deklarat&euml;n <code>return</code>. Vlera mund t&euml; jet&euml; &ccedil;far&euml;do tipi, duke p&euml;rfshir&euml; vargjet dhe objektet.</p>
+            <p>Deklarata <code>return</code> zakonisht vendoset si linja e fundit e funksionit para kllap&euml;s s&euml; madhe mbyll&euml;se dhe p&euml;rfundon me nj&euml; pik&euml;presje.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Definimi i funksionit
+function shuma(num1, num2) {
+    var totali = num1 + num2;
+    return totali;
+}
+     
+// Paraqitja e vlerës së kthyer
+alert(shuma(6, 20)); // Rezultati: 26
+alert(shuma(-5, 17)); // Rezultati: 12</code></pre>
+                </div>
+            </div>
+            <p>Nj&euml; funksion <em>nuk</em> <em>mund</em> t&euml; kthej&euml; vlera t&euml; shum&euml;fishta. Sidoqoft&euml;, mund t&euml; merrni rezultate t&euml; ngjashme duke kthyer nj&euml; varg me vlera.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Definimi i funksionit
+function heresiNumrave(iPjestueshmi, pjestuesi){
+    var heresi = iPjestueshmi / pjestuesi;
+    var vargu = [iPjestueshmi, pjestuesi, heresi];
+    return vargu;
+}
+     
+// Ruajtja e vlerës së kthyer në një variabël
+var vlerat = heresiNumrave(10, 2);
+     
+// Paraqitja e vlerave individuale
+alert(vlerat[0]); // Dalja: 10
+alert(vlerat[1]); // Dalja: 2
+alert(vlerat[2]); // Dalja: 5</code></pre>
+                </div>
+            </div>
+            <h2>Puna me funksione shpreh&euml;se</h2>
+            <p>Sintaksa q&euml; kemi p&euml;rdorur deri m&euml; tani p&euml;r t&euml; krijuar funksione quhet <strong>funksion deklarues</strong> (<em>function declaration</em>). Ekziston edhe nj&euml; sintaks&euml; tjet&euml;r p&euml;r krijimin e nj&euml; funksioni, e cila quhet <strong>funksion shpreh&euml;s</strong> (<em>function</em> <em>expression</em>).</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Funksioni deklarues
+function shuma(num1, num2) {
+    var totali = num1 + num2;
+    return totali;
+}
+     
+// Funksioni shprehës
+var shuma = function(num1, num2) {
+    var totali = num1 + num2;
+    return totali;
+};</code></pre>
+                </div>
+            </div>
+            <p>Pasi funksioni shpreh&euml;s t&euml; jet&euml; ruajtur n&euml; nj&euml; variab&euml;l, variabla e till&euml; mund t&euml; p&euml;rdoret si nj&euml; funksion:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var shuma = function(num1, num2) {
+    var totali = num1 + num2;
+    return totali;
+};
+ 
+alert(shuma(5, 10)); // Dalja: 15
+ 
+var rez = shuma(7, 25);
+alert(rez); // Dalja: 32</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Nuk &euml;sht&euml; e nevojshme t&euml; vendosni nj&euml; pik&euml;presje pas kllap&euml;s mbyll&euml;se gjarp&euml;rore n&euml; nj&euml; funksion deklarues. Por funksionet shpreh&euml;se, nga ana tjet&euml;r, gjithmon&euml; duhet t&euml; p&euml;rfundojn&euml; me nj&euml; pik&euml;presje.</p>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: N&euml; JavaScript funksionet mund t&euml; ruhen n&euml; variabla, t&euml; kalohen n&euml; funksione t&euml; tjera si argumente, t&euml; kalohen nga funksionet si vlera kthyese dhe t&euml; konstruktohen n&euml; koh&euml;n e ekzekutimit.</p>
+            </div>
+            <p>Sintaksa e <em>funksionit deklarues</em> dhe <em>funksionit shpreh&euml;s</em> duket shum&euml; e ngjashme, por ato ndryshojn&euml; n&euml; m&euml;nyr&euml;n e evaluimit:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>deklarimi(); // Dalja: Funksioni deklarues!
+function deklarimi () {
+    alert("Funksioni deklarues!");
+}
+     
+shprehja(); // Uncaught TypeError: undefined is not a function
+var shprehja = function() {
+    alert("Funksioni shprehës!");
+};</code></pre>
+                </div>
+            </div>
+            <p>Si&ccedil; mund ta shihni n&euml; shembullin e m&euml;sip&euml;rm, funksioni shpreh&euml;s b&euml;n nj&euml; p&euml;rjashtim kur thirret para se t&euml; definohet, por funksioni deklarues ekzekutohet me sukses.</p>
+            <p>JavaScript-i analizon funksionin deklarues para se t&euml; ekzekutohet programi. Prandaj, nuk ka r&euml;nd&euml;si n&euml;se programi e thirr funksionin para se t&euml; definohet sepse JavaScript-i e ka ngritur funksionin n&euml; krye t&euml; fush&euml;veprimit aktual prapa skenave. Funksioni shpreh&euml;s nuk vler&euml;sohet derisa t'i caktohet nj&euml; variab&euml;l; prandaj, &euml;sht&euml; ende i pa definuar kur thirret.</p>
+            <p>ES6 ka prezantuar sintaks&euml; edhe m&euml; t&euml; shkurt&euml;r p&euml;r t&euml; sh&euml;nuar funksionin shpreh&euml;s e cila quhet <strong>funksion shigjet&euml;</strong> (<em>arrow</em> <em>function</em>).</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Funksioni shigjetë
+var shuma = (num1, num2) => {
+    var totali = num1 + num2;
+    return totali;
+};</code></pre>
+                </div>
+            </div>
+            <h2>Kuptimi i fush&euml;veprimit t&euml; variabl&euml;s</h2>
+            <p>Sidoqoft&euml;, mund t&euml; deklaroni variablat kudo n&euml; JavaScript. Por, vendndodhja e deklarat&euml;s p&euml;rcakton shkall&euml;n e disponueshm&euml;ris&euml; s&euml; nj&euml; variable brenda programit, dmth. ku mund t&euml; p&euml;rdoret ose t&euml; kemi qasje tek ajo. Kjo qasje njihet si <strong>fush&euml;veprim i variabl&euml;s</strong> (<em>variable cope</em>).</p>
+            <p>Si parazgjedhje, variablat e deklaruara brenda nj&euml; funksioni kan&euml; <em>fush&euml;veprim lokal,</em> q&euml; do t&euml; thot&euml; se ato nuk mund t&euml; jen&euml; t&euml; qasshme ose t&euml; manipulohen nga jasht&euml; k&euml;tij funksioni, si&ccedil; tregohet n&euml; shembullin e m&euml;posht&euml;m:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>// Definimi i funksionit
+function funPersh() {
+    var persh = "Përshëndetje Botë!";
+    alert(persh);
+}
+     
+funPersh(); // Dalja: Përshëndetje Botë!
+    
+alert(persh); // Uncaught ReferenceError: greet is not defined</code></pre>
+                </div>
+            </div>
+            <p>Sidoqoft&euml;, &ccedil;do variab&euml;l e deklaruar n&euml; nj&euml; program jasht&euml; nj&euml; funksioni ka fush&euml;veprim global, d.m.th. kjo variab&euml;l do t&euml; jet&euml; n&euml; dispozicion p&euml;r t&euml; gjitha skriptet, pavar&euml;sisht n&euml;se skriptet gjinden brenda nj&euml; funksioni apo jasht&euml; tij:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var persh = "Përshëndetje Botë!";
+ 
+// Definimi i funksionit
+function funPersh() {
+    alert(persh);
+}
+     
+funPersh();  // Dalja: Përshëndetje Botë!
+     
+alert(persh); // Dalja: Përshëndetje Botë!</code></pre>
+                </div>
+            </div>
+
+
+
+
+
         </section>
 
     </main>
