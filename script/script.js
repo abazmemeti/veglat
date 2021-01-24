@@ -49,7 +49,7 @@ function resizeIframe(obj) {
     
     function mbyllja() {
         if(aside.style.right === '0px') {
-            aside.style.right = '-250px';
+            aside.style.right = '-240px';
             main.classList = '';
             nav.classList = '';
             permbajtja.innerHTML = 'Përmbajtja'
@@ -58,7 +58,7 @@ function resizeIframe(obj) {
 
     function hapjaMbyllja() {
         if(aside.style.right === '0px') {
-            aside.style.right = '-250px';
+            aside.style.right = '-240px';
             main.classList = '';
             nav.classList = '';
             permbajtja.innerHTML = 'Përmbajtja'
@@ -102,9 +102,3 @@ function resizeIframe(obj) {
     */
 
 })();
-
-
-window.addEventListener('load', () => {
-    
-    
-});
