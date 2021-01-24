@@ -71,7 +71,7 @@
     background-color: rgb(99,168,20);
 }
 #sql {
-    background-image: url("../foto/sql.png"), linear-gradient(to right, rgba(155,71,140, 0.75), rgba(255,255,255, 0));
+    background-image: url("../foto/sql.png"), linear-gradient(to right, rgb(155, 71, 140, 0.75), rgba(255,255,255, 0));
     border: 2px solid rgb(155, 71, 140);
     text-shadow: -1px 0 rgb(155,71,140), 0 1px rgb(155,71,140), 1px 0 rgb(155,71,140), 0 -1px rgb(155,71,140);
 }
