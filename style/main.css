@@ -20,7 +20,7 @@
     justify-content: center;
     background-repeat: no-repeat;
     background-position: right center;
-    padding: 10px 120px 10px 30px;
+    padding: 10px 100px 10px 30px;
     color: #282828;
 }
 .lang h1 {
@@ -90,11 +90,6 @@
 }
 
 @media(max-width: 767px) {
-    /*
-    header {
-        justify-content: center;
-    }
-    */
     .btn-bottom {
         display: none;
     }
