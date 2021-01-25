@@ -11,3 +11,12 @@ section h1, aside h3, article h3, .nata section h1, .nata aside h3, .nata articl
         background-color: rgb(241,89,41);
     }
 }
+
+::-moz-selection { 
+    color: white;
+    background: rgb(241,89,41);
+}
+::selection {
+    color: white;
+    background: rgb(241,89,41);
+}
