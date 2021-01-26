@@ -37,13 +37,19 @@
 #wrapper-txt p, #wrapper ul {
     font-size: 0.975em;
 }
-
+#wrapper-txt a {
+    color: inherit;
+    letter-spacing: 1px;
+}
+#wrapper-txt a:hover {
+    font-weight: 700;
+    letter-spacing: 0.675px;
+}
 #wrapper-lang {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 }
-
 .nata #wrapper-txt {
     color: #f2f2f2;
     background-color: #333;
