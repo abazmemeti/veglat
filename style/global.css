@@ -296,9 +296,9 @@ iframe {
     color: #905;
 }
 
-@media(min-width: 1366px) {
+@media(min-width: 1367px) {
     main {
-        max-width: 880px;
+        max-width: 870px;
         margin: 0 auto;
     }
 }
