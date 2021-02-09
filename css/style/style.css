@@ -26,6 +26,9 @@ input[type=range] {
     -webkit-appearance: none;
     width: 100%;
   }
+.nata input[type=range] {
+    background-color: #222;
+}
   input[type=range]:focus {
     outline: none;
   }
