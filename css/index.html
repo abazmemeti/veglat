@@ -66,6 +66,8 @@
             <li><a href="#hyrje-ne-css">Hyrje në CSS</a></li>
             <li><a href="#sintaksa-css">Sintaksa CSS</a></li>
             <li><a href="#selektoret">Selektorët</a></li>
+            <li><a href="#ngjyrat">Ngjyrat</a></li>
+            <li><a href="#color-picker">Zgjedhësi i ngjyrave</a></li>
             
         </ul>
     </aside>
@@ -513,10 +515,98 @@ p {
                 </div>
             </div>
             <p>Ueb-shfletuesit modern&euml; megjithat&euml; praktikisht mb&euml;shtesin shum&euml; m&euml; tep&euml;r emra ngjyrash sesa ato q&euml; p&euml;rcaktohen n&euml; standardin CSS, por p&euml;r t&euml; qen&euml; m&euml; t&euml; sigurt duhet t&euml; p&euml;rdorni vlera heksadecimale t&euml; ngjyrave n&euml; vend t&euml; tyre.</p>
+            <h3>Vlerat e ngjyrave HEX</h3>
+            <p>Hex (shkurtes&euml; p&euml;r heksadecimal) &euml;sht&euml; deri m&euml; tani metoda m&euml; e p&euml;rdorur p&euml;r definimin e ngjyrave n&euml; ueb.</p>
+            <p>Hex paraqet ngjyrat duke p&euml;rdorur nj&euml; kod 6-shifror, q&euml; i paraprin&euml; karakteri hash (#), si <code>#rrggbb</code>, n&euml; t&euml; cilin <code>rr</code>, <code>gg</code> dhe <code>bb</code> p&euml;rfaq&euml;sojn&euml; p&euml;rkat&euml;sisht komponentin ngjyr&euml;s s&euml; kuqe, gjelb&euml;r dhe t&euml; kalt&euml;r.</p>
+            <p>Vlera e secilit komponent mund t&euml; varioj nga <code>00</code> (pa ngjyr&euml;) deri n&euml; <code>FF</code> (ngjyra e plot&euml;) n&euml; sh&euml;nimin heksadecimal, ose nga <code>0</code> deri n&euml; <code>255</code> n&euml; sh&euml;nimin ekuivalent decimal. K&euml;sisoj <code>#ffffff</code> p&euml;rfaq&euml;son ngjyr&euml;n e bardh&euml; dhe <code>#000000</code> p&euml;rfaq&euml;son ngjyr&euml;n e zez&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    color: #ffa500;
+}
+p {
+    color: #00ff00;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Sistemi heksadecimal ose Hex i referohet nj&euml; skeme num&euml;rimi q&euml; p&euml;rdor 16 karaktere si baz&euml; t&euml; saj. P&euml;rdor numrat 0 deri n&euml; 9 dhe shkronjat A, B, C, D, E dhe F q&euml; korrespondojn&euml; p&euml;rkat&euml;sisht me numrat dhjetor&euml; 10, 11, 12, 13, 14 dhe 15.</p>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: N&euml;se kodi heksadecimal i nj&euml; ngjyre ka nga dy vlera t&euml; nj&euml;jta, ai gjithashtu mund t&euml; shkruhet m&euml; shkurt&euml; p&euml;r t&euml; shmangur sh&euml;nimin shtes&euml;, p&euml;r shembull, vlera e ngjyrave hex <code>#ffffff</code> mund t&euml; shkruhet edhe si <code>#fff</code>, <code>#000000</code> si <code>#000</code>, <code>#00ff00</code> si <code>#0f0</code>, <code>#ffcc00</code> si <code>#fc0</code>, e k&euml;shtu me radh&euml;.</p>
+            </div>
+            <h3>Vlerat e ngjyrave RGB</h3>
+            <p>Ngjyrat mund t&euml; definohen edhe n&euml; modelin RGB (Red &ndash; e kuqe, Green &ndash; e gjelb&euml;r dhe Blue &ndash; e kalt&euml;r) duke p&euml;rdorur sh&euml;nimin funksional <code>rgb()</code>.</p>
+            <p>Funksioni <code>rgb()</code> p&euml;rdor tri vlera t&euml; ndara me presje, t&euml; cilat specifikojn&euml; sasin&euml; e komponentit t&euml; ngjyr&euml;s s&euml; kuqe, t&euml; gjelb&euml;r dhe t&euml; kalt&euml;r. K&euml;to vlera zakonisht specifikohen si numra t&euml; plot&euml; nd&euml;rmjet 0 deri n&euml; 255, ku 0 p&euml;rfaq&euml;son <em>asnj&euml; ngjyr&euml;</em> dhe 255 p&euml;rfaq&euml;son <em>ngjyr&euml;n e plot&euml;</em> ose <em>maksimale</em>.</p>
+            <p>Shembulli i m&euml;posht&euml;m specifikon t&euml; nj&euml;jt&euml;n ngjyr&euml; si n&euml; shembullin e m&euml;parsh&euml;m, por n&euml; sh&euml;nimin RGB.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    color: rgb(255, 165, 0);
+}
+p {
+    color: rgb(0, 255, 0);
+}</code></pre>
+                </div>
+              </div>
+              <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Gjithashtu mund t&euml; specifikoni vlerat RGB brenda funksionit <code>rgb()</code> n&euml; p&euml;rqindje, ku <code>100%</code> p&euml;rfaq&euml;son ngjyr&euml;n e plot&euml; dhe <code>0%</code> (<em>jo thjesht <code>0</code></em>) p&euml;rfaq&euml;son asnj&euml; ngjyr&euml;. P&euml;r shembull, mund t&euml; specifikoni ngjyr&euml;n e kuqe&nbsp; <code>rgb(255,0,0)</code> ose <code>rgb(100%,0%,0%)</code>.</p>
+              </div>
+              <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: N&euml;se R, G dhe B t&euml; gjitha kan&euml; vler&euml;n maksimale 255, d.m.th. <code>rgb(255,255,255)</code>, ngjyra do t&euml; jet&euml; e bardh&euml;. Po k&euml;shtu, n&euml;se t&euml; gjitha kanalet kan&euml; vler&euml;n 0, d.m.th. <code>rgb(0,0,0)</code>, ngjyra do t&euml; ishte e zez&euml;.</p>
+              </div>
 
+              <h2>Ndikimi i vetis&euml; color n&euml; kufij dhe skica</h2>
+                <p>Vetia <code>color</code> nuk vlen vet&euml;m p&euml;r p&euml;rmbajtjen e tekstit, por p&euml;r &ccedil;do gj&euml; n&euml; plan t&euml; par&euml; q&euml; merr nj&euml; vler&euml; t&euml; ngjyr&euml;s. P&euml;r shembull, n&euml;se vlera e ngjyr&euml;s s&euml; kufirit (<code>border-color</code>) ose ngjyra e skic&euml;s (<code>outline-color</code>) nuk &euml;sht&euml; p&euml;rcaktuar qartazi p&euml;r elementin, n&euml; vend t&euml; k&euml;saj do t&euml; p&euml;rdoret vlera e ngjyr&euml;s nga vetia <code>color</code>.</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>p.nje {
+    color: #0000ff;
+    border: 2px solid;
+}
+p.dy {
+    color: #00ff00;
+    outline: 2px solid;
+}</code></pre>
+                    </div>
+                  </div>
 
-
-
+                <!-- Color Picker -->
+              <div id="color-picker">
+                <h3 style="text-align: center; font-size: 1.8em; margin-bottom: 1.6em">Zgjedhësi i ngjyrave RGB dhe HEX</h3>
+              
+                <div id="display">
+                  <p id="text"> 
+                    <span id="dec">rgb(12,115,184)</span>
+                    <span id="hex">#0C73B8</span>
+                  </p>
+                </div>
+              
+                <div id="inputet">
+              
+                  <div class="ngjyra">
+                    <input type="range" id="red" name="red" min="0" step="1" max="255" value="12">
+                    <div class="txt-ngjyra">Red: <span id="txt-red">12</span> </div>
+                    <div class="txt-ngjyra">Hex: <span id="hex-red">0C</span> </div>
+                  </div>
+              
+                  <div class="ngjyra">
+                    <input type="range" id="green" name="green" min="0" step="1" max="255" value="115">
+                    <div class="txt-ngjyra">Green: <span id="txt-green">115</span> </div>
+                    <div class="txt-ngjyra">Hex: <span id="hex-green">73</span> </div>
+                  </div>
+              
+                  <div class="ngjyra">
+                    <input type="range" id="blue" name="blue" min="0" step="1" max="255" value="184">
+                    <div class="txt-ngjyra">Blue: <span id="txt-blue">184</span> </div>
+                    <div class="txt-ngjyra">Hex: <span id="hex-blue">B8</span> </div>
+                  </div>
+              
+                </div>
+            </div>
 
         </section>
 
@@ -535,5 +625,6 @@ p {
 </div>
 
 <script src="../script/script.js"></script>
+<script src="script/script.js"></script>
 </body>
 </html>
