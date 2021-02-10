@@ -158,6 +158,9 @@ input[type=range] {
     font-family: monospace;
     font-size: 1.2em;
 }
+#color-picker > h3 {
+  font-size: 1.7em;
+}
 #display {
     width: 500px;
     margin: 0 auto;
@@ -168,7 +171,7 @@ input[type=range] {
 }
 #text {
     text-align: center;
-    padding: 1.2em 0;
+    padding: 1.5em 0;
 }
 #dec, #hex {
     color: white;
@@ -184,14 +187,21 @@ input[type=range] {
     text-align: center;
 }
 @media(max-width: 767px) {
-    #display {
-        width: 300px;
-    }
-    #inputet {
-        flex-direction: column;
-    }
-    .ngjyra {
-        width: 100%;
-          padding: 0.6em;
-    }
+  #color-picker > h3 {
+    font-size: 1.4em;
+  }
+  #color-picker > h3 > span {
+    display: block;
+  }
+
+  #display {
+    width: 95%;
+  }
+  #inputet {
+    flex-direction: column;
+  }
+  .ngjyra {
+    width: 100%;
+    padding: 0.6em;
+  }
 }
