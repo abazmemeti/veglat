@@ -610,6 +610,164 @@ p.dy {
 
         </section>
 
+        <section id="sfondi">
+            <h1>Sfondi</h1>
+            <p>Sfondi apo prapaskena luan nj&euml; rol t&euml; r&euml;nd&euml;sish&euml;m n&euml; prezantimin vizual t&euml; ueb faqeve.</p>
+            <p>CSS ofron disa veti p&euml;r stilizimin e sfondit t&euml; nj&euml; elementi, p&euml;rfshir&euml; ngjyrosjen e sfondit, vendosjen e imazheve n&euml; sfond dhe menaxhimin e pozicionimit t&euml; tyre, etj.</p>
+            <p>Vetit&euml; e sfondit jan&euml; <code>background-color, background-image, background-repeat, background-attachment</code> dhe <code>background-position</code>.</p>
+            <h2>Ngjyra e sfondit</h2>
+            <p>Vetia&nbsp; <code>background-color</code> p&euml;rdoret p&euml;r t&euml; vendosur ngjyr&euml; n&euml; sfond t&euml; nj&euml; elementi.</p>
+            <p>Shembulli i m&euml;posht&euml;m tregon se si t&euml; vendosni ngjyr&euml;n n&euml; sfond t&euml; t&euml; gjith&euml; faqes.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>body {
+    background-color: #f0e68c;
+}</code></pre>
+                </div>
+              </div>
+              <p>Vlerat e ngjyrave n&euml; CSS specifikohen kryesisht n&euml; formatet e m&euml;poshtme:</p>
+            <ul>
+                <li>me em&euml;r ngjyrash &ndash; si p.sh. "<code>red</code>"</li>
+                <li>me vler&euml; HEX &ndash; si p.sh. "<code>#ff0000</code>"</li>
+                <li>me vler&euml; RGB &ndash; si p.sh. "<code>rgb(255,0,0)</code>"</li>
+            </ul>
+            <h2>Imazhi n&euml; sfond</h2>
+            <p>Vetia <code>background-image</code> vendos nj&euml; imazh n&euml; sfond t&euml; nj&euml; elementi HTML.</p>
+            <p>Le t&euml; shohim shembullin vijues q&euml; vendos imazhin n&euml; sfond n&euml; t&euml; gjith&euml; faqen.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>body {
+    background-image: url("foto/imazh.png");
+}</code></pre>
+                </div>
+              </div>
+              <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Kur p&euml;rdorni imazhin n&euml; sfond t&euml; nj&euml; elementi, sigurohuni q&euml; imazhi q&euml; zgjidhni nuk ndikon n&euml; lexueshm&euml;rin&euml; e p&euml;rmbajtjes s&euml; tekstit t&euml; elementit.</p>
+              </div>
+              <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: N&euml; m&euml;nyr&euml; t&euml; paracaktuar shfletuesi p&euml;rs&euml;rit imazhin e sfondit si horizontalisht ashtu edhe vertikalisht p&euml;r t&euml; mbushur t&euml; gjith&euml; zon&euml;n e nj&euml; elementi. K&euml;t&euml; mund ta kontrolloni me vetin&euml; <code>background-repeat</code>.</p>
+              </div>
+              <h2>P&euml;rs&euml;ritja e sfondit</h2>
+                <p>Vetia <code>background-repeat</code> ju lejon t&euml; kontrolloni se si nj&euml; imazh i sfondit p&euml;rs&euml;ritet ose vendoset n&euml; form&euml; t&euml; pllakave n&euml; sfondin e nj&euml; elementi. Mund t&euml; vendosni nj&euml; imazh sfondi q&euml; t&euml; p&euml;rs&euml;ritet vertikalisht (boshti y), horizontalisht (boshti x), n&euml; t&euml; dy drejtimet ose n&euml; asnj&euml; drejtim.</p>
+                <p>Le t&euml; shohim shembullin vijues q&euml; demonstron se si t&euml; vendosim sfondin me gradienc&euml; p&euml;r nj&euml; ueb faqe duke p&euml;rs&euml;ritur imazhin e prer&euml; horizontalisht p&euml;rgjat&euml; boshtit x.</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>body {
+    background-image: url("foto/gradienca.png");
+    background-repeat: repeat-x;
+}</code></pre>
+                    </div>
+                  </div>
+                  <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; p&euml;rdorni vler&euml;n <code>repeat-y</code> p&euml;r t&euml; p&euml;rs&euml;ritur imazhin e sfondit vertikalisht p&euml;rgjat&euml; boshtit y, ose vler&euml;n <code>no-repeat</code> p&euml;r t&euml; parandaluar p&euml;rs&euml;ritjen krejt&euml;sisht.</p>
+                  <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>body {
+    background-image: url("foto/tekstura.png");
+    background-repeat: no-repeat;
+}</code></pre>
+                    </div>
+                  </div>
+                  <p>Le t&euml; hedhim nj&euml; v&euml;shtrim n&euml; ilustrimin vijues p&euml;r t&euml; kuptuar se si funksionon kjo veti n&euml; t&euml; v&euml;rtet&euml;.</p>
+                  <div class="img-kodi elementet-html" style="text-align: center;">
+                    <img src="foto/ilustrimi-bg-repeat-1.png" alt="Bg repeat repeat-x">
+                    <img src="foto/ilustrimi-bg-repeat-2.png" alt="Bg repeat-y no-repeat">
+                </div>
+                <h2>Pozicioni i sfondit</h2>
+                <p>Vetia <code>background-position</code> p&euml;rdoret p&euml;r t&euml; kontrolluar pozicionin e imazhit t&euml; sfondit.</p>
+                <p>N&euml;se nuk &euml;sht&euml; specifikuar asnj&euml; pozicion i sfondit, imazhi i sfondit vendoset n&euml; pozicionin e paracaktuar lart-majtas t&euml; elementit d.m.th. n&euml; <code>(0,0)</code>, le t&euml; provojm&euml; &nbsp;me shembullin vijues:</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>body {
+    background-image: url("foto/roboti.png");
+    background-repeat: no-repeat;
+}</code></pre>
+                    </div>
+                </div>
+                <p>N&euml; shembullin vijues, imazhi i sfondit &euml;sht&euml; pozicionuar n&euml; cepin e sip&euml;rm nga ana e djatht&euml;.</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>body {
+    background-image: url("foto/roboti.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+}</code></pre>
+                    </div>
+                </div>
+                <div class="shenim">
+                    <p><strong>Sh&euml;nim</strong>: N&euml;se specifikohen dy vlera p&euml;r vetin&euml; e pozicionit t&euml; sfondit, vlera e par&euml; p&euml;rfaq&euml;son pozicionin horizontal dhe e dyta p&euml;rfaq&euml;son pozicionin vertikal. N&euml;se specifikohet vet&euml;m nj&euml; vler&euml;, vlera e dyt&euml; supozohet t&euml; jet&euml; n&euml; qend&euml;r.</p>
+                </div>
+                <p>P&euml;rve&ccedil; fjal&euml;ve ky&ccedil;e p&euml;r pozicionim, gjithashtu p&euml;r k&euml;t&euml; veti mund t&euml; p&euml;rdorni vlera t&euml; p&euml;rqindjes ose t&euml; gjat&euml;sis&euml;, t&euml; tilla si <code>px</code> ose <code>em</code>.</p>
+                <p>Le t&euml; hedhim nj&euml; v&euml;shtrim n&euml; ilustrimet vijuese p&euml;r t&euml; kuptuar se si funksionon kjo veti n&euml; t&euml; v&euml;rtet&euml;.</p>
+                <div class="img-kodi elementet-html desktop-image" style="text-align: center;">
+                    <img src="foto/ilustrimi-bg-position.png" alt="Bg position">
+                </div>
+                <div class="img-kodi elementet-html mobile-image" style="text-align: center;">
+                    <img src="foto/ilustrimi-bg-position-1-mob.png" alt="Bg position 1">
+                    <img src="foto/ilustrimi-bg-position-2-mob.png" alt="Bg position 2">
+                </div>
+                <h2>Shtojca e sfondit</h2>
+                <p>Vetia <code>background-attachment</code> p&euml;rcakton n&euml;se imazhi i sfondit &euml;sht&euml; i fiksuar n&euml; lidhje me port&euml;n e shikimit ose bartet s&euml; bashku me bllokun q&euml; p&euml;rmban.</p>
+                <p>Le t&euml; shohim shembullin vijues p&euml;r t&euml; kuptuar se si funksionon:</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>body {
+    background-image: url("foto/imazh.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}</code></pre>
+                    </div>
+                </div>
+                <h2>Vetia e shkurt p&euml;r sfond</h2>
+                <p>Si&ccedil; mund ta shihni n&euml; shembujt e m&euml;sip&euml;rm, ka disa veti p&euml;r t'u marr&euml; parasysh kur merreni me sfondet. Sidoqoft&euml;, &euml;sht&euml; gjithashtu e mundur t&euml; specifikohen t&euml; gjitha k&euml;to veti n&euml; nj&euml; veti t&euml; vetme p&euml;r ta shkurtuar kodin ose p&euml;r t&rsquo;iu shmangur sh&euml;nimit shtes&euml;.</p>
+                <p>Vetia background &euml;sht&euml; nj&euml; veti e shkurt&euml;r p&euml;r vendosjen e t&euml; gjitha ve&ccedil;orive individuale t&euml; sfondit, dmth. p&euml;r nj&euml; her&euml; mund t&euml; shkruhen vetit&euml; e lartp&euml;rmendura, <code>background-color, background-image, background-repeat, background-attachment</code> dhe <code>background-position</code>. Le t&euml; shohim se si funksionon kjo:</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>body {
+    background-color: #f0e68c;
+    background-image: url("foto/imazhi.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 250px 25px;
+}</code></pre>
+                    </div>
+                </div>
+                <p>Duke p&euml;rdorur sh&euml;nimin e shkurt&euml;r, shembulli i m&euml;sip&euml;rm mund t&euml; sh&euml;nohet k&euml;sisoj:</p>
+                <div class="shembull">
+                    <p>Shembull:</p>
+                    <div class="kodi">
+<pre><code>body {
+    background: #f0e68c url("foto/imazhi.png") no-repeat fixed 250px 25px;
+}</code></pre>
+                    </div>
+                </div>
+                <p>Kur p&euml;rdorni vetin&euml; <code>background</code> radhitja e vlerave t&euml; vetive duhet t&euml; jet&euml; k&euml;sisoj:</p>
+                <div class="sintaksa">
+<pre><code>background: <em>ngjyra imazhi përsëritja shtojca pozicioni</em>;</code></pre>
+                </div>
+                <p>N&euml;se vlera p&euml;r nj&euml; veti individuale t&euml; sfondit mungon ose nuk &euml;sht&euml; specifikuar gjat&euml; p&euml;rdorimit t&euml; sh&euml;nimit t&euml; shkurt&euml;r, vlera e paracaktuar p&euml;r at&euml; pron&euml; do t&euml; p&euml;rdoret.</p>
+                <div class="shenim">
+                    <p><strong>Sh&euml;nim</strong>: Vetit&euml; e sfondit nuk trash&euml;gohen sikur vetia e ngjyrave, por sfondi i elementit prind do t&euml; jet&euml; i duksh&euml;m si parazgjedhje, p&euml;r shkak t&euml; vler&euml;s iniciuese ose t&euml; paracaktuar <code>transparent</code> t&euml; vetis&euml; CSS <code>background-color</code>.</p>
+                </div>
+
+
+
+
+
+
+
+
+
+
+        </section>
+
     </main>
 
 </div>
