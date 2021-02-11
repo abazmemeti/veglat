@@ -214,6 +214,10 @@ input[type=range] {
     padding: 0.6em;
   }
 
+  section .ilustrim img {
+    width: auto !important;
+}
+
   /* background position image */
   .desktop-image {
     display: none;
