@@ -77,6 +77,7 @@
             <li><a href="#vargjet-arrays">Vargjet (Arrays)</a></li>
             <li><a href="#unazat">Unazat (Loops)</a></li>
             <li><a href="#funksionet">Funksionet</a></li>
+            <li><a href="#objektet">Objektet</a></li>
         </ul>
     </aside>
 
@@ -3347,6 +3348,214 @@ funPersh();  // Dalja: Përshëndetje Botë!
 alert(persh); // Dalja: Përshëndetje Botë!</code></pre>
                 </div>
             </div>
+
+
+
+
+
+        </section>
+
+        <section id="objektet">
+            <h1>Objektet</h1>
+            <p>JavaScript &euml;sht&euml; gjuh&euml; programimi e bazuar n&euml; objekte dhe n&euml; JavaScript pothuajse gjith&ccedil;ka &euml;sht&euml; nj&euml; objekt ose vepron si nj&euml; objekt. Pra, p&euml;r t&euml; punuar me JavaScript n&euml; m&euml;nyr&euml; efektive dhe efikase duhet t&euml; kuptojm&euml; se si funksionojn&euml; objektet, dhe si t&euml; krijoni objektet tuaja e t'i p&euml;rdorni ata.</p>
+            <p>Objekti n&euml; JavaScript &euml;sht&euml; vet&euml;m nj&euml; koleksion i vlerave t&euml; em&euml;ruara. K&euml;to vlera t&euml; em&euml;rtuara zakonisht referohen si veti t&euml; objektit. N&euml;se ju kujtohet nga kaptina e vargjeve, vargu &euml;sht&euml; nj&euml; koleksion vlerash, ku secila vler&euml; ka nj&euml; indeks (nj&euml; &ccedil;el&euml;s numerik) q&euml; fillon nga zero dhe rritet p&euml;r nj&euml; n&euml; secil&euml;n vler&euml;. Objekti &euml;sht&euml; i ngjash&euml;m me vargun, e dallimi &euml;sht&euml; se ju i p&euml;rcaktoni &ccedil;el&euml;sat vet&euml;, si&ccedil; jan&euml; emri, mosha, gjinia, etj.</p>
+            <h2>Krijimi i objekteve</h2>
+            <p>Nj&euml; objekt mund t&euml; krijohet me kllapa t&euml; m&euml;dha (gjarp&euml;rore) <strong><code>{}</code></strong> me nj&euml; list&euml; opsionale t&euml; vetive. Nj&euml; veti &euml;sht&euml; nj&euml; &ccedil;ift "&ccedil;el&euml;s: vler&euml;" ("<em>key</em>: <em>value</em>"), ku &ccedil;el&euml;si (ose <em>emri i vetis&euml;</em>) &euml;sht&euml; gjithmon&euml; nj&euml; string dhe vlera (ose <em>vlera e vetis&euml;</em>) mund t&euml; jet&euml; &ccedil;do tip i t&euml; dh&euml;nave, si stringje, numra, booleans ose tip kompleks i t&euml; dh&euml;nave si vargje, funksione dhe objekte tjera. P&euml;r m&euml; tep&euml;r, vetit&euml; q&euml; si vlera kan&euml; funksione shpesh quhen <em>metoda</em> p&euml;r t'i dalluar ato nga vetit&euml; e tjera. Nj&euml; objekt tipik n&euml; JavaScript mund t&euml; duket k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var personi = {
+    emri: "Filan",
+    mbiemri: "Fisteku",
+    mosha: 17,
+    emriPlote: function() {
+        alert(this.emri + " " + this.mbiemri);
+    }
+};</code></pre>
+                </div>
+            </div>
+            <p>Shembulli i m&euml;sip&euml;rm krijon nj&euml; objekt t&euml; quajtur <code>person</code> q&euml; ka tri veti, <code>emri</code>, <code>mbiemri</code> dhe <code>mosha</code> dhe nj&euml; metod&euml; <code>emriPlote()</code>. Metoda <code>emriPlote()</code> tregon bashkimin e vler&euml;s s&euml; emrit <code>this.emri</code> dhe mbiemrit <code>this.mbiemri</code>. Kjo &euml;sht&euml; m&euml;nyra m&euml; e leht&euml; dhe m&euml; e preferuar p&euml;r t&euml; krijuar nj&euml; objekt t&euml; ri n&euml; JavaScript, e q&euml; njihet si sintaks&euml; <strong>objekti literal</strong> (<em>objekt literals</em>).</p>
+            <p>Emrat e vetive zakonisht nuk kan&euml; nevoj&euml; t&euml; citohen (futen n&euml;n thonj&euml;za) n&euml;se nuk jan&euml; fjal&euml; t&euml; rezervuara, nuk p&euml;rmbajn&euml; hap&euml;sira apo karaktere speciale (pra, gjith&ccedil;ka tjet&euml;r p&euml;rve&ccedil; shkronjave, numrave dhe karaktereve _ dhe $), ose n&euml;se fillojn&euml; me nj&euml; num&euml;r, si&ccedil; tregohet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var personi = {
+    "emri dhe mbiemri": "Filan Fisteku",
+    "mosha aktuale": 17,
+    gjinia: "Mashkull"
+};</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Q&euml; nga ECMAScript 5, fjal&euml;t e rezervuara mund t&euml; p&euml;rdoren si em&euml;rtime t&euml; vetive t&euml; objektit pa u cituar. Sidoqoft&euml;, duhet t&euml; shmangni k&euml;t&euml; p&euml;r nj&euml; pajtueshm&euml;ri m&euml; t&euml; mir&euml;.</p>
+            </div>
+            <h2>Qasja n&euml; vetit&euml; e objektit</h2>
+            <p>P&euml;r t&rsquo;iu qas&euml; ose p&euml;r t&euml; marr&euml; vler&euml;n e nj&euml; vetie, mund t&euml; p&euml;rdorni sh&euml;nimin me pik&euml; (<code>.</code>), ose sh&euml;nimin me kllapa t&euml; mesme (<code>[]</code>), si&ccedil; demonstrohet n&euml; shembullin e m&euml;posht&euml;m:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var libri = {
+    "titulli": "Kronikë në gur",
+    "autori": "Ismail Kadare",
+    "viti": 1971
+};
+
+// Shënimi me pikë
+document.write(libri.autori);  // Rezultati: Ismail Kadare
+
+// Shënimi me kllapa të mesme
+document.write(libri["viti"]); // Rezultati: 1971</code></pre>
+                </div>
+            </div>
+            <p>Sh&euml;nimi me pik&euml; &euml;sht&euml; m&euml; i leht&euml; p&euml;r ta lexuar dhe shkruar, por nuk mund t&euml; p&euml;rdoret gjithmon&euml;. N&euml;se emri i vetis&euml; nuk &euml;sht&euml; valid (d.m.th. n&euml;se p&euml;rmban hap&euml;sira ose karaktere speciale), nuk mund t&euml; p&euml;rdorni sh&euml;nimin me pik&euml;; do t&euml; duhet t&euml; p&euml;rdorni sh&euml;nimin me kllapa t&euml; mesme, si&ccedil; tregohet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var libri = {
+    titulli: "Kronikë në gur",
+    autori: "Ismail Kadare",
+    "data e publikimit": "7 Korrik 1971"
+};
+
+// Shënimi me kllapa të mesme
+document.write(libri["data e publikimit"]); // Prints: 7 Korrik 1971</code></pre>
+                </div>
+            </div>
+            <p>Sh&euml;nimi me kllapa t&euml; mesme ofron shum&euml; m&euml; shum&euml; fleksibilitet sesa sh&euml;nimi me pik&euml;. Kjo gjithashtu ju lejon t&euml; specifikoni emrat e vetive si variabla n&euml; vend t&euml; teksteve vet&euml;m si stringje, si&ccedil; tregohet n&euml; shembullin m&euml; posht&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var personi = {
+    emri: "Agron",
+    mosha: 17,
+    gjinia: "Mashkull"
+};
+
+var hyrja = prompt("Shënoni një emër të vetisë për të marrë vlerën e saj");
+alert(personi[hyrja]); // Rezultati: Agron (nëse shënojmë "emri")</code></pre>
+                </div>
+            </div>
+            <h2>Unaza n&euml;p&euml;r vetit&euml; e objektit</h2>
+            <p>Mund t&rsquo;i p&euml;rs&euml;risni ekzekutimin e vlerave t&euml; vetive t&euml; nj&euml; objekti duke p&euml;rdorur unaz&euml;n <code>for...in</code>. Kjo unaz&euml; &euml;sht&euml; optimizuar posa&ccedil;&euml;risht p&euml;r t&euml; p&euml;rs&euml;ritur vetit&euml; e objektit. Ja nj&euml; shembull:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var personi = {
+    emri: "Agron",
+    mosha: 17,
+    gjinia: "Mashkull"
+};
+
+// Përsëritje mbi vetitë e objektit
+for(var i in personi) {  
+    document.write(personi[i] + "&lt;br&gt;"); // Shtypja: emri, mosha dhe gjinia
+}</code></pre>
+                </div>
+            </div>
+            <h2>Vendosja e vetive t&euml; objektit</h2>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; vendosni veti t&euml; reja ose t&euml; p&euml;rdit&euml;soni at&euml; ekzistues duke p&euml;rdorur sh&euml;nimin me pik&euml; (<code>.</code>) ose me kllapa t&euml; mesme (<code>[]</code>), si&ccedil; paraqitet n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var personi = {
+    emri: "Agron",
+    mosha: 17,
+    gjinia: "Mashkull"
+};
+
+// Vendosja e një vetie të re
+personi.shteti = "Kosovë";
+document.write(personi.shteti); // Rezultati: Kosovë
+
+personi["email"] = "agron.gashi@mail.com";
+document.write(personi.email); // Rezultati: agron.gashi@mail.com
+
+// Përditësimi i vetisë ekzistuese
+personi.mosha = 16;
+document.write(personi.mosha); // Rezultati: 16
+
+personi["emri"] = "Agron Gashi";
+document.write(personi.emri); // Rezultati: Agron Gashi</code></pre>
+                </div>
+            </div>
+            <h2>Fshirja e vetive t&euml; objektit</h2>
+            <p>Operatori i fshirjes <code>delete</code> mund t&euml; p&euml;rdoret p&euml;r t&euml; hequr plot&euml;sisht vetit&euml; nga nj&euml; objekt. Fshirja n&euml; t&euml; v&euml;rtet&euml; &euml;sht&euml; m&euml;nyra e vetme p&euml;r t&euml; hequr nj&euml; veti nga nj&euml; objekt. Vendosja e vetis&euml; n&euml; <code>undefined</code> ose <code>null</code> ndryshon vet&euml;m vler&euml;n e vetis&euml;. Nuk heq vetin&euml; nga objekti.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var personi = {
+    emri: "Agron",
+    mosha: 17,
+    gjinia: "Mashkull",
+    paraqitEmrin: function() {
+        alert(this.emri);
+    }
+};
+
+// Fshirja e vetisë
+delete personi.mosha;
+alert(personi.mosha); // Dalja: undefined</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Operatori i fshirjes <code>delete</code> heq vet&euml;m nj&euml; veti t&euml; objektit ose nj&euml; element t&euml; nj&euml; vargu, e nuk ka asnj&euml; efekt mbi variablat ose funksionet e deklaruara. Sidoqoft&euml;, duhet t&euml; shmangni operatorin <code>delete</code> p&euml;r fshirjen e nj&euml; elementi t&euml; vargut, pasi nuk ndryshon gjat&euml;sin&euml; e vargut, por thjesht l&euml; nj&euml; vrim&euml; n&euml; varg.</p>
+            </div>
+            <h2>Thirrja e metodave t&euml; objektit</h2>
+            <p>Mund t&rsquo;ju qaseni metod&euml;s s&euml; nj&euml; objekti n&euml; t&euml; nj&euml;jt&euml;n m&euml;nyr&euml; si ju qaseni vetive &ndash; duke p&euml;rdorur sh&euml;nimin me pika ose duke p&euml;rdorur sh&euml;nimin me kllapa t&euml; mesme.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var personi = {
+    emri: "Agron",
+    mosha: 17,
+    gjinia: "Mashkull",
+    paraqitEmrin: function() {
+        alert(this.emri);
+    }
+};
+
+person.paraqitEmrin(); // Dalja: Agron
+person["paraqitEmrin"](); // Dalja: Agron</code></pre>
+                </div>
+            </div>
+            <h2>Manipulimi nga vlera krahas referenca</h2>
+            <p>Objektet JavaScript jan&euml; t&euml; tipit referenc&euml; q&euml; n&euml;nkupton se kur b&euml;ni kopje t&euml; tyre, n&euml; t&euml; v&euml;rtet&euml; thjesht kopjoni referencat p&euml;r at&euml; objekt. Nd&euml;rsa vlerat primitive si stringjet dhe numrat caktohen ose kopjohen si nj&euml; vler&euml; e t&euml;r&euml;. P&euml;r ta kuptuar m&euml; mir&euml; gjith&euml; k&euml;t&euml;, le t&euml; shikojm&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var mesazhi = "Përshëndetje Botë!";
+
+var persh = mesazhi; // Caktimi i variablës së mesazhit në një variabël të re
+persh = "Tungatjeta!";
+    
+document.write(mesazhi);  // Shtypja: Përshëndetje Botë!
+document.write(persh);  // Shtypja: Tungatjeta!</code></pre>
+                </div>
+            </div>
+            <p>N&euml; shembullin e m&euml;sip&euml;rm, kemi b&euml;r&euml; nj&euml; kopje t&euml; variabl&euml;s <code>mesazhi</code> dhe kemi ndryshuar vler&euml;n e asaj kopje (d.m.th. variabl&euml;n <code>persh</code>). T&euml; dy variablat mbeten t&euml; dallueshme dhe t&euml; ndara. Por, n&euml;se b&euml;jm&euml; t&euml; nj&euml;jt&euml;n gj&euml; me nj&euml; objekt, do t&euml; marrim nj&euml; rezultat tjet&euml;r, si&ccedil; do ta shohim n&euml; shembullin vijues:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>var personi = {
+    emri: "Agron",
+    mosha: 17,
+    gjinia: "Mashkull"
+};
+
+var perdoruesi = personi; // Caktimi i variablës personi në një variabël të re
+perdoruesi.emri = "Dritan";
+
+document.write(personi.emri);  // Shtypja: Dritan
+document.write(perdoruesi.emri);  // Shtypja: Dritan</code></pre>
+                </div>
+            </div>
+            <p>Mund ta shihni qart&euml;, &ccedil;do ndryshim i b&euml;r&euml; n&euml; variabl&euml;n <code>perdoruesi</code> gjithashtu ndryshon variabl&euml;n <code>personi</code>; kjo ndodh sepse t&euml; dy variablat i referohen t&euml; nj&euml;jtit objekt. Pra, thjesht kopjimi i objektit nuk e klonon at&euml;, por kopjon referenc&euml;n p&euml;r at&euml; objekt.</p>
+
+
+
+
+
+
 
 
 
