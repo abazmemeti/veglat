@@ -75,6 +75,7 @@
             <li><a href="#ngjyrat">Ngjyrat</a></li>
             <li><a href="#color-picker">Zgjedhësi i ngjyrave</a></li>
             <li><a href="#sfondi">Sfondi</a></li>
+            <li><a href="#fontet">Fontet</a></li>
             
         </ul>
     </aside>
@@ -764,15 +765,205 @@ p.dy {
                     <p><strong>Sh&euml;nim</strong>: Vetit&euml; e sfondit nuk trash&euml;gohen sikur vetia e ngjyrave, por sfondi i elementit prind do t&euml; jet&euml; i duksh&euml;m si parazgjedhje, p&euml;r shkak t&euml; vler&euml;s iniciuese ose t&euml; paracaktuar <code>transparent</code> t&euml; vetis&euml; CSS <code>background-color</code>.</p>
                 </div>
 
+        </section>
 
-
-
-
-
-
-
-
-
+        <section id="fontet">
+            <h1>Fontet</h1>
+            <p>Zgjedhja e fontit (llojit t&euml; shkronjave) dhe stilit t&euml; duhur &euml;sht&euml; shum&euml; e r&euml;nd&euml;sishme p&euml;r lexueshm&euml;rin&euml; e tekstit n&euml; nj&euml; faqe.</p>
+            <p>CSS ofron disa veti p&euml;r stilizim t&euml; fontit t&euml; tekstit, duke p&euml;rfshir&euml; ndryshimin e pamjes s&euml; tyre, kontrollimin e madh&euml;sis&euml; dhe trash&euml;sin&euml; e tyre, pastaj menaxhimin e variantit, etj.</p>
+            <p>Vetit&euml; e fonteve jan&euml;:<code> font-family, font-style, font-weight, font-size</code> dhe <code>font-variant</code>.</p>
+            <h2>Familja e fontit</h2>
+            <p>Vetia <code>font-family</code> p&euml;rdoret p&euml;r t&euml; specifikuar fontin q&euml; do t&euml; p&euml;rdoret p&euml;r t&euml; paraqitur tekstin.</p>
+            <p>Kjo veti mund t&euml; p&euml;rmbaj&euml; disa emra t&euml; fonteve t&euml; ndara me presje si nj&euml; sistem <em>fallback</em>, k&euml;shtu q&euml; n&euml;se fonti i par&euml; nuk &euml;sht&euml; i disponuesh&euml;m n&euml; sistemin e p&euml;rdoruesit, shfletuesi p&euml;rpiqet t&euml; p&euml;rdor&euml; t&euml; dytin e k&euml;shtu me radh&euml;.</p>
+            <p>Prandaj, radhitni fontin q&euml; d&euml;shironi t&euml; jet&euml; i pari, pastaj &ccedil;do font tjet&euml;r q&euml; mund t&euml; plot&euml;sohet n&euml;se fonti i par&euml; nuk &euml;sht&euml; i disponuesh&euml;m. N&euml; fund duhet ta p&euml;rfundoni list&euml;n me nj&euml; familje t&euml; p&euml;rgjithshme t&euml; fonteve t&euml; cilat jan&euml; pes&euml; &ndash; <code>serif, sans-serif, monospace, cursive</code> dhe <code>fantasy</code>. Nj&euml; deklarat&euml; tipike e familjes s&euml; fonteve mund t&euml; duket k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>body {
+    font-family: Arial, Helvetica, sans-serif;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml;se emri i nj&euml; familje t&euml; fonteve p&euml;rmban m&euml; shum&euml; se nj&euml; fjal&euml;, ajo duhet t&euml; vendoset brenda thonj&euml;zave, si p.sh. "Times New Roman", "Courier New", "Segoe UI", etj.</p>
+            </div>
+            <p>Familjet e fonteve zakonisht t&euml; p&euml;rdorura n&euml; ueb faqe jan&euml; <em>serif</em> dhe <em>sans-serif</em>, sepse jan&euml; m&euml; t&euml; p&euml;rshtatshme p&euml;r lexim. Nd&euml;rsa fontet <em>monospace</em> p&euml;rdoren zakonisht p&euml;r t&euml; paraqitur kodin, pasi n&euml; k&euml;t&euml; lloj shkrimi &ccedil;do shkronj&euml; z&euml; t&euml; nj&euml;jt&euml;n hap&euml;sir&euml; e cila duket si tekst i shkruar.</p>
+            <p>Fontet <em>cursive</em> duken si shkrim kursiv ose shkrim dore. Fonti <em>fantasy</em> p&euml;rfaq&euml;son font artistik, por k&euml;to lloj fonte nuk p&euml;rdoren gjer&euml;sisht p&euml;r shkak t&euml; disponueshm&euml;ris&euml; s&euml; dob&euml;t n&euml; t&euml; gjith&euml; sistemet operative.</p>
+            <h3>Dallimi n&euml; mes fonteve serif dhe sans-serif</h3>
+            <p>Fontet <em>serif</em> kan&euml; vij&euml; t&euml; vog&euml;l ose kthesa n&euml; skajet e karaktereve, nd&euml;rsa fontet <em>sans-serif</em> jan&euml; m&euml; t&euml; drejta dhe nuk i kan&euml; k&euml;to vija dhe kthesa t&euml; vogla n&euml; skaje. Shihni ilustrimin vijues.</p>
+            <div class="" style="text-align: center;">
+                <img src="foto/serif-vs-sans-serif.png" alt="Serif vs sans-serif">
+            </div>
+            <h2>Stili i fontit</h2>
+            <p>Vetia <code>font-style</code> p&euml;rdoret p&euml;r t&euml; vendosur stilin e shkronjave n&euml; p&euml;rmbajtjen e tekstit t&euml; nj&euml; elementi.</p>
+            <p>Stili i fontit mund t&euml; jet&euml; <code>normal, italic</code> ose <code>oblique</code>. Vlera e paracaktuar &euml;sht&euml; <code>normal</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p.normal {
+    font-style: normal;
+}
+p.pjerret {
+    font-style: italic;
+}
+p.zhdrejt {
+    font-style: oblique;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml; shikim t&euml; par&euml; t&euml; dy stilet <code>oblique</code> dhe <code>italic</code> shfaqin t&euml; nj&euml;jtin gj&euml;, por ekziston nj&euml; dallim. Stili <code>italic</code> p&euml;rdor nj&euml; <em>version t&euml; pjerrt&euml;</em> t&euml; fontit nd&euml;rsa <em>stili i zhdrejt&euml;</em> nga ana tjet&euml;r &euml;sht&euml; thjesht nj&euml; <em>version i pjerr&euml;t</em> ose i zhdrejt&euml; i fontit normal.</p>
+            </div>
+            <h2>Madh&euml;sia e fontit</h2>
+            <p>Vetia <code>font-size</code> p&euml;rdoret p&euml;r t&euml; caktuar madh&euml;sin&euml; e fontit n&euml; p&euml;rmbajtjen e tekstit t&euml; nj&euml; elementi.</p>
+            <p>Ekzistojn&euml; disa m&euml;nyra p&euml;r t&euml; specifikuar vlerat e madh&euml;sis&euml; s&euml; fontit, p.sh. me fjal&euml; ky&ccedil;e, p&euml;rqindje, piksell, em, etj.</p>
+            <h3>Madh&euml;sia e fontit me piksell</h3>
+            <p>Vendosja e madh&euml;sis&euml; s&euml; fonit n&euml; vlera piksell (p.sh. 14px, 16px, etj.) &euml;sht&euml; nj&euml; zgjedhje e mir&euml; kur keni nevoj&euml; p&euml;r sakt&euml;sin&euml; e piksell&euml;ve. Piksell &euml;sht&euml; nj&euml; nj&euml;si mat&euml;se absolute e cila specifikon nj&euml; gjat&euml;si fikse.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    font-size: 24px;
+}
+p {
+    font-size: 14px;
+}</code></pre>
+                </div>
+            </div>
+            <p>Definimi i madh&euml;sive t&euml; fontit me piksell nuk konsiderohet shum&euml; i arritsh&euml;m, sepse p&euml;rdoruesi nuk mund t&euml; ndryshoj&euml; madh&euml;sin&euml; e shkronjave nga cil&euml;simet e shfletuesit. P&euml;r shembull, personat me shikim t&euml; kufizuar ose t&euml; ul&euml;t mund t&euml; d&euml;shirojn&euml; t&euml; zmadhojn&euml; madh&euml;sin&euml; e fontit m&euml; shum&euml; se madh&euml;sia e specifikuar nga ju.</p>
+            <p>Prandaj, duhet t&euml; shmangni p&euml;rdorimin e vlerave piksell dhe t&euml; p&euml;rdorni vlerat q&euml; jan&euml; relative n&euml; raport me madh&euml;sin&euml; e paracaktuar t&euml; fontit nga p&euml;rdoruesi.</p>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Teksti mund t&euml; ridimensionohet gjithashtu tek t&euml; gjith&euml; shfletuesit duke p&euml;rdorur <em>ve&ccedil;orin&euml; e zmadhimit (zoom)</em>. Sidoqoft&euml;, kjo ve&ccedil;ori ndryshon p&euml;rmasat e t&euml;r&euml; faqes, jo vet&euml;m t&euml; tekstit. W3C rekomandon p&euml;rdorimin e vlerave em ose p&euml;rqindje (%) n&euml; m&euml;nyr&euml; q&euml; t&euml; krijohen paraqitje m&euml; t&euml; fuqishme dhe t&euml; shkall&euml;zuara.</p>
+            </div>
+            <h3>Madh&euml;sia e fontit me EM</h3>
+            <p>Nj&euml;sia <code>em</code> i referohet madh&euml;sis&euml; s&euml; shkronjave t&euml; elementit prind. Kur p&euml;rcaktohet vetia <code>font-size</code>, <code>1em</code> &euml;sht&euml; e barabart&euml; me madh&euml;sin&euml; e fontit q&euml; vlen p&euml;r <em>prindin e elementit</em>.</p>
+            <p>Pra, n&euml;se caktoni <code>font-size</code> me vler&euml; <code>20px</code> n&euml; elementin e trupit, at&euml;her&euml; <code>1em = 20px</code> dhe <code>2em = 40px</code>.</p>
+            <p>Sidoqoft&euml;, n&euml;se nuk e keni caktuar madh&euml;sin&euml; e fontit askund n&euml; faqe, at&euml;her&euml; vlera &euml;sht&euml; e parazgjedhur nga shfletuesi, q&euml; normalisht &euml;sht&euml; <code>16px</code>. Prandaj, n&euml; m&euml;nyr&euml; t&euml; paracaktuar <code>1em = 16px</code> dhe <code>2em = 32px</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    font-size: 2em;      /* 32px/16px=2em */
+}
+p {
+    font-size: 0.875em;  /* 14px/16px=0.875em */
+}</code></pre>
+                </div>
+            </div>
+            <h3>Kombinimi i p&euml;rqindjes dhe EM</h3>
+            <p>Si&ccedil; e keni v&euml;rejtur n&euml; shembullin e m&euml;sip&euml;rm, llogaritja e vlerave em nuk duket e thjesht&euml;. P&euml;r ta thjeshtuar k&euml;t&euml;, nj&euml; teknik&euml; e njohur &euml;sht&euml; vendosja e <code>font-size</code> p&euml;r elementin <code>body</code> n&euml; <code>62.5%</code> (q&euml; &euml;sht&euml; 62.5% e 16px t&euml; paracaktuara), e cila barazohet me <code>10px</code> ose <code>0.625em</code>.</p>
+            <p>Tani mund t&euml; caktoni <code>font-size</code> p&euml;r &ccedil;do element duke p&euml;rdorur nj&euml;sin&euml; <code>em</code>, me nj&euml; konvertim t&euml; leht&euml; p&euml;r tu mbajtur mend, duke e ndar&euml; vler&euml;n <code>px</code> me <code>10</code>. N&euml; k&euml;t&euml; m&euml;nyr&euml; <code>10px = 1em</code>, <code>12px = 1.2em</code>, <code>14px = 1.4em</code>, <code>16px = 1.6em</code>, e k&euml;shtu me radh&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>body {
+    font-size: 62.5%;    /* font-size 1em = 10px */
+}
+p {
+    font-size: 1.4em;    /* 1.4em = 14px */
+}
+p span {
+    font-size: 2em;      /* 2em = 28px */
+}</code></pre>
+                </div>
+            </div>
+            <h3>Madh&euml;sia e fontit me Root EM</h3>
+            <p>P&euml;r t'i b&euml;r&euml; gj&euml;rat edhe m&euml; t&euml; thjeshta CSS3 ka prezantuar nj&euml;sin&euml; rem (shkurtes&euml; e "root em") q&euml; &euml;sht&euml; gjithmon&euml; relative me <code>font-size</code> t&euml; elementit rr&euml;nj&euml; (<code>html</code>), pavar&euml;sisht se ku q&euml;ndron elementi n&euml; dokument (ndryshe nga <code>em</code> q&euml; &euml;sht&euml; relativ me madh&euml;sin&euml; e fontit t&euml; elementit prind).</p>
+            <p>Kjo do t&euml; thot&euml; q&euml; <code>1rem</code> &euml;sht&euml; ekuivalent me madh&euml;sin&euml; e fontit t&euml; elementit <code>html</code>, q&euml; &euml;sht&euml; <code>16px</code> si parazgjedhje n&euml; shumic&euml;n e ueb-shfletuesve.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>html {
+    font-size: 62.5%;    /* font-size 1em = 10px */
+}
+p {
+    font-size: 1.4rem;   /* 1.4rem = 14px */
+}
+p span {
+    font-size: 2rem;     /* 2rem = 20px (e jo 28px) */
+}</code></pre>
+                </div>
+            </div>
+            <h3>Madh&euml;sia e fontit me fjal&euml; ky&ccedil;e</h3>
+            <p>CSS ofron disa fjal&euml; ky&ccedil;e q&euml; mund t&euml; p&euml;rdorni p&euml;r t&euml; p&euml;rcaktuar madh&euml;sit&euml; e fonteve.</p>
+            <p>Nj&euml; madh&euml;si absolute e fontit mund t&euml; specifikohet duke p&euml;rdorur nj&euml; nga k&euml;to fjal&euml; ky&ccedil;e: <code>xx-small, x-small, small, medium, large, x-large, xx-large</code>. Nd&euml;rsa, madh&euml;sia relative e fontit mund t&euml; specifikohet duke p&euml;rdorur fjal&euml;t ky&ccedil;e: <code>smaller</code> ose <code>larger</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>body {
+    font-size: large;
+}
+h1 {
+    font-size: larger;
+}
+p {
+    font-size: smaller;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Fjala ky&ccedil;e medium &euml;sht&euml; ekuivalente me madh&euml;sin&euml; e paracaktuar t&euml; fontit t&euml; ueb-shfletuesve, e cila normalisht &euml;sht&euml; <code>16px</code>. Po k&euml;shtu, <code>xx-small</code> &euml;sht&euml; ekuivalent me <code>9px</code>, <code>x-small</code> &euml;sht&euml; <code>10px</code>, <code>small</code> &euml;sht&euml; <code>13px</code>, <code>large</code> &euml;sht&euml; <code>18px</code>, <code>x-large</code> &euml;sht&euml; <code>24px</code>, dhe <code>xx-large</code> &euml;sht&euml; <code>32px</code>.</p>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Pasi keni vendosur nj&euml; madh&euml;si t&euml; fontit n&euml; elementin <code>body</code>, m&euml; pas mund t&euml; vendosni madh&euml;sin&euml; relative t&euml; fontit kudo tjet&euml;r n&euml; faqe, duke ju dh&euml;n&euml; mund&euml;sin&euml; t&euml; shkall&euml;zoni me leht&euml;si madh&euml;sin&euml; e fontit lart ose posht&euml; n&euml; p&euml;rputhje me rrethanat.</p>
+            </div>
+            <h3>Madh&euml;sia e fontit me nj&euml;sit&euml; Viewport</h3>
+            <p>Madh&euml;sit&euml; e fontit mund t&euml; specifikohen edhe duke p&euml;rdorur nj&euml;sit&euml; viewport (hap&euml;sira e pamjes), si&ccedil; jan&euml; <code>vw</code> ose <code>vh</code>.</p>
+            <p>Nj&euml;sia viewport i referohet p&euml;rqindjes s&euml; dimensioneve t&euml; pamjes s&euml; shfletuesit, ku <code>1vw = 1%</code> e gjer&euml;sis&euml; s&euml; viewport-it dhe <code>1vh = 1%</code> e lart&euml;sis&euml; s&euml; viewport-it. Andaj, n&euml;se viewport &euml;sht&euml; <code>1600px</code> e gjer&euml;, <code>1vw</code> &euml;sht&euml; <code>16px</code>.</p>
+            <p>Provoni shembullin e m&euml;posht&euml;m duke ndryshuar madh&euml;sin&euml; e dritares s&euml; shfletuesit dhe shikoni se si funksionon:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>body {
+    font-size: 1vw;
+}
+h1 {
+    font-size: 3vw;
+}</code></pre>
+                </div>
+            </div>
+            <p>Sidoqoft&euml;, ekziston nj&euml; problem me nj&euml;sit&euml; viewport. N&euml; ekranet e vogla, shkronjat b&euml;hen aq shum&euml; t&euml; vogla sa nuk mund t&euml; lexohen. P&euml;r t&euml; parandaluar k&euml;t&euml; mund t&euml; p&euml;rdorni funksionin CSS <code>calc()</code>, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>html { 
+    font-size: calc(1em + 1vw); 
+}
+h1 {
+    font-size: 3rem;
+}</code></pre>
+                </div>
+            </div>
+            <p>N&euml; k&euml;t&euml; shembull, edhe n&euml;se gjer&euml;sia e viewport-it b&euml;het <code>0</code>, madh&euml;sia e fontit do t&euml; jet&euml; s&euml; paku <code>1em</code> ose <code>16px</code>.</p>
+            <h2>Trash&euml;sia e fontit</h2>
+            <p>Vetia <code>font-weight</code> p&euml;rcakton r&euml;nd&euml;sin&euml; ose trash&euml;sin&euml; e fontit.</p>
+            <p>Kjo veti mund t&euml; marr&euml; nj&euml; nga k&euml;to vlera:<code> normal, bold, bolder, lighter, 100, 200, 300, 400, 500, 600, 700, 800, 900</code> dhe <code>inherit</code>.</p>
+            <p>Vlerat numerike <code>100 &ndash; 900</code> specifikojn&euml; trash&euml;sin&euml; e fontit, ku secili num&euml;r p&euml;rfaq&euml;son nj&euml; trash&euml;si m&euml; t&euml; madhe se paraardh&euml;si i tij. <code>400</code> &euml;sht&euml; e nj&euml;jt&euml; me <code>normal</code> dhe <code>700</code> &euml;sht&euml; e nj&euml;jt&euml; me <code>bold</code>.</p>
+            <p>Vlerat <code>bolder</code> dhe <code>lighter</code> jan&euml; relative me trash&euml;sin&euml; e trash&euml;guar t&euml; fontit, nd&euml;rsa vlerat e tjera si <code>normal</code> dhe <code>bold</code> jan&euml; vlera absolute t&euml; trash&euml;sis&euml; s&euml; fontit.</p>
+            <p>Le t&euml; provojm&euml; nj&euml; shembull p&euml;r t&euml; kuptuar se si funksionon kjo veti n&euml; thelb:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    font-weight: bold;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Shumica e fonteve jan&euml; n&euml; dispozicion vet&euml;m n&euml; nj&euml; num&euml;r t&euml; kufizuar t&euml; trash&euml;sive; shpesh ato jan&euml; n&euml; dispozicion vet&euml;m me vlerat <em>normal</em> dhe <em>bold</em>. N&euml; rast se nj&euml; font nuk &euml;sht&euml; i disponuesh&euml;m me trash&euml;sin&euml; e specifikuar, do t&euml; zgjidhet nj&euml; alternativ&euml; q&euml; &euml;sht&euml; trash&euml;sia m&euml; e af&euml;rt n&euml; dispozicion.</p>
+            </div>
+            <h2>Variant i fontit</h2>
+            <p>Vetia <code>font-variant</code> lejon q&euml; teksti t&euml; shfaqet n&euml; nj&euml; variant t&euml; ve&ccedil;ant&euml; t&euml; shkronjave t&euml; vogla (small-caps).</p>
+            <p>Small-caps ose <em>shkronjat e vogla kapitale</em> jan&euml; paksa t&euml; ndryshme nga shkronjat e m&euml;dha normale, n&euml; t&euml; cilat shkronjat e vogla shfaqen si versione m&euml; t&euml; vogla t&euml; shkronjave t&euml; m&euml;dha p&euml;rkat&euml;se.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    font-variant: small-caps;
+}</code></pre>
+                </div>
+            </div>
+            <p>Vlera <code>normal</code> heq shkronjat e vogla nga teksti i cili tashm&euml; &euml;sht&euml; formatuar n&euml; at&euml; m&euml;nyr&euml;.</p>
         </section>
 
     </main>
