@@ -76,6 +76,7 @@
             <li><a href="#color-picker">Zgjedhësi i ngjyrave</a></li>
             <li><a href="#sfondi">Sfondi</a></li>
             <li><a href="#fontet">Fontet</a></li>
+            <li><a href="#teksti">Teksti</a></li>
             
         </ul>
     </aside>
@@ -964,6 +965,173 @@ h1 {
                 </div>
             </div>
             <p>Vlera <code>normal</code> heq shkronjat e vogla nga teksti i cili tashm&euml; &euml;sht&euml; formatuar n&euml; at&euml; m&euml;nyr&euml;.</p>
+        </section>
+
+        <section id="teksti">
+            <h1>Teksti</h1>
+            <h2>Formatimi i tekstit me CSS</h2>
+            <p>CSS ofron disa veti q&euml; ju mund&euml;sojn&euml; t&euml; p&euml;rcaktoni stile t&euml; ndryshme t&euml; tekstit si&ccedil; jan&euml;: ngjyra, rreshtimi, hap&euml;sira n&euml; mes shkronjave, dekorimi, transformimi, etj.</p>
+            <p>Vetit&euml; e tekstit q&euml; p&euml;rdoren zakonisht jan&euml;: <code>text-align, text-decoration, text-transform, text-indent, line-height, letter-spacing, word-spacing,</code> etj. K&euml;to veti ju japin kontroll t&euml; sakt&euml; mbi pamjen vizuale t&euml; <em>karaktereve, fjal&euml;ve, hap&euml;sirave</em>, etj.</p>
+            <h2>Ngjyra e tekstit</h2>
+            <p>Ngjyra e tekstit p&euml;rcaktohet nga vetia e ngjyrave n&euml; CSS: <code>color</code>.</p>
+            <p>Rregulli i stilit n&euml; shembullin vijues do t&euml; definoj ngjyr&euml;n e paracaktuar t&euml; tekstit p&euml;r faqen e dh&euml;n&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>body {
+    color: #434343;
+}</code></pre>
+                </div>
+            </div>
+            <p>Megjith&euml;se, vetia e ngjyrave duket sikur do t&euml; ishte nj&euml; pjes&euml; e tekstit n&euml; CSS, por n&euml; fakt &euml;sht&euml; vet&euml;m nj&euml; veti e pavarur n&euml; CSS.</p>
+            <h2>Rreshtimi i tekstit</h2>
+            <p>Vetia <code>text-align</code> p&euml;rdoret p&euml;r t&euml; vendosur shtrirjen horizontale t&euml; tekstit.</p>
+            <p>Teksti mund t&euml; rreshtohet n&euml; kat&euml;r m&euml;nyra: n&euml; t&euml; majt&euml;, n&euml; t&euml; djatht&euml;, n&euml; qend&euml;r ose t&euml; justifikuar (<em>justified</em>).</p>
+            <p>Le t&euml; hedhim nj&euml; v&euml;shtrim n&euml; shembullin vijues p&euml;r t&euml; kuptuar se si funksionon kjo veti n&euml; thelb.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    text-align: center;
+}
+p {
+    text-align: justify;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Kur vetia <code>text-align</code> ka vler&euml;n <code>justify</code>, &ccedil;do rresht i tekstit do t&euml; shtrihet prej nj&euml;rit skaj n&euml; tjetrin n&euml; gjer&euml;si t&euml; barabart&euml; (p&euml;rve&ccedil; rreshtit t&euml; fundit). Kjo shtrirje e tekstit zakonisht p&euml;rdoret n&euml; botime t&euml; tilla si revista dhe gazeta.</p>
+            </div>
+            <p>Le t&euml; hedhim nj&euml; v&euml;shtrim n&euml; ilustrimet vijuese p&euml;r t&euml; kuptuar se &ccedil;far&euml; n&euml;nkuptojn&euml; k&euml;to vlera.</p>
+            <div class="textalign">
+                <div><p style="text-align: left;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet impedit laudantium iste minus, deleniti aperiam pariatur quasi non?</p><span>left</span></div>
+                <div><p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet impedit laudantium iste minus, deleniti aperiam pariatur quasi non?</p><span>center</span></div>
+                <div><p style="text-align: right;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet impedit laudantium iste minus, deleniti aperiam pariatur quasi non?</p><span>right</span></div>
+                <div><p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet impedit laudantium iste minus, deleniti aperiam pariatur quasi non?</p><span>justify</span></div>
+            </div>
+            <h2>Dekorimi i tekstit</h2>
+            <p>Vetia <code>text-decoration</code> p&euml;rdoret p&euml;r t&euml; vendosur ose hequr dekorime nga teksti.</p>
+            <p>Kjo veti zakonisht pranon nj&euml; nga k&euml;to vlera:<code> underline, overline, line-through</code> dhe <code>none</code>. Duhet t&euml; shmangni n&euml;nvizimin e tekstit q&euml; nuk paraqet ndonj&euml; link, pasi mund t&euml; hutoj&euml; vizitorin.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    text-decoration: overline;
+}
+h2 {
+    text-decoration: line-through;
+}
+h3 {
+    text-decoration: underline;
+}</code></pre>
+                </div>
+            </div>
+            <h3>Heqja e n&euml;nvizimit t&euml; paracaktuar nga linqet</h3>
+            <p>Vetia <code>text-decoration</code> p&euml;rdoret gjer&euml;sisht p&euml;r t&euml; hequr n&euml;nvizimin e paracaktuar nga hyperlinqet n&euml; HTML. M&euml; pas mund t&rsquo;i b&euml;ni disa ndryshme tjera vizuale p&euml;r ta b&euml;r&euml; at&euml; t&euml; dallohet nga teksti normal, p&euml;r shembull, duke p&euml;rdorur kufiz&euml; me pika n&euml; vend t&euml; n&euml;nvizimit solid.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>a {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Kur krijoni nj&euml; link n&euml; HTML, shfletuesit automatikisht e n&euml;nvizojn&euml; at&euml; dhe ia vendosin ngjyr&euml;n e kalt&euml;r, n&euml; m&euml;nyr&euml; q&euml; lexuesit t&euml; shohin qart&euml; se cili tekst mund t&euml; klikohet.</p>
+            </div>
+            <h2>Transformimi i tekstit</h2>
+            <p>Vetia <code>text-transform</code> p&euml;rdoret p&euml;r t&euml; vendosur shkronja t&euml; ndryshme p&euml;r nj&euml; tekst.</p>
+            <p>Teksti shpesh shkruhet me shkronja t&euml; p&euml;rziera (t&euml; m&euml;dha dhe t&euml; vogla). Sidoqoft&euml;, n&euml; situata t&euml; caktuara mund t&euml; d&euml;shironi t&euml; paraqitni tekstin tuaj n&euml; raste krejt&euml;sisht t&euml; ndryshme. Duke p&euml;rdorur k&euml;t&euml; veti mund t&euml; ndryshoni p&euml;rmbajtjen e tekstit t&euml; nj&euml; elementi n&euml; shkronja t&euml; m&euml;dha ose t&euml; vogla, ose t&euml; shkruani me germ&euml; t&euml; madhe shkronj&euml;n e par&euml; t&euml; secil&euml;s fjal&euml; pa ndryshuar tekstin origjinal.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    text-transform: uppercase;
+}
+h2 {
+    text-transform: capitalize;
+}
+h3 {
+    text-transform: lowercase;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Kryeradha e tekstit</h2>
+            <p>Vetia <code>text-indent</code> p&euml;rdoret p&euml;r t&euml; vendosur kryeradh&euml; n&euml; rreshtin e par&euml; t&euml; tekstit brenda nj&euml; blloku t&euml; tekstit. Zakonisht kjo b&euml;het duke futur hap&euml;sir&euml; boshe para rreshtit t&euml; par&euml; t&euml; tekstit.</p>
+            <p>Gjer&euml;sia e hap&euml;sir&euml;s mund t&euml; specifikohet duke p&euml;rdorur p&euml;rqindjen (%), vlerat e gjat&euml;sis&euml; n&euml; piksell, em, etj.</p>
+            <p>Stili i m&euml;posht&euml;m do t&euml; shtoj hap&euml;sir&euml; n&euml; rreshtin e par&euml; t&euml; paragraf&euml;ve me vler&euml; prej 100 piksell.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    text-indent: 100px;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Hap&euml;sira n&euml; mes shkronjave</h2>
+            <p>Vetia <code>letter-spacing</code> p&euml;rdoret p&euml;r t&euml; vendosur hap&euml;sir&euml; shtes&euml; midis karaktereve t&euml; tekstit.</p>
+            <p>Kjo veti mund t&euml; marr&euml; vlera t&euml; gjat&euml;sis&euml; n&euml; piksell, em, etj. Mund t&euml; pranoj&euml; gjithashtu edhe vlera negative. Kur vendosni hap&euml;sir&euml; n&euml; mes shkronjave, vlera q&euml; e vendosni tregon hap&euml;sir&euml;n shtes&euml; nga hap&euml;sira e paracaktuar nd&euml;rmjet karaktereve.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    letter-spacing: -3px;
+}
+p {
+    letter-spacing: 10px;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Hap&euml;sira n&euml; mes fjal&euml;ve</h2>
+            <p>Vetia <code>word-spacing</code> p&euml;rdoret p&euml;r t&euml; specifikuar hap&euml;sir&euml;n shtes&euml; midis fjal&euml;ve.</p>
+            <p>Kjo veti p&euml;rdor vlera t&euml; gjat&euml;sis&euml; n&euml; piksell, em, etj. Gjithashtu lejohen edhe vlera negative.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p.normal {
+    word-spacing: 20px;
+}
+p.justifikuar {
+    word-spacing: 20px;
+    text-align: justify;
+}
+p.paraformatuar {
+    word-spacing: 20px;
+    white-space: pre;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Hap&euml;sira n&euml; mes fjal&euml;ve mund t&euml; ndikohet nga teksti i justifikuar. Gjithashtu, edhe pse hap&euml;sira &euml;sht&euml; ruajtur, hap&euml;sirat nd&euml;rmjet fjal&euml;ve ndikohen nga vetia e ndarjes s&euml; fjal&euml;ve.</p>
+            </div>
+            <h2>Lart&euml;sia e rreshtit</h2>
+            <p>Vetia <code>line-height</code> p&euml;rdoret p&euml;r t&euml; vendosur lart&euml;sin&euml; e rreshtit t&euml; tekstit. Pra, gjithashtu p&euml;rdoret p&euml;r t&euml; vendosur distanc&euml; midis rreshtave t&euml; tekstit.</p>
+            <p>Vlera e k&euml;saj vetie mund t&euml; jet&euml; nj&euml; num&euml;r, p&euml;rqindje (%), ose gjat&euml;si n&euml; piksell, em, etj.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    line-height: 1.2;
+}</code></pre>
+                </div>
+            </div>
+            <p>Kur vlera &euml;sht&euml; nj&euml; num&euml;r, lart&euml;sia e rreshtit llogaritet duke shum&euml;zuar madh&euml;sin&euml; e fontit t&euml; elementit me numrin. Nd&euml;rsa, vlerat e p&euml;rqindjes jan&euml; relative me madh&euml;sin&euml; e fontit t&euml; elementit.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vlerat negative p&euml;r vetin&euml; <code>line-height</code> nuk lejohen. Kjo veti &euml;sht&euml; gjithashtu nj&euml; p&euml;rb&euml;r&euml;s i vetis&euml; s&euml; fontit n&euml; CSS.</p>
+            </div>
+            <p>N&euml;se vlera e vetis&euml; <code>line-height</code> &euml;sht&euml; m&euml; e madhe se vlera e <code>font-size</code> p&euml;r nj&euml; element, kjo diferenc&euml; pritet n&euml; gjysm&euml; dhe shp&euml;rndahet n&euml; m&euml;nyr&euml; t&euml; barabart&euml; n&euml; pjes&euml;n e sip&euml;rme dhe t&euml; poshtme t&euml; rreshtit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #f0e68c;
+}</code></pre>
+                </div>
+            </div>
+            <p>Ekzistojn&euml; edhe veti tjera t&euml; tekstit, si&ccedil; jan&euml; p.sh. tejmbushja e tekstit (<code>overflow</code>), hija e tekstit (<code>text-shadow</code>), etj.</p>
         </section>
 
     </main>
