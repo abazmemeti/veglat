@@ -77,6 +77,7 @@
             <li><a href="#sfondi">Sfondi</a></li>
             <li><a href="#fontet">Fontet</a></li>
             <li><a href="#teksti">Teksti</a></li>
+            <li><a href="#linqet">Linqet</a></li>
             
         </ul>
     </aside>
@@ -1132,6 +1133,107 @@ p.paraformatuar {
                 </div>
             </div>
             <p>Ekzistojn&euml; edhe veti tjera t&euml; tekstit, si&ccedil; jan&euml; p.sh. tejmbushja e tekstit (<code>overflow</code>), hija e tekstit (<code>text-shadow</code>), etj.</p>
+        </section>
+
+        <section id="linqet">
+            <h1>Linqet</h1>
+            <h2>Stilizimi i linqeve me CSS</h2>
+            <p>Linqet ose hiperlinqet jan&euml; pjes&euml; esenciale t&euml; nj&euml; ueb faqeje. K&euml;to lidhje i mund&euml;sojn&euml; vizitor&euml;ve t&euml; kalojn&euml; prej nj&euml; faqe n&euml; nj&euml; tjet&euml;r n&euml; at&euml; ueb sajt duke klikuar n&euml; to. Andaj stilizimi i linqeve si&ccedil; duhet &euml;sht&euml; nj&euml; aspekt i r&euml;nd&euml;sish&euml;m i nd&euml;rtimit t&euml; nj&euml; ueb sajti miq&euml;sor p&euml;r p&euml;rdoruesit.</p>
+            <p>Linku ka kat&euml;r gjendje t&euml; ndryshme &ndash;<code> link, visited, active</code> dhe <code>hover</code>. K&euml;to kat&euml;r gjendje t&euml; nj&euml; linku mund t&euml; stilizohen ndryshe duke p&euml;rdorur selektor&euml;t e m&euml;posht&euml;m t&euml; pseudo-klas&euml;ve.</p>
+            <ul>
+                <li><strong><code>a:link</code></strong> &ndash; definon stilet p&euml;r linqet normale ose t&euml; pavizituar.</li>
+                <li><strong><code>a:visited</code></strong> &ndash; definon stilet p&euml;r linqet q&euml; p&euml;rdoruesi i ka vizituar.</li>
+                <li><strong><code>a:hover</code></strong> &ndash; definon stilet p&euml;r linkun kur p&euml;rdoruesi vendos treguesin e miut mbi t&euml;.</li>
+                <li><strong><code>a:active</code></strong> &ndash; definon stilet p&euml;r linqet kur ato klikohen.</li>
+            </ul>
+            <p>Mund t&euml; specifikoni &ccedil;far&euml;do vetie CSS q&euml; d&euml;shironi, si p.sh.<code> color, font, background, border,</code> etj., e secilin prej k&euml;tyre selektor&euml;ve mund t&rsquo;ia rregulloni stilin e linqeve, ashtu si&ccedil; mund t&euml; veproni me tekstin normal.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>a:link {    /* link i pavizituar */
+    color: #ff0000;
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+a:visited {    /* Link i vizituar */
+    color: #ff00ff;
+}
+a:hover {    /* mausi mbi link */
+    color: #00ff00;
+    border-bottom: none;
+}
+a:active {    /* link aktiv */
+    color: #00ffff;
+}</code></pre>
+                </div>
+            </div>
+            <p>Radhitja n&euml; t&euml; cilin vendosni stilin p&euml;r gjendje t&euml; ndryshme t&euml; linqeve &euml;sht&euml; i r&euml;nd&euml;sish&euml;m, sepse ajo q&euml; definohet e fundit ka p&euml;rpar&euml;si mbi rregullat e stilit t&euml; definuar m&euml; par&euml;.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml; p&euml;rgjith&euml;si, renditja e pseudo-klasave duhet t&euml; jet&euml; k&euml;sisoj &ndash;<code> :link, :visited, :hover, :active, :focus </code>n&euml; m&euml;nyr&euml; q&euml; k&euml;to t&euml; funksionojn&euml; si&ccedil; duhet.</p>
+            </div>
+            <h2>Modifikimi i stileve standarde t&euml; linkut</h2>
+            <p>N&euml; t&euml; gjith&euml; ueb shfletuesit kryesor si Chrome, Firefox, Safari, etj., linqet n&euml; ueb faqe jan&euml; t&euml; n&euml;nvizuar dhe kan&euml; ngjyr&euml; t&euml; paracaktuar nga ueb shfletuesi.</p>
+            <p>Si parazgjedhje, linqet e tekstit do t&euml; shfaqen si m&euml; posht&euml; n&euml; shumic&euml;n e shfletuesve:</p>
+            <ul>
+                <li><u style="color:rgb(55, 55, 255)">Link i pavizituar</u> &ndash; tekst i kalt&euml;r i n&euml;nvizuar.</li>
+                <li><u style="color:rgb(155, 19, 155)">Link i vizituar</u> &ndash; tekst vjollc&euml; i n&euml;nvizuar.</li>
+                <li><u style="color:red">Link aktiv</u> &ndash; tekst i kuq i n&euml;nvizuar.</li>
+            </ul>
+            <p>Sidoqoft&euml;, nuk ka asnj&euml; ndryshim n&euml; pamjen e linkut n&euml; rast t&euml; gjendjes kur jemi me maus mbi link (<em>hover</em>). Pra, mbetet i kalt&euml;r, vjollc&euml; ose i kuq n&euml; var&euml;si t&euml; gjendjes (d.m.th. i pa vizituar, i vizituar ose aktiv).</p>
+            <h3>Cil&euml;simi i ngjyr&euml;s s&euml; personalizuar t&euml; linqeve</h3>
+            <p>Thjesht p&euml;rdorni vetin&euml; e ngjyrave n&euml; CSS &ndash;<code> color </code>p&euml;r t&euml; definuar ngjyr&euml;n e zgjedhur p&euml;r gjendjet e ndryshme t&euml; nj&euml; linku. Por kini kujdes kur zgjidhni ngjyrat, sigurohuni q&euml; p&euml;rdoruesi t&euml; mund t&euml; b&euml;j&euml; dallimin e qart&euml; midis tekstit normal dhe linqeve.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>a:link {
+    color: #1ebba3;
+}
+a:visited {
+    color: #ff00f4;
+}
+a:hover {
+    color: #a766ff;
+}
+a:active {
+    color: #ff9800;
+}</code></pre>
+                </div>
+            </div>
+            <h3>Heqja e n&euml;nvizimit t&euml; paracaktuar nga linqet</h3>
+            <p>N&euml;se nuk ju p&euml;lqen n&euml;nvizimi i paracaktuar n&euml; linqe, thjesht mund t&euml; p&euml;rdorni vetin&euml; CSS <code>text-decoration</code> p&euml;r t&euml; hequr at&euml;. P&euml;rndryshe, mund t&euml; aplikoni nj&euml; stilizim tjet&euml;r n&euml; link si&ccedil; jan&euml; ngjyra e sfondit, kufiza e poshtme, font i theksuar, etj., p&euml;r ta b&euml;r&euml; at&euml; q&euml; t&euml; dallohet nga teksti normal.</p>
+            <p>Shembulli i m&euml;posht&euml;m tregon se si t&euml; hiqni ose vendosni n&euml;nvizimin p&euml;r gjendje t&euml; ndryshme t&euml; nj&euml; linku.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>a:link, a:visited {
+    text-decoration: none; 
+}
+a:hover, a:active {
+    text-decoration: underline;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Pamja e linqeve t&euml; tekstit si butona</h2>
+            <p>Gjithashtu mund t'i b&euml;ni linqet tuaja t&euml; zakonshme t&euml; tekstit t&euml; duken si butona duke p&euml;rdorur CSS-n&euml;. P&euml;r ta b&euml;r&euml; k&euml;t&euml;, duhet t&euml; p&euml;rdorim disa veti tjera t&euml; CSS-s&euml;, t&euml; tilla si<code> background-color, border, display, padding, </code>etj.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>a:link, a:visited {
+    color: white;    
+    background-color: #1ebba3;    
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #099983;
+    text-decoration: none;
+    text-align: center;
+    font: 14px Arial, sans-serif;  
+}
+a:hover, a:active {
+    background-color: #9c6ae1;
+    border-color: #7443b6;
+}</code></pre>
+                </div>
+            </div>
         </section>
 
     </main>
