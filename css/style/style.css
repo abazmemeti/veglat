@@ -257,3 +257,105 @@ input[type=range] {
     grid-gap: 0.6em;
   }
 }
+
+/* Figura listat */
+.listat-figura {
+  display: flex;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+.listat-figura div {
+  margin-bottom: 20px;
+}
+
+.listat-figura div li {
+  background-color: #ddd;
+  line-height: 1.75;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.nata .listat-figura div li {
+  background-color: #383838;
+}
+
+.listat-figura div.inside li {
+  list-style-position: inside;
+}
+
+.listat-figura div p {
+  font-weight: 700;
+  text-align: center;
+  margin-top: 8px;
+}
+
+@media(max-width: 499px) {
+  .listat-figura {
+    display: block;
+  }
+}
+
+/* Figura tabelat */
+.tabelat-figura {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+  margin: 15px;
+  font-size: 0.9rem;
+}
+.tabelat-figura div {
+  margin-bottom: 25px;
+}
+.tabelat-figura table, .tabelat-figura th, .tabelat-figura td {
+  border: 1px solid black;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.tabelat-figura table tr:first-child, .nata .tabelat-figura table tr:first-child {
+  background-color: transparent;
+  text-align: left;
+}
+.tabelat-figura .non-collapse table {
+  border-collapse: separate;
+}
+.tabelat-figura p {
+  text-align: center;
+  vertical-align: bottom;
+}
+
+@media(max-width: 499px) {
+  .tabelat-figura {
+    display: block;
+  }
+}
+
+/* Figura 2 - tabelat */
+.tabelat-figura2 {
+  margin: 10px 15px 30px;
+  font-size: 0.95rem;
+  overflow-x: auto;
+}
+.tabelat-figura2 table tr:first-child {
+  background-color: transparent;
+  text-align: left;
+}
+.tabelat-figura2 table, .tabelat-figura2 th, .tabelat-figura2 td,
+.nata .tabelat-figura2 table, .nata .tabelat-figura2 th, .nata .tabelat-figura2 td {
+  border: none;
+}
+.tabelat-figura2 th, .tabelat-figura2 td {
+  text-align: left;
+  border-top: 1px solid #dee2e6;
+}
+.tabelat-figura2 tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+.nata .tabelat-figura2 thead tr:first-child, .nata .tabelat-figura2 tbody tr:first-child {
+  background-color: transparent;
+}
+
+.nata .tabelat-figura2 th, .nata .tabelat-figura2 td {
+  border-top:1px solid #444;
+}
+.nata .tabelat-figura2 tbody tr:nth-child(odd) {
+  background-color: #333;
+}

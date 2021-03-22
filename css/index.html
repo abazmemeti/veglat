@@ -78,6 +78,8 @@
             <li><a href="#fontet">Fontet</a></li>
             <li><a href="#teksti">Teksti</a></li>
             <li><a href="#linqet">Linqet</a></li>
+            <li><a href="#listat">Listat</a></li>
+            <li><a href="#tabelat">Tabelat</a></li>
             
         </ul>
     </aside>
@@ -1232,6 +1234,391 @@ a:hover, a:active {
     background-color: #9c6ae1;
     border-color: #7443b6;
 }</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="listat">
+            <h1>Listat</h1>
+            <h2>Llojet e listave HTML</h2>
+            <p>Ekzistojn&euml; tri lloje t&euml; ndryshme t&euml; listave n&euml; HTML:</p>
+            <ul>
+            <li><strong>Listat e parenditura</strong> &ndash; List&euml; e artikujve, ku &ccedil;do artikull i list&euml;s sh&euml;nohet me pika.</li>
+            <li><strong>Listat e renditura</strong> &ndash; List&euml; e artikujve, ku secili artikull i list&euml;s sh&euml;nohet me numra.</li>
+            <li><strong>Listat p&euml;rshkruese</strong> &ndash; List&euml; e artikujve, me nj&euml; p&euml;rshkrim p&euml;r secilin artikull.</li>
+            </ul>
+            <h2>Stilizimi i listave me CSS</h2>
+            <p>CSS ofron disa veti p&euml;r stilizim dhe formatim t&euml; listave t&euml; parenditura dhe t&euml; renditura. K&euml;to veti t&euml; list&euml;s CSS zakonisht ju lejojn&euml; t&euml;:</p>
+            <ul>
+            <li>Kontrolloni form&euml;n ose pamjen e shenj&euml;s.</li>
+            <li>Specifikoni nj&euml; imazh p&euml;r shenj&euml;n n&euml; vend t&euml; nj&euml; pik&euml; apo nj&euml; numri.</li>
+            <li>Vendosni distanc&euml;n n&euml; mes shenj&euml;s dhe tekstit n&euml; list&euml;.</li>
+            <li>Specifikoni n&euml;se shenja do t&euml; shfaqet brenda ose jasht&euml; kutis&euml; q&euml; p&euml;rmban artikujt e list&euml;s.</li>
+            </ul>
+            <h2>Ndryshimi i llojit t&euml; shenj&euml;s tek listat</h2>
+            <p>Si parazgjedhje, artikujt n&euml; nj&euml; list&euml; t&euml; renditur paraqiten me numra arab&euml; (1, 2, 3, 5, e k&euml;shtu me radh&euml;), nd&euml;rsa n&euml; nj&euml; list&euml; t&euml; parenditur, artikujt sh&euml;nohen me nj&euml; pik&euml; (&bull;).</p>
+            <p>Por, ju mund ta ndryshoni k&euml;t&euml; shenj&euml; t&euml; parazgjedhur t&euml; list&euml;s n&euml; &ccedil;do lloj tjet&euml;r, si&ccedil; jan&euml; numrat romak&euml;, shkronjat latine, rrethi, katrori, e k&euml;shtu me radh&euml;, duke p&euml;rdorur vetin&euml; <code>list-style-type</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ul {
+    list-style-type: square;
+}
+ol {
+    list-style-type: upper-roman;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Ndryshimi i pozicionit t&euml; shenjave tek listat</h2>
+            <p>Si parazgjedhje, shenja e secilit artikull t&euml; list&euml;s pozicionohen jasht&euml; (<code>outside</code>) kutive t&euml; tyre t&euml; shfaqjes.</p>
+            <p>Sidoqoft&euml;, ju gjithashtu mund t'i poziciononi k&euml;to shenja, pra, numrat ose pikat brenda kutive t&euml; shfaqjes s&euml; artikullit t&euml; list&euml;s duke p&euml;rdorur vetin&euml; <code>list-style-position</code> s&euml; bashku me vler&euml;n <code>inside</code>. N&euml; k&euml;t&euml; rast shenjat do t&euml; p&euml;rfshihen brenda kutis&euml; s&euml; linj&euml;s.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ol.brenda li {
+    list-style-position: inside;
+}
+ol.jashte li {
+    list-style-position: outside;
+}</code></pre>
+                </div>
+            </div>
+            <p>Le t&euml; shohim ilustrimin vijues p&euml;r t&euml; kuptuar se si pozicionohen shenjat brenda dhe jasht&euml; kutis&euml; s&euml; pamjes s&euml; listave.</p>
+            <div class="listat-figura">
+                <div class="outside">
+                    <ol>
+                        <li>Artikulli i par&euml;</li>
+                        <li>Artikulli i dyt&euml;, i cili &euml;sht&euml; tekst m&euml; i gjat&euml; nga artikujt tjer&euml; p&euml;r ta testuar</li>
+                        <li>Artikulli i tret&euml;</li>
+                    </ol>
+                    <p>Jasht&euml; (me parazgjedhje)</p>
+                </div>
+                <div class="inside">
+                    <ol>
+                        <li>Artikulli i par&euml;</li>
+                        <li>Artikulli i dyt&euml;, i cili &euml;sht&euml; tekst m&euml; i gjat&euml; nga artikujt tjer&euml; p&euml;r ta testuar</li>
+                        <li>Artikulli i tret&euml;</li>
+                    </ol>
+                    <p>Brenda</p>
+                </div>
+            </div>
+
+            <h2>P&euml;rdorimi i imazheve si shenja t&euml; listave</h2>
+            <p>Gjithashtu mund t&euml; vendoset nj&euml; imazh si shenj&euml; e list&euml;s duke p&euml;rdorur vetin&euml; <code>list-style-image</code>.</p>
+            <p>Rregulli i stilit n&euml; shembullin vijues cakton nj&euml; imazh transparent PNG "shigjeta.png" si shenj&euml; t&euml; list&euml;s p&euml;r t&euml; gjith&euml; artikujt n&euml; list&euml;n e parenditur.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ul li {
+    list-style-image: url("foto/shigjeta.png");
+}</code></pre>
+                </div>
+            </div>
+            <p>Ndonj&euml;her&euml;, vetia <code>list-style-image</code> mund t&euml; mos na jep rezultatin e pritur. P&euml;rndryshe, mund t&euml; p&euml;rdorni zgjidhjen e m&euml;poshtme p&euml;r kontroll m&euml; t&euml; mir&euml; n&euml; pozicionimin e shenjave n&euml; list&euml;.</p>
+            <p>Duke b&euml;r&euml; pun&euml; p&euml;rreth, gjithashtu mund t&euml; vendosni shenja n&euml; list&euml; nga imazhi p&euml;rmes vetis&euml; CSS <code>background-image</code>. S&euml; pari, hiqni pikat n&euml; list&euml;, pastaj, p&euml;rcaktoni p&euml;r elementin e list&euml;s nj&euml; imazh n&euml; sfond q&euml; nuk p&euml;rs&euml;ritet.</p>
+            <p>Shembulli i m&euml;posht&euml;m tregon imazhin si shenj&euml; n&euml; m&euml;nyr&euml; t&euml; rregullt p&euml;r t&euml; gjith&euml; &nbsp;ueb shfletuesit:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ul {
+    list-style-type: none;
+}
+ul li {
+    background-image: url("foto/shigjeta.png");
+    background-position: 0px 5px; /* Poz-X Poz-Y (nga lartë-majtas) */
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Cil&euml;simi i t&euml; gjitha vetive t&euml; list&euml;s p&euml;rnj&euml;her&euml;</h2>
+            <p>Vetia <code>list-style</code> &euml;sht&euml; nj&euml; veti e shkurt&euml;r p&euml;r definimin e tri vetive p&euml;rnj&euml;her&euml;: <code>list-style-type</code>, <code>list-style-image</code> dhe <code>list-style-position</code>.</p>
+            <p>Rregulli i m&euml;posht&euml;m i stilit cil&euml;son t&euml; gjitha vetit&euml; e list&euml;s n&euml; nj&euml; deklarat&euml; t&euml; vetme.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ul {
+    list-style: square inside url("foto/shigjeta.png");
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Kur p&euml;rdorni vetin&euml; e shkurt <code>list-style</code>, radhitjet e vlerave jan&euml;: <code>list-style-type | list-style-position | list-style-image</code>. Nuk ka r&euml;nd&euml;si n&euml;se nj&euml;ra nga vlerat e m&euml;sip&euml;rme mungon p&euml;r sa koh&euml; q&euml; pjesa tjet&euml;r jan&euml; n&euml; radh&euml;n e specifikuar.</p>
+            </div>
+            <h2>Krijimi i menyve t&euml; navigimit duke p&euml;rdorur listat</h2>
+            <p>Listat HTML p&euml;rdoren shpesh p&euml;r t&euml; krijuar shirit horizontal apo meny t&euml; navigimit q&euml; zakonisht paraqiten n&euml; krye t&euml; nj&euml; ueb sajti. Por meqen&euml;se artikujt e list&euml;s jan&euml; bllok elemente, k&euml;sisoj p&euml;r t'i shfaqur ato nj&euml;ra pas tjetr&euml;s duhet t&euml; p&euml;rdorim vetin&euml; CSS <code>display</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>ul {
+    padding: 0;
+    list-style: none;
+    background: #f2f2f2;
+}
+ul li {
+    display: inline-block;
+}
+ul li a {
+    display: block;
+    padding: 10px 25px;
+    color: #333;
+    text-decoration: none;
+}
+ul li a:hover {
+    color: #fff;
+    background: #939393;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="tabelat">
+            <h1>Tabelat</h1>
+            <h2>Stilizimi i tabelave me CSS</h2>
+            <p>Tabelat p&euml;rdoren zakonisht p&euml;r t&euml; shfaqur t&euml; dh&euml;na tabelore, si&ccedil; jan&euml; p.sh. raportet financiare.</p>
+            <p>Por kur krijoni nj&euml; tabel&euml; n&euml; HTML pa ndonj&euml; stil ose atribut, ueb shfletuesit i shfaqin ato pa asnj&euml; kufiz&euml;. Me ndihm&euml;n e CSS mund t&euml; p&euml;rmir&euml;soni shum&euml; pamjen e tabelave.</p>
+            <p>CSS ofron disa veti q&euml; ju mund&euml;sojn&euml; t&euml; kontrolloni paraqitjen dhe prezantimin e elementeve t&euml; tabel&euml;s. N&euml; nj&euml;sit&euml; vijuese do t&euml; shihni se si t&euml; p&euml;rdorni CSS-n&euml; p&euml;r t&euml; krijuar tabela elegante dhe t&euml; q&euml;ndrueshme.</p>
+            <h2>Shtimi i kufizave n&euml; tabela</h2>
+            <p>Vetia CSS <code>border</code> &euml;sht&euml; m&euml;nyra m&euml; e mir&euml; p&euml;r t&euml; definuar kufijt&euml; p&euml;r tabelat.</p>
+            <p>Shembulli i m&euml;posht&euml;m do t&euml; cil&euml;soj&euml; nj&euml; kufiz&euml; t&euml; zez&euml; p&euml;r elementet &lt;<code>table</code>&gt;, &lt;<code>th</code>&gt; dhe &lt;<code>td</code>&gt;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>table, th, td {
+    border: 1px solid black;
+}</code></pre>
+                </div>
+            </div>
+            <p>Si parazgjedhje, ueb shfletuesi paraqet nj&euml; kufiz&euml; p&euml;rreth tabel&euml;s, si dhe p&euml;rreth t&euml; gjitha celulave, me nj&euml; hap&euml;sir&euml; nd&euml;rmjet, e cila rezulton me kufiza t&euml; dyfishta. P&euml;r t&euml; eliminuar k&euml;t&euml; problem t&euml; kufiz&euml;s s&euml; dyfisht&euml;, thjesht mund t&euml; rr&euml;noni kufijt&euml; e celulave t&euml; tabel&euml;s t&euml; ngjitur dhe t&euml; krijoni kufij t&euml; past&euml;r me nj&euml; vij&euml;.</p>
+            <p>Le t&euml; shohim n&euml; ilustrimin vijues p&euml;r t&euml; kuptuar se si zbatohet kufizat n&euml; nj&euml; tabel&euml;.</p>
+            <div class="tabelat-figura">
+                <div class="non-collapse">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Emri</th>
+                            <th>Mosha</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Altin Haziri</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Shkurte Rrustemi</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Muhamed Selimi</td>
+                            <td>17</td>
+                        </tr>
+                    </table>
+                    <p><strong>Kufij t&euml; dyfisht&euml; &nbsp;(me parazgjedhje)</strong></p>
+                </div>
+                <div class="collapse">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Emri</th>
+                            <th>Mosha</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Altin Haziri</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Shkurte Rrustemi</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Muhamed Selimi</td>
+                            <td>17</td>
+                        </tr>
+                    </table>
+                    <p><strong>Kufij t&euml; nj&euml;fisht&euml;</strong></p>
+                </div>
+            </div>
+            <h2>Kufij t&euml; bashkuar t&euml; tabel&euml;s</h2>
+            <p>Ekzistojn&euml; dy modele t&euml; dallueshme p&euml;r vendosjen e kufijve n&euml; celulat e tabel&euml;s n&euml; CSS: kufij <em>t&euml; nj&euml;fisht&euml;</em> dhe <em>t&euml; dyfisht&euml;</em>.</p>
+            <p>N&euml; modelin e kufirit t&euml; dyfisht&euml;, i cili &euml;sht&euml; i paracaktuar, secila celul&euml; e tabel&euml;s ka kufijt&euml; e saj t&euml; ve&ccedil;ant&euml;, nd&euml;rsa n&euml; modelin e kufirit t&euml; nj&euml;fisht&euml;, celulat e tabel&euml;s ndajn&euml; nj&euml; kufiz&euml; t&euml; p&euml;rbashk&euml;t.&nbsp; Mund t&euml; cil&euml;soni modelin e kufiz&euml;s p&euml;r nj&euml; tabel&euml; n&euml; HTML duke p&euml;rdorur vetin&euml; CSS <code>border-collapse</code>.</p>
+            <p>Rregullat e m&euml;poshtme t&euml; stilit do t&euml; shembin kufijt&euml; e celulave t&euml; tabel&euml;s dhe do t&euml; aplikojn&euml; nj&euml; kufiz&euml; t&euml; zez&euml; me trash&euml;si nj&euml; piksell.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Gjithashtu mund t&euml; hiqni hap&euml;sir&euml;n midis kufijve t&euml; celulave t&euml; tabel&euml;s duke cil&euml;suar vler&euml;n e vetis&euml; CSS <code>border-spacing</code> n&euml; <code>0</code>. Megjithat&euml;, kjo veti heq vet&euml;m hap&euml;sir&euml;n, por nuk bashkon kufijt&euml; si kur cil&euml;soni vetin&euml; <code>border-collapse</code> me vler&euml;n <code>collapse</code>.</p>
+            </div>
+            <h2>Rregullimi i hap&euml;sir&euml;s brenda n&euml; tabela</h2>
+            <p>Me parazgjedhje, ueb shfletuesit i krijojn&euml; celulat e tabel&euml;s me madh&euml;si t&euml; mjaftueshme p&euml;r t&euml; p&euml;rmbajtur t&euml; dh&euml;nat n&euml; celul&euml;.</p>
+            <p>P&euml;r t&euml; shtuar m&euml; shum&euml; hap&euml;sir&euml; n&euml; mes t&euml; p&euml;rmbajtjes s&euml; celul&euml;s n&euml; tabel&euml; dhe kufijve t&euml; celul&euml;s, mund t&euml; p&euml;rdorni vetin&euml; CSS <code>padding</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>th, td {
+    padding: 15px;
+}</code></pre>
+                </div>
+            </div>
+            <p>Gjithashtu mund t&euml; rregulloni hap&euml;sir&euml;n midis kufijve t&euml; celulave duke p&euml;rdorur vetin&euml; CSS <code>border-spacing</code>, n&euml;se kufijt&euml; e tabel&euml;s suaj jan&euml; t&euml; ndara (e q&euml; &euml;sht&euml; e paracaktuar).</p>
+            <p>Rregullat e m&euml;poshtme t&euml; stilit cil&euml;sojn&euml; hap&euml;sir&euml;n prej 10 piksell&euml;sh midis t&euml; gjitha kufijve brenda nj&euml; tabele:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>table {
+    border-spacing: 10px;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Cil&euml;simi i gjer&euml;sis&euml; dhe lart&euml;sis&euml; s&euml; tabel&euml;s</h2>
+            <p>Si parazgjedhje, nj&euml; tabel&euml; n&euml; HTML do t&euml; jet&euml; mjaft e gjer&euml; dhe e lart&euml; p&euml;r ta nx&euml;n&euml; t&euml; gjith&euml; p&euml;rmbajtjen e saj.</p>
+            <p>Sidoqoft&euml;, mund t&euml; cil&euml;soni gjer&euml;sin&euml; dhe lart&euml;sin&euml; e tabel&euml;s, si dhe celulat e saj n&euml; m&euml;nyr&euml; t&euml; qart&euml; duke p&euml;rdorur vetit&euml; CSS <code>width</code> dhe <code>height</code>. Rregullat e stilit n&euml; shembullin vijues do t&euml; cil&euml;sojn&euml; gjer&euml;sin&euml; e tabel&euml;s n&euml; 100%, dhe lart&euml;sin&euml; e celulave n&euml; kok&euml; t&euml; tabel&euml;s n&euml; 40px.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>table {
+    width: 100%;
+}
+th {
+    height: 40px;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Kontrollimi i paraqitjes s&euml; tabel&euml;s</h2>
+            <p>Tabela do t&euml; zgjerohet dhe lart&euml;sohet mjaftuesh&euml;m p&euml;r t&euml; akomoduar t&euml; dh&euml;nat q&euml; p&euml;rmbahen brenda saj. Kjo &euml;sht&euml; sjellja e paracaktuar. Deri sa t&euml; dh&euml;nat plot&euml;sohen brenda tabel&euml;s, ajo vazhdon t&euml; zgjerohen deri sa ekziston hap&euml;sir&euml;. Sidoqoft&euml;, ndonj&euml;her&euml; &euml;sht&euml; e nevojshme t&euml; vendosni nj&euml; gjer&euml;si fikse p&euml;r tabel&euml;n e dh&euml;n&euml; n&euml; m&euml;nyr&euml; q&euml; t&euml; menaxhoni paraqitjen e saj.</p>
+            <p>Mund ta b&euml;ni k&euml;t&euml; me ndihm&euml;n e vetis&euml; n&euml; CSS <code>table-layout</code>. Kjo veti definon algoritmin q&euml; do t&euml; p&euml;rdoret p&euml;r paraqitjen e celulave, rreshtave dhe kolonave t&euml; tabel&euml;s. Kjo veti merr nj&euml; nga dy vlerat:</p>
+            <ul>
+            <li><strong><code>auto</code></strong> &ndash; P&euml;rdor nj&euml; algorit&euml;m automatik t&euml; paraqitjes s&euml; tabel&euml;s. Me k&euml;t&euml; algorit&euml;m, gjer&euml;sit&euml; e tabel&euml;s dhe celulat e saj rregullohen p&euml;r t'iu p&euml;rshtatur p&euml;rmbajtjes. Kjo &euml;sht&euml; vler&euml; e paracaktuar.</li>
+            <li><strong><code>fixed</code></strong> &ndash; P&euml;rdor algoritmin e paraqitjes fikse t&euml; tabel&euml;s. Me k&euml;t&euml; algorit&euml;m, paraqitja horizontale e tabel&euml;s nuk varet nga p&euml;rmbajtja e celulave; kjo varet vet&euml;m nga gjer&euml;sia e tabel&euml;s, gjer&euml;sia e kolonave dhe kufizave ose hap&euml;sira e celulave. Zakonisht kjo vler&euml; &euml;sht&euml; m&euml; e shpejt se vlera auto.</li>
+            </ul>
+            <p>Rregullat e stilit n&euml; shembullin vijues specifikojn&euml; q&euml; tabela HTML &euml;sht&euml; paraqitur duke p&euml;rdorur algoritmin e paraqitjes fikse dhe ka nj&euml; gjer&euml;si fikse prej 300 piksell&euml;sh.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>table {
+    width: 300px;
+    table-layout: fixed;
+}</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Mund t&euml; optimizoni performanc&euml;n e paraqitjes s&euml; tabel&euml;s duke specifikuar vler&euml;n e fiksuar <code>fixed</code> p&euml;r vetin&euml; <code>table-layout</code>. Vlera fikse e k&euml;saj vetie b&euml;n q&euml; tabela t&euml; paraqitet nj&euml; rresht p&euml;r nj&euml; her&euml;, duke ju siguruar p&euml;rdoruesve informacion me nj&euml; rit&euml;m m&euml; t&euml; shpejt&euml;.</p>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Pa vler&euml;n fikse <code>fixed</code> t&euml; vetis&euml; <code>table-layout</code> n&euml; tabela t&euml; m&euml;dha, p&euml;rdoruesit nuk do t&euml; shohin asnj&euml; pjes&euml; t&euml; tabel&euml;s derisa ueb shfletuesi t&euml; paraqet t&euml;r&euml; tabel&euml;n.</p>
+            </div>
+            <h2>Shtrirja e tekstit brenda celulave t&euml; tabelave</h2>
+            <p>Mund t&euml; shtrini p&euml;rmbajtjen e tekstit brenda celulave t&euml; tabel&euml;s horizontalisht ose vertikalisht.</p>
+            <h3>Shtrirja horizontale e p&euml;rmbajtjes s&euml; celulave</h3>
+            <p>P&euml;r shtrirjen horizontale t&euml; tekstit brenda celulave t&euml; tabel&euml;s mund t&euml; p&euml;rdorni vetin&euml; <code>text-align</code> n&euml; t&euml; nj&euml;jt&euml;n m&euml;nyr&euml; si&ccedil; p&euml;rdorni at&euml; me element&euml;t e tjer&euml;. Mund ta vendosni tekstin n&euml; t&euml; majt&euml;, n&euml; t&euml; djatht&euml;, n&euml; qend&euml;r ose mund ta justifikoni.</p>
+            <p>Rregullat e m&euml;poshtme t&euml; stilit do t&euml; shtrin&euml; tekstin majtas brenda elementeve &lt;<code>th</code>&gt;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>th {
+    text-align: left;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Teksti brenda elementeve &lt;<code>td</code>&gt; shtrihet majtas me parazgjedhje, nd&euml;rsa teksti brenda elementeve &lt;<code>th</code>&gt; &euml;sht&euml; shtrir&euml; n&euml; qend&euml;r dhe jepet me shkronja t&euml; trasha me parazgjedhje.</p>
+            </div>
+            <h3>Shtrirja vertikale e p&euml;rmbajtjes s&euml; celulave</h3>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund ta shtrini vertikalisht p&euml;rmbajtjen brenda elementeve &lt;<code>th</code>&gt; dhe &lt;<code>td</code>&gt; n&euml; krye, n&euml; fund ose n&euml; mes duke p&euml;rdorur vetin&euml; CSS <code>vertical-align</code>. Shtrirja vertikale me parazgjedhje &euml;sht&euml; n&euml; mes.</p>
+            <p>Rregulla e m&euml;poshtme e stilit do t&euml; shtrij vertikalisht n&euml; pjes&euml;n e poshtme tekstin brenda elementeve &lt;<code>th</code>&gt;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>th {
+    height: 40px;
+    vertical-align: bottom;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Kontrollimi i pozicionit t&euml; titullit t&euml; tabel&euml;s</h2>
+            <p>Mund t&euml; vendosni pozicionin vertikal t&euml; nj&euml; titulli t&euml; tabel&euml;s duke p&euml;rdorur vetin&euml; CSS <code>caption-side</code>.</p>
+            <p>Titulli mund t&euml; vendoset n&euml; krye ose n&euml; fund t&euml; tabel&euml;s. Pozicioni i paracaktuar &euml;sht&euml; n&euml; krye.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>caption {
+    caption-side: bottom;
+}</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: P&euml;r t&euml; ndryshuar shtrirjen horizontale t&euml; tekstit n&euml; titullit e tabel&euml;s (p.sh. majtas ose djathtas), thjesht mund t&euml; p&euml;rdorni vetin&euml; CSS <code>text-align</code>, si&ccedil; e b&euml;ni me tekstin normal.</p>
+            </div>
+            <h2>Krijimi i tabelave me &ldquo;shirita-zeb&euml;r&rdquo;</h2>
+            <p>Cil&euml;simi i ngjyrave t&euml; ndryshme t&euml; sfondit p&euml;r rreshtat nj&euml;ri pas tjetrit &euml;sht&euml; nj&euml; teknik&euml; e p&euml;rhapur p&euml;r t&euml; p&euml;rmir&euml;suar lexueshm&euml;rin&euml; e tabelave q&euml; kan&euml; sasi t&euml; madhe t&euml; t&euml; dh&euml;nave. Kjo zakonisht njihet si nj&euml; tabel&euml; me &ldquo;shirita-zeb&euml;r&rdquo;.</p>
+            <p>Shum&euml; leht&euml; mund ta arrini k&euml;t&euml; efekt duke p&euml;rdorur selektorin e pseudo-klas&euml;s t&euml; CSS <code>:nth-child()</code>.</p>
+            <p>Rregulli i m&euml;posht&euml;m i stilit do t&euml; nxjerr n&euml; pah &ccedil;do t&euml; dytin rresht brenda trupit t&euml; tabel&euml;s.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}</code></pre>
+                </div>
+            </div>
+            <p>Tabela me &ldquo;shirita-zeb&euml;r&rdquo; zakonisht duket di&ccedil;ka si imazhi i m&euml;posht&euml;m.</p>
+            <div class="tabelat-figura2">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nr</th>
+                            <th>Emri</th>
+                            <th>Mbiemri</th>
+                            <th>Email-i</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Altin</td>
+                            <td>Haziri</td>
+                            <td>altin.haziri@mail.com</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Shkurte</td>
+                            <td>Rrustemi</td>
+                            <td>shkurte.rrustemi@mail.com</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Muhamed</td>
+                            <td>Selimi</td>
+                            <td>muhamed.selimi@mail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Pseudo-klasa <code>:nth-child()</code> zgjedh elemente t&euml; bazuar n&euml; pozicionin e tyre n&euml; nj&euml; grup t&euml; f&euml;mij&euml;ve. Mund t&euml; marr&euml; si argument nj&euml; num&euml;r, nj&euml; fjal&euml; ky&ccedil;e &ccedil;ift (<code>even</code>) ose tek (<code>odd</code>), ose nj&euml; shprehje t&euml; form&euml;s <code>xn + y</code> ku <code>x</code> dhe <code>y</code> jan&euml; numra t&euml; plot&euml; (p.sh. <code>1n</code>, <code>2n</code>, <code>2n + 1</code>, ...)</p>
+            </div>
+            <h2>Tabela responsive</h2>
+            <p>Tabelat nuk jan&euml; t&euml; natyr&euml;s responsive. Sidoqoft&euml;, p&euml;r t&euml; mb&euml;shtetur pajisjet mobile mund t&euml; shtoni responsivitet n&euml; tabelat tuaja duke mund&euml;suar l&euml;vizjen horizontale n&euml; ekranet e vogla. P&euml;r ta b&euml;r&euml; k&euml;t&euml; thjesht futni tabel&euml;n tuaj brenda nj&euml; elementi &lt;<code>div</code>&gt; dhe aplikoni stilin <code>overflow-x: auto;</code> si&ccedil; tregohet m&euml; posht&euml;:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>&lt;div style="overflow-x: auto;"&gt;
+  &lt;table&gt;
+    ... p&euml;rmbajtja e tabel&euml;s ...
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
                 </div>
             </div>
         </section>
