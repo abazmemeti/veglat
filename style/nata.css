@@ -123,6 +123,9 @@ body.nata {
 .nata aside li a, .nata article li a {
    color: #eee;
 }
+.nata aside li.nav-aktiv a {
+    color: #fff;
+}
 .nata footer {
     background-color: #181818;
     color: #fff;

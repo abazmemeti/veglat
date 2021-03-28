@@ -93,9 +93,13 @@ nav a {
     color: white;
     font-weight: 700;
     text-decoration: none;
+    font-weight: 300;
 }
-nav a:hover, nav a.aktiv {
+nav a:hover {
     text-decoration: underline;
+}
+nav a.aktiv {
+    font-weight: 900;
 }
 
 
@@ -141,13 +145,13 @@ aside li a, article li a {
     margin-bottom: 3px;
     display: block;
     color: #333;
+    font-weight: 300;
 }
 aside li a:hover, article li a:hover {
     text-decoration: underline;
 }
 aside li.nav-aktiv a {
-    text-decoration: underline;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 /* Main - Permbajtja */
@@ -155,6 +159,7 @@ section {
     padding: 85px 40px 0;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-weight: 300;
 }
 section:first-child {
     margin-top: -50px;
