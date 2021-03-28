@@ -74,7 +74,29 @@ function resizeIframe(obj) {
     burger.addEventListener('click', () => {
         document.body.classList.toggle('shih-nav');
         burger.classList.toggle('burger');
-    })
+    });
+
+
+    /* Navigimi aktiv kur skrollohet dhe klikohet */
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                if (entry.intersectionRatio > 0) {
+                    document.querySelector(`aside li a[href="#${id}"]`).parentElement.classList.add('nav-aktiv');
+                } else {
+                    document.querySelector(`aside li a[href="#${id}"]`).parentElement.classList.remove('nav-aktiv');
+                }
+            });
+        });
+    
+        // Track all sections that have an `id` applied
+        document.querySelectorAll('section[id]').forEach((section) => {
+            observer.observe(section);
+        });
+        
+    });
     
     /* Pamja e nav-igimit kur skrollohet 
     const scrollUp = "scroll-up";
