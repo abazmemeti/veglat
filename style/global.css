@@ -145,7 +145,7 @@ aside li a, article li a {
     margin-bottom: 3px;
     display: block;
     color: #333;
-    font-weight: 300;
+    font-weight: 400;
 }
 aside li a:hover, article li a:hover {
     text-decoration: underline;
@@ -159,7 +159,7 @@ section {
     padding: 85px 40px 0;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-weight: 300;
+    font-weight: 400;
 }
 section:first-child {
     margin-top: -50px;
