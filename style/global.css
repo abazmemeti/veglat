@@ -91,9 +91,9 @@ nav a {
     padding-right: 8px;
     line-height: 50px;
     color: white;
-    font-weight: 700;
     text-decoration: none;
-    font-weight: 300;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 nav a:hover {
     text-decoration: underline;
@@ -527,7 +527,7 @@ footer a {
     top: 13px;
 }
 #nata img {
-    transform: scale(0.65);
+    transform: scale(0.75);
 }
 
 /* Permbajtja e fiksuar e fshehur */
