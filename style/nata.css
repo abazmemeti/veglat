@@ -41,6 +41,10 @@ body.nata {
     border: 1px solid #444
 }
 
+.nata section a {
+    color:rgb(75, 190, 240);
+}
+
 .nata .shembull {
     border: 1px dotted #666;
 }    
