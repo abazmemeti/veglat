@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../style/global.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="../style/nata.css">
-    <script src="../script/highlight.js"></script>
+    <script src="../script/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <title>SQL</title>
 </head>
@@ -68,6 +68,12 @@
         <h3>SQL</h3>
         <ul>
             <li><a href="#sql-njohuri-themelore">Njohuri themelore</a></li>
+            <li><a href="#sql-hyrje">Hyrje në SQL</a></li>
+            <li><a href="#sintaksa-sql">Sintaksa SQL</a></li>
+            <li><a href="#krijimi-databazes">Krijimi i Databazës</a></li>
+            <li><a href="#krijimi-tabeles">Krijimi i Tabelave</a></li>
+            <li><a href="#kufizimet">Kufizimet</a></li>
+            <li><a href="#insert">Deklarata INSERT</a></li>
             
         </ul>
     </aside>
@@ -77,10 +83,498 @@
         <section id="sql-njohuri-themelore">
 
             <h1>SQL &ndash; Njohuri themelore</h1>
-            <p>SQL &euml;sht&euml; nj&euml; gjuh&euml; standarde e krijuar p&euml;r menaxhimin e t&euml; dh&euml;nave n&euml; sistemin e menaxhimit t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave relacionale.</p>
+            <p><strong>SQL</strong> &euml;sht&euml; gjuh&euml; standarde e krijuar p&euml;r menaxhimin e t&euml; dh&euml;nave n&euml; sistemin menaxhues t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave relacionale.</p>
             <div class="figure jonata">
                 <img src="foto/sql.png" alt="SQL">
             </div>
+            <p>SQL &euml;sht&euml; akronim nga <strong><em>S</em></strong><em>tructured</em> <strong><em>Q</em></strong><em>uery</em> <strong><em>L</em></strong><em>anguage</em> &ndash; Gjuh&euml; e strukturuar e k&euml;rkimit. SQL &euml;sht&euml; gjuh&euml; standarde programimi e krijuar posa&ccedil;&euml;risht p&euml;r ruajtjen, rikuperimin, menaxhimin apo manipulimin e t&euml; dh&euml;nave brenda nj&euml; sistemi relativ t&euml; menaxhimit t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave (RDBMS &ndash; <em>Relational Database Managment System</em>). SQL u b&euml; nj&euml; standard ISO n&euml; vitin 1987.</p>
+            <p>SQL &euml;sht&euml; gjuh&euml; m&euml; e aplikueshme e baz&euml;s s&euml; t&euml; dh&euml;nave dhe e mb&euml;shtetur nga sistemet e baz&euml;s s&euml; t&euml; dh&euml;nave relacionale, si MySQL, SQL Server dhe Oracle. Sidoqoft&euml;, disa karakteristika t&euml; standardit SQL zbatohen ndryshe n&euml; sisteme t&euml; ndryshme t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave.</p>
+            <p>SQL u zhvillua fillimisht n&euml; IBM n&euml; fillim t&euml; viteve 1970. Fillimisht quhej SEQUEL (<em>Structured English Query Language</em>) e cila m&euml; von&euml; u ndryshua n&euml; SQL (shqiptohet si ES-KJU-ELL).</p>
+            <h2>&Ccedil;far&euml; mund t&euml; b&euml;ni me SQL</h2>
+            <p>Shum&euml; gj&euml;ra mund t&euml; b&euml;ni me SQL:</p>
+            <ul>
+                <li>Mund t&euml; krijoni nj&euml; baz&euml; t&euml; t&euml; dh&euml;nave (databaz&euml;).</li>
+                <li>Mund t&euml; krijoni tabela n&euml; nj&euml; baz&euml; t&euml; dh&euml;nash.</li>
+                <li>Mund t&euml; k&euml;rkoni informacion nga nj&euml; baz&euml; t&euml; dh&euml;nash.</li>
+                <li>Mund t&euml; futni sh&euml;nime n&euml; nj&euml; baz&euml; t&euml; dh&euml;nash.</li>
+                <li>Mund t&euml; p&euml;rdit&euml;soni ose modifikoni t&euml; dh&euml;nat n&euml; nj&euml; baz&euml; t&euml; dh&euml;nash.</li>
+                <li>Mund t&rsquo;i fshini t&euml; dh&euml;nat nga baza e t&euml; dh&euml;nave.</li>
+                <li>Mund t&euml; vendosni leje ose kontroll t&euml; qasjes brenda baz&euml;s s&euml; t&euml; dh&euml;nave p&euml;r sigurin&euml; e tyre.</li>
+            </ul>
+            <p>Lista nuk p&euml;rfundon k&euml;tu, gjithashtu mund t&euml; kryeni edhe shum&euml; detyra t&euml; tjera t&euml; lidhura me baz&euml;n e t&euml; dh&euml;nave me SQL.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Shumica e sistemeve relacionale t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave gjithashtu kan&euml; shtojcat e tyre shtes&euml; t&euml; vetis&euml; p&euml;rve&ccedil; standardit SQL q&euml; jan&euml; n&euml; dispozicion vet&euml;m n&euml; sistemin e tyre.</p>
+            </div>
+        </section>
+
+        <section id="sql-hyrje">
+            <h1>SQL &ndash; Hyrje</h1>
+            <p>SQL p&euml;rdoret p&euml;r t&euml; komunikuar me baz&euml;n e t&euml; dh&euml;nave, k&euml;shtu q&euml; para se t&euml; filloni t&euml; eksperimentoni me SQL, s&euml; pari duhet t&euml; keni qasje n&euml; nj&euml; sistem t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave.</p>
+            <p>P&euml;r t&euml; ekzekutuar deklaratat SQL do t'ju duhet t&euml; keni qasje n&euml; nj&euml; sistem t&euml; plot&euml; t&euml; menaxhimit t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave si MySQL, SQL Server etj.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Baza e t&euml; dh&euml;nave SQL q&euml; do ta p&euml;rdorim do t&euml; jet&euml; MySQL n&euml; kuad&euml;r t&euml; ueb serverit XAMPP, t&euml; cilin m&euml; par&euml; duhet ta instalojm&euml;. Komunikimi me baz&euml;n e t&euml; dh&euml;nave mund t&euml; b&euml;het p&euml;rmes linj&euml;s komanduese (command-line) ose inerfejsit q&euml; e ofron XAMPP. Si fillestar&euml; do ta p&euml;rdorim linj&euml;n komanduese.</p>
+            </div>
+            <h2>&Ccedil;far&euml; &euml;sht&euml; baza e t&euml; dh&euml;nave relacionale</h2>
+            <p>Baza e t&euml; dh&euml;nave relacionale &euml;sht&euml; nj&euml; baz&euml; e t&euml; dh&euml;nave e ndar&euml; n&euml; nj&euml;si logjike t&euml; quajtura <strong>tabela</strong>, ku tabelat lidhen me nj&euml;ra-tjetr&euml;n brenda baz&euml;s s&euml; t&euml; dh&euml;nave. Baza e t&euml; dh&euml;nave relacionale lejon q&euml; t&euml; dh&euml;nat t&euml; ndahen n&euml; nj&euml;si logjike, m&euml; t&euml; vogla dhe t&euml; menaxhueshme p&euml;r mir&euml;mbajtje m&euml; t&euml; leht&euml; dhe performanc&euml; m&euml; t&euml; mir&euml;.</p>
+            <p>Tabelat jan&euml; t&euml; lidhura me nj&euml;ra-tjetr&euml;n p&euml;rmes &ccedil;el&euml;save t&euml; p&euml;rbashk&euml;t ose fushave n&euml; nj&euml; sistem relacional t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave, kjo &euml;sht&euml; arsyeja pse t&euml; dh&euml;nat e d&euml;shiruara mund t&euml; ekzistojn&euml; n&euml; m&euml; shum&euml; se nj&euml; tabel&euml;, andaj leht&euml; mund t&rsquo;i bashkoni tabela t&euml; shumta s&euml; bashku p&euml;r t&euml; marr&euml; nj&euml; grup t&euml; kombinuar t&euml; t&euml; dh&euml;nave duke p&euml;rdorur nj&euml; pyetje t&euml; vetme (<em>single query</em>).</p>
+            <h2>Cil&euml;simi i mjedisit t&euml; pun&euml;s p&euml;r praktikimin e SQL-s&euml;</h2>
+            <p>N&euml;se nuk keni t&euml; instaluar DBMS (<strong><em>D</em></strong><em>ata<strong>b</strong>ase <strong>M</strong>anagement <strong>S</strong>ystem </em>&ndash; Sistemi i Menaxhimit t&euml; Databaz&euml;s) n&euml; sistemin tuaj, i keni disa mund&euml;si p&euml;r t&euml; zgjedhur. Mund t&euml; instaloni nj&euml; DBMS falas, me burim t&euml; hapur (<em>open-source</em>).</p>
+            <p>MySQL &euml;sht&euml; sistem m&euml; i popullarizuar dhe m&euml; i mb&euml;shtetur gjer&euml;sisht i sistemit t&euml; menaxhimit t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave. &Euml;sht&euml; shum&euml; leht&euml; p&euml;r t&rsquo;u shkarkuar dhe p&euml;rdorur dhe &euml;sht&euml; e disponueshme p&euml;r sistemin operativ Windows dhe Linux (ose UNIX). Mund ta shkarkoni shum&euml; leht&euml; nga ky link <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">https://dev.mysql.com/downloads/mysql/</a></p>
+            <p>Gjithashtu mund ta instaloni SQL Server Express. &Euml;sht&euml; nj&euml; version falas i Microsoft SQL Server i cili lejon deri n&euml; 10 GB hap&euml;sir&euml; ruajt&euml;se t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave. Mund ta shkarkoni ekspres edicionin nga ky link: <a href="https://www.microsoft.com/en-in/download/details.aspx?id=30438" target="_blank">https://www.microsoft.com/en-in/download/details.aspx?id=30438</a></p>
+            <p>N&euml; m&euml;nyr&euml; alternative, n&euml;se planifikoni t&euml; zhvilloni nj&euml; aplikacion me PHP dhe MySQL, mund t&euml; instaloni WampServer ose XAMPP. XAMPP &euml;sht&euml; nj&euml; mjedis i zhvillimit t&euml; uebit n&euml; t&euml; gjitha sistemet operative t&euml; njohura. Ju mund&euml;son t&euml; krijoni ueb aplikacione me Apache2, PHP dhe nj&euml; baz&euml; t&euml; dh&euml;nash MySQL. Gjithashtu do t&euml; siguroj&euml; mjetin administrativ t&euml; MySQL t&euml; quajtur PhpMyAdmin p&euml;r t&euml; menaxhuar me leht&euml;si bazat e t&euml; dh&euml;nave tuaja duke p&euml;rdorur nj&euml; ueb shfletues. Mund ta shkarkoni nga ky link: <a href="https://www.apachefriends.org/download.html" target="_blank">https://www.apachefriends.org/download.html</a></p>
+        </section>
+
+        <section id="sintaksa-sql">
+            <h1>Sintaksa SQL</h1>
+            <p>Sintaksa e SQL-s&euml; menaxhohet nga Instituti Komb&euml;tar i Standardeve Amerikane (ANSI &ndash; <strong><em>A</em></strong><em>merican <strong>N</strong>ational <strong>S</strong>tandards <strong>I</strong>nstitute</em>) dhe Organizata Nd&euml;rkomb&euml;tare p&euml;r Standardizim (ISO &ndash; <strong><em>I</em></strong><em>nternational <strong>O</strong>rganisation for <strong>S</strong>tandardization</em>).</p>
+            <h2>Deklaratat SQL</h2>
+            <p>Deklaratat SQL jan&euml; shum&euml; t&euml; thjeshta dhe t&euml; drejtp&euml;rdrejta sikur gjuha angleze e r&euml;ndomt, por me sintaks&euml; specifike.</p>
+            <p>Nj&euml; deklarat&euml; SQL p&euml;rb&euml;het nga nj&euml; sekuenc&euml; e fjal&euml;ve ky&ccedil;e, identifikuesve, etj. t&euml; p&euml;rfunduar nga nj&euml; pik&euml;presje (<code>;</code>). K&euml;tu kemi dh&euml;n&euml; nj&euml; shembull t&euml; nj&euml; deklarate t&euml; vlefshme SQL.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT emri_pun, data_pun, paga FROM punetoret WHERE paga > 5000;</code></pre>
+                </div>
+            </div>
+            <p>P&euml;r lexueshm&euml;ri m&euml; t&euml; mir&euml; mund t&euml; shkruani t&euml; nj&euml;jt&euml;n deklarat&euml;, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT emri_pun, data_pun, paga
+FROM punetoret
+WHERE paga > 5000;</code></pre>
+                </div>
+            </div>
+            <p>P&euml;rdorni pik&euml;presje n&euml; fund t&euml; deklarat&euml;s SQL &ndash; ajo e p&euml;rfundon deklarat&euml;n ose e dor&euml;zon at&euml; n&euml; serverin e baz&euml;s s&euml; t&euml; dh&euml;nave. Sidoqoft&euml;, disa sisteme t&euml; menaxhimit t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave nuk kan&euml; ndonj&euml; k&euml;rkes&euml; t&euml; till&euml;, por konsiderohet si nj&euml; praktik&euml; m&euml; e mir&euml; p&euml;r ta p&euml;rdorur at&euml;.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: &Ccedil;do rresht i ri mund t&euml; ndodh&euml; brenda nj&euml; deklarate SQL, me kusht q&euml; &ccedil;do kalim n&euml; rresht t&euml; ri mos t&euml; ndaj&euml; fjal&euml; ky&ccedil;e, vlera, shprehje, etj.</p>
+            </div>
+            <h2>Ndjeshm&euml;ria ndaj shkronjave n&euml; SQL</h2>
+            <p>Merrni parasysh nj&euml; deklarat&euml; tjet&euml;r t&euml; SQL-s&euml; q&euml; t&euml;rheq rekordet nga tabela <em>punetoret</em>:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT emri_pun, data_pun, paga FROM punetoret;</code></pre>
+                </div>
+            </div>
+            <p>T&euml; nj&euml;jt&euml;n deklarat&euml; mund ta shkruajm&euml; edhe k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>select emri_pun, data_pun, paga from punetoret;</code></pre>
+                </div>
+            </div>
+            <p>Fjal&euml;t ky&ccedil;e n&euml; SQL jan&euml; t&euml; pandjeshme n&euml; llojin e shkronjave q&euml; i p&euml;rdorim, &ccedil;ka don t&euml; thot&euml; se <code>SELECT</code> &euml;sht&euml; e nj&euml;jt&euml; sikur <code>select</code>. Por, baza e t&euml; dh&euml;nave dhe emrat e tabelave mund t&euml; jen&euml; t&euml; ndjeshme n&euml; llojin e shkronjave n&euml; var&euml;si t&euml; sistemit operativ. N&euml; p&euml;rgjith&euml;si, platformat Unix ose Linux jan&euml; t&euml; ndjeshme n&euml; llojin e shkronjave, nd&euml;rsa platformat n&euml; Windows nuk jan&euml;.</p>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Rekomandohet q&euml; t&euml; shkruani fjal&euml;t ky&ccedil;e n&euml; SQL me shkronja t&euml; m&euml;dha, p&euml;r t&rsquo;i dalluar ato nga teksti tjet&euml;r brenda nj&euml; deklarate SQL p&euml;r nj&euml; kuptim m&euml; t&euml; mir&euml;.</p>
+            </div>
+            <h2>Komentet n&euml; SQL</h2>
+            <p>Komenti &euml;sht&euml; thjesht nj&euml; tekst q&euml; nuk merret parasysh nga motori i databaz&euml;s. Komentet mund t&euml; p&euml;rdoren p&euml;r t&euml; dh&euml;n&euml; nj&euml; informat&euml; t&euml; shpejt&euml; n&euml; lidhje me deklarat&euml;n SQL.</p>
+            <p>SQL mb&euml;shtet komente n&euml; nj&euml; rresht, si dhe n&euml; disa rreshta. P&euml;r t&euml; shkruar nj&euml; koment n&euml; nj&euml; rresht duhet filluar rreshtin me dy viza (--).</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>-- Përzgjedh të gjithë punëtorët
+SELECT * FROM punetoret;</code></pre>
+                </div>
+            </div>
+            <p>Sidoqoft&euml;, p&euml;r t&euml; shkruar komente n&euml; shum&euml; rreshta, duhet filluar komentin me nj&euml; viz&euml; t&euml; pjerrt&euml; t&euml; ndjekur nga nj&euml; yll (<code>/*</code>) dhe t&euml; p&euml;rfundohet me nj&euml; yll t&euml; ndjekur nga viza e pjerrt&euml; (<code>*/</code>), k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>/* Përzgjedh të gjithë punëtorët  
+që kanë pagën më shumë se 5000 */
+SELECT * FROM punetoret
+WHERE paga > 5000;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="krijimi-databazes">
+            <h1>Krijimi i databaz&euml;s</h1>
+            <p>Para se t&euml; b&euml;jm&euml; ndonj&euml; gj&euml; me t&euml; dh&euml;nat, s&euml; pari duhet t&euml; krijojm&euml; nj&euml; baz&euml; t&euml; dh&euml;nash (databaz&euml;). Supozojm&euml; q&euml; tani kemi nj&euml; server MySQL ose SQL t&euml; disponuesh&euml;m p&euml;r p&euml;rdorim, si dhe keni t&euml; gjitha privilegjet e nevojshme.</p>
+            <p>Deklarata SQL <code>CREATE DATABASE</code> p&euml;rdoret p&euml;r t&euml; krijuar nj&euml; baz&euml; t&euml; t&euml; dh&euml;nave.</p>
+            <h2>Sintaksa</h2>
+            <p>Sintaksa themelore p&euml;r krijimin e nj&euml; databaze mund t&euml; jepet k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>CREATE DATABASE emri_databazes;</code></pre>
+            </div>
+            <p>Deklarata e m&euml;poshtme SQL krijon nj&euml; baz&euml; t&euml; t&euml; dh&euml;nave me emrin <em>demo</em>:</p>
+            <div class="sintaksa">
+<pre><code>CREATE DATABASE demo;</code></pre>
+            </div>
+            <p>Krijimi i nj&euml; databaze nuk e p&euml;rzgjedh at&euml; edhe p&euml;r p&euml;rdorim. Pra, para se t&euml; shkojm&euml; m&euml; tej, duhet t&euml; zgjedhim databaz&euml;n e synuar p&euml;rmes deklarat&euml;s <code>USE</code>. P&euml;r shembull, <code>USE demo;</code> kjo urdh&euml;res&euml; cil&euml;son databaz&euml;n <em>demo</em> si databaz&euml; t&euml; zgjedhur p&euml;r t&euml; gjitha urdh&euml;rat e ardhshme.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml; Unix, databazat dhe emrat e tabelave jan&euml; t&euml; ndjeshme n&euml; llojin e shkronjave, k&euml;shtu q&euml; gjithmon&euml; duhet t'i referoheni databazave tuaja si <code>demo</code>, jo si <code>Demo</code>, <code>DEMO</code> ose di&ccedil;ka tjet&euml;r. Por, fjal&euml;t ky&ccedil;e SQL nuk jan&euml; t&euml; ndjeshme n&euml; llojin e shkronjave, pra, <code>CREATE DATABASE</code> &euml;sht&euml; e nj&euml;jt&euml; me <code>create database</code>.</p>
+            </div>
+            <h2>Krijimi i databaz&euml;s n&euml; MySQL</h2>
+            <p>Le t&euml; krijojm&euml; nj&euml; databaz&euml; n&euml; MySQL duke p&euml;rdorur vegl&euml;n n&euml; linj&euml;n komanduese (<em>command-line</em>).</p>
+            <h3>Hapi 1: P&euml;rfshirja e linj&euml;s komanduese t&euml; MySQL</h3>
+            <p>P&euml;r ta thirrur linj&euml;n komanduese MySQL, duhet t&euml; identifikohemi s&euml; pari n&euml; serverin MySQL. P&euml;r t'u identifikuar si p&euml;rdorues <code>root</code>, sh&euml;noni komand&euml;n e m&euml;poshtme n&euml; terminal dhe shtypni enter. Do t'ju k&euml;rkohet fjal&euml;kalimi. Sh&euml;noni fjal&euml;kalimin tuaj dhe shtypni enter, n&euml;se &euml;sht&euml; i sakt&euml;, do t&euml; shfaqet teksti <code>mysql&gt;</code>, e në XAMPP do t&euml; shfaqet <code>MariaDB [(none)]></code> p&euml;rmes s&euml; cil&euml;s ju do t&euml; jeni n&euml; gjendje t&euml; sh&euml;noni deklarata SQL si dhe t&rsquo;i shihni rezultatet.</p>
+            <div class="sintaksa">
+<pre><code>shell&gt;&nbsp;mysql&nbsp;-u&nbsp;root&nbsp;-p</code></pre>
+            </div>
+            <h3>Hapi 2: Krijimi i nj&euml; databaze MySQL</h3>
+            <p>Tani, ekzekutoni komand&euml;n e m&euml;poshtme p&euml;r t&euml; krijuar databaz&euml;n me emrin <em>demo</em>.</p>
+            <div class="sintaksa">
+<pre><code>mysql&gt;&nbsp;CREATE&nbsp;DATABASE&nbsp;demo;</code></pre>
+            </div>
+            <p>N&euml;se databaza krijohet me sukses, do t&euml; shihni rezultatin di&ccedil;ka k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>Query OK, 1 row affected (0.03 sec)</code></pre>
+            </div>
+            <p>N&euml;se tentoni t&euml; krijoni nj&euml; databaz&euml; me em&euml;r q&euml; tashm&euml; ekziston, do t&euml; merrni nj&euml; mesazh gabimi. P&euml;r t&euml; shmangur k&euml;t&euml; n&euml; MySQL mund t&euml; p&euml;rdorni nj&euml; klauzol&euml; opcionale <code>IF NOT EXISTS</code>:</p>
+            <div class="sintaksa">
+<pre><code>mysql&gt;&nbsp;CREATE&nbsp;DATABASE&nbsp;IF&nbsp;NOT&nbsp;EXISTS&nbsp;demo;</code></pre>
+            </div>
+            <h3>Hapi 3: P&euml;rzgjedhja e databaz&euml;s</h3>
+            <p>Sh&euml;noni komand&euml;n e m&euml;poshtme dhe shtypni enter. Do t&euml; shihni rezultatin "<em>Database changed</em>". Tani databaza jon&euml; <em>demo</em> &euml;sht&euml; p&euml;rzgjedhur si databaz&euml; e paracaktuar p&euml;r t&euml; gjitha operacionet e ardhshme.</p>
+            <div class="sintaksa">
+<pre><code>mysql&gt;&nbsp;USE&nbsp;demo;</code></pre>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: N&euml;se d&euml;shironi t&euml; shihni nj&euml; list&euml; t&euml; databazave ekzistuese n&euml; serverin MySQL, mund t&euml; ekzekutoni deklarat&euml;n SHOW DATABASES; n&euml; linj&euml;n komanduese.</p>
+            </div>
+        </section>
+
+        <section id="krijimi-tabeles">
+            <h1>Krijimi i tabelave</h1>
+            <p>M&euml; par&euml; m&euml;suam se si t&euml; krijojm&euml; nj&euml; databaz&euml; n&euml; serverin e databazave. Tani &euml;sht&euml; koha p&euml;r t&euml; krijuar disa tabela brenda databaz&euml;s ton&euml; q&euml; n&euml; t&euml; v&euml;rtet&euml; do t&euml; p&euml;rmbajn&euml; t&euml; dh&euml;nat. Nj&euml; tabel&euml; e t&euml; dh&euml;nave thjesht organizon informacionin n&euml; rreshta dhe kolona.</p>
+            <p>Deklarata SQL <code>CREATE TABLE</code> p&euml;rdoret p&euml;r t&euml; krijuar nj&euml; tabel&euml;.</p>
+            <h2>Sintaksa</h2>
+            <p>Sintaksa bazike p&euml;r krijimin e nj&euml; tabele mund t&euml; jet&euml;:</p>
+            <div class="sintaksa">
+<pre><code>CREATE TABLE emri_tabeles (
+    emri_kolona1 tipi_te_dhenave kufizimet,
+    emri_kolona2 tipi_te_dhenave kufizimet,
+    ....
+);</code></pre>
+            </div>
+            <p>P&euml;r ta kuptuar leht&euml; k&euml;t&euml; sintaks&euml;, le t&euml; krijojm&euml; nj&euml; tabel&euml; n&euml; databaz&euml;n ton&euml; <em>demo</em>. Sh&euml;noni deklarat&euml;n vijuese n&euml; linj&euml;n komanduese t&euml; MySQL dhe shtypni enter:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>-- Sintaksa për Databazën në MySQL
+CREATE TABLE personat (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    emri VARCHAR(50) NOT NULL,
+    ditelindja DATE,
+    nr_telefonit VARCHAR(15) NOT NULL UNIQUE
+);
+     
+-- Sintaksa për Databazën në SQL Server 
+CREATE TABLE persons (
+    id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    emri VARCHAR(50) NOT NULL,
+    ditelindja DATE,
+    nr_telefonit VARCHAR(15) NOT NULL UNIQUE
+);</code></pre>
+                </div>
+            </div>
+            <p>Deklarata e m&euml;sip&euml;rme krijon nj&euml; tabel&euml; me emrin <em>personat</em> me kat&euml;r kolona: <em>id</em>, <em>emri</em>, <em>ditelindja</em> dhe <em>nr_telefonit</em>. Vini re se &ccedil;do em&euml;r kolone ndiqet nga nj&euml; deklarat&euml; p&euml;r tipin e t&euml; dh&euml;nave; kjo deklarat&euml; specifikon se &ccedil;far&euml; lloji t&euml; t&euml; dh&euml;nave do t&euml; ruaj&euml; kolona, qoft&euml; numri i plot&euml; (<em>integer</em>), string, dat&euml;, etj.</p>
+            <p>Disa tipe t&euml; t&euml; dh&euml;nave mund t&euml; deklarohen me nj&euml; paramet&euml;r t&euml; gjat&euml;sis&euml; q&euml; tregon se sa karaktere mund t&euml; ruhen n&euml; kolon&euml;. P&euml;r shembull, <code>VARCHAR(50)</code> mund t&euml; p&euml;rmbaj&euml; deri n&euml; 50 karaktere.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Tipi i t&euml; dh&euml;nave t&euml; kolonave mund t&euml; ndryshoj&euml; n&euml; var&euml;si t&euml; sistemit t&euml; databaz&euml;s. P&euml;r shembull, MySQL dhe SQL Server mb&euml;shtesin tipin e t&euml; dh&euml;nave <code>INT</code> p&euml;r vlerat intexher (numra t&euml; plot&euml;), nd&euml;rsa databazat Oracle mb&euml;shtesin tipin e t&euml; dh&euml;nave <code>NUMBER</code>.</p>
+            </div>
+            <p>Tabela e m&euml;poshtme p&euml;rmbledh tipet e t&euml; dh&euml;nave m&euml; t&euml; p&euml;rdorura q&euml; p&euml;rkrahen nga MySQL.</p>
+            <div style="overflow-x: auto;">
+                <table style="min-width: 450px;">
+                    <tr>
+                    <td>
+                        <p><strong>Tipi i t&euml; dh&euml;nave</strong></p>
+                    </td>
+                    <td>
+                        <p><strong>P&euml;rshkrimi</strong></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <p><code>INT</code></p>
+                    </td>
+                    <td>
+                    <p>Ruan vlerat numerike n&euml; brezin prej -2147483648 deri 2147483647</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <p><code>DECIMAL</code></p>
+                    </td>
+                    <td>
+                    <p>Ruan vlerat decimale me precizitet t&euml; sakt&euml;.</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <p><code>CHAR</code></p>
+                    </td>
+                    <td>
+                    <p>Ruan stringje me gjat&euml;si fikse me nj&euml; madh&euml;si maksimale prej 255 karakteresh.</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <p><code>VARCHAR</code></p>
+                    </td>
+                    <td>
+                    <p>Ruan stringje me gjat&euml;si t&euml; ndryshueshme me nj&euml; madh&euml;si maksimale prej 65,535 karakteresh.</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <p><code>TEXT</code></p>
+                    </td>
+                    <td>
+                    <p>Ruan stingje me nj&euml; madh&euml;si maksimale prej 65,535 karakteresh.</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <p><code>DATE</code></p>
+                    </td>
+                    <td>
+                    <p>Ruan vlerat e datave n&euml; formatin YYYY-MM-DD.</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <p><code>DATETIME</code></p>
+                    </td>
+                    <td>
+                    <p>Ruan vlerat e kombinuara t&euml; dat&euml;s / or&euml;s n&euml; formatin:</p>
+                    <p>YYYY-MM-DD HH: MM: SS.</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <p><code>TIMESTAMP</code></p>
+                    </td>
+                    <td>
+                    <p>Ruan vlerat e vulave kohore. Vlerat <code>TIMESTAMP</code> ruhen si numri i sekondave q&euml; nga epoka e Unix ('1970-01-01 00:00:01' UTC).</p>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+            <p>Ekzistojn&euml; disa <strong>kufizime</strong> shtes&euml; (t&euml; quajtura ndryshe <em>modifikues</em>) q&euml; jan&euml; cil&euml;suar p&euml;r kolonat e tabel&euml;s n&euml; deklarat&euml;n paraprake. Kufizimet definojn&euml; rregullat n&euml; lidhje me vlerat e lejuara n&euml; kolona.</p>
+            <ul>
+                <li>Kufizimi <code>NOT NULL</code> siguron q&euml; fusha nuk mund t&euml; pranoj&euml; nj&euml; vler&euml; <code>NULL</code>.</li>
+                <li>Kufizimi <code>PRIMARY KEY</code> e b&euml;n&euml; fush&euml;n p&euml;rkat&euml;se si &ccedil;el&euml;si kryesor i tabel&euml;s.</li>
+                <li>Atributi <code>AUTO_INCREMENT</code> &euml;sht&euml; nj&euml; shtojc&euml; e MySQL n&euml; standardin SQL, e cila i thot&euml; MySQL-s&euml; q&euml; automatikisht t&euml; caktoj&euml; nj&euml; vler&euml; n&euml; k&euml;t&euml; fush&euml; n&euml;se lihet e pap&euml;rcaktuar, duke rritur vler&euml;n e m&euml;parshme p&euml;r 1. &Euml;sht&euml; n&euml; dispozicion vet&euml;m p&euml;r fushat numerike.</li>
+                <li>Kufizimi <code>UNIQUE</code> siguron q&euml; &ccedil;do rresht p&euml;r nj&euml; kolon&euml; duhet t&euml; ket&euml; nj&euml; vler&euml; unike.</li>
+            </ul>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Serveri SQL i Microsoft&rsquo;it p&euml;rdor vetin&euml; <code>IDENTITY</code> p&euml;r t&euml; kryer rritjen automatike. Vlera e paracaktuar &euml;sht&euml; <code>IDENTITY(1,1)</code> q&euml; do t&euml; thot&euml; vlera fillestare &euml;sht&euml; 1, dhe vlera rrit&euml;se &euml;sht&euml; gjithashtu 1.</p>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Mund t&euml; ekzekutoni komand&euml;n <code>DESC <em>emri_tabeles</em>;</code> p&euml;r t&euml; par&euml; informacionin e kolon&euml;s ose struktur&euml;n e &ccedil;do tabele n&euml; databazat MySQL dhe Oracle, nd&euml;rsa <code>EXEC kolona_ve emri_tabeles;</code> n&euml; SQL Server (z&euml;vend&euml;son emri_tabeles me emrin aktual t&euml; tabel&euml;s).</p>
+            </div>
+            <h2>Krijimi i tabel&euml;s n&euml;se nuk ekziston</h2>
+            <p>N&euml;se tentoni t&euml; krijoni nj&euml; tabel&euml; q&euml; vet&euml;m ekziston tashm&euml; brenda databaz&euml;s, do t&euml; merrni nj&euml; mesazh gabimi. P&euml;r t&euml; shmangur k&euml;t&euml; n&euml; MySQL mund t&euml; p&euml;rdorni nj&euml; klauzol&euml; opsionale <code>IF NOT EXISTS</code>:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>CREATE TABLE IF NOT EXISTS personat (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    emri VARCHAR(50) NOT NULL,
+    ditelindja DATE,
+    nr_telefonit VARCHAR(15) NOT NULL UNIQUE
+);</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: N&euml;se d&euml;shironi t&euml; shihni list&euml;n e tabelave brenda databaz&euml;s aktualisht t&euml; zgjedhur, mund t&euml; ekzekutoni deklarat&euml;n <code>SHOW TABLES</code> n&euml; linj&euml;n komanduese t&euml; MySQL.</p>
+            </div>
+        </section>
+
+        <section id="kufizimet">
+            <h1>Kufizimet</h1>
+            <h2>&Ccedil;far&euml; &euml;sht&euml; kufizimi?</h2>
+            <p>Kufizimi &euml;sht&euml; thjesht nj&euml; restrikcion (limitim) i vendosur n&euml; nj&euml; ose m&euml; shum&euml; kolona t&euml; nj&euml; tabele p&euml;r t&euml; kufizuar tipin e vlerave q&euml; mund t&euml; ruhen n&euml; at&euml; kolon&euml;. Kufizimet sigurojn&euml; nj&euml; mekaniz&euml;m standard p&euml;r t&euml; ruajtur sakt&euml;sin&euml; dhe integritetin e t&euml; dh&euml;nave brenda nj&euml; tabele n&euml; databaz&euml;.</p>
+            <p>Ekzistojn&euml; disa lloje t&euml; ndryshme t&euml; kufizimeve n&euml; SQL, duke p&euml;rfshir&euml;:</p>
+            <ul>
+                <li><code>NOT NULL</code></li>
+                <li><code>PRIMARY KEY</code></li>
+                <li><code>UNIQUE</code></li>
+                <li><code>DEFAULT</code></li>
+                <li><code>FOREIGN KEY</code></li>
+                <li><code>CHECK</code></li>
+            </ul>
+            <h2>Kufizimi NOT NULL</h2>
+            <p>Kufizimi <code>NOT NULL</code> specifikon q&euml; kolona nuk pranon vlera <code>NULL</code>.</p>
+            <p>Kjo do t&euml; thot&euml; n&euml;se kufizimi <code>NOT NULL</code> apikohet n&euml; nj&euml; kolon&euml;, at&euml;her&euml; nuk mund t&euml; futni nj&euml; rresht t&euml; ri n&euml; tabel&euml; pa shtuar nj&euml; vler&euml; <em>jo-NULL</em> p&euml;r at&euml; kolon&euml;.</p>
+            <p>Deklarata e m&euml;poshtme SQL krijon nj&euml; tabel&euml; me emrin <em>personat</em> me kat&euml;r kolona, nga t&euml; cilat tri kolona, <em>id</em>, <em>emri</em> dhe <em>nr_telefonit</em> nuk pranojn&euml; vlera NULL.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>CREATE TABLE personat (
+    id INT NOT NULL,
+    emri VARCHAR(30) NOT NULL,
+    ditelindja DATE,
+    nr_telefonit VARCHAR(15) NOT NULL
+);</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Nj&euml; vler&euml; NULL &euml;sht&euml; e ndryshme nga zero (<code>0</code>), zbraztira, ose nj&euml; varg i karaktereve me gjat&euml;si zero si&ccedil; &euml;sht&euml;&nbsp; ''. <code>NULL</code> do t&euml; thot&euml; se nuk &euml;sht&euml; b&euml;r&euml; asnj&euml; hyrje.</p>
+            </div>
+            <h2>Kufizimi PRIMARY KEY</h2>
+            <p>Kufizimi <code>PRIMARY KEY</code> identifikon kolon&euml;n ose bashk&euml;sin&euml; e kolonave q&euml; kan&euml; vlera q&euml; identifikojn&euml; n&euml; m&euml;nyr&euml; unike nj&euml; rresht n&euml; nj&euml; tabel&euml;. Nuk munden dy rreshta n&euml; nj&euml; tabel&euml; t&euml; ken&euml; t&euml; nj&euml;jtin &ccedil;el&euml;s primar (<em>primary key</em>). Gjithashtu, nuk mund t&euml; futni vler&euml;n <code>NULL</code> n&euml; nj&euml; kolon&euml; me &ccedil;el&euml;s primar.</p>
+            <p>Deklarata e m&euml;poshtme SQL krijon nj&euml; tabel&euml; me emrin <em>personat</em> dhe specifikon kolon&euml;n <em>id</em> si &ccedil;el&euml;s primar. Kjo do t&euml; thot&euml; q&euml; kjo fush&euml; nuk lejon vlera <code>NULL</code> ose vlera t&euml; dubluara.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>CREATE TABLE personat (
+    id INT NOT NULL PRIMARY KEY,
+    emri VARCHAR(30) NOT NULL,
+    ditelindja DATE,
+    nr_telefonit VARCHAR(15) NOT NULL
+);</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: &Ccedil;el&euml;si primar zakonisht vendoset nga nj&euml; kolon&euml; n&euml; tabel&euml;, megjithat&euml; m&euml; shum&euml; se nj&euml; kolon&euml; mund t&euml; p&euml;rb&euml;j&euml; &ccedil;el&euml;sin primar, p.sh. edhe adresa e post&euml;s elektronike t&euml; punonj&euml;sit ose numri i caktuar i identifikimit mund t&euml; jet&euml; logjikisht &ccedil;el&euml;si kryesor p&euml;r nj&euml; tabel&euml; t&euml; punonj&euml;sve.</p>
+            </div>
+            <h2>Kufizimi UNIQUE</h2>
+            <p>Kufizimi <code>UNIQUE</code> p&euml;rcakton q&euml; nj&euml; ose m&euml; shum&euml; kolona t&euml; p&euml;rmbajn&euml; vlera unike brenda nj&euml; tabele.</p>
+            <p>Megjith&euml;se t&euml; dy kufizimet <code>UNIQUE</code> dhe <code>PRIMARY KEY</code> zbatojn&euml; unikalitetin, p&euml;rdorni kufizimin <code>UNIQUE</code> n&euml; vend t&euml; <code>PRIMARY KEY</code>, kur doni t&euml; zbatoni ve&ccedil;antin&euml; e nj&euml; kolone, ose t&euml; kombinoni kolona, e q&euml; nuk posedojn&euml; &ccedil;el&euml;s primar.</p>
+            <p>Deklarata e m&euml;poshtme SQL krijon nj&euml; tabel&euml; me emrin <em>personat</em> dhe specifikon kolon&euml;n <em>nr_telefonit</em> si unike. Kjo do t&euml; thot&euml; q&euml; kjo fush&euml; nuk lejon vlera t&euml; dubluara.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>CREATE TABLE personat (
+    id INT NOT NULL PRIMARY KEY,
+    emri VARCHAR(30) NOT NULL,
+    ditelindja DATE,
+    nr_telefonit VARCHAR(15) NOT NULL UNIQUE
+);</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Disa kufizime <code>UNIQUE</code> mund t&euml; p&euml;rcaktohen n&euml; nj&euml; tabel&euml;, nd&euml;rsa vet&euml;m nj&euml; <code>PRIMARY KEY</code> mund t&euml; p&euml;rcaktohet n&euml; nj&euml; tabel&euml;. Gjithashtu, ndryshe nga kufizimi <code>PRIMARY KEY</code>, kufizimet <code>UNIQUE</code> i lejojn&euml; vlerat <code>NULL</code>.</p>
+            </div>
+            <h2>Kufizimi DEFAULT</h2>
+            <p>Kufizimi <code>DEFAULT</code> specifikon vler&euml;n e paracaktuar p&euml;r kolonat.</p>
+            <p>Kolona e paracaktuar (<em>default</em>) &euml;sht&euml; nj&euml; vler&euml; q&euml; do t&euml; futet n&euml; kolon&euml; nga motori i databaz&euml;s kur nj&euml; deklarat&euml; <code>INSERT</code> nuk cakton n&euml; m&euml;nyr&euml; t&euml; qart&euml; nj&euml; vler&euml; t&euml; posa&ccedil;me.</p>
+            <p>Deklarata e m&euml;poshtme SQL krijon nj&euml; vler&euml; t&euml; paracaktuar p&euml;r kolon&euml;n <em>qyteti</em>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>CREATE TABLE persoat (
+    id INT NOT NULL PRIMARY KEY,
+    emri VARCHAR(30) NOT NULL,
+    ditelindja DATE,
+    nr_telefonit VARCHAR(15) NOT NULL UNIQUE,
+    qyteti VARCHAR(30) NOT NULL DEFAULT 'Bujanoc'
+);</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml;se e definoni nj&euml; kolon&euml; t&euml; tabel&euml;s si <code>NOT NULL</code>, e m&euml; pas asaj kolone i caktoni nj&euml; vler&euml; t&euml; paracaktuar, at&euml;her&euml; n&euml; deklarat&euml;n <code>INSERT</code> nuk keni nevoj&euml; t&euml; caktoni n&euml; m&euml;nyr&euml; eksplicite nj&euml; vler&euml; p&euml;r at&euml; kolon&euml; n&euml; m&euml;nyr&euml; q&euml; t&euml; futni nj&euml; rresht t&euml; ri n&euml; tabel&euml;.</p>
+            </div>
+            <h2>Kufizimi FOREIGN KEY</h2>
+            <p>Nj&euml; &ccedil;el&euml;s i huaj (FK &ndash; <em>Foreign Key</em>) &euml;sht&euml; nj&euml; kolon&euml; ose kombinim i kolonave q&euml; p&euml;rdoret p&euml;r t&euml; vendosur dhe zbatuar nj&euml; marr&euml;dh&euml;nie midis t&euml; dh&euml;nave n&euml; dy tabela.</p>
+            <p>N&euml; MySQL mund t&euml; krijoni nj&euml; &ccedil;el&euml;s t&euml; huaj duke definuar nj&euml; kufizim <code>FOREIGN KEY</code> kur krijoni nj&euml; tabel&euml; si n&euml; shembullin m&euml; posht&euml;. Deklarata e m&euml;poshtme p&euml;rcakton nj&euml; &ccedil;el&euml;s t&euml; huaj n&euml; kolon&euml;n <em>id_depart</em> t&euml; tabel&euml;s <em>punetoret</em> q&euml; i referohet kolon&euml;s <em>id_depart</em> n&euml; tabel&euml;n <em>departamentet</em>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>CREATE TABLE punetoret (
+    id_pun INT NOT NULL PRIMARY KEY,
+    emri_pun VARCHAR(55) NOT NULL,
+    data_pun DATE NOT NULL,
+    paga INT,
+    id_depart INT,
+    FOREIGN KEY (id_depart) REFERENCES departamentet(id_depart)
+);</code></pre>
+                </div>
+            </div>
+            <h2>Kufizimi CHECK</h2>
+            <p>Kufizimi <code>CHECK</code> p&euml;rdoret p&euml;r t&euml; p&euml;rcaktuar vlerat e kufizuara q&euml; mund t&euml; vendosen n&euml; nj&euml; kolon&euml;.</p>
+            <p>P&euml;r shembull, rangu i vlerave p&euml;r kolon&euml;n e pagave mund t&euml; p&euml;rkufizohet duke krijuar nj&euml; kufizim <code>CHECK</code> q&euml; lejon vet&euml;m vlera nga <code>3,000</code> deri n&euml; <code>10,000</code>. Kjo parandalon sh&euml;nimin vler&euml;s s&euml; pagave p&euml;rtej kufirit t&euml; p&euml;rcaktuar t&euml; pagave nga nd&euml;rmarrja.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>CREATE TABLE punetoret (
+    id_pun INT NOT NULL PRIMARY KEY,
+    emri_pun VARCHAR(55) NOT NULL,
+    data_pun DATE NOT NULL,
+    paga INT NOT NULL CHECK (paga >= 3000 AND paga <= 10000),
+    id_depart INT,
+    FOREIGN KEY (id_depart) REFERENCES departamentet(id_depart)
+);</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: MySQL nuk mb&euml;shtet kufizimin CHECK t&euml; SQL-s&euml;. Klauzola CHECK analizohet, por injorohet nga t&euml; gjith&euml; motor&euml;t e ruajtjes s&euml; MySQL.</p>
+            </div>
+        </section>
+
+        <section id="insert">
+            <h1>Deklarata INSERT</h1>
+            <h2>Futja e t&euml; dh&euml;nave n&euml; tabel&euml;</h2>
+            <p>N&euml; kaptin&euml;n paraprake kemi krijuar nj&euml; tabel&euml; me emrin <em>personat</em> n&euml; databaz&euml;n ton&euml; me emrin <em>demo</em>. Tani &euml;sht&euml; koha p&euml;r t&euml; futur disa t&euml; dh&euml;na brenda tabel&euml;s son&euml; t&euml; t&euml; dh&euml;nave.</p>
+            <p>Deklarata <code>INSERT INTO</code> p&euml;rdoret p&euml;r t&euml; futur rreshta t&euml; rinj n&euml; nj&euml; tabel&euml; t&euml; databaz&euml;s.</p>
+            <h2>Sintaksa</h2>
+            <p>Sintaksa themelore p&euml;r futjen e t&euml; dh&euml;nave n&euml; nj&euml; tabel&euml; mund t&euml; jepet k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>INSERT INTO emri_tabeles (kolona1,kolona2,...) VALUES (vlera1,vlera2,...);</code></pre>
+            </div>
+            <p>K&euml;tu <em>kolona</em><em>1</em>, <em>kolona</em><em>2</em>,..., etj. paraqesin emrat e kolonave t&euml; tabel&euml;s, nd&euml;rsa <em>vlera</em><em>1</em>, <em>vlera</em><em>2</em>,..., e k&euml;shtu me radh&euml; paraqesin vlerat p&euml;rkat&euml;se p&euml;r k&euml;to kolona.</p>
+            <p>Le t&euml; fusim disa t&euml; dh&euml;na n&euml; tabel&euml;n <em>personat</em>.</p>
+            <h3>Hapi 1: Pamja e struktur&euml;s s&euml; tabel&euml;s</h3>
+            <p>Para se t&euml; shtoni t&euml; dh&euml;na, ide e mir&euml; &euml;sht&euml; t&euml; merrni informacion n&euml; lidhje me struktur&euml;n e tabel&euml;s. Ekzekutoni komand&euml;n e m&euml;poshtme n&euml; linj&euml;n komanduese t&euml; MySQL, do t&euml; shfaqet informacioni p&euml;r kolonat n&euml; tabel&euml;n <em>personat</em>, dmth. emri i kolon&euml;s, tipi i t&euml; dh&euml;nave, kufizimet, etj.</p>
+            <div class="sintaksa">
+<pre><code>mysql&gt;&nbsp;DESCRIBE&nbsp;personat;</code></pre>
+            </div>
+            <h3>Hapi 2: Shtimi i sh&euml;nimeve n&euml; tabel&euml;</h3>
+            <p>Deklarata e m&euml;poshtme fut nj&euml; rresht t&euml; ri n&euml; tabel&euml;n <em>personat</em>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>INSERT INTO personat (emri, ditelindja, nr_telefonit)
+VALUES ('Altin Haziri', '2004-07-15', '062-8020361');</code></pre>
+                </div>
+            </div>
+            <p>E vut&euml; re, nuk fut&euml;m ndonj&euml; vler&euml; p&euml;r fush&euml;n <code>id</code>? Sepse, si&ccedil; e dim&euml;, fusha <code>id</code> p&euml;rmban <code>AUTO-INCREMENT</code>, q&euml; i thot&euml; MySQL q&euml; automatikisht t&euml; caktoj&euml; nj&euml; vler&euml; n&euml; k&euml;t&euml; fush&euml; n&euml;se lihet e pap&euml;rcaktuar.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vlerat jo-numerike si stringjet dhe datat duhet t&euml; jen&euml; gjithmon&euml; t&euml; rrethuara me thonj&euml;za, nd&euml;rsa vlerat numerike nuk duhet t&euml; mbyllen kurr&euml; brenda thonj&euml;zave. Gjithashtu, n&euml;se stringu juaj n&euml; vetvete p&euml;rmban thonj&euml;za, ju duhet t&euml; sh&euml;noni para thonj&euml;z&euml;s <code>\</code> (backslash).</p>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, futni nj&euml; rresht tjet&euml;r n&euml; tabel&euml;n <em>personat</em>:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>INSERT INTO personat (emri, ditelindja, nr_telefonit)
+VALUES ('Shkurte Rrustemi', '2003-01-22', '063-7925512');</code></pre>
+                </div>
+            </div>
+            <p>Futni edhe nj&euml; rresht m&euml; shum&euml; n&euml; tabel&euml;n personat, n&euml; m&euml;nyr&euml; t&euml; ngjashme:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>INSERT INTO personat (emri, ditelindja, nr_telefonit)
+VALUES ('Muhamed Selimi', '2002-11-09', '063-8325044');</code></pre>
+                </div>
+            </div>
+            <p>Tani n&euml;se zgjidhni t&euml; dh&euml;nat nga tabela <em>personat</em> p&euml;rmes k&euml;saj deklarate:</p>
+            <div class="sintaksa">
+<pre><code>SELECT * FROM personat;</code></pre>
+            </div>
+            <p>Rezultati do t&euml; duket k&euml;shtu:</p>
+            <div class="tabela-sql">
+                <pre>
++----+--------------------+------------+--------------+
+| id | emri               | ditelindja | nr_telefonit |
++----+--------------------+------------+--------------+
+|  1 | Altin Haziri       | 1990-07-15 | 062-8020361  |
+|  2 | Shkurte Rrustemi   | 1995-05-01 | 063-7925512  |
+|  3 | Muhamed Selimi     | 2002-11-09 | 063-8325044  |
++----+--------------------+------------+--------------+
+                </pre>
+            </div>
+
+
+
+
+
+
 
         </section>
 
