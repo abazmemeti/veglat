@@ -25,9 +25,9 @@ section h1, aside h3, article h3, .nata section h1, .nata aside h3, .nata articl
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    
+    margin-bottom: 10px;
 }
 .tabela-sql pre {
     font-size: 1.05rem;
-    margin-bottom: -10px;
+    margin-bottom: -15px;
 }
