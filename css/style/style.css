@@ -362,3 +362,12 @@ input[type=range] {
 .nata .tabelat-figura2 tbody tr:nth-child(odd) {
   background-color: #333;
 }
+
+/* Figura kufijt - border-style */
+.stili-kufirit {
+  text-align: center;
+
+}
+.stili-kufirit img {
+  box-shadow: none;
+}

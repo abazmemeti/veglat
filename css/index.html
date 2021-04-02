@@ -80,6 +80,7 @@
             <li><a href="#linqet">Linqet</a></li>
             <li><a href="#listat">Listat</a></li>
             <li><a href="#tabelat">Tabelat</a></li>
+            <li><a href="#box-modeli">Box modeli</a></li>
             
         </ul>
     </aside>
@@ -1620,6 +1621,298 @@ th {
 &lt;/div&gt;</code></pre>
                 </div>
             </div>
+        </section>
+
+        <section id="box-modeli">
+            <h1>Box Modeli</h1>
+            <h2>&Ccedil;far&euml; &euml;sht&euml; Box Modeli?</h2>
+            <p>&Ccedil;do element q&euml; mund t&euml; shfaqet n&euml; nj&euml; ueb faqe p&euml;rb&euml;het nga nj&euml; ose m&euml; shum&euml; kuti drejtk&euml;nd&euml;she (<em>rectangular boxes</em>). Box modeli n&euml; CSS p&euml;rshkruan n&euml; m&euml;nyr&euml; tipike se si k&euml;to kuti drejtk&euml;nd&euml;she jan&euml; paraqitur n&euml; nj&euml; ueb faqe. K&euml;to kuti mund t&euml; ken&euml; veti t&euml; ndryshme dhe mund t&euml; bashk&euml;veprojn&euml; me nj&euml;ra-tjetr&euml;n n&euml; m&euml;nyra t&euml; ndryshme, por &ccedil;do kuti ka nj&euml; <strong><em>zon&euml; t&euml; p&euml;rmbajtjes</em></strong> dhe zona opsionale <strong><em>padding</em></strong>, <strong><em>border</em></strong> dhe <strong><em>margin</em></strong>.</p>
+            <p>Vizatimi i m&euml;posht&euml;m tregon se si vetit&euml; CSS <code>width</code>, <code>height</code>, <code>padding</code>, <code>border</code> dhe <code>margin</code> p&euml;rcaktojn&euml; se sa hap&euml;sir&euml; mund t&euml; z&euml; nj&euml; element n&euml; nj&euml; ueb faqe.</p>
+            <div class="img-kodi elementet-html" style="text-align: center;">
+                <img src="foto/css-box-model.png" alt="Box Modeli">
+            </div>
+            <p>Padding-u (mbushja) &euml;sht&euml; hap&euml;sir&euml; transparente midis p&euml;rmbajtjes s&euml; elementit dhe kufirit t&euml; tij (ose skajit t&euml; kutis&euml;, n&euml;se nuk ka asnj&euml; kufi), nd&euml;rsa margjina &euml;sht&euml; hap&euml;sira transparente p&euml;rreth kufirit.</p>
+            <p>Gjithashtu, n&euml;se nj&euml; element ka ngjyr&euml; n&euml; sfond, ajo ngjyr&euml; do t&euml; jet&euml; e dukshme edhe n&euml; zon&euml;n e padding-ut. Zona e margjin&euml;s mbetet gjithnj&euml; transparente, nuk ndikohet nga ngjyra e sfondit t&euml; elementit, megjithat&euml;, b&euml;n q&euml; ngjyra e sfondit t&euml; elementit prind t&euml; shihet p&euml;rmes saj.</p>
+            <h2>Gjer&euml;sia dhe lart&euml;sia e elementeve</h2>
+            <p>Zakonisht kur cil&euml;soni gjer&euml;sin&euml; dhe lart&euml;sin&euml; e nj&euml; elementi duke p&euml;rdorur vetit&euml; CSS <code>width</code> dhe <code>height</code>, n&euml; t&euml; v&euml;rtet&euml; ju po cil&euml;soni vet&euml;m gjer&euml;sin&euml; dhe lart&euml;sin&euml; e zon&euml;s s&euml; p&euml;rmbajtjes s&euml; k&euml;tij elementi. Gjer&euml;sia dhe lart&euml;sia aktuale e kutis&euml; s&euml; elementit varet nga disa faktor&euml;.</p>
+            <p>Hap&euml;sira aktuale q&euml; kutia e nj&euml; elementi mund t&euml; marr&euml; n&euml; nj&euml; ueb faqe llogaritet k&euml;shtu:</p>
+
+            <table>
+                <tbody>
+                <tr>
+                <td>
+                <p><strong>Madh&euml;sia e kutis&euml;</strong></p>
+                </td>
+                <td>
+                <p><strong>Vetit&euml; CSS</strong></p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>Gjer&euml;sia totale</p>
+                </td>
+                <td>
+                <p><code>width + padding-left + padding-right + border-left + border-right + margin-left + margin-right</code></p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p>Lart&euml;sia totale</p>
+                </td>
+                <td>
+                <p><code>height + padding-top + padding-bottom + border-top + border-bottom + margin-top + margin-bottom</code></p>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Tani le t&euml; provojm&euml; shembullin e m&euml;posht&euml;m p&euml;r t&euml; kuptuar se si funksionon n&euml; t&euml; v&euml;rtet&euml; box modeli:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    width: 300px;
+    height: 200px;
+    padding: 15px; /* cilëson padding-un për të gjitha anët */
+    border: 10px solid black; /* cilëson kufirin për të gjitha anët */
+    margin: 20px auto; /* cilëson margjinën e epërme dhe të poshtme në 20 piksell, ndërsa majtas dhe djathtas auto */
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml; box modelin e CSS; zona e p&euml;rmbajtjes s&euml; kutis&euml; t&euml; nj&euml; elementi &euml;sht&euml; zona ku shfaqet p&euml;rmbajtja e tij, p.sh., teksti, imazhi, video, etj. Mund t&euml; p&euml;rmbaj&euml; gjithashtu edhe kuti elementesh pasardh&euml;se.</p>
+            </div>
+            <h2>Cil&euml;simi i dimensioneve t&euml; elementit</h2>
+            <p>CSS ka disa veti t&euml; dimensioneve, t&euml; tilla si <code>width</code>, <code>height</code>, <code>max-width</code>, <code>min-width</code>, <code>max-height</code> dhe <code>min-height</code> q&euml; ju lejon t&euml; kontrolloni gjer&euml;sin&euml; dhe lart&euml;sin&euml; e nj&euml; elementi.</p>
+            <h3>Cil&euml;simi i gjer&euml;sis&euml; dhe lart&euml;sis&euml;</h3>
+            <p>Vetia <code>width</code> dhe <code>height</code> definon gjer&euml;sin&euml; dhe lart&euml;sin&euml; e zon&euml;s s&euml; p&euml;rmbajtjes t&euml; nj&euml; elementi.</p>
+            <p>Kjo gjer&euml;si dhe lart&euml;si nuk p&euml;rfshin padding-un, kufijt&euml; ose margjinat.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    width: 300px;
+    height: 200px;
+}</code></pre>
+                </div>
+            </div>
+            <p>Rregullat e m&euml;sip&euml;rme t&euml; stilit i caktojn&euml; elementit &lt;<code>div</code>&gt; nj&euml; gjer&euml;si fikse prej 300 piksell dhe lart&euml;si fikse prej 200 piksell.</p>
+            <p>Vetit&euml; <code>width</code> dhe <code>height</code> mund t&euml; marrin k&euml;to vlera:</p>
+            <ul>
+                <li><em>gjat&euml;sia</em> &ndash; specifikon nj&euml; gjer&euml;si n&euml; px, em, rem, pt, cm, etj.</li>
+                <li>% &ndash;&nbsp; specifikon gjer&euml;sin&euml; n&euml; p&euml;rqindje (%) t&euml; gjer&euml;sis&euml; s&euml; elementit q&euml; p&euml;rmban.</li>
+                <li>auto &ndash; ueb shfletuesi llogarit gjer&euml;sin&euml; e p&euml;rshtatshme p&euml;r elementin.</li>
+                <li>initial &ndash; Cil&euml;son gjer&euml;sin&euml; dhe lart&euml;sin&euml; n&euml; vler&euml;n e saj t&euml; paracaktuar, e cila &euml;sht&euml; auto.</li>
+                <li>inherit &ndash; specifikon q&euml; gjer&euml;sia duhet t&euml; trash&euml;gohet nga elementi prind.</li>
+            </ul>
+            <p>Nuk mund t&euml; specifikoni vlera negative p&euml;r vetit&euml; e gjer&euml;sis&euml; dhe lart&euml;sis&euml;.</p>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: N&euml; m&euml;nyr&euml; tipike kur krijoni nj&euml; element bllok, t&euml; till&euml; si &lt;<code>div</code>&gt;, &lt;<code>p</code>&gt;, etj. ueb shfletuesi vendos automatikisht gjer&euml;sin&euml; e tyre n&euml; 100% t&euml; gjer&euml;sis&euml; s&euml; disponueshme, dhe lart&euml;sin&euml; n&euml; &ccedil;far&euml;do vlere q&euml; nevojitet p&euml;r t&euml; treguar t&euml; gjith&euml; p&euml;rmbajtjen. Duhet t&euml; shmangni vendosjen e nj&euml; gjer&euml;sie dhe lart&euml;sie fikse n&euml;se nuk &euml;sht&euml; e nevojshme.</p>
+            </div>
+            <h3>Cil&euml;simi i gjer&euml;sis&euml; dhe lart&euml;sis&euml; maksimale</h3>
+            <p>Mund t&euml; p&euml;rdorni vetit&euml; <code>max-width</code> dhe <code>max-height</code> p&euml;r t&euml; specifikuar gjer&euml;sin&euml; dhe lart&euml;sin&euml; maksimale t&euml; zon&euml;s s&euml; p&euml;rmbajtjes. Kjo gjer&euml;si dhe lart&euml;si maksimale nuk p&euml;rfshin padding-un, kufijt&euml; apo margjin&euml;n.</p>
+            <p>Nj&euml; element nuk mund t&euml; jet&euml; m&euml; i gjer&euml; se vlera e <code>max-width</code>, edhe n&euml;se vlera e vetis&euml; <code>width</code> &euml;sht&euml; di&ccedil; m&euml; e madhe. P&euml;r shembull, n&euml;se <code>width</code> &euml;sht&euml; vendosur n&euml; 300px dhe <code>max-width</code> &euml;sht&euml; vendosur n&euml; 200px, gjer&euml;sia aktuale e elementit do t&euml; jet&euml; 200px.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    width: 300px;
+    max-width: 200px;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml;se vetia <code>min-width</code> &euml;sht&euml; specifikuar me nj&euml; vler&euml; m&euml; t&euml; madhe se ajo e vetis&euml; <code>max-width</code>, n&euml; k&euml;t&euml; rast vlera e <code>min-width</code> do t&euml; jet&euml; n&euml; t&euml; v&euml;rtet&euml; ajo q&euml; zbatohet.</p>
+            </div>
+            <p>Po k&euml;shtu, nj&euml; element q&euml; ka t&euml; zbatuar <code>max-height</code> nuk do t&euml; jet&euml; kurr&euml; m&euml; i lart&euml; se vlera e specifikuar, edhe n&euml;se vetia <code>width</code> ka vler&euml; m&euml; t&euml; madhe. P&euml;r shembull, n&euml;se height &euml;sht&euml; vendosur n&euml; 200px dhe <code>max-height</code> &euml;sht&euml; vendosur n&euml; 100px, lart&euml;sia aktuale e elementit do t&euml; jet&euml; 100px.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    height: 200px;
+    max-height: 100px;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: N&euml;se vetia <code>min-height</code> &euml;sht&euml; specifikuar me nj&euml; vler&euml; m&euml; t&euml; madhe se ajo e <code>max-height</code>, n&euml; k&euml;t&euml; rast vlera <code>min-height</code> do t&euml; jet&euml; ajo q&euml; zbatohet.</p>
+            </div>
+            <h3>Cil&euml;simi i gjer&euml;sis&euml; dhe lart&euml;sis&euml; minimale</h3>
+            <p>Mund t&euml; p&euml;rdorni vetit&euml; <code>min-width</code> dhe <code>min-height</code> p&euml;r t&euml; specifikuar gjer&euml;sin&euml; dhe lart&euml;sin&euml; minimale t&euml; zon&euml;s s&euml; p&euml;rmbajtjes. Kjo gjer&euml;si dhe lart&euml;si minimale nuk p&euml;rfshin padding-un, kufijt&euml; apo margjinat.</p>
+            <p>Nj&euml; element nuk mund t&euml; jet&euml; m&euml; i ngusht&euml; se vlera e <code>min-width</code>, edhe n&euml;se vlera e vetis&euml; <code>width</code> &euml;sht&euml; di&ccedil;ka m&euml; e vog&euml;l. P&euml;r shembull, n&euml;se <code>width</code> &euml;sht&euml; vendosur n&euml; 300px dhe <code>min-width</code> &euml;sht&euml; vendosur n&euml; 400px, gjer&euml;sia aktuale e elementit do t&euml; jet&euml; 400px.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    width: 200px;
+    min-width: 300px;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vetia <code>min-width</code> zakonisht p&euml;rdoret p&euml;r t&euml; siguruar q&euml; nj&euml; element ka t&euml; pakt&euml;n nj&euml; gjer&euml;si minimale edhe n&euml;se nuk ka p&euml;rmbajtje. Megjithat&euml;, elementi do t&euml; lejohet t&euml; rritet normalisht n&euml;se p&euml;rmbajtja e tij tejkalon gjer&euml;sin&euml; minimale t&euml; caktuar.</p>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, nj&euml; element n&euml; t&euml; cilin zbatohet <code>min-height</code> nuk do t&euml; jet&euml; kurr&euml; m&euml; i vog&euml;l se vlera e specifikuar, edhe n&euml;se vetia <code>height</code> &euml;sht&euml; di&ccedil;ka m&euml; e vog&euml;l. P&euml;r shembull, n&euml;se <code>height</code> &euml;sht&euml; vendosur n&euml; 200px, dhe <code>min-height</code> &euml;sht&euml; vendosur n&euml; 300px, lart&euml;sia aktuale e elementit do t&euml; jet&euml; 300px.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    height: 100px;
+    min-height: 200px;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vetia <code>min-height</code> zakonisht p&euml;rdoret p&euml;r t&euml; siguruar q&euml; nj&euml; element ka t&euml; pakt&euml;n nj&euml; lart&euml;si minimale edhe n&euml;se nuk ka p&euml;rmbajtje. Megjithat&euml; elementi do t&euml; lejohet t&euml; rritet normalisht n&euml;se p&euml;rmbajtja tejkalon lart&euml;sin&euml; minimale t&euml; caktuar.</p>
+            </div>
+            <h3>Cil&euml;simi i diapazonit t&euml; gjer&euml;sis&euml; dhe lart&euml;sis&euml;</h3>
+            <p>Vetit&euml; <code>min-width</code> dhe <code>min-height</code> p&euml;rdoren shpesh n&euml; kombinim me vetit&euml; <code>max-width</code> dhe <code>max-height</code> p&euml;r t&euml; prodhuar nj&euml; diapazon (brez) t&euml; gjer&euml;sis&euml; dhe lart&euml;sis&euml; n&euml; nj&euml; element.</p>
+            <p>Kjo mund t&euml; jet&euml; shum&euml; e dobishme p&euml;r krijimin e nj&euml; dizajni fleksibil. N&euml; shembullin vijues, gjer&euml;sia minimale e elementit &lt;<code>div</code>&gt; do t&euml; ishte 300px dhe mund t&euml; shtrihet horizontalisht deri n&euml; nj&euml; vler&euml; maksimale prej 500px.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    min-width: 300px;
+    max-width: 500px;
+}</code></pre>
+                </div>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; definoni nj&euml; interval lart&euml;sie p&euml;r nj&euml; element. N&euml; shembullin e m&euml;posht&euml;m lart&euml;sia minimale e elementit &lt;<code>div</code>&gt; do t&euml; ishte 300px dhe mund t&euml; shtrihet vertikalisht deri n&euml; maksimum 500px.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    min-height: 300px;
+    max-height: 500px;
+}</code></pre>
+                </div>
+            </div>
+
+            <h2>Vetit&euml; e padding-ut</h2>
+            <p>Vetit&euml; CSS t&euml; padding-ut lejojn&euml; t&euml; vendosni hap&euml;sir&euml; nd&euml;rmjet p&euml;rmbajtjes s&euml; nj&euml; elementi dhe kufirit t&euml; tij (ose skajit t&euml; kutis&euml; s&euml; elementit, n&euml;se nuk ka kufi t&euml; p&euml;rcaktuar).</p>
+            <p>Padding-u ndikohet nga ngjyra e sfondit t&euml; elementit. P&euml;r shembull, n&euml;se vendosni ngjyr&euml;n e sfondit n&euml; nj&euml; element, ajo ngjyr&euml; do t&euml; jet&euml; e dukshme edhe n&euml; zon&euml;n s&euml; padding-ut.</p>
+            <h3>Definimi i padding-ut p&euml;r an&euml;t individuale</h3>
+            <p>Mund t&euml; specifikoni padding-jet p&euml;r an&euml;t individuale t&euml; nj&euml; elementi t&euml; till&euml; si pjesa e sip&euml;rme, e djatht&euml;, e poshtme dhe e majt&euml; duke p&euml;rdorur p&euml;rkat&euml;sisht vetit&euml; CSS t&euml; <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> dhe <code>padding-left</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+p {
+    padding-left: 75px;
+    padding-right: 75px;
+}</code></pre>
+                </div>
+            </div>
+            <p>Vetit&euml; e padding-ut mund t&euml; specifikohen duke p&euml;rdorur vlerat e m&euml;poshtme:</p>
+            <ul>
+                <li><em>gjat&euml;sia</em> &ndash; specifikon nj&euml; padding n&euml; px, em, rem, pt, cm, etj.</li>
+                <li>% &ndash; specifikon nj&euml; padding n&euml; p&euml;rqindje (%) t&euml; gjer&euml;sis&euml; s&euml; elementit q&euml; p&euml;rmban.</li>
+                <li>inherit &ndash; specifikon q&euml; padding-u duhet t&euml; trash&euml;gohet nga elementi prind.</li>
+            </ul>
+            <p>Ndryshe nga margjina CSS, vlerat p&euml;r vetit&euml; e padding-ut nuk mund t&euml; jen&euml; negative.</p>
+            <h3>Vetia e shkurt&euml; e padding-ut</h3>
+            <p>Vetia padding &euml;sht&euml; nj&euml; veti e shkurt&euml; p&euml;r t&euml; shmangur cil&euml;simin e padding-ut t&euml; secil&euml;s an&euml; ve&ccedil; e ve&ccedil;, d.m.th., <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> dhe <code>padding-left</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    padding: 50px; /* zbatohen në të katër anët */
+}
+p {
+    padding: 25px 75px; /* vertikal | horizontal */
+}
+div {
+    padding: 25px 50px 75px; /* sipër | horizontal | poshtë */
+}
+pre {
+    padding: 25px 50px 75px 100px; /* sipër | djathtas | poshtë | majtas */
+}</code></pre>
+                </div>
+            </div>
+            <p>Ky sh&euml;nim i shkurt&euml; mund t&euml; marr&euml; nj&euml;, dy, tri ose kat&euml;r vlera t&euml; ndara me hap&euml;sira.</p>
+            <ul>
+                <li>N&euml;se specifikohet <em>nj&euml; vler&euml;</em>, ajo zbatohet <strong>n&euml; t&euml; kat&euml;r an&euml;t</strong>.</li>
+                <li>N&euml;se specifikohen <em>dy vlera</em>, vlera e par&euml; aplikohet <strong>n&euml; an&euml;n e sip&euml;rme dhe t&euml; poshtme</strong>, dhe vlera e dyt&euml; zbatohet <strong>n&euml; an&euml;n e djatht&euml; dhe t&euml; majt&euml;</strong> t&euml; kutis&euml; s&euml; elementit.</li>
+                <li>N&euml;se specifikohen <em>tri vlera</em>, vlera e par&euml; zbatohet <strong>n&euml; krye</strong>, vlera e dyt&euml; zbatohet <strong>n&euml; an&euml;n e djatht&euml; dhe t&euml; majt&euml;</strong> dhe vlera e fundit zbatohet <strong>n&euml; pjes&euml;n e poshtme</strong>.</li>
+                <li>N&euml;se specifikohen <em>kat&euml;r vlera</em>, ato zbatohen <strong>n&euml; pjes&euml;n e sip&euml;rme, n&euml; t&euml; djatht&euml;, n&euml; pjes&euml;n e poshtme dhe n&euml; t&euml; majt&euml;</strong> t&euml; kutis&euml; s&euml; elementit p&euml;rkat&euml;sisht n&euml; radhitjen e specifikuar.</li>
+            </ul>
+            <p>Rekomandohet t&euml; p&euml;rdoret vetia e shkurt&euml;, kjo do t'ju ndihmoj&euml; t&euml; kurseni pak koh&euml; duke shmangur sh&euml;nim shtes&euml; dhe k&euml;sisoj e b&euml;ni kodin tuaj CSS m&euml; t&euml; leht&euml; p&euml;r t'u ndjekur dhe mir&euml;mbajtur.</p>
+            <h3>Efekti i padding-ut dhe kufirit n&euml; paraqitje</h3>
+            <p>Kur krijoni nj&euml; ueb faqe, cil&euml;simi i padding-ut apo kufirit n&euml; elemente ndonj&euml;her&euml; prodhon nj&euml; rezultat t&euml; papritur, sepse padding-u dhe kufiri ju shtohen gjer&euml;sis&euml; dhe lart&euml;sis&euml; s&euml; kutis&euml; s&euml; gjeneruar nga elementi, si&ccedil; e kemi tash t&euml; njohur nga nj&euml;sia Box modeli.</p>
+            <p>P&euml;r shembull, n&euml;se cil&euml;soni gjer&euml;sin&euml; e nj&euml; elementi &lt;<code>div</code>&gt; n&euml; 100% dhe gjithashtu vendosni padding apo kufij majtas dhe djathtas, n&euml; faqe do t&euml; shfaqet shiriti l&euml;viz&euml;s horizontal.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    width: 100%;
+    padding: 25px;
+}</code></pre>
+                </div>
+            </div>
+            <p>P&euml;r t&euml; parandaluar padding-un dhe kufirin q&euml; t&euml; ndryshojn&euml; gjer&euml;sin&euml; dhe lart&euml;sin&euml; e kutis&euml; s&euml; elementit, mund t&euml; p&euml;rdorni vetin&euml; CSS <code>box-sizing</code>. N&euml; shembullin vijues gjer&euml;sia dhe lart&euml;sia e kutis&euml; &lt;<code>div</code>&gt; do t&euml; mbeten t&euml; pandryshuara, megjithat&euml;, zona e p&euml;rmbajtjes s&euml; saj do t&euml; zvog&euml;lohet me rritjen e padding-ut apo kufirit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Vetit&euml; e kufijve</h2>
+            <p>Vetit&euml; CSS t&euml; kufirit lejojn&euml; t&euml; definoni zon&euml;n kufitare t&euml; kutis&euml; s&euml; nj&euml; elementi.</p>
+            <p>Kufijt&euml; shfaqen drejtp&euml;rdrejt midis margjin&euml;s dhe padding-ut t&euml; nj&euml; elementi. Kufiri mund t&euml; jet&euml; nj&euml; stil i paracaktuar si, vij&euml; solide, vij&euml; me pika, vij&euml; e dyfisht&euml;, etj. apo edhe nj&euml; imazh.</p>
+            <h3>Kuptimi i stileve t&euml; ndryshme t&euml; kufijve</h3>
+            <p>Vetia <code>border-style</code> cil&euml;son stilin e kufirit t&euml; nj&euml; kutie, si&ccedil; jan&euml;: <code>solid</code>, <code>dotted</code>, etj. &Euml;sht&euml; nj&euml; veti e shkurt&euml; p&euml;r cil&euml;simin e stilit t&euml; vij&euml;s p&euml;r t&euml; kat&euml;r an&euml;t e kufirit t&euml; elementeve.</p>
+            <p>Vetia <code>border-style</code> mund t&euml; ket&euml; k&euml;to vlera: <code>none</code>, <code>hidden</code>, <code>solid</code>, <code>dashed</code>, <code>dotted</code>, <code>double</code>, <code>inset</code>, <code>outset</code>, <code>groove</code> dhe <code>ridge</code>.</p>
+            <div class="stili-kufirit">
+                    <img src="foto/css-border-style1.png" alt="Stili i kufijeve 1">
+                    <img src="foto/css-border-style2.png" alt="Stili i kufijeve 2">
+                    <img src="foto/css-border-style3.png" alt="Stili i kufijeve 3">
+                    <img src="foto/css-border-style4.png" alt="Stili i kufijeve 4">
+            </div>
+            <p>Vlerat <code>none</code> dhe <code>hidden</code> nuk shfaqin asnj&euml; kufi, megjithat&euml;, ekziston nj&euml; ndryshim i vog&euml;l midis k&euml;tyre dy vlerave. N&euml; rastin e celulave t&euml; tabel&euml;s dhe bashkimit t&euml; kufirit, vlera <code>none</code> ka p&euml;rpar&euml;si <em>m&euml; t&euml; ul&euml;t</em>, nd&euml;rsa vlera <code>hidden</code> ka p&euml;rpar&euml;si <em>m&euml; t&euml; lart&euml;</em>, n&euml;se vendoset ndonj&euml; kufi tjet&euml;r konfliktual.</p>
+            <p>Vlerat <code>inset</code>, <code>outset</code>, <code>groove</code> dhe <code>ridge</code> krijojn&euml; nj&euml; efekt 3D, i cili n&euml; thelb varet nga vlera e border-color. Kjo zakonisht arrihet duke krijuar nj&euml; "hije" nga dy ngjyra q&euml; jan&euml; pak m&euml; t&euml; ndritshme dhe m&euml; t&euml; err&euml;ta se ngjyra e kufirit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    border-style: dotted;
+}
+p {
+    border-style: ridge;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Duhet t&euml; specifikoni nj&euml; stil t&euml; kufirit n&euml; m&euml;nyr&euml; q&euml; kufiri t&euml; shfaqet rreth nj&euml; elementi, sepse stili i paracaktuar i kufirit &euml;sht&euml; <code>none</code>. Nd&euml;rsa, gjer&euml;sia ose trash&euml;sia e kufirit t&euml; paracaktuar &euml;sht&euml; <code>medium</code>, dhe ngjyra e paracaktuar e kufirit &euml;sht&euml; e nj&euml;jt&euml; me ngjyr&euml;n e tekstit.</p>
+            </div>
+            <h3>Cil&euml;simi i gjer&euml;sis&euml; s&euml; kufirit</h3>
+            <p>Vetia <code>border-width</code> specifikon gjer&euml;sin&euml; e zon&euml;s kufitare. &Euml;sht&euml; nj&euml; veti e shkurt&euml; p&euml;r cil&euml;simin e trash&euml;sis&euml; n&euml; t&euml; kat&euml;r an&euml;t e kufirit t&euml; nj&euml; elementi n&euml; t&euml; nj&euml;jt&euml;n koh&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    border-style: dashed;
+    border-width: 10px;
+}</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Gjer&euml;sia e kufirit mund t&euml; specifikohet duke p&euml;rdorur &ccedil;do vler&euml; t&euml; gjat&euml;sis&euml;, t&euml; tilla si px, em, rem, etj. P&euml;rve&ccedil; nj&euml;sive t&euml; gjat&euml;sis&euml;, gjer&euml;sia e kufirit mund t&euml; specifikohet gjithashtu duke p&euml;rdorur nj&euml; nga tre fjal&euml;t ky&ccedil;e: <code>thin</code>, <code>medium</code> dhe <code>thick</code>. Vlerat e p&euml;rqindjes nuk lejohen.</p>
+            </div>
+            <h3>Specifikimi i ngjyr&euml;s s&euml; kufirit</h3>
+            <p>Vetia <code>border-color</code> specifikon ngjyr&euml;n e zon&euml;s kufitare. Kjo &euml;sht&euml; gjithashtu nj&euml; veti e shkurt&euml; p&euml;r cil&euml;simin e ngjyr&euml;s n&euml; t&euml; kat&euml;r an&euml;t e kufirit t&euml; nj&euml; elementi.</p>
+            <p>Rregullat e m&euml;poshtme t&euml; stilit shtojn&euml; nj&euml; kufi solid me ngjyr&euml; t&euml; kuqe rreth paragraf&euml;ve.</p>
+
+
+
+
+
+
         </section>
 
     </main>
