@@ -74,6 +74,7 @@
             <li><a href="#krijimi-tabeles">Krijimi i Tabelave</a></li>
             <li><a href="#kufizimet">Kufizimet</a></li>
             <li><a href="#insert">Deklarata INSERT</a></li>
+            <li><a href="#select">Deklarata SELECT</a></li>
             
         </ul>
     </aside>
@@ -569,13 +570,86 @@ VALUES ('Muhamed Selimi', '2002-11-09', '063-8325044');</code></pre>
 +----+--------------------+------------+--------------+
                 </pre>
             </div>
+        </section>
 
-
-
-
-
-
-
+        <section id="select">
+            <h1>Deklarata SELECT</h1>
+            <h2>Zgjedhja e t&euml; dh&euml;nave nga tabela</h2>
+            <p>N&euml; kaptin&euml;n e m&euml;parsh&euml;me m&euml;suam se si t&euml; fusim t&euml; dh&euml;na n&euml; nj&euml; tabel&euml; t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave. Tani do t&euml; zgjedhim t&euml; dh&euml;nat nga tabelat ekzistuese duke p&euml;rdorur pyet&euml;sorin SQL (<em>SQL query</em>).</p>
+            <p>Deklarata <code>SELECT</code> p&euml;rdoret p&euml;r t&euml; zgjedhur ose p&euml;r t&euml; rimarr&euml; t&euml; dh&euml;na nga nj&euml; ose m&euml; shum&euml; tabela. Mund ta p&euml;rdorni k&euml;t&euml; deklarat&euml; p&euml;r t&euml; zgjedh t&euml; gjitha rreshtat nga nj&euml; tabel&euml; n&euml; t&euml; nj&euml;jt&euml;n koh&euml;, si dhe p&euml;r t&euml; marr&euml; vet&euml;m ato rreshta q&euml; plot&euml;sojn&euml; nj&euml; kusht t&euml; caktuar ose nj&euml; kombinim t&euml; kushteve.</p>
+            <h2>Sintaksa</h2>
+            <p>Sintaksa themelore p&euml;r zgjedhjen e t&euml; dh&euml;nave nga nj&euml; tabel&euml; mund t&euml; jepet k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>SELECT emri_kolona1, emri_kolona2, emri_kolonaN FROM emri_tabeles;</code></pre>
+            </div>
+            <p>K&euml;tu, <em>emri_kolona</em><em>1</em>, <em>emri_kolona</em><em>2</em>, <em>...</em> jan&euml; emrat e kolonave ose fushave t&euml; nj&euml; tabele t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave vlerat e t&euml; cilave doni t&rsquo;i zgjedhni. Sidoqoft&euml;, n&euml;se doni t&rsquo;i zgjedhni vlerat e t&euml; gjitha kolonave t&euml; disponueshme n&euml; nj&euml; tabel&euml;, thjesht mund t&euml; p&euml;rdorni sintaks&euml;n e m&euml;poshtme:</p>
+            <div class="sintaksa">
+<pre><code>SELECT * FROM table_name;</code></pre>
+            </div>
+            <p>Le t'i v&euml;m&euml; n&euml; p&euml;rdorim k&euml;to deklarata. Supozoni se kemi nj&euml; tabel&euml; me emrin <em>punetoret</em> n&euml; databaz&euml;n ton&euml; q&euml; p&euml;rmban sh&euml;nimet e m&euml;poshtme:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+--------+-----------+
+| id_pun | emri_pun       | data_pun   | paga   | id_depart |
++--------+----------------+------------+--------+-----------+
+|      1 | Blend Pajaziti | 2001-05-01 |   5000 |         4 |
+|      2 | Belkize Jusufi | 2002-07-15 |   6500 |         1 |
+|      3 | Muhamed Selimi | 2005-10-18 |   8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 |   7200 |         3 |
+|      5 | Egzona Shabani | 2008-06-24 |   5600 |      NULL |
++--------+----------------+------------+--------+-----------+
+                </pre>
+            </div>
+            <h3>Zgjidhni t&euml; gjitha nga tabela</h3>
+            <p>Deklarata e m&euml;poshtme do t&euml; kthej&euml; t&euml; gjitha rreshtat nga tabela e punonj&euml;sve.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret;</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit, rezultati do t&euml; duket k&euml;sisoj:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+--------+-----------+
+| id_pun | emri_pun       | data_pun   | paga   | id_depart |
++--------+----------------+------------+--------+-----------+
+|      1 | Blend Pajaziti | 2001-05-01 |   5000 |         4 |
+|      2 | Belkize Jusufi | 2002-07-15 |   6500 |         1 |
+|      3 | Muhamed Selimi | 2005-10-18 |   8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 |   7200 |         3 |
+|      5 | Egzona Shabani | 2008-06-24 |   5600 |      NULL |
++--------+----------------+------------+--------+-----------+
+                </pre>
+            </div>
+            <p>Si&ccedil; mund ta shihni, deklarata e till&euml; i kthen t&euml; gjitha rreshtat dhe kolonat nga tabela <em>punetoret</em>.</p>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Ylli (*) &euml;sht&euml; karakter i till&euml; q&euml; do t&euml; thot&euml; <strong>gjith&ccedil;ka</strong>. P&euml;r shembull, karakteri ylli n&euml; deklarat&euml;n <code>SELECT</code> t&euml; shembullit t&euml; m&euml;sip&euml;rm &euml;sht&euml; nj&euml; z&euml;vend&euml;sim i shkurt&euml; p&euml;r t&euml; gjitha kolonat e tabel&euml;s <em>punetoret</em>.</p>
+            </div>
+            <h3>Zgjidhni kolonat nga tabela</h3>
+            <p>N&euml;se nuk ju nevojiten t&euml; gjitha t&euml; dh&euml;nat, mund t&euml; zgjidhni kolona specifike:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT id_pun, emri_pun, salary
+FROM punetoret;</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit t&euml; k&euml;saj deklarate, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+--------+
+| id_pun | emri_pun       | paga   |
++--------+----------------+--------+
+|      1 | Blend Pajaziti |   5000 |
+|      2 | Belkize Jusufi |   6500 |
+|      3 | Muhamed Selimi |   8000 |
+|      4 | Burhan Murati  |   7200 |
+|      5 | Egzona Shabani |   5600 |
++--------+----------------+--------+                    
+                </pre>
+            </div>
+            <p>Si&ccedil; mund ta shihni k&euml;t&euml; her&euml; nuk jan&euml; kolonat <em>data_pun</em> dhe <em>id_depart</em> n&euml; grupin e rezultateve. N&euml; kapitullin tjet&euml;r do t&euml; m&euml;sojm&euml; se si t&euml; zgjedhim t&euml; dh&euml;nat nga nj&euml; tabel&euml; t&euml; bazuara n&euml; nj&euml; kusht.</p>
         </section>
 
     </main>
