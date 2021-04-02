@@ -366,8 +366,12 @@ input[type=range] {
 /* Figura kufijt - border-style */
 .stili-kufirit {
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
 }
 .stili-kufirit img {
   box-shadow: none;
+  margin-top: 0;
+  margin-bottom: -5px;
 }

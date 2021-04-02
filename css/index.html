@@ -1907,12 +1907,115 @@ p {
             <h3>Specifikimi i ngjyr&euml;s s&euml; kufirit</h3>
             <p>Vetia <code>border-color</code> specifikon ngjyr&euml;n e zon&euml;s kufitare. Kjo &euml;sht&euml; gjithashtu nj&euml; veti e shkurt&euml; p&euml;r cil&euml;simin e ngjyr&euml;s n&euml; t&euml; kat&euml;r an&euml;t e kufirit t&euml; nj&euml; elementi.</p>
             <p>Rregullat e m&euml;poshtme t&euml; stilit shtojn&euml; nj&euml; kufi solid me ngjyr&euml; t&euml; kuqe rreth paragraf&euml;ve.</p>
-
-
-
-
-
-
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    border-style: solid;
+    border-color: #ff0000;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vetia CSS <code>border-width</code> ose <code>border-color</code> nuk funksionojn&euml; n&euml;se p&euml;rdoren t&euml; vetme. P&euml;rdorni vetin&euml; <code>border-style</code> p&euml;r t&euml; cil&euml;suar m&euml; par&euml; stilin e kufirit.</p>
+            </div>
+            <h3>Vetia e shkurt&euml; e kufirit</h3>
+            <p>Vetia CSS <code>border</code> &euml;sht&euml; nj&euml; veti e shkurt&euml; p&euml;r cil&euml;simin e nj&euml; ose m&euml; shum&euml; nga vetit&euml; e kufirit <code>border-width</code>, <code>border-style</code> dhe <code>border-color</code> n&euml; nj&euml; rregull t&euml; vet&euml;m.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    border: 5px solid #00ff00;
+}</code></pre>
+                </div>
+            </div>
+            <p>N&euml;se vlera p&euml;r nj&euml; veti individuale t&euml; kufirit hiqet ose nuk specifikohet gjat&euml; cil&euml;simit t&euml; vetis&euml; s&euml; shkurt&euml; t&euml; kufirit, vlera e paracaktuar p&euml;r at&euml; veti do t&euml; p&euml;rdoret.</p>
+            <p>P&euml;r shembull, n&euml;se vlera p&euml;r vetin&euml; <code>border-color</code> mungon ose nuk specifikohet kur cil&euml;soni kufirin, vetia <code>color</code> e elementit do t&euml; p&euml;rdoret si vler&euml; p&euml;r ngjyr&euml;n e kufirit.</p>
+            <p>N&euml; shembullin m&euml; posht&euml;, kufiri do t&euml; jet&euml; nj&euml; vij&euml; e kuqe solide me gjer&euml;si 5 piksell:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    color: red;
+    border: 5px solid;
+}</code></pre>
+                </div>
+            </div>
+            <p>Por, n&euml; rastin e <code>border-style</code>, mungesa e vler&euml;s s&euml; saj do t&euml; pamund&euml;soj shfaqjen e kufirit, sepse vlera e paracaktuar p&euml;r k&euml;t&euml; veti &euml;sht&euml; <code>none</code>. N&euml; shembullin vijues, nuk do t&euml; ket&euml; kufi:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    border: 5px #00ff00;
+}</code></pre>
+                </div>
+            </div>
+            <h2>Vetit&euml; e margjin&euml;s</h2>
+            <p>Vetit&euml; CSS t&euml; margjin&euml;s lejojn&euml; t&euml; caktoni hap&euml;sir&euml;n rreth kufirit t&euml; kutis&euml; s&euml; nj&euml; elementi (ose skajit t&euml; kutis&euml; s&euml; elementit, n&euml;se nuk ka kufi t&euml; p&euml;rcaktuar).</p>
+            <p>Margjina e nj&euml; elementi nuk ndikohet nga ngjyra e sfondit, ajo &euml;sht&euml; gjithmon&euml; transparente. Sidoqoft&euml;, n&euml;se elementi prind ka ngjyr&euml; n&euml; sfond, ai do t&euml; jet&euml; i duksh&euml;m p&euml;rmes zon&euml;s s&euml; tij t&euml; margjin&euml;s.</p>
+            <h3>Cil&euml;simi i margjinave p&euml;r an&euml;t individuale</h3>
+            <p>Mund t&euml; specifikoni margjina p&euml;r an&euml;t individuale t&euml; nj&euml; elementi t&euml; till&euml; si ana e sip&euml;rme, e djatht&euml;, e poshtme dhe e majt&euml; duke p&euml;rdorur p&euml;rkat&euml;sisht vetit&euml; CSS: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> dhe <code>margin-left</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+p {
+    margin-left: 75px;
+    margin-right: 75px;
+}</code></pre>
+                </div>
+            </div>
+            <p>Vetit&euml; e margjin&euml;s mund t&euml; specifikohen duke p&euml;rdorur vlerat e m&euml;poshtme:</p>
+            <ul>
+                <li><em>gjat&euml;sia</em> &ndash; specifikon margjin&euml;n n&euml; px, em, rem, pt, cm, etj.</li>
+                <li>% &ndash; specifikon margjin&euml;n n&euml; p&euml;rqindje (%) t&euml; gjer&euml;sis&euml; s&euml; elementit q&euml; p&euml;rmban.</li>
+                <li>auto &ndash; ueb shfletuesi llogarit nj&euml; margjin&euml; t&euml; p&euml;rshtatshme p&euml;r t'u p&euml;rdorur.</li>
+                <li>inherit &ndash; specifikon q&euml; margjina duhet t&euml; trash&euml;gohet nga elementi prind.</li>
+            </ul>
+            <p>Gjithashtu mund t&euml; specifikoni margjina me vlera negative n&euml; nj&euml; element, p.sh., <code>margin: -10px;</code>, <code>margin: -5%;</code>, etj.</p>
+            <h3>Vetia e shkurt&euml; e margjin&euml;s</h3>
+            <p>Vetia margin &euml;sht&euml; nj&euml; veti e shkurt&euml; p&euml;r t&euml; shmangur vendosjen e margjin&euml;s t&euml; secil&euml;s an&euml; ve&ccedil;mas, d.m.th., <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> dhe <code>margin-left</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    margin: 50px; /* zbatohen në të katër anët */
+}
+p {
+    margin: 25px 75px; /* vertikal | horizontal */
+}
+div {
+    margin: 25px 50px 75px; /* sipër | horizontal | poshtë */
+}
+hr {
+    margin: 25px 50px 75px 100px; /* sipër | djathtas | poshtë | majtas */
+}</code></pre>
+                </div>
+            </div>
+            <p>Ky sh&euml;nim i shkurt&euml; mund t&euml; marr&euml; nj&euml;, dy, tre ose kat&euml;r vlera t&euml; ndara me hap&euml;sir&euml;.</p>
+            <ul>
+                <li>N&euml;se specifikohet <em>nj&euml; vler&euml;</em>, ajo zbatohet <strong>n&euml; t&euml; kat&euml;r an&euml;t</strong>.</li>
+                <li>N&euml;se specifikohen <em>dy vlera</em>, vlera e par&euml; aplikohet <strong>n&euml; an&euml;n e sip&euml;rme dhe t&euml; poshtme</strong>, dhe vlera e dyt&euml; zbatohet <strong>n&euml; an&euml;n e djatht&euml; dhe t&euml; majt&euml;</strong> t&euml; kutis&euml; s&euml; elementit.</li>
+                <li>N&euml;se specifikohen <em>tri vlera</em>, vlera e par&euml; zbatohet <strong>n&euml; krye</strong>, vlera e dyt&euml; zbatohet <strong>n&euml; an&euml;n e djatht&euml; dhe t&euml; majt&euml;</strong> dhe vlera e fundit zbatohet <strong>n&euml; pjes&euml;n e poshtme</strong>.</li>
+                <li>N&euml;se specifikohen <em>kat&euml;r vlera</em>, ato zbatohen <strong>n&euml; pjes&euml;n e sip&euml;rme, n&euml; t&euml; djatht&euml;, n&euml; pjes&euml;n e poshtme dhe n&euml; t&euml; majt&euml;</strong> t&euml; kutis&euml; s&euml; elementit p&euml;rkat&euml;sisht n&euml; radhitjen e specifikuar.</li>
+            </ul>
+            <p>Rekomandohet t&euml; p&euml;rdorni vetin&euml; e shkurt&euml;, pasi kjo do t'ju ndihmoj&euml; t&euml; kurseni pak koh&euml; duke shmangur sh&euml;nimin shtes&euml; dhe ta b&euml;ni kodin tuaj CSS m&euml; t&euml; leht&euml; p&euml;r t'u ndjekur dhe mir&euml;mbajtur.</p>
+            <h3>Qend&euml;rzimi horizontal me margjina automatike</h3>
+            <p>Vlera auto p&euml;r vetin&euml; e margjin&euml;s i tregon ueb shfletuesit q&euml; t&euml; llogarit automatikisht margjin&euml;n. Kjo zakonisht p&euml;rdoret p&euml;r t&euml; qend&euml;rzuar nj&euml; element horizontalisht brenda nj&euml; elementi m&euml; t&euml; madh.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    width: 300px;
+    background: gray;
+    margin: 0 auto;
+}</code></pre>
+                </div>
+            </div>
+            <p>Rregullat e m&euml;sip&euml;rme t&euml; stilit lejojn&euml; q&euml; elementi &lt;<code>div</code>&gt; t&euml; ket&euml; 300 piksell nga e gjith&euml; hap&euml;sira horizontale e disponueshme, nd&euml;rsa hap&euml;sira tjet&euml;r e mbetur do t&euml; ndahet n&euml; m&euml;nyr&euml; t&euml; barabart&euml; midis margjin&euml;s s&euml; majt&euml; dhe t&euml; djatht&euml;. K&euml;sisoj elementi &lt;<code>div</code>&gt; do t&euml; qend&euml;rzohet horizontalisht.</p>
         </section>
 
     </main>
