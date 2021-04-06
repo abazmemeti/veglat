@@ -75,6 +75,7 @@
             <li><a href="#kufizimet">Kufizimet</a></li>
             <li><a href="#insert">Deklarata INSERT</a></li>
             <li><a href="#select">Deklarata SELECT</a></li>
+            <li><a href="#klauzola-where">Klauzola WHERE</a></li>
             
         </ul>
     </aside>
@@ -264,7 +265,7 @@ CREATE TABLE personat (
 );
      
 -- Sintaksa për Databazën në SQL Server 
-CREATE TABLE persons (
+CREATE TABLE personat (
     id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     emri VARCHAR(50) NOT NULL,
     ditelindja DATE,
@@ -650,6 +651,425 @@ FROM punetoret;</code></pre>
                 </pre>
             </div>
             <p>Si&ccedil; mund ta shihni k&euml;t&euml; her&euml; nuk jan&euml; kolonat <em>data_pun</em> dhe <em>id_depart</em> n&euml; grupin e rezultateve. N&euml; kapitullin tjet&euml;r do t&euml; m&euml;sojm&euml; se si t&euml; zgjedhim t&euml; dh&euml;nat nga nj&euml; tabel&euml; t&euml; bazuara n&euml; nj&euml; kusht.</p>
+        </section>
+
+        <section id="klauzola-where">
+            <h1>Klauzola WHERE</h1>
+            <h2>P&euml;rzgjedhja e t&euml; dh&euml;n&euml;s bazuar n&euml; kusht</h2>
+            <p>N&euml; kapitullin e m&euml;parsh&euml;m m&euml;suam se si t&euml; marrim t&euml; gjitha t&euml; dh&euml;nat nga nj&euml; tabel&euml; ose kolona t&euml; caktuara nga tabela. Por, n&euml; skenarin e bot&euml;s reale zakonisht duhet t&euml; zgjedhim, p&euml;rdit&euml;sojm&euml; ose fshijm&euml; vet&euml;m ato t&euml; dh&euml;na q&euml; p&euml;rmbushin kushte t&euml; caktuara si p.sh., pun&euml;tor&euml;t q&euml; i p&euml;rkasin nj&euml; grupmoshe t&euml; caktuar, ose vendi, etj.</p>
+            <p>Klauzola <code>WHERE</code> p&euml;rdoret me <code>SELECT</code>, <code>UPDATE</code>, dhe <code>DELETE</code>. Sidoqoft&euml;, do t&euml; shihni p&euml;rdorimin e k&euml;saj klauzole me deklaratat e tjera n&euml; kapitujt e ardhsh&euml;m.</p>
+            <h2>Sintaksa</h2>
+            <p>Klauzola <code>WHERE</code> p&euml;rdoret me deklarat&euml;n <code>SELECT</code> p&euml;r t&euml; nxjerr&euml; vet&euml;m ato t&euml; dh&euml;na q&euml; plot&euml;sojn&euml; kushtet e specifikuara. Sintaksa themelore mund t&euml; jepet k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>SELECT liste_kolonave FROM emri_tabeles WHERE kushti;</code></pre>
+            </div>
+            <p>K&euml;tu, <em>liste_ kolonave</em> jan&euml; emrat e kolonave / fushave si <em>emri</em>, <em>mosha</em>, <em>vendi</em> etj. t&euml; nj&euml; tabele n&euml; baz&euml;n e t&euml; dh&euml;nave vlerat e s&euml; cil&euml;s doni t&rsquo;i merrni. Sidoqoft&euml;, n&euml;se doni t&euml; merrni vlerat e t&euml; gjitha kolonave t&euml; disponueshme n&euml; nj&euml; tabel&euml;, mund t&euml; p&euml;rdorni sintaks&euml;n e m&euml;poshtme:</p>
+            <div class="sintaksa">
+<pre><code>SELECT * FROM emri_tabeles WHERE kushti;</code></pre>
+            </div>
+            <p>Tani, le t&rsquo;i shohim disa shembuj q&euml; tregojn&euml; se si funksionon n&euml; t&euml; v&euml;rtet&euml;.</p>
+            <p>Supozoni se kemi nj&euml; tabel&euml; t&euml; quajtur <em>punetoret</em> n&euml; databaz&euml;n ton&euml; me t&euml; dh&euml;nat e m&euml;poshtme:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      1 | Blend Pajaziti | 2001-05-01 | 5000 |         4 |
+|      2 | Belkize Jusufi | 2002-07-15 | 6500 |         1 |
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
+|      5 | Egzona Shabani | 2008-06-24 | 5600 |      NULL |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <h3>Filtroni t&euml; dh&euml;nat me klauzol&euml;n WHERE</h3>
+            <p>Deklarata e m&euml;poshtme SQL do t&rsquo;i kthej&euml; t&euml; gjith&euml; pun&euml;tor&euml;t nga tabela <em>punetoret</em>, paga e t&euml; cil&euml;ve &euml;sht&euml; m&euml; e madhe se 7000. Klauzola WHERE i filtroi t&euml; dh&euml;nat e panevojshme.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret
+WHERE paga > 7000;</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit, rezultati do t&euml; duket k&euml;sisoj:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <p>Si&ccedil; mund ta shihni rezultati p&euml;rmban vet&euml;m ata pun&euml;tor&euml; q&euml; paga e tyre &euml;sht&euml; m&euml; e madhe se 7000. N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; merrni t&euml; dh&euml;na nga kolona t&euml; ve&ccedil;anta, k&euml;sisoj:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT id_pun, emri_pun, paga
+FROM punetoret
+WHERE paga > 7000;</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit t&euml; deklarat&euml;s s&euml; m&euml;sip&euml;rme, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------+
+| id_pun | emri_pun       | paga |
++--------+----------------+------+
+|      3 | Muhamed Selimi | 8000 |
+|      4 | Burhan Murati  | 7200 |
++--------+----------------+------+
+                </pre>
+            </div>
+            <p>Deklarata e m&euml;poshtme do t&euml; marr&euml; sh&euml;nimet e nj&euml; pun&euml;tori, ID-ja e t&euml; cilit &euml;sht&euml; 2.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret
+WHERE id_pun = 2;</code></pre>
+                </div>
+            </div>
+            <p>Deklarata do t&euml; prodhoj k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      2 | Belkize Jusufi | 2002-07-15 | 6500 |         1 |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <p>K&euml;t&euml; her&euml; si rezultat kemi vet&euml;m nj&euml; rresht, pasi <em>id_pun</em> &euml;sht&euml; unik p&euml;r &ccedil;do pun&euml;tor.</p>
+            <h2>Operator&euml;t e lejuar n&euml; klauzol&euml;n WHERE</h2>
+            <p>SQL p&euml;rkrah num&euml;r t&euml; operator&euml;ve t&euml; ndrysh&euml;m q&euml; mund t&euml; p&euml;rdoren n&euml; klauzol&euml;n <code>WHERE</code>, ata m&euml; t&euml; r&euml;nd&euml;sishmit jan&euml; p&euml;rmbledhur n&euml; tabel&euml;n vijuese.</p>
+            <div style="overflow-x: auto;">
+                <table class="klauzola-where-tabela">
+                    <tr>
+                    <td>
+                        <p><strong>Operatori</strong></p>
+                    </td>
+                    <td>
+                        <p><strong>P&euml;rshkrimi</strong></p>
+                    </td>
+                    <td>
+                        <p><strong>Shembull</strong></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <p><code>=</code></p>
+                    </td>
+                    <td>
+                        <p>I barabart&euml;</p>
+                    </td>
+                    <td>
+                        <p><code>WHERE id = 2</code></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <p><code>&gt;&nbsp;</code></p>
+                    </td>
+                    <td>
+                        <p>M&euml; i madh se</p>
+                    </td>
+                    <td>
+                        <p><code>WHERE mosha &gt; 30</code></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <p><code>&lt;&nbsp;</code></p>
+                    </td>
+                    <td>
+                        <p>M&euml; i vog&euml;l se</p>
+                    </td>
+                    <td>
+                        <p><code>WHERE mosha &lt; 18</code></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <p><code>&gt;=</code></p>
+                    </td>
+                    <td>
+                        <p>M&euml; i madh ose i barabart&euml;</p>
+                    </td>
+                    <td>
+                        <p><code>WHERE vleresimi &gt;= 4</code></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <p><code>&lt;=</code></p>
+                    </td>
+                    <td>
+                        <p>M&euml; i vog&euml;l ose i barabart&euml;</p>
+                    </td>
+                    <td>
+                        <p><code>WHERE cmimi &lt;= 100</code></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <p><code>LIKE</code></p>
+                    </td>
+                    <td>
+                        <p>P&euml;rputhje e thjesht&euml; e modelit</p>
+                    </td>
+                    <td>
+                        <p><code>WHERE emri LIKE 'Bel'</code></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <p><code>IN</code></p>
+                    </td>
+                    <td>
+                        <p>Kontrolloni n&euml;se nj&euml; vler&euml; e specifikuar p&euml;rputhet me ndonj&euml; vler&euml; n&euml; nj&euml; list&euml; ose n&euml;npyetje</p>
+                    </td>
+                    <td>
+                        <p><code>WHERE shteti IN ('AL', 'KS')</code></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <p><code>BETWEEN</code></p>
+                    </td>
+                    <td>
+                        <p>Kontrolloni n&euml;se nj&euml; vler&euml; e specifikuar &euml;sht&euml; brenda nj&euml; vargu vlerash</p>
+                    </td>
+                    <td style="width: 280px">
+                        <p><code>WHERE vleresimi BETWEEN 3 AND 5</code></p>
+                    </td>
+                    </tr>
+                    </table>
+            </div>
+            <h2>Operator&euml;t AND &amp; OR</h2>
+            <p>Nganj&euml;her&euml; duhet t&euml; filtroni t&euml; dh&euml;nat bazuar n&euml; m&euml; shum&euml; kushte si p.sh., zgjedhja e pun&euml;tor&euml;ve, mosha e t&euml; cil&euml;ve &euml;sht&euml; m&euml; e vjet&euml;r se 30 dhe shteti prej nga jan&euml; &euml;sht&euml; Shqip&euml;ria, pastaj zgjedhja e produkteve &ccedil;mimi i t&euml; cilave &euml;sht&euml; m&euml; i ul&euml;t se 100 lek&euml; dhe vler&euml;simet jan&euml; m&euml; t&euml; m&euml;dha se 4, etj.</p>
+            <h3>Operatori AND</h3>
+            <p>Operatori AND &euml;sht&euml; nj&euml; operator logjik q&euml; kombinon dy kushte dhe kthen <code>TRUE</code> vet&euml;m n&euml;se t&euml; dy kushtet vler&euml;sohen si <code>TRUE</code>. Operatori <code>AND</code> shpesh p&euml;rdoret n&euml; klauzol&euml;n <code>WHERE</code> t&euml; deklarat&euml;s <code>SELECT</code>, <code>UPDATE</code>, <code>DELETE</code> p&euml;r t&euml; formuar kushtet q&euml; do t&euml; filtrojn&euml; nj&euml; grup t&euml; rezultateve.</p>
+            <div class="sintaksa">
+<pre><code>SELECT emri_kolona1, emri_kolona2, emri_kolonaN
+FROM emri_tabeles
+WHERE kushti1 AND kushti2;</code></pre>
+            </div>
+            <p>Le t&euml; shohim disa shembuj q&euml; tregojn&euml; se si funksionon n&euml; t&euml; v&euml;rtet&euml;.</p>
+            <p>Supozoni se keni nj&euml; tabel&euml; t&euml; quajtur <em>punetoret</em> n&euml; databaz&euml;n ton&euml; me t&euml; dh&euml;nat e m&euml;poshtme:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      1 | Blend Pajaziti | 2001-05-01 | 5000 |         4 |
+|      2 | Belkize Jusufi | 2002-07-15 | 6500 |         1 |
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
+|      5 | Egzona Shabani | 2008-06-24 | 5600 |      NULL |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <p>Deklarata e m&euml;poshtme SQL do t&euml; kthej&euml; vet&euml;m ata pun&euml;tor&euml; nga tabela e <em>punetoret</em> paga e t&euml; cil&euml;ve &euml;sht&euml; m&euml; e madhe se 7000 dhe <em>id_depart</em> &euml;sht&euml; e barabart&euml; me 5.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret
+WHERE paga > 7000 AND id_depart = 5;</code></pre>
+                </div>
+              </div>
+              <p>Pas ekzekutimit, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+              <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <h3>Operatori OR</h3>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, operatori OR &euml;sht&euml; gjithashtu nj&euml; operator logjik q&euml; kombinon dy kushte, por kthen t&euml; <code>TRUE</code> &nbsp;n&euml;se vet&euml;m nj&euml; prej kushteve &euml;sht&euml; <code>TRUE</code>.</p>
+            <p>Deklarata e m&euml;poshtme SQL do t&euml; kthej&euml; t&euml; gjith&euml; pun&euml;tor&euml;t nga tabela <em>punetoret</em> paga e t&euml; cil&euml;ve &euml;sht&euml; ose m&euml; e madhe se 7000 ose <em>id_depart</em> &euml;sht&euml; e barabart&euml; me 5.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret
+WHERE paga > 7000 OR id_pun = 5;</code></pre>
+                </div>
+            </div>
+            <p>K&euml;t&euml; her&euml; do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
++--------+----------------+------------+------+-----------+
+                </pre>
+              </div>
+              <h3>Kombinimi i operator&euml;ve AND &amp; OR</h3>
+            <p>Gjithashtu mund t&euml; kombinoni operator&euml;t <code>AND</code> dhe <code>OR</code> p&euml;r t&euml; krijuar kusht&euml;zime t&euml; nd&euml;rlikuara.</p>
+            <p>Deklarata e m&euml;poshtme e SQL do t&euml; kthej&euml; t&euml; gjith&euml; pun&euml;tor&euml;t, paga e t&euml; cil&euml;ve &euml;sht&euml; m&euml; e madhe se 5000 dhe <em>id_depart</em> &euml;sht&euml; e barabart&euml; me 1 ose 5.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret
+WHERE paga > 5000 AND (id_depart = 1 OR id_depart = 5);</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit t&euml; query-it (pyet&euml;sorit) t&euml; m&euml;sip&euml;rm, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      2 | Belkize Jusufi | 2002-07-15 | 6500 |         1 |
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <h2>Operator&euml;t IN &amp; BETWEEN</h2>
+            <p>M&euml;suam se si t&euml; kombinojm&euml; m&euml; shum&euml; kushte duke p&euml;rdorur operator&euml;t AND dhe OR. Sidoqoft&euml;, ndonj&euml;her&euml; kjo nuk &euml;sht&euml; e mjaftueshme dhe shum&euml; produktive, p&euml;r shembull, n&euml;se duhet t&euml; kontrolloni vlerat q&euml; ndodhen brenda nj&euml; diapazoni ose nj&euml; grup vlerash.</p>
+            <p>Operator&euml;t <code>IN</code> dhe <code>BETWEEN</code> paraqesin nj&euml; mund&euml;si q&euml; mund&euml;sojn&euml; t&euml; p&euml;rcaktoni nj&euml; diapazon ekskluziv ose nj&euml; grup vlerash n&euml; vend se t&euml; kombinoni kushtet e ndara.</p>
+            <h3>Operatori IN</h3>
+            <p>Operatori <code>IN</code> &euml;sht&euml; operator logjik q&euml; p&euml;rdoret p&euml;r t&euml; kontrolluar n&euml;se nj&euml; vler&euml; e ve&ccedil;ant&euml; ekziston brenda nj&euml; grupi vlerash apo jo. Sintaksa e saj themelore mund t&euml; jepet k&euml;sisoj:</p>
+            <div class="sintaksa">
+<pre><code>SELECT liste_kolonave FROM emri_tabeles
+WHERE emri_kolones IN (vlera1, vlera1,...);</code></pre>
+            </div>
+            <p>K&euml;tu, <em>liste_ kolonave</em> jan&euml; emrat e kolonave / fushave si <em>emri</em>, <em>mosha</em>, <em>vendi</em> etj., t&euml; nj&euml; tabele t&euml; baz&euml;s s&euml; t&euml; dh&euml;nave vlerat e s&euml; cil&euml;s doni t&rsquo;i merrni. T&rsquo;i shohim disa shembuj.</p>
+            <p>Supozojm&euml; se kemi nj&euml; tabel&euml; <em>punetoret</em> n&euml; databaz&euml;n ton&euml; q&euml; ka t&euml; dh&euml;nat e m&euml;poshtme:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      1 | Blend Pajaziti | 2001-05-01 | 5000 |         4 |
+|      2 | Belkize Jusufi | 2002-07-15 | 6500 |         1 |
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
+|      5 | Egzona Shabani | 2008-06-24 | 5600 |      NULL |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <p>Deklarata e m&euml;poshtme SQL do t&euml; kthej&euml; vet&euml;m ata pun&euml;tor&euml;, <em>id_depart</em> i t&euml; cil&euml;ve &euml;sht&euml; 1 ose 3.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret
+WHERE id_depart IN (1, 3);</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit t&euml; query-it, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      2 | Belkize Jusufi | 2002-07-15 | 6500 |         1 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; p&euml;rdorni operatorin <code>NOT IN</code>, i cili &euml;sht&euml; sakt&euml;sisht i kund&euml;rt me IN. Deklarata e m&euml;poshtme SQL do t&euml; kthej&euml; t&euml; gjith&euml; punetoret, p&euml;rve&ccedil; atyre q&euml; <em>id_dept</em> e kan&euml; vler&euml;n 1 ose 3.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret
+WHERE id_depart NOT IN (1, 3);</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit t&euml; query-it, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      1 | Blend Pajaziti | 2001-05-01 | 5000 |         4 |
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <h3>Operatori BETWEEN</h3>
+            <p>Ndonj&euml;her&euml; d&euml;shironi t&euml; zgjidhni nj&euml; rresht n&euml;se vlera n&euml; nj&euml; kolon&euml; bie brenda nj&euml; diapazoni t&euml; caktuar. Ky lloj kushti &euml;sht&euml; i zakonsh&euml;m kur punoni me t&euml; dh&euml;na numerike.</p>
+            <p>P&euml;r t&euml; kryer query-n t&euml; bazuar p&euml;r nj&euml; kusht t&euml; till&euml; mund t&euml; p&euml;rdorni operatorin <code>BETWEEN</code>. Ky &euml;sht&euml; nj&euml; operator logjik q&euml; mund&euml;son t&euml; specifikoni nj&euml; interval t&euml; vlerave:</p>
+            <div class="sintaksa">
+<pre><code>SELECT emri_kolones1, emri_kolones2, emri_kolones3
+FROM emri_tabela
+WHERE emri_kolones BETWEEN vlera_min AND vlera_max;</code></pre>
+            </div>
+            <p>Le t&euml; nd&euml;rtojm&euml; dhe kryejm&euml; query duke u bazuar n&euml; kushtet e intervalit n&euml; tabel&euml;n ton&euml; <em>punetoret</em>.</p>
+            <p>Deklarata e m&euml;poshtme SQL do t&euml; kthej&euml; vet&euml;m ata pun&euml;tor&euml; nga tabela <em>punetoret</em>, paga e t&euml; cil&euml;ve &euml;sht&euml; brenda intervalit t&euml; vlerave 7000 dhe 9000.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret 
+WHERE paga BETWEEN 7000 AND 9000;</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <p>Kur p&euml;rdorni operatorin <code>BETWEEN</code> me vlerat e dat&euml;s ose koh&euml;s, p&euml;rdorni funksionin <code>CAST()</code> p&euml;r t&euml; konvertuar n&euml; m&euml;nyr&euml; eksplicite vlerat e tipit t&euml; d&euml;shiruar t&euml; t&euml; dh&euml;nave q&euml; t&euml; fitojm&euml; rezultatet m&euml; t&euml; mira. P&euml;r shembull, n&euml;se p&euml;rdorni nj&euml; string t&euml; till&euml; si '2016-12-31' n&euml; krahasim me nj&euml; <code>DATE</code>, p&euml;rpunoni stringun n&euml; nj&euml; <code>DATE</code>, k&euml;sisoj:</p>
+            <p>Deklarata e m&euml;poshtme SQL zgjedh t&euml; gjith&euml; pun&euml;tor&euml;t q&euml; u pun&euml;suan n&euml; mes 1 janarit 2006 (d.m.th. '2006-01-01') dhe 31 dhjetorit 2016 (d.m.th. '2016-12-31'):</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret WHERE data_pun
+BETWEEN CAST('2006-01-01' AS DATE) AND CAST('2016-12-31' AS DATE);</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit t&euml; query-it, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
+|      5 | Egzona Shabani | 2008-06-24 | 5600 |      NULL |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <p>Deri sa intervalet e datave dhe numrave jan&euml; m&euml; t&euml; zakonshme, gjithashtu mund t&euml; krijoni kushte q&euml; k&euml;rkojn&euml; brenda intervaleve t&euml; stringjeve. Deklarata e m&euml;poshtme SQL zgjedh t&euml; gjith&euml; pun&euml;tor&euml;t, emri i t&euml; cil&euml;ve fillon me ndonj&euml; nga shkronjat ne mes 'D' dhe 'S':</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret
+WHERE emri_pun BETWEEN 'D' AND 'S';</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit t&euml; query-it, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
+|      5 | Egzona Shabani | 2008-06-24 | 5600 |      NULL |
++--------+----------------+------------+------+-----------+
+                </pre>
+              </div>
+
+
+
+            
+
+
+
+
+
+
+
         </section>
 
     </main>
