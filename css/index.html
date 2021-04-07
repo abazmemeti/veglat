@@ -81,6 +81,8 @@
             <li><a href="#listat">Listat</a></li>
             <li><a href="#tabelat">Tabelat</a></li>
             <li><a href="#box-modeli">Box modeli</a></li>
+            <li><a href="#shfaqja-display">Shfaqja (<em>Display</em>)</a></li>
+            <li><a href="#pozicionimi">Pozicionimi</a></li>
             
         </ul>
     </aside>
@@ -2016,6 +2018,159 @@ hr {
                 </div>
             </div>
             <p>Rregullat e m&euml;sip&euml;rme t&euml; stilit lejojn&euml; q&euml; elementi &lt;<code>div</code>&gt; t&euml; ket&euml; 300 piksell nga e gjith&euml; hap&euml;sira horizontale e disponueshme, nd&euml;rsa hap&euml;sira tjet&euml;r e mbetur do t&euml; ndahet n&euml; m&euml;nyr&euml; t&euml; barabart&euml; midis margjin&euml;s s&euml; majt&euml; dhe t&euml; djatht&euml;. K&euml;sisoj elementi &lt;<code>div</code>&gt; do t&euml; qend&euml;rzohet horizontalisht.</p>
+        </section>
+
+        <section id="shfaqja-display">
+            <h1>Shfaqja (<em>Display</em>)</h1>
+            <h2>Vetia CSS <em>Display</em></h2>
+            <p>Specifikimi CSS definon vler&euml;n e paracaktuar t&euml; shfaqjes p&euml;r t&euml; gjith&euml; element&euml;t, p.sh. elementi &lt;<code>div</code>&gt; <em>paraqitet si bllok</em> (<strong><code>block</code></strong>), nd&euml;rsa elementi &lt;<code>span</code>&gt; <em>paraqitet n&euml; linj&euml;</em> (<strong><code>inline</code></strong>).</p>
+            <h2>Ndryshimi i vler&euml;s s&euml; parazgjedhur t&euml; shfaqjes</h2>
+            <p>Mbivendosja e vler&euml;s s&euml; paracaktuar t&euml; shfaqjes s&euml; nj&euml; elementi &euml;sht&euml; nj&euml; implikim i r&euml;nd&euml;sish&euml;m i vetis&euml; <code>display</code>. P&euml;r shembull, ndryshimi i nj&euml; elementi t&euml; nivelit <em>inline</em> n&euml; element t&euml; nivelit <em>bllok</em> ose ndryshimi i elementit t&euml; nivelit bllok q&euml; do t&euml; shfaqet si nj&euml; element i nivelit <em>inline</em>.</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vetia CSS <code>display</code> &euml;sht&euml; nj&euml; nga vetit&euml; m&euml; t&euml; fuqishme dhe m&euml; t&euml; dobishme n&euml; CSS. Mund t&euml; jet&euml; shum&euml; e dobishme p&euml;r krijimin e ueb faqeve q&euml; duken n&euml; nj&euml; m&euml;nyr&euml; tjet&euml;r, por prap&euml; duke ndjekur standardet e uebit.</p>
+            </div>
+            <h3>Display block</h3>
+            <p>Vlera <code>block</code> e vetis&euml; <code>display</code> e detyron nj&euml; element t&euml; sillet si nj&euml; element i <strong>nivelit bllok</strong>, si &euml;sht&euml; p.sh. elementi &lt;<code>div</code>&gt; ose &lt;<code>p</code>&gt;. Rregullat e stilit n&euml; shembullin vijues shfaqin elementet &lt;<code>span</code>&gt; dhe &lt;<code>a</code>&gt; si element&euml; t&euml; nivelit bllok:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>span {
+    display: block;
+}
+a {
+    display: block;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Ndryshimi i tipit t&euml; shfaqjes t&euml; nj&euml; elementi ndryshon vet&euml;m sjelljen e shfaqjes s&euml; nj&euml; elementi, JO edhe tipin e elementit q&euml; &euml;sht&euml;. P&euml;r shembull, nj&euml; element inline i cil&euml;suar si <code>display: block;</code> nuk lejohet t&euml; ket&euml; nj&euml; element bllok t&euml; vendosur brenda tij.</p>
+            </div>
+            <h3>Display inline</h3>
+            <p>Vlera <code>inline</code> e vetis&euml; <code>display</code> b&euml;n q&euml; nj&euml; element t&euml; sillet sikur t&euml; ishte <strong>element n&euml; linj&euml;</strong>, p&euml;r shembull si&ccedil; jan&euml; elementet &lt;<code>span</code>&gt; ose &lt;<code>a</code>&gt;. Rregullat e stilit n&euml; shembullin vijues shfaqin elementet &lt;<code>p</code>&gt; dhe &lt;<code>li</code>&gt; si elemente t&euml; <em>nivelit inline</em>:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>p {
+    display: inline;
+}
+ul li {
+    display: inline;
+}</code></pre>
+                </div>
+            </div>
+            <h3>Display inline-block</h3>
+            <p>Vlera <code>inline-block</code> e vetis&euml; <code>display</code> b&euml;n q&euml; nj&euml; element t&euml; gjeneroj&euml; nj&euml; kuti bllok q&euml; do t&euml; ket&euml; p&euml;rmbajtje p&euml;rreth d.m.th. n&euml; t&euml; nj&euml;jt&euml;n linj&euml; me p&euml;rmbajtjen e af&euml;rt. Rregullat e m&euml;poshtme t&euml; stilit shfaqin elementet &lt;<code>div</code>&gt; dhe &lt;<code>span</code>&gt; si bllok n&euml; linj&euml; (<em>inline-block</em>):</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>div {
+    display: inline-block;
+}
+span {
+    display: inline-block;
+}</code></pre>
+                </div>
+            </div>
+            <h3>Display none</h3>
+            <p>Vlera <code>none</code> vetis&euml; <code>display</code> thjesht nuk b&euml;n q&euml; nj&euml; element t&euml; gjeneroj&euml; fare nj&euml; kuti. Elementet e f&euml;mij&euml;ve nuk gjenerojn&euml; gjithashtu asnj&euml; kuti, edhe n&euml;se vetia e tyre <code>display</code> &euml;sht&euml; cil&euml;suar n&euml; ndonj&euml; vler&euml; tjet&euml;r. Dokumenti paraqitet sikur elementi t&euml; mos ekzistonte n&euml; pem&euml;n e dokumentit.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>h1 {
+    display: none;
+}
+p {
+    display: none;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Vlera <code>none</code> p&euml;r vetin&euml; <code>display</code> nuk krijon nj&euml; kuti t&euml; padukshme &ndash; por nuk krijon fare kuti. Padukshm&euml;ria e nj&euml; elementi b&euml;het me deklarat&euml;n <code>visibility: hidden;</code></p>
+            </div>
+        </section>
+
+        <section id="pozicionimi">
+            <h1>Pozicionimi</h1>
+            <h2>Metodat e pozicionimit n&euml; CSS</h2>
+            <p>Pozicionimi i elementeve n&euml; m&euml;nyr&euml; t&euml; p&euml;rshtatshme n&euml; ueb faqe &euml;sht&euml; nj&euml; domosdoshm&euml;ri p&euml;r nj&euml; dizajn t&euml; mir&euml; t&euml; paraqitjes. Ekzistojn&euml; disa metoda n&euml; CSS q&euml; mund t&euml; p&euml;rdoren p&euml;r pozicionimin e elementeve.</p>
+            <h3>Pozicionimi statik</h3>
+            <p>Nj&euml; element i pozicionuar n&euml; m&euml;nyr&euml; statike pozicionohet gjithmon&euml; sipas rrjedh&euml;s normale t&euml; faqes. Elementet HTML kan&euml; pozicion statik me parazgjedhje. Elementet e pozicionuara n&euml; m&euml;nyr&euml; statike nuk ndikohen nga k&euml;to veti: <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code> dhe <code>z-index</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>.box {
+    padding: 20px;
+    background: #7dc765;
+}</code></pre>
+                </div>
+            </div>
+            <h3>Pozicionimi relativ</h3>
+            <p>Nj&euml; element relativisht i pozicionuar &euml;sht&euml; <em>i pozicionuar</em> n&euml; krahasim me pozicionin e tij normal.</p>
+            <p>N&euml; skem&euml;n e pozicionimit relativ, pozicioni i kutis&euml; s&euml; elementit llogaritet sipas rrjedh&euml;s normale. Pastaj kutia zhvendoset nga ky pozicion normal n&euml; p&euml;rputhje me vetit&euml; &ndash; <code>top</code> ose <code>bottom</code> dhe/ose <code>left</code> ose <code>right</code>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>.box {
+    position: relative;
+    left: 100px;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Nj&euml; element i pozicionuar n&euml; m&euml;nyr&euml; relative mund t&euml; zhvendoset dhe t&euml; mbivendos&euml; element&euml; t&euml; tjer&euml;, por ai e mban hap&euml;sir&euml;n e rezervuar fillimisht p&euml;r t&euml; n&euml; rrjedh&euml;n normale.</p>
+            </div>
+            <h3>Pozicionimi absolut</h3>
+            <p>Nj&euml; element i pozicionuar absolutisht &euml;sht&euml; i pozicionuar n&euml; raport (krahasuar) me elementin e par&euml; prind q&euml; ka nj&euml; pozicion tjet&euml;r p&euml;rve&ccedil; atij statik. N&euml;se nuk gjendet ndonj&euml; element i till&euml;, ai do t&euml; pozicionohet n&euml; ueb faqe n&euml; krahasim me k&euml;ndin <strong>'sip&euml;r-majtas'</strong> t&euml; dritares s&euml; shfletuesit. Cil&euml;simet e kutis&euml; m&euml; tej mund t&euml; specifikohen duke p&euml;rdorur nj&euml; ose m&euml; shum&euml; veti: <code>top</code>, <code>right</code>, <code>bottom</code> dhe <code>left</code>.</p>
+            <p>Elementet e pozicionuar n&euml; m&euml;nyr&euml; absolute nxirren jasht&euml; rrjedh&euml;s normale t&euml;r&euml;sisht dhe k&euml;shtu nuk z&euml;n&euml; vend kur vendosen elemente f&euml;mij&euml;. Sidoqoft&euml;, mund t&euml; mbivendoset element&euml; t&euml; tjer&euml; n&euml; var&euml;si t&euml; vler&euml;s s&euml; vetis&euml; <code>z-index</code>. Gjithashtu, nj&euml; element i pozicionuar absolutisht mund t&euml; ket&euml; margjina, dhe ato nuk shemben me asnj&euml; margjin&euml; tjet&euml;r.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>.box {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+}</code></pre>
+                </div>
+            </div>
+            <h3>Pozicionimi i fiksuar</h3>
+            <p>Pozicionimi i fiksuar &euml;sht&euml; nj&euml; n&euml;nkategori e pozicionimit absolut.</p>
+            <p>Dallimi i vet&euml;m &euml;sht&euml; se, nj&euml; element i pozicionuar n&euml; m&euml;nyr&euml; fikse &euml;sht&euml; i fiksuar n&euml; lidhje me pamjen e shfletuesit dhe nuk l&euml;viz.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>.box {
+    position: fixed;
+    top: 200px;
+    left: 100px;
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Gjithashtu ekziston n&euml; standardin CSS3 edhe pozicionimi ngjit&euml;s (<em>sticky</em>), pra, <br> <code><strong>position: sticky;</strong></code></p>
+            </div>
+            <h2>Rregullimi i elementeve n&euml; shtresa duke p&euml;rdorur vetin&euml; z-index</h2>
+            <p>Zakonisht faqet HTML konsiderohen dy-dimensionale, sepse teksti, imazhet dhe element&euml;t e tjer&euml; jan&euml; rregulluar n&euml; faqe q&euml; nuk mbivendosen nj&euml;ra mbi tjetr&euml;n. Sidoqoft&euml;, p&euml;rve&ccedil; pozicioneve t&euml; tyre horizontale dhe vertikale, kutit&euml; mund t&euml; radhiten p&euml;rgjat&euml; <strong>boshtit z,</strong> d.m.th. nj&euml;ra mbi tjetr&euml;n duke p&euml;rdorur vetin&euml; CSS <code>z-index</code>. Kjo veti specifikon nivelin e nj&euml; kutie, vlera e pozicionit t&euml; s&euml; cil&euml;s &euml;sht&euml; nj&euml; nga k&euml;to: <code>absolute</code>, <code>fixed</code> ose <code>relative</code>.</p>
+            <p>Pozicioni i boshtit z t&euml; secil&euml;s shtres&euml; shprehet si nj&euml; num&euml;r i plot&euml; q&euml; p&euml;rfaq&euml;son radh&euml;n e paraqitjes. Nj&euml; element me nj&euml; <code>z-index</code> m&euml; t&euml; madh e mbulon nj&euml; tjet&euml;r element me nj&euml; <code>z-index</code> m&euml; t&euml; vog&euml;l.</p>
+            <p>Vetia <code>z-index</code> mund t'ju ndihmoj&euml; t&euml; krijoni ueb faqe m&euml; komplekse.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>.box {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    z-index: 2;
+}</code></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
         </section>
 
     </main>
