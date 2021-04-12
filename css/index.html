@@ -83,6 +83,7 @@
             <li><a href="#box-modeli">Box modeli</a></li>
             <li><a href="#shfaqja-display">Shfaqja (<em>Display</em>)</a></li>
             <li><a href="#pozicionimi">Pozicionimi</a></li>
+            <li><a href="#media-queries">Media Queries</a></li>
             
         </ul>
     </aside>
@@ -2169,6 +2170,129 @@ p {
 
 
 
+
+
+        </section>
+
+        <section id="media-queries">
+            <h1>Media Queries n&euml; CSS3</h1>
+            <p>Media Queries n&euml; CSS ju mund&euml;sojn&euml; t&euml; formatoni dokumentet tuaja q&euml; t&euml; paraqiten n&euml; m&euml;nyr&euml; korrekte n&euml; madh&euml;si t&euml; ndryshme t&euml; ekraneve.</p>
+            <h2>Media Queries dhe ueb dizajni responziv</h2>
+            <p>Media Queries ju lejojn&euml; t&euml; rregulloni prezantimin e ueb faqeve p&euml;r num&euml;r m&euml; t&euml; madh t&euml; pajisjeve si&ccedil; jan&euml; telefonat e men&ccedil;ur, tablet&euml;t, desktop&euml;t, etj. pa b&euml;r&euml; ndonj&euml; ndryshim n&euml; sh&euml;nime. Nj&euml; media query p&euml;rb&euml;het nga nj&euml; lloj media dhe asnj&euml; apo m&euml; shum&euml; shprehje q&euml; p&euml;rputhen me llojin dhe kushtet e nj&euml; ve&ccedil;orie partikulare t&euml; medias, si&ccedil; jan&euml; gjer&euml;sia e pajisjes ose rezolucioni i ekranit.</p>
+            <p>Meqen&euml;se media query &euml;sht&euml; nj&euml; shprehje logjike, ajo mund t&euml; jet&euml; e sakt&euml; (<em>true</em>) ose jo e sakt&euml; (<em>false</em>). Rezultati i pyetjes do t&euml; jet&euml; e sakt&euml; n&euml;se lloji i medias i specifikuar n&euml; pyetjen media p&euml;rputhet me llojin e pajisjes n&euml; t&euml; cil&euml;n dokumenti shfaqet, si dhe t&euml; gjitha shprehjet n&euml; pyetjen e medias p&euml;rputhen. Kur nj&euml; pyetje e medias &euml;sht&euml; e sakt&euml;, rregullat e stilit t&euml; lidhura me at&euml; zbatohen n&euml; pajisjen e synuar. M&euml; posht&euml; keni nj&euml; shembull t&euml; thjesht&euml; t&euml; media query p&euml;r pajisjet standarde.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>/* Telefonat e mençur (portret dhe peisazh) ---------- */
+@media screen and (min-width: 320px) and (max-width: 480px){
+    /* stilet */
+}
+/* Telefonat e mençur (portret) ---------- */
+@media screen and (max-width: 320px){
+    /* stilet */
+}
+/* Telefonat e mençur (peisazh) ---------- */
+@media screen and (min-width: 321px){
+    /* stilet */
+}
+/* Tabletë, iPad (portret dhe peisazh) ---------- */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    /* stilet */
+}
+/* Tabletë, iPad (portret) ---------- */
+@media screen and (min-width: 768px){
+    /* stilet */
+}
+/* Tabletë, iPad (peisazh) ---------- */
+@media screen and (min-width: 1024px){
+    /* stilet */
+}
+/* Desktop and laptop ---------- */
+@media screen and (min-width: 1224px){
+    /* stilet */
+}
+/* Ekranet e mëdha ---------- */
+@media screen and (min-width: 1824px){
+    /* stilet */
+}</code></pre>
+                </div>
+            </div>
+            <div class="keshille">
+                <p><strong>K&euml;shill&euml;</strong>: Media queries jan&euml; nj&euml; m&euml;nyr&euml; e shk&euml;lqyeshme p&euml;r t&euml; krijuar paraqitje responsive (t&euml; p&euml;rshtatshme). Duke p&euml;rdorur media queries mund ta personalizoni ueb faqen tuaj ndryshe p&euml;r p&euml;rdoruesit q&euml; p&euml;rdorin pajisje si telefona t&euml; men&ccedil;ur ose tablet&euml; pa ndryshuar p&euml;rmbajtjen aktuale t&euml; faqes.</p>
+            </div>
+            <h2>Ndryshimi i gjer&euml;sis&euml; s&euml; kolon&euml;s bazuar n&euml; madh&euml;sin&euml; e ekranit</h2>
+            <p>Mund t&euml; p&euml;rdorni CSS media query p&euml;r ndryshimin e gjer&euml;sis&euml; s&euml; ueb faqes dhe element&euml;ve t&euml; saj p&euml;r t&euml; ofruar nj&euml; eksperienc&euml; m&euml; t&euml; mir&euml; t&euml; pamjes p&euml;r p&euml;rdoruesit n&euml; pajisje t&euml; ndryshme.</p>
+            <p>Rregullat e m&euml;poshtme t&euml; stilit automatikisht do t&euml; ndryshojn&euml; gjer&euml;sin&euml; e elementit t&euml; kontejnerit bazuar n&euml; madh&euml;sin&euml; e ekranit ose pamjen e shikimit (<em>viewport</em>). P&euml;r shembull, n&euml;se gjer&euml;sia e pamjes s&euml; shikimit &euml;sht&euml; m&euml; e vog&euml;l se 768 piksell ajo do t&euml; mbuloj&euml; 100% t&euml; gjer&euml;sis&euml; s&euml; pamjes s&euml; shikimit, n&euml;se &euml;sht&euml; m&euml; e madhe se 768 piksell por m&euml; e vog&euml;l se 1024 piksell do t&euml; jet&euml; e gjer&euml; 750 piksell, etj.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>.kontejneri {
+    margin: 0 auto;
+    background: #f2f2f2;
+    box-sizing: border-box;
+}
+/* Telefona mobil (portret dhe peisazh) ---------- */
+@media screen and (max-width: 767px){
+    .kontejneri {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+/* Tabletë, iPad (portret dhe peisazh) ---------- */
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .kontejneri {
+        width: 750px;
+        padding: 0 10px;
+    }
+}
+/* Desktop dhe laptop me rezolucion të ultë ---------- */
+@media screen and (min-width: 1024px) {
+    .kontejneri {
+        width: 980px;
+        padding: 0 15px;
+    }
+}
+/* Desktop dhe laptop me rezolucion të lartë ---------- */
+@media screen and (min-width: 1280px) {
+    .kontejneri {
+        width: 1200px;
+        padding: 0 20px;
+    }
+}</code></pre>
+                </div>
+            </div>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Mund t&euml; p&euml;rdorni vetin&euml; CSS3 <em>box-sizing</em> n&euml; elemente p&euml;r t&euml; krijuar paraqitje m&euml; intuitive dhe fleksibile me shum&euml; m&euml; pak p&euml;rpjekje.</p>
+            </div>
+            <h2>Ndryshimi i faqeve bazuar n&euml; madh&euml;sin&euml; e ekranit</h2>
+            <p>Gjithashtu mund t&euml; p&euml;rdorni CSS media query p&euml;r t&euml; b&euml;r&euml; paraqitjen tuaj t&euml; uebsajtit me shum&euml; kolona m&euml; t&euml; adaptueshme dhe t&euml; p&euml;rshtatshme p&euml;r pajisje t&euml; ndryshme duke b&euml;r&euml; pak ndryshim n&euml; kodin CSS.</p>
+            <p>Rregulli i m&euml;posht&euml;m i stilit do t&euml; krijoj&euml; nj&euml; paraqitje me dy kolona n&euml;se madh&euml;sia e pamjes &euml;sht&euml; m&euml; e madhe ose e barabart&euml; me 768 piksell, por n&euml;se &euml;sht&euml; m&euml; e vog&euml;l, at&euml;her&euml; do t&euml; jepet paraqitja me vet&euml;m nj&euml; kolon&euml;.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>.kolona {
+    width: 48%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    background: #93dcff;
+    float: left;
+}
+.kontejneri.kolona:first-child{
+    margin-right: 4%;
+}
+@media screen and (max-width: 767px){
+    .kolona {
+        width: 100%;
+        padding: 5px 20px;
+        float: none;
+    }
+    .kontejneri.kolona:first-child{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}</code></pre>
+                </div>
+            </div>
 
 
         </section>
