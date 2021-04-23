@@ -76,6 +76,7 @@
             <li><a href="#insert">Deklarata INSERT</a></li>
             <li><a href="#select">Deklarata SELECT</a></li>
             <li><a href="#klauzola-where">Klauzola WHERE</a></li>
+            <li><a href="#klauzola-order-by">Klauzola ORDER BY</a></li>
             
         </ul>
     </aside>
@@ -1070,6 +1071,150 @@ WHERE emri_pun BETWEEN 'D' AND 'S';</code></pre>
 
 
 
+        </section>
+
+        <section id="klauzola-order-by">
+            <h1>Klauzola ORDER BY</h1>
+            <h2>Renditja e grupit t&euml; rezultateve</h2>
+            <p>N&euml; p&euml;rgjith&euml;si kur p&euml;rdorni deklarat&euml;n <code>SELECT</code> p&euml;r t&euml; marr&euml; t&euml; dh&euml;na nga nj&euml; tabel&euml;, rreshtat n&euml; grupin e rezultateve nuk jan&euml; n&euml; ndonj&euml; renditje t&euml; ve&ccedil;ant&euml;. N&euml;se d&euml;shironi q&euml; rezultati juaj t&euml; vendoset n&euml; nj&euml; renditje t&euml; posa&ccedil;me, mund t&euml; specifikoni klauzol&euml;n <code>ORDER BY</code> n&euml; fund t&euml; deklarat&euml;s, e cila i tregon serverit se si t&euml; rendis&euml; t&euml; dh&euml;nat e kthyera nga query (pyet&euml;si). Renditja e paracaktuar &euml;sht&euml; rrit&euml;se (<em>ascending</em>).</p>
+            <h2>Sintaksa</h2>
+            <p>Klauzola <code>ORDER BY</code> p&euml;rdoret p&euml;r t&euml; renditur t&euml; dh&euml;nat e kthyera nga nj&euml; query duke u rritur (<em>ascending</em>) ose duke u zvog&euml;luar (<em>descending</em>). Sintaksa themelore e k&euml;saj klauzole do t&euml; jet&euml;:</p>
+            <div class="sintaksa">
+<pre><code>SELECT lista_kolonave FROM emri_tabeles ORDER BY emri_kolones ASC|DESC;</code></pre>
+            </div>
+            <p>K&euml;tu, <em>lista_kolonave</em> jan&euml; emrat e kolonave / fushave si <em>emri</em>, <em>mosha</em>, <em>shteti</em>, etj. t&euml; nj&euml; tabele n&euml; databaz&euml;, vlerat e s&euml; cil&euml;s d&euml;shironi t&rsquo;i merrni, nd&euml;rsa <em>emri_kolones</em> &euml;sht&euml; emri i kolon&euml;s q&euml; d&euml;shironi t&rsquo;i renditni. Le t&rsquo;i shohim disa shembuj q&euml; tregojn&euml; se si funksionon kjo klauzol&euml;.</p>
+            <p>Supozojm&euml; se kemi nj&euml; tabel&euml; <em>punetoret</em> n&euml; databaz&euml;n ton&euml; q&euml; ka t&euml; dh&euml;nat e m&euml;poshtme:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      1 | Blend Pajaziti | 2001-05-01 | 5000 |         4 |
+|      2 | Belkize Jusufi | 2002-07-15 | 6500 |         1 |
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
+|      5 | Egzona Shabani | 2008-06-24 | 5600 |      NULL |
++--------+----------------+------------+------+-----------+
+                </pre>
+            </div>
+            <h3>Renditja e kolon&euml;s s&euml; vetme</h3>
+            <p>Deklarata e m&euml;poshtme SQL do t&euml; kthej&euml; t&euml; gjith&euml; pun&euml;tor&euml;t nga tabela <em>punetoret</em> dhe rendit rezultatin e dh&euml;n&euml; p&euml;r nga kolona <em>emri_pun</em> n&euml; renditje ngrit&euml;se.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret 
+ORDER BY emri_pun ASC;</code></pre>
+                </div>
+            </div>
+            <p>Mund t&euml; tejkaloni opsionin <code>ASC</code> dhe thjesht t&euml; p&euml;rdorni sintaks&euml;n e m&euml;poshtme. Na jep t&euml; nj&euml;jtin rezultat t&euml; vendosur si deklarata e m&euml;parshme, sepse sortimi i paracaktuar i renditjes &euml;sht&euml; n&euml; ngritje:</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret 
+ORDER BY emri_pun;</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit t&euml; deklarat&euml;s s&euml; m&euml;sip&euml;rme, do t&euml; merrni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      2 | Belkize Jusufi | 2002-07-15 | 6500 |         1 |
+|      1 | Blend Pajaziti | 2001-05-01 | 5000 |         4 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
+|      5 | Egzona Shabani | 2008-06-24 | 5600 |      NULL |
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
++--------+----------------+------------+------+-----------+ 
+                </pre>
+            </div>
+            <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; p&euml;rdorni opsionin <code>DESC</code> p&euml;r t&euml; kryer nj&euml; sortim me renditje zbrit&euml;se. Deklarata e m&euml;poshtme radhit rezultatin e caktuar nga kolona numerike <em>paga</em> n&euml; rend zbrit&euml;s (nga vlera m&euml; e madhe tek ajo m&euml; e vogla).</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM punetoret 
+ORDER BY paga DESC;</code></pre>
+                </div>
+            </div>
+            <p>K&euml;t&euml; her&euml;, do t&euml; p&euml;rfitoni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++--------+----------------+------------+------+-----------+
+| id_pun | emri_pun       | data_pun   | paga | id_depart |
++--------+----------------+------------+------+-----------+
+|      3 | Muhamed Selimi | 2005-10-18 | 8000 |         5 |
+|      4 | Burhan Murati  | 2007-01-03 | 7200 |         3 |
+|      2 | Belkize Jusufi | 2002-07-15 | 6500 |         1 |
+|      5 | Egzona Shabani | 2008-06-24 | 5600 |      NULL |
+|      1 | Blend Pajaziti | 2001-05-01 | 5000 |         4 |
++--------+----------------+------------+------+-----------+                    
+                </pre>
+            </div>
+            <h3>Renditja e kolonave t&euml; shum&euml;fishta</h3>
+            <p>Gjithashtu mund t&euml; specifikoni m&euml; shum&euml; kolona gjat&euml; sortimit. Sidoqoft&euml;, dallimi n&euml; rezultate nuk do t&euml; shihet derisa t&euml; keni disa vlera t&euml; nj&euml;jta n&euml; tabel&euml;n tuaj.</p>
+            <p>P&euml;r t&euml; kuptuar renditjen me shum&euml; kolona n&euml; nj&euml; m&euml;nyr&euml; m&euml; t&euml; mir&euml;, t&euml; supozojm&euml; se kemi nj&euml; tabel&euml; me emrin <em>profesoret</em> n&euml; databaz&euml;n ton&euml; me t&euml; dh&euml;nat e m&euml;poshtme:</p>
+            <div class="tabela-sql">
+                <pre>
++----+--------+------------+----------+--------+
+| id | emri   | mbiemri | ditelindja  | gjinia |
++----+--------+---------+-------------+--------+
+|  1 | Haki   | Mehmeti | 1989-03-04  |  M     |
+|  2 | Bujar  | Sadiku  | 1981-08-30  |  M     |
+|  3 | Arsim  | Mehmeti | 1992-09-19  |  M     |
+|  4 | Merita | Bajrami | 1979-07-02  |  F     |
+|  5 | Arsim  | Hasani  | 1985-01-15  |  M     |
++----+--------+------------+----------+--------+   
+                </pre>
+            </div>
+            <p>N&euml;se e shihni tabel&euml;n me kujdes, do t&euml; v&euml;reni se kemi disa vlera t&euml; dyfishta. Sidoqoft&euml;, emrat e plot&euml; t&euml; profesor&euml;ve "Arsim Hasani" dhe "Arsim Mehmeti" jan&euml; t&euml; ndrysh&euml;m, por emrat e tyre jan&euml; t&euml; nj&euml;jt&euml;.</p>
+            <p>Tani ekzekutoni urdh&euml;res&euml;n e m&euml;poshtme e cila do t&euml; rendit rezultatin e vendosur nga kolona <em>emri</em>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM profesoret 
+ORDER BY emri;</code></pre>
+                </div>
+            </div>
+            <p>Pas ekzekutimit, do t&euml; p&euml;rfitoni k&euml;t&euml; rezultat:</p>
+            <div class="tabela-sql">
+                <pre>
++----+--------+---------+------------+--------+
+| id | emri   | mbiemri | ditelindja | gjinia |
++----+--------+---------+------------+--------+
+|  3 | Arsim  | Mehmeti | 1992-09-19 | M      |
+|  5 | Arsim  | Hasani  | 1985-01-15 | M      |
+|  2 | Bujar  | Sadiku  | 1981-08-30 | M      |
+|  1 | Haki   | Mehmeti | 1989-03-04 | M      |
+|  4 | Merita | Bajrami | 1979-07-02 | F      |
++----+--------+---------+------------+--------+ 
+                </pre>
+            </div>
+            <p>Tani ekzekutoni k&euml;t&euml; deklarat&euml; e cila urdh&euml;ron rezultatin e vendosur nga kolonat <em>emri</em> dhe <em>mbiemri</em>.</p>
+            <div class="shembull">
+                <p>Shembull:</p>
+                <div class="kodi">
+<pre><code>SELECT * FROM profesoret 
+ORDER BY emri, mbiemri;</code></pre>
+                </div>
+            </div>
+            <div class="tabela-sql">
+                <pre>
++----+--------+---------+------------+--------+
+| id | emri   | mbiemri | ditelindja | gjinia |
++----+--------+---------+------------+--------+
+|  5 | Arsim  | Hasani  | 1985-01-15 | M      |
+|  3 | Arsim  | Mehmeti | 1992-09-19 | M      |
+|  2 | Bujar  | Sadiku  | 1981-08-30 | M      |
+|  1 | Haki   | Mehmeti | 1989-03-04 | M      |
+|  4 | Merita | Bajrami | 1979-07-02 | F      |
++----+--------+---------+------------+--------+
+                </pre>
+            </div>
+            <p>E vut&euml; re dallimin n&euml; mes rezultatit t&euml; m&euml;parsh&euml;m dhe atij aktual &ndash; k&euml;t&euml; her&euml; profesori "Arsim Mehmeti" radhitet pas profesorit "Arsim Hasani ".</p>
+            <p>Meqen&euml;se emri i t&euml; dy profesor&euml;ve &euml;sht&euml; i nj&euml;jt&euml; "Arsim", k&euml;sisoj renditja e nivelit t&euml; dyt&euml; kryhet n&euml; kolon&euml;n <em>mbiemri</em> p&euml;r k&euml;ta dy profesor&euml;, prandaj profesori "Arsim Mehmeti" radhitet pas profesorit &nbsp;"Arsim Hasani".</p>
+            <div class="shenim">
+                <p><strong>Sh&euml;nim</strong>: Kur specifikohet sortimi i kolonave t&euml; shum&euml;fishta, rezultatet renditen fillimisht sipas kolon&euml;s s&euml; par&euml; dhe pastaj ajo list&euml; e renditur renditet sipas kolon&euml;s s&euml; dyt&euml;, e k&euml;shtu me radh&euml;.</p>
+            </div>
         </section>
 
     </main>
