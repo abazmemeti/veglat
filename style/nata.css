@@ -107,20 +107,22 @@ body.nata {
 
 .nata header {
     background-color: #181818;
+    border-top: 1px solid #3a3a3a;
 }
 .nata header .logo a {
     color: #fff;
 }
 .nata nav {
     background-color: #181818;
+    border-top: 1px solid #3a3a3a;
 }
 .nata nav a {
      color: white;
 }
 .nata aside, .nata article {
     background-color: #282828;
-    border-left: 1px solid #333;
-    border-right: 1px solid #333;
+    border-left: 1px solid #3a3a3a;
+    border-right: 1px solid #3a3a3a;
     color: #eee;
 }
 
@@ -133,6 +135,7 @@ body.nata {
 .nata footer {
     background-color: #181818;
     color: #fff;
+    border-top: 1px solid #3a3a3a;
 }
 .nata footer a {
     color: #fff;
