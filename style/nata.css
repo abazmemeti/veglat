@@ -193,4 +193,7 @@ body.nata {
     .nata .btn-bottom {
         background-color: #111 !important;
     }
+    .nata footer {
+        border-top: 1px solid #3a3a3a;
+    }
 }
