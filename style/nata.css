@@ -107,14 +107,14 @@ body.nata {
 
 .nata header {
     background-color: #181818;
-    border-top: 1px solid #3a3a3a;
+    border-bottom: 1px solid #3a3a3a;
 }
 .nata header .logo a {
     color: #fff;
 }
 .nata nav {
     background-color: #181818;
-    border-top: 1px solid #3a3a3a;
+    border-bottom: 1px solid #3a3a3a;
 }
 .nata nav a {
      color: white;
