@@ -468,7 +468,8 @@ document.getElementById("btn").onclick = thuajTung;</code></pre>
                     <h2>Vendosja e kodit JavaScript n&euml; linj&euml; (<em>inline</em>)</h2>
                     <p>Ju gjithashtu mund t&euml; vendosni kodin JavaScript brenda duke e futur at&euml; direkt brenda nj&euml; etikete HTML duke p&euml;rdorur atributet speciale t&euml; etiketave t&euml; tilla si<code> onclick<em>, </em>onmouseover<em>, </em>onkeypress<em>, </em>onload,</code>                        etj.</p>
                     <p>Sidoqoft&euml;, duhet t&euml; evitoni vendosjen e sasis&euml; s&euml; madhe t&euml; kodit JavaScript inline, pasi rr&euml;mon HTML-n&euml; tuaj me JavaScript dhe e b&euml;n t&euml; v&euml;shtir&euml; mir&euml;mbajtjen e kodit tuaj
-                        JavaScript.</p>
+                        JavaScript.
+                    </p>
                     <div class="shembull">
                         <p>Shembull:</p>
                         <div class="kodi">
@@ -857,7 +858,8 @@ alert(b) // Dalja: null</code></pre>
                     <p><code>Object</code> (objekti) &euml;sht&euml; nj&euml; tip kompleks i t&euml; dh&euml;nave q&euml; ju lejon t&euml; ruani koleksione t&euml; t&euml; dh&euml;nave.</p>
                     <p>Nj&euml; objekt p&euml;rmban veti (<em>properties</em>), t&euml; definuara si nj&euml; &ccedil;ift me vler&euml; ky&ccedil;e. Nj&euml; &ccedil;el&euml;s i vetis&euml; (emri) &euml;sht&euml; gjithmon&euml; nj&euml; sring, por vlera
                         mund t&euml; jet&euml; &ccedil;far&euml;do tip i t&euml; dh&euml;nave, si <em>string</em>, <em>number</em>, <em>boolean</em>, ose tipe komplekse t&euml; t&euml; dh&euml;nave si <em>array</em>, <em>function</em> dhe objekte t&euml;
-                        tjera.</p>
+                        tjera.
+                    </p>
                     <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; m&euml;nyr&euml;n m&euml; t&euml; thjesht&euml; p&euml;r t&euml; krijuar nj&euml; objekt n&euml; JavaScript.</p>
                     <div class="shembull">
                         <p>Shembull:</p>
@@ -934,7 +936,8 @@ alert(rezultati); // Dalja: Përshëndetje, Agron
                     </div>
                     <h2>Operatori <em>typeof</em></h2>
                     <p>Operatori <code>typeof</code> mund t&euml; p&euml;rdoret p&euml;r t&euml; identifikuar se &ccedil;far&euml; tipi t&euml; t&euml; dh&euml;nave p&euml;rmban nj&euml; variab&euml;l ose operand. Mund t&euml; p&euml;rdoret me ose pa kllapa
-                        (<code>typeof(x)</code> ose <code>typeof x</code>).</p>
+                        (
+                        <code>typeof(x)</code> ose <code>typeof x</code>).</p>
                     <p>Operatori <code>typeof</code> &euml;sht&euml; ve&ccedil;an&euml;risht i dobish&euml;m n&euml; situatat kur duhet ndryshe t&rsquo;i p&euml;rpunoni vlerat e tipeve t&euml; ndryshme, por duhet t&euml; jeni shum&euml; t&euml; kujdessh&euml;m,
                         sepse mund t&euml; prodhoj&euml; rezultat t&euml; papritur n&euml; disa raste, si&ccedil; demonstrohet n&euml; shembullin vijues:</p>
                     <div class="shembull">
@@ -961,7 +964,7 @@ typeof undefined;  // Tipi: "undefined"
 typeof variabelPadeklaruar; // Tipi: "undefined"
      
 // Null
-typeof Null;  // Tipi: "object"
+typeof null;  // Tipi: "object"
      
 // Objekte
 typeof {emri: "Agon", mosha: 17};  // Tipi: "object"
@@ -1911,7 +1914,8 @@ alert(pos); // Dalja: 5</code></pre>
                         </div>
                     </div>
                     <p>N&euml; m&euml;nyr&euml; t&euml; ngjashme, mund t&euml; p&euml;rdorni metod&euml;n <code>lastIndexOf()</code> p&euml;r t&euml; marr&euml; indeksin ose pozicionin e stringut s&euml; fundit t&euml; specifikuar brenda nj&euml; stringu,
-                        k&euml;sisoj:</p>
+                        k&euml;sisoj:
+                    </p>
                     <div class="shembull">
                         <p>Shembull:</p>
                         <div class="kodi">
@@ -2291,7 +2295,8 @@ console.log(x) // 0.30000000000000004</code></pre>
                         </div>
                     </div>
                     <p>Si&ccedil; mund ta shihni, rezultati &euml;sht&euml; <code>0.3000000000000000004</code> e jo <code>0.3</code> si&ccedil; duhet t&euml; ishte. Ky dallim quhet gabim i paraqitjes (<em>error representation</em>) ose gabim i p&euml;rafrimit
-                        (<em>roundoff error</em>). Kjo ndodh sepse JavaScript dhe shum&euml; gjuh&euml; t&euml; tjera programuese p&euml;rdorin form&euml;n binare (baza 2) p&euml;r t&euml; paraqitur numrat decimal (baza 10) p&euml;r brenda. P&euml;r fat
+                        (
+                        <em>roundoff error</em>). Kjo ndodh sepse JavaScript dhe shum&euml; gjuh&euml; t&euml; tjera programuese p&euml;rdorin form&euml;n binare (baza 2) p&euml;r t&euml; paraqitur numrat decimal (baza 10) p&euml;r brenda. P&euml;r fat
                         t&euml; keq, shumica e fraksioneve decimale nuk mund t&euml; p&euml;rfaq&euml;sohen sakt&euml;sisht n&euml; form&euml; binare, k&euml;shtu q&euml; ndodhin k&euml;to dallime t&euml; vogla.</p>
                     <p>P&euml;r t&euml; shmangur k&euml;t&euml; problem mund t&euml; p&euml;rdorni k&euml;t&euml; zgjidhje:</p>
                     <div class="shembull">
@@ -2639,7 +2644,8 @@ switch(d.getDay()) {
                         e h&euml;n&euml;, e k&euml;shtu me radh&euml;.</p>
                     <div class="shenim">
                         <p><strong>Sh&euml;nim</strong>: N&euml; nj&euml; deklarat&euml; <em>switch...case</em>, vlera e shprehjes ose variabl&euml;s krahasohet me vler&euml;n e dh&euml;n&euml; duke p&euml;rdorur operatorin e barazis&euml; s&euml; trefisht&euml;
-                            (<code>===</code>). Kjo do t&euml; thot&euml; n&euml;se <code>x="0"</code>, nuk p&euml;rputhet me <code>case 0:</code>, sepse tipet e t&euml; dh&euml;nave t&euml; tyre nuk jan&euml; t&euml; nj&euml;jta.</p>
+                            (
+                            <code>===</code>). Kjo do t&euml; thot&euml; n&euml;se <code>x="0"</code>, nuk p&euml;rputhet me <code>case 0:</code>, sepse tipet e t&euml; dh&euml;nave t&euml; tyre nuk jan&euml; t&euml; nj&euml;jta.</p>
                     </div>
                     <p>Deklarata <em>switch...case</em> ndryshon nga deklarata <em>if...else</em> n&euml; nj&euml; m&euml;nyr&euml; t&euml; r&euml;nd&euml;sishme. Deklarata <em>switch</em> ekzekutohet rresht pas rreshti (d.m.th. deklarat&euml; pas deklarate)
                         dhe pasi JavaScript gjen nj&euml; klauzol&euml; <code>case</code> q&euml; vler&euml;son si e v&euml;rtet&euml;, jo vet&euml;m q&euml; ekzekuton kodin q&euml; korrespondon me at&euml; klauzol&euml;, por gjithashtu ekzekuton t&euml;
@@ -2740,7 +2746,8 @@ var person = ["Filan", "Fisteku", 38];</code></pre>
                     </div>
                     <h2>Qasja n&euml; elementet e vargut</h2>
                     <p>Elementeve t&euml; vargut mund t&rsquo;ju qasemi nga indeksi i tyre duke p&euml;rdorur sh&euml;nimin me kllapa t&euml; mesme. Indeksi &euml;sht&euml; nj&euml; num&euml;r q&euml; p&euml;rfaq&euml;son pozicionin e nj&euml; elementi n&euml;
-                        varg.</p>
+                        varg.
+                    </p>
                     <p>Indekset e vargjeve fillojn&euml; nga vlera zero (0). Kjo do t&euml; thot&euml; q&euml; elementi i par&euml; i nj&euml; vargu ruhet n&euml; indeksin 0, e jo 1, elementi i dyt&euml; ruhet n&euml; indeksin 1, etj. Indekset e vargjeve
                         fillojn&euml; me 0 dhe shkojn&euml; deri n&euml; numrin e elementeve minus 1. Pra, vargu me pes&euml; elementeve do t&euml; kishte indekse nga 0 n&euml; 4.</p>
                     <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si t&euml; nxirrni elementin individual t&euml; vargut sipas indeksit t&euml; tij.</p>
@@ -3103,7 +3110,8 @@ alert(numra); // Dalja: 10,100,20,5,50,75</code></pre>
                     </div>
                     <p>Si&ccedil; mund ta shihni, rezultati &euml;sht&euml; ndryshe nga ai q&euml; kemi pritur. Kjo ndodh sepse metoda <code>sort()</code> rendit elementet e vargut numerik duke i shnd&euml;rruar n&euml; stringje (p.sh. 20 b&euml;het "20",
                         100 b&euml;het "100", e k&euml;shtu me radh&euml;), k&euml;sisoj karakteri i par&euml; i stringut "20" (dmth. "2") vjen pas karakterit t&euml; par&euml; t&euml; sringut "100" (dmth. "1"), prandaj vlera 20 renditet pas vler&euml;s
-                        100.</p>
+                        100.
+                    </p>
                     <p>P&euml;r ta rregulluar k&euml;t&euml; problem t&euml; renditjes s&euml; nj&euml; vargu numerik, mund t&euml; aplikoni nj&euml; funksion krahasimi, k&euml;sisoj:</p>
                     <div class="shembull">
                         <p>Shembull:</p>
@@ -3256,7 +3264,8 @@ while(i &lt;= 5);</code></pre>
                     <h2>Diferenca n&euml; mes unaz&euml;s <em>while</em> dhe <em>do...while</em></h2>
                     <p>Unaza <code>while</code> ndryshon nga unaza <code>do-while</code> n&euml; nj&euml; m&euml;nyr&euml; t&euml; r&euml;nd&euml;sishme &ndash; n&euml; unaz&euml;n <code>while</code>, kushti q&euml; do t&euml; vler&euml;sohet, testohet n&euml;
                         fillim t&euml; &ccedil;do cikli t&euml; unaz&euml;s, k&euml;sisoj n&euml;se shprehja e kusht&euml;zuar vler&euml;sohet si jo e v&euml;rtet&euml; (<code>false</code>), kodi n&euml; unaz&euml; nuk do t&euml; ekzekutohet asnj&euml;her&euml;
-                        .</p>
+                        .
+                    </p>
                     <p>Nga ana tjet&euml;r, n&euml; unaz&euml;n <code>do-while</code>, cikli do t&euml; ekzekutohet gjithmon&euml; nj&euml; her&euml; edhe n&euml;se shprehja e kusht&euml;zuar vler&euml;sohet si jo e v&euml;rtet&euml; (<code>false</code>),
                         sepse ndryshe nga unaza <code>while</code>, kushti vler&euml;sohet n&euml; fund t&euml; ciklit t&euml; unaz&euml;s, e jo n&euml; fillim.</p>
                     <h2>Unaza <em>for</em></h2>
@@ -3270,7 +3279,8 @@ while(i &lt;= 5);</code></pre>
                     <p>Parametrat e deklarat&euml;s s&euml; unaz&euml;n <code>for</code> kan&euml; k&euml;to kuptime:</p>
                     <ul>
                         <li><strong><em>inicializimi</em></strong> &ndash; p&euml;rdoret p&euml;r inicimin e variablave t&euml; num&euml;ruesit dhe vler&euml;sohet nj&euml; her&euml; pa ndonj&euml; kusht para ekzekutimit t&euml; par&euml; t&euml; kodit n&euml;
-                            unaz&euml;.</li>
+                            unaz&euml;.
+                        </li>
                         <li><strong><em>kushti</em></strong> &ndash; vler&euml;sohet n&euml; fillim t&euml; &ccedil;do p&euml;rs&euml;ritje t&euml; ciklit t&euml; unaz&euml;s. N&euml;se vler&euml;simi &euml;sht&euml; si i v&euml;rtet&euml; (<code>true</code>),
                             deklaratat n&euml; unaz&euml; do t&euml; ekzekutohen. N&euml;se vler&euml;simi &euml;sht&euml; jo i v&euml;rtet&euml; (<code>false</code>), ekzekutimi n&euml; unaz&euml; do t&euml; p&euml;rfundoj.</li>
                         <li><strong><em>inkrementi</em></strong> &ndash; p&euml;rdit&euml;son num&euml;ruesin e unaz&euml;s me nj&euml; vler&euml; t&euml; re sa her&euml; q&euml; ekzekutohet kodi n&euml; unaz&euml;.</li>
@@ -3307,7 +3317,8 @@ for(var i = 0; i &lt; fruta.length; i++) {
 }</code></pre>
                     </div>
                     <p>Num&euml;ruesi i unaz&euml;s d.m.th. <em>variabla</em> n&euml; unaz&euml;n <code>for-in</code> &euml;sht&euml; nj&euml; string, jo nj&euml; num&euml;r. Ai p&euml;rmban emrin e vetis&euml; aktuale ose indeksin e elementit aktual t&euml;
-                        vargut.</p>
+                        vargut.
+                    </p>
                     <p>Shembulli i m&euml;posht&euml;m do t'ju tregoj&euml; se si t&euml; kaloni n&euml;p&euml;r t&euml; gjitha vetit&euml; e nj&euml; objekti n&euml; JavaScript.</p>
                     <div class="shembull">
                         <p>Shembull:</p>
@@ -3783,7 +3794,8 @@ alert(personi.mosha); // Dalja: undefined</code></pre>
                     </div>
                     <h2>Thirrja e metodave t&euml; objektit</h2>
                     <p>Mund t&rsquo;ju qaseni metod&euml;s s&euml; nj&euml; objekti n&euml; t&euml; nj&euml;jt&euml;n m&euml;nyr&euml; si ju qaseni vetive &ndash; duke p&euml;rdorur sh&euml;nimin me pika ose duke p&euml;rdorur sh&euml;nimin me kllapa t&euml;
-                        mesme.</p>
+                        mesme.
+                    </p>
                     <div class="shembull">
                         <p>Shembull:</p>
                         <div class="kodi">
